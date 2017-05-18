@@ -3,19 +3,18 @@
   "language": "Vim script",
   "repository": "https://github.com/exercism/xvimscript",
   "active": false,
-  "test_pattern": "TODO",
   "exercises": [
-
+    {
+      "slug": "hello-world",
+      "difficulty": 1,
+      "topics": ["strings"]
+    }
   ],
-  "deprecated": [
-
-  ],
+  "deprecated": [],
   "ignored": [
     "bin",
     "img",
     "docs"
   ],
-  "foregone": [
-
-  ]
+  "foregone": []
 }
