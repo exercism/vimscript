@@ -7,7 +7,12 @@
     {
       "slug": "hello-world",
       "difficulty": 1,
-      "topics": ["strings"]
+      "topics": []
+    },
+    {
+      "slug": "leap",
+      "difficulty": 1,
+      "topics": []
     }
   ],
   "deprecated": [],
