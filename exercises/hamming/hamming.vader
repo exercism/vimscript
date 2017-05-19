@@ -1,0 +1,20 @@
+Execute ("empty strands"):
+  AssertEqual 0, Hamming('', '')
+
+Execute (identical strands):
+  AssertEqual 0, Hamming('AGT', 'AGT')
+
+Execute (one difference):
+  AssertEqual 1, Hamming('AGT', 'AGG')
+
+Execute (reversed strand):
+  AssertEqual 2, Hamming('AGT', 'TGA')
+
+Execute (strands are off by one):
+  AssertEqual 9, Hamming('GGACGGATTCTG', 'AGGACGGATTCT')
+
+Execute (strands of different length throw exception):
+  AssertThrows call Hamming('A', 'AA')
+  AssertEqual 'The two strands must have the same length.', g:vader_exception
+  AssertThrows call Hamming('AA', 'A')
+  AssertEqual 'The two strands must have the same length.', g:vader_exception
