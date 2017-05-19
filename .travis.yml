@@ -1,4 +1,10 @@
+dist: trusty
 sudo: false
+
+addons:
+  apt:
+    packages:
+      - vim-gtk
 
 script:
   - bin/fetch-configlet
