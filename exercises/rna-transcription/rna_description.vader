@@ -1,0 +1,23 @@
+Execute (complement of cytosine is guanine):
+  AssertEqual 'G', OfDNA('C')
+
+Execute (complement of guanine is cytosine):
+  AssertEqual 'C', OfDNA('G')
+
+Execute (complement of thymine is adenine):
+  AssertEqual 'A', OfDNA('T')
+
+Execute (complement of adenine is uracil):
+  AssertEqual 'U', OfDNA('A')
+
+Execute (rna complement):
+  AssertEqual 'UGCACCAGAAUU', OfDNA('ACGTGGTCTTAA')
+
+Execute (dna correctly handles invalid input):
+  AssertEqual '', OfDNA('U')
+
+Execute (dna correctly handles completely invalid input):
+  AssertEqual '', OfDNA('XXX')
+
+Execute (dna correctly handles partially invalid input):
+  AssertEqual '', OfDNA('ACGTXXXCTAA')
