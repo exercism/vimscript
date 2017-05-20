@@ -6,7 +6,11 @@ addons:
     packages:
       - vim-gtk
 
-script:
+install:
   - bin/fetch-configlet
+  - pip install vim-vint
+
+script:
   - bin/configlet .
   - bin/ci
+  - vint .
