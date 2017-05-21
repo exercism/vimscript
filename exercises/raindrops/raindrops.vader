@@ -1,0 +1,53 @@
+Execute (the sound for 1 is 1):
+  AssertEqual '1', Raindrops(1)
+
+Execute (the sound for 3 is Pling):
+  AssertEqual 'Pling', Raindrops(3)
+
+Execute (the sound for 5 is Plang):
+  AssertEqual 'Plang', Raindrops(5)
+
+Execute (the sound for 7 is Plong):
+  AssertEqual 'Plong', Raindrops(7)
+
+Execute (the sound for 6 is Pling as it has a factor 3):
+  AssertEqual 'Pling', Raindrops(6)
+
+Execute (2 to the power 3 does not make a raindrop sound as 3 is the exponent not the base):
+  AssertEqual '8', Raindrops(8)
+
+Execute (the sound for 9 is Pling as it has a factor 3):
+  AssertEqual 'Pling', Raindrops(9)
+
+Execute (the sound for 10 is Plang as it has a factor 5):
+  AssertEqual 'Plang', Raindrops(10)
+
+Execute (the sound for 14 is Plong as it has a factor 7):
+  AssertEqual 'Plong', Raindrops(14)
+
+Execute (the sound for 15 is PlingPlang as it has factors 3 and 5):
+  AssertEqual 'PlingPlang', Raindrops(15)
+
+Execute (the sound for 21 is PlingPlong as it has factors 3 and 7):
+  AssertEqual 'PlingPlong', Raindrops(21)
+
+Execute (the sound for 25 is Plang as it has factor 5):
+  AssertEqual 'Plang', Raindrops(5)
+
+Execute (the sound for 27 is Pling as it has factor 3):
+  AssertEqual 'Pling', Raindrops(27)
+
+Execute (the sound for 35 is PlangPlong as it has factors 5 and 7):
+  AssertEqual 'PlangPlong', Raindrops(35)
+
+Execute (the sound for 49 is Plong as it has factor 7):
+  AssertEqual 'Plong', Raindrops(49)
+
+Execute (the sound for 52 is 52):
+  AssertEqual '52', Raindrops(52)
+
+Execute (the sound for 105 is PlingPlangPlong as it has factors 3, 5 and 7):
+  AssertEqual 'PlingPlangPlong', Raindrops(105)
+
+Execute (the sound for 3125 is Plang as it has factor 5):
+  AssertEqual 'Plang', Raindrops(3125)
