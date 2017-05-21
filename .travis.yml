@@ -1,5 +1,16 @@
-language: bash
+dist: trusty
+sudo: false
+
+addons:
+  apt:
+    packages:
+      - vim-gtk
+
+install:
+  - bin/fetch-configlet
+  - pip install vim-vint
 
 script:
-  - bin/fetch-configlet
   - bin/configlet .
+  - bin/ci
+  - vint .

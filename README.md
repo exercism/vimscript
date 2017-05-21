@@ -1,5 +1,7 @@
 # Exercism Vim script Track
 
+[![Build Status](https://travis-ci.org/exercism/xvimscript.svg?branch=master)](https://travis-ci.org/exercism/xvimscript)
+
 Exercism exercises in Vim script.
 
 ## TODO

@@ -3,19 +3,58 @@
   "language": "Vim script",
   "repository": "https://github.com/exercism/xvimscript",
   "active": false,
-  "test_pattern": "TODO",
   "exercises": [
-
+    {
+      "slug": "hello-world",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "leap",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "hamming",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "bob",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "rna-transcription",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "anagram",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "difference-of-squares",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "raindrops",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "word-count",
+      "difficulty": 1,
+      "topics": []
+    }
   ],
-  "deprecated": [
-
-  ],
+  "deprecated": [],
   "ignored": [
     "bin",
     "img",
     "docs"
   ],
-  "foregone": [
-
-  ]
+  "foregone": []
 }
