@@ -1,0 +1,35 @@
+Execute (square of sum 0):
+  AssertEqual 0, SquareOfSum(0)
+
+Execute (square of sum 1):
+  AssertEqual 1, SquareOfSum(1)
+
+Execute (square of sum 5):
+  AssertEqual 225, SquareOfSum(5)
+
+Execute (square of sum 100):
+  AssertEqual 25502500, SquareOfSum(100)
+
+Execute (sum of squares 0):
+  AssertEqual 0, SumOfSquares(0)
+
+Execute (sum of squares 1):
+  AssertEqual 1, SumOfSquares(1)
+
+Execute (sum of squares 5):
+  AssertEqual 55, SumOfSquares(5)
+
+Execute (sum of squares 100):
+  AssertEqual 338350, SumOfSquares(100)
+
+Execute (differences of squares 0):
+  AssertEqual 0, Difference(0)
+
+Execute (differences of squares 1):
+  AssertEqual 0, Difference(1)
+
+Execute (differences of squares 5):
+  AssertEqual 170, Difference(5)
+
+Execute (differences of squares 100):
+  AssertEqual 25164150, Difference(100)
