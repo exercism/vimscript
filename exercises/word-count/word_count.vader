@@ -1,0 +1,54 @@
+Before:
+  if exists('expected')
+    unlet expected
+  endif
+
+Execute (count one word):
+  let phrase   = 'word'
+  let expected = {'word': 1}
+  AssertEqual expected, WordCount(phrase)
+
+Execute (count one of each word):
+  let phrase   = 'one of each'
+  let expected = {'one': 1, 'of': 1, 'each': 1}
+  AssertEqual expected, WordCount(phrase)
+
+Execute (multiple occurrences of a word):
+  let phrase   = 'one fish two fish red fish blue fish'
+  let expected = {'one': 1, 'fish': 4, 'two': 1, 'red': 1, 'blue': 1}
+  AssertEqual expected, WordCount(phrase)
+
+Execute (handles cramped lists):
+  let phrase   = 'one,two,three'
+  let expected = {'one': 1, 'two': 1, 'three': 1}
+  AssertEqual expected, WordCount(phrase)
+
+Execute (handles expanded lists):
+  let phrase   = "one,\ntwo,\nthree"
+  let expected = {'one': 1, 'two': 1, 'three': 1}
+  AssertEqual expected, WordCount(phrase)
+
+Execute (ignore punctuation):
+  let phrase   = 'car: carpet as java: javascript!!&@$%^&'
+  let expected = {'car': 1, 'carpet': 1, 'as': 1, 'java': 1, 'javascript': 1}
+  AssertEqual expected, WordCount(phrase)
+
+Execute (include numbers):
+  let phrase   = 'testing, 1, 2 testing'
+  let expected = {'testing': 2, '1': 1, '2': 1}
+  AssertEqual expected, WordCount(phrase)
+
+Execute (normalize case):
+  let phrase   = 'go Go GO Stop stop'
+  let expected = {'go': 3, 'stop': 2}
+  AssertEqual expected, WordCount(phrase)
+
+Execute (with apostrophes):
+  let phrase   = "First: don't laugh. Then: don't cry."
+  let expected = {'first': 1, 'don''t': 2, 'laugh': 1, 'then': 1, 'cry': 1}
+  AssertEqual expected, WordCount(phrase)
+
+Execute (with quotations):
+  let phrase   = "Joe can't tell between 'large' and large."
+  let expected = {'joe': 1, 'can''t': 1, 'tell': 1, 'between': 1, 'large': 2, 'and': 1}
+  AssertEqual expected, WordCount(phrase)
