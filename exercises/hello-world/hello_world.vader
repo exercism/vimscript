@@ -1,0 +1,8 @@
+Execute (says hello using default argument):
+  AssertEqual "Hello, World!", Hello()
+
+Execute (says hello using name "Bram"):
+  AssertEqual "Hello, Bram!", Hello('Bram')
+
+Execute (says hello using name "Bill Joy"):
+  AssertEqual "Hello, Bill Joy!", Hello('Bill Joy')
