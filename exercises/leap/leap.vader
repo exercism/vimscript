@@ -1,0 +1,11 @@
+Execute (2000 is a leap year):
+  AssertEqual 1, IsLeap(2000)
+
+Execute (2015 is not a leap year):
+  AssertEqual 0, IsLeap(2015)
+
+Execute (2016 is a leap year):
+  AssertEqual 1, IsLeap(2016)
+
+Execute (2100 is not a leap year):
+  AssertEqual 0, IsLeap(2100)
