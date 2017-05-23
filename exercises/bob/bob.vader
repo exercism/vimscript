@@ -1,0 +1,63 @@
+Execute (stating something):
+  let drivel = 'Tom-ay-to, tom-aaah-to.'
+  AssertEqual 'Whatever.', Answer(drivel)
+
+Execute (shouting):
+  let drivel = 'WATCH OUT!'
+  AssertEqual 'Whoa, chill out!', Answer(drivel)
+
+Execute (asking question):
+  let drivel = 'Does this cryogenic chamber make me look fat?'
+  AssertEqual 'Sure.', Answer(drivel)
+
+Execute (asking numeric question):
+  let drivel = 'You are, what, like 15?'
+  AssertEqual 'Sure.', Answer(drivel)
+
+Execute (talkig forcefully):
+  let drivel = "Let's go make out behind the gym!"
+  AssertEqual 'Whatever.', Answer(drivel)
+
+Execute (using acronyms in regular speech):
+  let drivel = "It's okay if you don't want to go to the DMV."
+  AssertEqual 'Whatever.', Answer(drivel)
+
+Execute (forceful questions):
+  let drivel = 'WHAT THE HELL WERE YOU THINKING?'
+  AssertEqual 'Whoa, chill out!', Answer(drivel)
+
+Execute (shouting numbers):
+  let drivel = '1, 2, 3 GO!'
+  AssertEqual 'Whoa, chill out!', Answer(drivel)
+
+Execute (only numbers):
+  let drivel = '1, 2, 3'
+  AssertEqual 'Whatever.', Answer(drivel)
+
+Execute (question with only numbers):
+  let drivel = '4?'
+  AssertEqual 'Sure.', Answer(drivel)
+
+Execute (shouting with special characters):
+  let drivel = 'ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!'
+  AssertEqual 'Whoa, chill out!', Answer(drivel)
+
+Execute (shouting with no exclamation mark):
+  let drivel = 'I HATE YOU'
+  AssertEqual 'Whoa, chill out!', Answer(drivel)
+
+Execute (statement containing question mark):
+  let drivel = 'Ending with ? means a question.'
+  AssertEqual 'Whatever.', Answer(drivel)
+
+Execute (prattling on):
+  let drivel = 'Wait! Hang on. Are you going to be OK?'
+  AssertEqual 'Sure.', Answer(drivel)
+
+Execute (silence):
+  let drivel = ''
+  AssertEqual 'Fine. Be that way!', Answer(drivel)
+
+Execute (prolonged silence):
+  let drivel = '           '
+  AssertEqual 'Fine. Be that way!', Answer(drivel)
