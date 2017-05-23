@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -ex
+
+mkdir tmp
+trap '{ rm -rf tmp; }' EXIT
+
+git clone https://github.com/junegunn/vader.vim.git tmp/vader.vim
+
+cat >tmp/vimrc <<EOF
+filetype off
+set runtimepath+=tmp/vader.vim
+filetype plugin on
+syntax enable
+
+for file in glob('exercises/*/example.vim', 0, 1)
+  execute 'source' file
+endfor
+EOF
+
+TERM=xterm HOME=/dev/null vim -XNu tmp/vimrc -i NONE -c 'Vader! exercises/*/*.vader'
