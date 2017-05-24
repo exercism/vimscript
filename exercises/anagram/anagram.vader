@@ -1,0 +1,95 @@
+Execute (no matches):
+  let word       = 'diaper'
+  let candidates = ['hello', 'world', 'zombies', 'pants']
+  let expected   = []
+  AssertEqual expected, Anagram(word, candidates)
+
+Execute (detects simple anagram):
+  let word       = 'ant'
+  let candidates = ['tan', 'stand', 'at']
+  let expected   = ['tan']
+  AssertEqual expected, Anagram(word, candidates)
+
+Execute (does not detect false positives):
+  let word       = 'galea'
+  let candidates = ['eagle']
+  let expected   = []
+  AssertEqual expected, Anagram(word, candidates)
+
+Execute (detects two anagrams):
+  let word       = 'master'
+  let candidates = ['stream', 'pigeon', 'maters']
+  let expected   = ['maters', 'stream']
+  AssertEqual expected, Anagram(word, candidates)
+
+Execute (does not detect anagram subsets):
+  let word       = 'good'
+  let candidates = ['dog', 'goody']
+  let expected   = []
+  AssertEqual expected, Anagram(word, candidates)
+
+Execute (detects anagram):
+  let word       = 'listen'
+  let candidates = ['enlists', 'google', 'inlets', 'banana']
+  let expected   = ['inlets']
+  AssertEqual expected, Anagram(word, candidates)
+
+Execute (detects three anagrams):
+  let word       = 'allergy'
+  let candidates = ['gallery', 'ballerina', 'regally', 'clergy', 'largely', 'leading']
+  let expected   = ['gallery', 'largely', 'regally']
+  AssertEqual expected, Anagram(word, candidates)
+
+Execute (does not detect identical words):
+  let word       = 'corn'
+  let candidates = ['corn', 'dark', 'Corn', 'rank', 'CORN', 'cron', 'park']
+  let expected   = ['cron']
+  AssertEqual expected, Anagram(word, candidates)
+
+Execute (does not detect non-anagrams with identical checksum):
+  let word       = 'mass'
+  let candidates = ['last']
+  let expected   = []
+  AssertEqual expected, Anagram(word, candidates)
+
+Execute (detects anagrams case insensitively):
+  let word       = 'Orchestra'
+  let candidates = ['cashregister', 'Carthorse', 'radishes']
+  let expected   = ['Carthorse']
+  AssertEqual expected, Anagram(word, candidates)
+
+Execute (detects anagrams using case insensitive subject):
+  let word       = 'Orchestra'
+  let candidates = ['cashregister', 'carthorse', 'radishes']
+  let expected   = ['carthorse']
+  AssertEqual expected, Anagram(word, candidates)
+
+Execute (detects anagrams using case insensitive possible matches):
+  let word       = 'orchestra'
+  let candidates = ['cashregister', 'Carthorse', 'radishes']
+  let expected   = ['Carthorse']
+  AssertEqual expected, Anagram(word, candidates)
+
+Execute (does not detect a word as its own anagram):
+  let word       = 'banana'
+  let candidates = ['Banana']
+  let expected   = []
+  AssertEqual expected, Anagram(word, candidates)
+
+Execute (does not detect an anagramif the original word is repeated):
+  let word       = 'go'
+  let candidates = ['go Go GO']
+  let expected   = []
+  AssertEqual expected, Anagram(word, candidates)
+
+Execute (anagrams must use all letters exactly once):
+  let word       = 'tapper'
+  let candidates = ['patter']
+  let expected   = []
+  AssertEqual expected, Anagram(word, candidates)
+
+Execute (capital word is not own anagram):
+  let word       = 'BANANA'
+  let candidates = ['Banana']
+  let expected   = []
+  AssertEqual expected, Anagram(word, candidates)
