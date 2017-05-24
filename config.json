@@ -23,6 +23,11 @@
       "slug": "bob",
       "difficulty": 1,
       "topics": []
+    },
+    {
+      "slug": "rna-transcription",
+      "difficulty": 1,
+      "topics": []
     }
   ],
   "deprecated": [],
