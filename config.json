@@ -32,20 +32,22 @@
     {
       "slug": "anagram",
       "difficulty": 1,
-      "topics": [
-      ]
+      "topics": []
     },
     {
       "slug": "difference-of-squares",
       "difficulty": 1,
-      "topics": [
-      ]
+      "topics": []
     },
     {
       "slug": "raindrops",
       "difficulty": 1,
-      "topics": [
-      ]
+      "topics": []
+    },
+    {
+      "slug": "word-count",
+      "difficulty": 1,
+      "topics": []
     }
   ],
   "deprecated": [],
