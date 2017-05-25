@@ -1,0 +1,50 @@
+" The tests are divided into two groups:
+"
+"   - encoding from English to atbash cipher
+"   - decoding from atbash cipher to all-lowercase-mashed-together English
+
+" Test encoding from English to atbash
+
+Execute (encode yes):
+  AssertEqual 'bvh', AtbashEncode('yes')
+
+Execute (encode no):
+  AssertEqual 'ml', AtbashEncode('no')
+
+Execute (encode OMG):
+  AssertEqual 'lnt', AtbashEncode('OMG')
+
+Execute (encode spaces):
+  AssertEqual 'lnt', AtbashEncode('O M G')
+
+Execute (encode mindblowingly):
+  AssertEqual 'nrmwy oldrm tob', AtbashEncode('mindblowingly')
+
+Execute (encode numbers):
+  AssertEqual 'gvhgr mt123 gvhgr mt', AtbashEncode('Testing,1 2 3, testing.')
+
+Execute (encode deep thought):
+  AssertEqual 'gifgs rhurx grlm', AtbashEncode('Truth is fiction.')
+
+Execute (encode all the letters):
+  AssertEqual
+    \ 'gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt',
+    \ AtbashEncode('The quick brown fox jumps over the lazy dog.')
+
+" Test decoding from atbash to English
+
+Execute (decode exercism):
+  AssertEqual 'exercism', AtbashDecode('vcvix rhn')
+
+Execute (decode a sentence):
+  AssertEqual
+    \ 'anobstacleisoftenasteppingstone',
+    \ AtbashDecode('zmlyh gzxov rhlug vmzhg vkkrm thglm v')
+
+Execute (decode numbers):
+  AssertEqual 'testing123testing', AtbashDecode('gvhgr mt123 gvhgr mt')
+
+Execute (decode all the letters):
+  AssertEqual
+    \ 'thequickbrownfoxjumpsoverthelazydog',
+    \ AtbashDecode('gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt')
