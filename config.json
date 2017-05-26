@@ -3,6 +3,7 @@
   "language": "Vim script",
   "repository": "https://github.com/exercism/xvimscript",
   "active": false,
+  "test_pattern": "\\.vader$",
   "exercises": [
     {
       "slug": "hello-world",
