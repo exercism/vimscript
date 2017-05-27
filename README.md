@@ -1,18 +1,23 @@
-# Exercism Vim script Track
+# xVimscript
+
+![build status](https://travis-ci.org/exercism/xvimscript.svg?branch=master)
 
 Exercism exercises in Vim script.
 
-## TODO
+## Contributing
 
-_Document how to contribute to the Vim script track._
+We welcome any kind of contribution!
 
-## Contributing Guide
+If you have a suggestion or question, create a new
+[issue](https://github.com/exercism/xvimscript/issues).
 
-Please see the [contributing guide](https://github.com/exercism/x-common/blob/master/CONTRIBUTING.md).
+For code or fixing typos and similar things, open a
+[pull request](https://github.com/exercism/xvimscript/pulls).
 
-### [Vim logo](https://github.com/exercism/xvimscript/tree/master/img/icon.png)
+Look at recent [commits](https://github.com/exercism/xvimscript/commits/master)
+to get a feeling on how to format your own ones.
 
-Since Vimscript is part of the Vim text editor, Vimscript alone does not have its own logo, and a modified Vim logo is used instead.
-[Vim's license](http://vimdoc.sourceforge.net/htmldoc/uganda.html#license) does not specify the terms of use for the Vim logo, but we believe that adapting it, by changing the colour scheme, falls within fair use.
+Even if there are any uncertainties, go for it nevertheless. We can straighten
+out everything in the process.
 
-The logo is used on Exercism to identify the Vimscript language, not Exercism as a whole.
+Thank you for contributing! :tada:
