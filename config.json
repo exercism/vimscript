@@ -59,6 +59,11 @@
       "slug": "roman-numerals",
       "difficulty": 1,
       "topics": []
+    },
+    {
+      "slug": "phone-number",
+      "difficulty": 1,
+      "topics": []
     }
   ],
   "deprecated": [],
