@@ -1,5 +1,7 @@
 # xVimscript
 
+[![Join the chat at https://gitter.im/exercism/xvimscript](https://badges.gitter.im/exercism/xvimscript.svg)](https://gitter.im/exercism/xvimscript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ![build status](https://travis-ci.org/exercism/xvimscript.svg?branch=master)
 
 Exercism exercises in Vim script.
