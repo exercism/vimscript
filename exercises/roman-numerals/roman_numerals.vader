@@ -1,0 +1,53 @@
+Execute (1 is a single I):
+  AssertEqual 'I', ToRoman(1)
+
+Execute (2 is two I's):
+  AssertEqual 'II', ToRoman(2)
+
+Execute (2 is three I's):
+  AssertEqual 'III', ToRoman(3)
+
+Execute (4, being 5 - 1, is IV):
+  AssertEqual 'IV', ToRoman(4)
+
+Execute (5 is a single V):
+  AssertEqual 'V', ToRoman(5)
+
+Execute (6, being 5 + 1, is VI):
+  AssertEqual 'VI', ToRoman(6)
+
+Execute (9, being 10 - 1, is IX):
+  AssertEqual 'IX', ToRoman(9)
+
+Execute (20 is two X's):
+  AssertEqual 'XXVII', ToRoman(27)
+
+Execute (48 is not 50 - 2, but rather 40 + 8):
+  AssertEqual 'XLVIII', ToRoman(48)
+
+Execute (50 is a single L):
+  AssertEqual 'LIX', ToRoman(59)
+
+Execute (90, being 100 - 10, is XC):
+  AssertEqual 'XCIII', ToRoman(93)
+
+Execute (100 is a single C):
+  AssertEqual 'CXLI', ToRoman(141)
+
+Execute (60, being 50 + 10, is LX):
+  AssertEqual 'CLXIII', ToRoman(163)
+
+Execute (400, being 500 - 100, is CD):
+  AssertEqual 'CDII', ToRoman(402)
+
+Execute (500 is a single D):
+  AssertEqual 'DLXXV', ToRoman(575)
+
+Execute (900, being 1000 - 100, is CM):
+  AssertEqual 'CMXI', ToRoman(911)
+
+Execute (1000 is a single M):
+  AssertEqual 'MXXIV', ToRoman(1024)
+
+Execute (3000 is three M's):
+  AssertEqual 'MMM', ToRoman(3000)
