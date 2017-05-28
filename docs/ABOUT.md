@@ -18,7 +18,7 @@ double quote, you can use `ci"` to change this quote.
 
 You reduce the risk of
 [carpal tunnel syndrome](https://en.wikipedia.org/wiki/Carpal_tunnel_syndrome)
-by not hitting several keys at once, but but pressing single keys in sequence.
+by not hitting several keys at once, but by pressing single keys in sequence.
 
 For convenience, often used keys at put on the homerow or near it, so you don't
 have to move your hands back and forth all the time.
