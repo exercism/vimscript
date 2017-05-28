@@ -54,6 +54,11 @@
       "slug": "atbash-cipher",
       "difficulty": 1,
       "topics": []
+    },
+    {
+      "slug": "roman-numerals",
+      "difficulty": 1,
+      "topics": []
     }
   ],
   "deprecated": [],
