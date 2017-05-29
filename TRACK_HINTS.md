@@ -1,4 +1,11 @@
-# Setup
+# TRACK HINTS
+
+- [Intro](#intro)
+- [Running tests](#running-tests)
+- [Writing tests](#writing-tests)
+- [Linting Vim files](#linting-vim-files)
+
+## Intro
 
 This track uses two tools to run the test suite and ensure best practices:
 
