@@ -1,0 +1,38 @@
+"
+" Common test data version: 1.0.0
+"
+
+Before:
+  unlet! expected
+
+Execute (empty strand):
+  let expected = {
+        \ 'A': 0,
+        \ 'C': 0,
+        \ 'G': 0,
+        \ 'T': 0,
+        \ }
+  AssertEqual expected, NucleotideCount('')
+
+Execute (strand with repeated nucleotide):
+  let expected = {
+        \ 'A': 0,
+        \ 'C': 0,
+        \ 'G': 7,
+        \ 'T': 0,
+        \ }
+  AssertEqual expected, NucleotideCount('GGGGGGG')
+
+Execute (strand with multiple nucleotides):
+  let expected = {
+        \ 'A': 20,
+        \ 'C': 12,
+        \ 'G': 17,
+        \ 'T': 21,
+        \ }
+  AssertEqual expected, NucleotideCount('AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC')
+
+Execute (strand with invalid nucleotides):
+  let expected = 'invalid nucleotide in strand'
+  AssertThrows call NucleotideCount('AGXXACT')
+  AssertEqual expected, g:vader_exception
