@@ -55,6 +55,24 @@ autocmd BufRead *.{vader,vim}
 Afterwards open any `.vim` or `.vader` file from an exercise directory and run
 the `:Test` command.
 
+## Writing tests
+
+#### Type mismatch exceptions
+
+Older Vims don't like changing types for the same variable. If your tests use
+global variables, unlet them in a `Before` block at the top of the Vader file.
+
+When each test uses `let expected = ...`, then put this at the top:
+
+```vim
+Before:
+  unlet! expected
+```
+
+This is patched as of
+[Vim 7.4.1546](https://github.com/vim/vim/commit/f6f32c38bf3319144a84a01a154c8c91939e7acf),
+but we shouldn't assume versions in favor of compatibility.
+
 ## Linting Vim files
 
 1. Install [vint](https://github.com/Kuniwak/vint#quick-start).
