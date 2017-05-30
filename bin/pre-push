@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Only run vint when the commits touched any .vim files.
+#
+# This script is meant to be used as a git pre-push hook:
+#
+#   $ cp bin/pre-push .git/hooks/
+#
+# It assumes that the git remote is called "origin".
+
+if git diff --name-only origin/master..HEAD | grep -q '\.vim$'; then
+  if ! command -v vint 1>/dev/null; then
+      echo 'Install "vint" first: pip3 install vim-vint'
+      exit 1
+  fi
+  echo '[pre-push] Found .vim files. Running vint...'
+  vint .
+fi
