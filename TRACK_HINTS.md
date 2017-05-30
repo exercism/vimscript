@@ -67,7 +67,7 @@ the `:Test` command.
 #### Type mismatch exceptions
 
 Older Vims don't like changing types for the same variable. If your tests use
-global variables, unlet them in a `Before` block at the top of the Vader file.
+global variables, `unlet!` them in a `Before` block at the top of the Vader file.
 
 When each test uses `let expected = ...`, then put this at the top:
 
