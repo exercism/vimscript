@@ -1,0 +1,5 @@
+policies:
+  ProhibitCommandWithUnintendedSideEffect:
+    enabled: false
+  ProhibitCommandRelyOnUser:
+    enabled: false
