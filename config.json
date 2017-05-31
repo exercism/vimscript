@@ -74,8 +74,9 @@
   "deprecated": [],
   "ignored": [
     "bin",
+    "docs",
     "img",
-    "docs"
+    "lib"
   ],
   "foregone": []
 }
