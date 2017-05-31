@@ -69,6 +69,12 @@
       "slug": "nucleotide-count",
       "difficulty": 1,
       "topics": []
+    },
+    {
+      "slug": "allergies",
+      "difficulty": 1,
+      "topics": [
+      ]
     }
   ],
   "deprecated": [],
