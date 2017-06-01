@@ -69,6 +69,10 @@ function! s:generate(slug) abort
     redraw!
     echomsg '404: Not Found'
     return
+  elseif line2byte('$') == -1
+    silent bwipeout!
+    echomsg 'Got empty buffer. Have you disabled the netrw plugin?'
+    return
   endif
   %yank x
   let data = json_decode(substitute(@x, '\\', '\\\\', 'g'))

@@ -64,6 +64,24 @@ the `:Test` command.
 
 ## Writing tests
 
+#### Generate test files
+
+Use the [generator](lib/generate.vim) to create Vader files from their canonical
+test data:
+
+```vim
+" in Vim
+:source lib/generate.vim
+:Generate word-count
+```
+
+This would fetch the [canonical test data](https://raw.githubusercontent.com/exercism/x-common/master/exercises/word-count/canonical-data.json),
+decode the JSON to Vim data types, iterate over the result, and put the tests in
+a new unnamed buffer.
+
+_This script requires Vim 7.4.1304+ for `json_decode()`. It also relies on the
+netrw plugin (`:h netrw`), but that one is shipped and sourced by default._
+
 #### Type mismatch exceptions
 
 Older Vims don't like changing types for the same variable. If your tests use
