@@ -73,8 +73,7 @@
     {
       "slug": "allergies",
       "difficulty": 1,
-      "topics": [
-      ]
+      "topics": []
     },
     {
       "slug": "scrabble-score",
@@ -83,6 +82,11 @@
     },
     {
       "slug": "triangle",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "etl",
       "difficulty": 1,
       "topics": []
     }
