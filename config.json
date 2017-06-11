@@ -89,6 +89,11 @@
       "slug": "etl",
       "difficulty": 1,
       "topics": []
+    },
+    {
+      "slug": "beer-song",
+      "difficulty": 1,
+      "topics": []
     }
   ],
   "deprecated": [],
