@@ -135,6 +135,12 @@
   "deprecated": [
 
   ],
+  "ignored": [
+    "bin",
+    "docs",
+    "img",
+    "lib"
+  ],
   "foregone": [
 
   ]
