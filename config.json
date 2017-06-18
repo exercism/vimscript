@@ -1,7 +1,7 @@
 {
   "slug": "vimscript",
   "language": "Vim script",
-  "repository": "https://github.com/exercism/xvimscript",
+  "repository": "https://github.com/exercism/vimscript",
   "active": true,
   "test_pattern": "\\.vader$",
   "exercises": [
