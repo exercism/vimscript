@@ -1,0 +1,52 @@
+"
+" Version: 1.1.0
+"
+
+Before:
+  unlet! input expected
+
+Execute (sentence empty):
+  let input = ""
+  let expected = 0
+  AssertEqual expected, IsPangram(input)
+
+Execute (pangram with only lower case):
+  let input = "the quick brown fox jumps over the lazy dog"
+  let expected = 1
+  AssertEqual expected, IsPangram(input)
+
+Execute (missing character 'x'):
+  let input = "a quick movement of the enemy will jeopardize five gunboats"
+  let expected = 0
+  AssertEqual expected, IsPangram(input)
+
+Execute (another missing character 'x'):
+  let input = "the quick brown fish jumps over the lazy dog"
+  let expected = 0
+  AssertEqual expected, IsPangram(input)
+
+Execute (pangram with underscores):
+  let input = "the_quick_brown_fox_jumps_over_the_lazy_dog"
+  let expected = 1
+  AssertEqual expected, IsPangram(input)
+
+Execute (pangram with numbers):
+  let input = "the 1 quick brown fox jumps over the 2 lazy dogs"
+  let expected = 1
+  AssertEqual expected, IsPangram(input)
+
+Execute (missing letters replaced by numbers):
+  let input = "7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog"
+  let expected = 0
+  AssertEqual expected, IsPangram(input)
+
+Execute (pangram with mixed case and punctuation):
+  let input = "\"Five quacking Zephyrs jolt my wax bed.\""
+  let expected = 1
+  AssertEqual expected, IsPangram(input)
+
+Execute (upper and lower case versions of the same character should not be counted separately):
+  let input = "the quick brown fox jumps over with lazy FX"
+  let expected = 0
+  AssertEqual expected, IsPangram(input)
+
