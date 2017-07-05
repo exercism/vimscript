@@ -137,6 +137,13 @@
       "topics": [
 
       ]
+    },
+    {
+      "slug": "pangram",
+      "difficulty": 1,
+      "topics": [
+
+      ]
     }
   ],
   "deprecated": [
