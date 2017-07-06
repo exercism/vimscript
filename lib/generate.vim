@@ -75,7 +75,18 @@ function! s:generate(slug) abort
     return
   endif
   %yank x
-  let data = json_decode(substitute(@x, '\\', '\\\\', 'g'))
+  try
+    let data = json_decode(substitute(@x, '\\', '\\\\', 'g'))
+  catch
+    redraw
+    echohl ErrorMsg
+    echomsg 'JSON decoding failed.'
+    echomsg 'Trying again without backslash escaping.'
+    echomsg 'Check escaping in the generated tests!'
+    echohl None
+    call input('[press any key]')
+    let data = json_decode(@x)
+  endtry
   bwipeout!
   enew!
   setfiletype vader
