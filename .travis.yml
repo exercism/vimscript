@@ -15,6 +15,6 @@ install:
   - pip install vim-vint
 
 script:
-  - bin/configlet .
+  - bin/configlet lint .
   - bin/ci
   - vint .
