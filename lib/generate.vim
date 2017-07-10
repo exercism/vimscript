@@ -7,7 +7,7 @@
 "
 
 function! s:data_url(slug) abort
-  return printf('https://raw.githubusercontent.com/exercism/x-common/master/exercises/%s/canonical-data.json', a:slug)
+  return printf('https://raw.githubusercontent.com/exercism/problem-specifications/master/exercises/%s/canonical-data.json', a:slug)
 endfunction
 
 function! s:generate_header(data)
