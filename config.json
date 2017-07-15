@@ -6,148 +6,205 @@
   "test_pattern": "\\.vader$",
   "exercises": [
     {
+      "uuid": "a0d099f9-eda7-42d4-a4f6-284ae3178df1",
       "slug": "hello-world",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "92956ede-93e9-4dc8-8208-adb6001383c1",
       "slug": "leap",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "9cda4dfe-bdce-4a0b-9be2-ebafabd57271",
       "slug": "hamming",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "345a440a-f995-4ead-9890-f5075c7f962e",
       "slug": "bob",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "b8bc605a-527d-48d3-9963-a8325be122c1",
       "slug": "rna-transcription",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "20d6efaf-1dee-42ec-9461-d738ec1b1e17",
       "slug": "anagram",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "e6662c3e-9d5e-4744-977e-ed12f3171e1e",
       "slug": "difference-of-squares",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "e75e2331-1494-4e70-9ad4-3396a6aeccc3",
       "slug": "raindrops",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "d85603b2-f143-48bd-8184-67959b53b1d0",
       "slug": "word-count",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "2cd8b4dd-0c07-4e62-9d49-ec9697dc978b",
       "slug": "atbash-cipher",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "c24cf39c-d9f2-437d-8962-514f9ec095fe",
       "slug": "roman-numerals",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "a990dad9-e26c-45fc-939a-6484eb0b7546",
       "slug": "phone-number",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "ff92dd32-fa39-4b09-81ed-ab4b2ba4096d",
       "slug": "nucleotide-count",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "6cd2b3dc-9f3e-4a69-916e-ba19e2814fe7",
       "slug": "allergies",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "55859980-03d6-4994-a8e2-120179a8f0e5",
       "slug": "scrabble-score",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "33796a20-8325-4068-bdbd-e91519144b24",
       "slug": "triangle",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "d0f80889-5c4e-4de6-b3a4-08a71a2e9c75",
       "slug": "etl",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "73babd80-2a68-490f-a451-120918e5311c",
       "slug": "beer-song",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "7f1d0f92-bd78-4ca7-a436-cf9c871df1b2",
       "slug": "largest-series-product",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "fa80ef6a-db6a-429d-ae7a-ceba0ba96dab",
       "slug": "pangram",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     }
-  ],
-  "deprecated": [
-
   ],
   "ignored": [
     "bin",
