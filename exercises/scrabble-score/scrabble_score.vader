@@ -1,0 +1,62 @@
+"
+" Version: 1.0.0
+"
+
+Before:
+  unlet! input expected
+
+Execute (lowercase letter):
+  let input = "a"
+  let expected = 1
+  AssertEqual expected, Score(input)
+
+Execute (uppercase letter):
+  let input = "A"
+  let expected = 1
+  AssertEqual expected, Score(input)
+
+Execute (valuable letter):
+  let input = "f"
+  let expected = 4
+  AssertEqual expected, Score(input)
+
+Execute (short word):
+  let input = "at"
+  let expected = 2
+  AssertEqual expected, Score(input)
+
+Execute (short, valuable word):
+  let input = "zoo"
+  let expected = 12
+  AssertEqual expected, Score(input)
+
+Execute (medium word):
+  let input = "street"
+  let expected = 6
+  AssertEqual expected, Score(input)
+
+Execute (medium, valuable word):
+  let input = "quirky"
+  let expected = 22
+  AssertEqual expected, Score(input)
+
+Execute (long, mixed-case word):
+  let input = "OxyphenButazone"
+  let expected = 41
+  AssertEqual expected, Score(input)
+
+Execute (english-like word):
+  let input = "pinata"
+  let expected = 8
+  AssertEqual expected, Score(input)
+
+Execute (empty input):
+  let input = ""
+  let expected = 0
+  AssertEqual expected, Score(input)
+
+Execute (entire alphabet available):
+  let input = "abcdefghijklmnopqrstuvwxyz"
+  let expected = 87
+  AssertEqual expected, Score(input)
+

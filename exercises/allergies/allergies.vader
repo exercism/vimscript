@@ -1,0 +1,68 @@
+"
+" Version: 1.0.0
+"
+
+Before:
+  unlet! input expected
+
+Execute (no allergies means not allergic):
+  let input = 0
+  AssertEqual 0, AllergicTo(input, 'peanuts')
+  AssertEqual 0, AllergicTo(input, 'cats')
+  AssertEqual 0, AllergicTo(input, 'strawberries')
+
+Execute (is allergic to eggs):
+  let input = 1
+  AssertEqual 1, AllergicTo(input, 'eggs')
+
+Execute (allergic to eggs in addition to other stuff):
+  let input = 5
+  AssertEqual 1, AllergicTo(input, 'eggs')
+  AssertEqual 1, AllergicTo(input, 'shellfish')
+  AssertEqual 0, AllergicTo(input, 'strawberries')
+
+Execute (no allergies at all):
+  let input = 0
+  let expected = []
+  AssertEqual expected, List(input)
+
+Execute (allergic to just eggs):
+  let input = 1
+  let expected = ['eggs']
+  AssertEqual expected, List(input)
+
+Execute (allergic to just peanuts):
+  let input = 2
+  let expected = ['peanuts']
+  AssertEqual expected, List(input)
+
+Execute (allergic to just strawberries):
+  let input = 8
+  let expected = ['strawberries']
+  AssertEqual expected, List(input)
+
+Execute (allergic to eggs and peanuts):
+  let input = 3
+  let expected = ['eggs', 'peanuts']
+  AssertEqual expected, List(input)
+
+Execute (allergic to more than eggs but not peanuts):
+  let input = 5
+  let expected = ['eggs', 'shellfish']
+  AssertEqual expected, List(input)
+
+Execute (allergic to lots of stuff):
+  let input = 248
+  let expected = ['strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats']
+  AssertEqual expected, List(input)
+
+Execute (allergic to everything):
+  let input = 255
+  let expected = ['eggs', 'peanuts', 'shellfish', 'strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats']
+  AssertEqual expected, List(input)
+
+Execute (ignore non allergen score parts):
+  let input = 509
+  let expected = ['eggs', 'shellfish', 'strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats']
+  AssertEqual expected, List(input)
+

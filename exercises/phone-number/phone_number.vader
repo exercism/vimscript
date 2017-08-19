@@ -1,0 +1,36 @@
+"
+" Common test data version: 1.2.0
+"
+
+Execute (cleans the number):
+  AssertEqual '2234567890', ToNANP('(223) 456-7890')
+
+Execute (cleans numbers with dots):
+  AssertEqual '2234567890', ToNANP('223.456.7890')
+
+Execute (cleans numbers with multiple spaces):
+  AssertEqual '2234567890', ToNANP('223 456    7890')
+
+Execute (invalid when 9 digits):
+  AssertEqual '', ToNANP('123456789')
+
+Execute (invalid when 11 digits and does not start with 1):
+  AssertEqual '', ToNANP('22234567890')
+
+Execute (valid when 11 digits and does start with 1):
+  AssertEqual '2234567890', ToNANP('12234567890')
+
+Execute (valid when 11 digits and starting with 1 even with punctuation):
+  AssertEqual '2234567890', ToNANP('+1 (223) 456-7890')
+
+Execute (invalid with letters):
+  AssertEqual '', ToNANP('123-abc-7890')
+
+Execute (invalid with punctuations):
+  AssertEqual '', ToNANP('123-@:!-7890')
+
+Execute (invalid if area code does not start with 2-9):
+  AssertEqual '', ToNANP('(123) 456-7890')
+
+Execute (invalid if exchange code does not start with 2-9):
+  AssertEqual '', ToNANP('(223) 056-7890')

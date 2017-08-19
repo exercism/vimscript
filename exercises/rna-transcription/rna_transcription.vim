@@ -10,11 +10,9 @@
 "
 " Example:
 "
-"   :echo OfDNA('ACGTGGTCTTAA')
+"   :echo ToRna('ACGTGGTCTTAA')
 "   UGCACCAGAAUU
 "
-function! OfDNA(strand) abort
-
+function! ToRna(strand) abort
   " your solution goes here
-
 endfunction

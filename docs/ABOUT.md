@@ -1,5 +1,3 @@
-## ABOUT
-
 [Vim](http://www.vim.org) is a decades old text editor that is still wildly
 popular among programmers and people who like working in terminal emulators.
 
@@ -11,17 +9,18 @@ commands, and so on. This sounds complicated, but you quickly get used to it.
 The biggest difference to other editors is Vim's modal interface. If you use
 Vim, you don't use complicated shortcuts, you speak a language.
 
-E.g. when you hit `d` in normal mode, you initiate a delete action. Then you
-have to choose the region to act upon. E.g. `dw` deletes until the end of the
-current word. `dd` deletes the current line. If the cursor is anywhere in a
-double quote, you can use `ci"` to change this quote.
+E.g. when you hit `d` in normal mode, you initiate a delete action. Then
+you have to choose the region (or other object) to act upon. E.g. `dw`
+deletes until the end of the current word. `dd` deletes the current
+line. If the cursor is anywhere in a double quote, you can use `ci"` to
+change this quote.
 
 You reduce the risk of
 [carpal tunnel syndrome](https://en.wikipedia.org/wiki/Carpal_tunnel_syndrome)
-by not hitting several keys at once, but but pressing single keys in sequence.
+by not hitting several keys at once, but by pressing single keys in sequence.
 
-For convenience, often used keys at put on the homerow or near it, so you don't
-have to move your hands back and forth all the time.
+For convenience, often used keys are put on the homerow or near it, so
+you don't have to move your hands back and forth all the time.
 
 Yes, there's a lot to learn at first, but when you get it, you can edit text
 faster and more precisely than with most other editors. There is a reason people

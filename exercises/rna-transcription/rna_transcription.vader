@@ -1,23 +1,47 @@
-Execute (complement of cytosine is guanine):
-  AssertEqual 'G', OfDNA('C')
+"
+" Version: 1.0.1
+"
 
-Execute (complement of guanine is cytosine):
-  AssertEqual 'C', OfDNA('G')
+Before:
+  unlet! input expected
 
-Execute (complement of thymine is adenine):
-  AssertEqual 'A', OfDNA('T')
+Execute (RNA complement of cytosine is guanine):
+  let input = "C"
+  let expected = "G"
+  AssertEqual expected, ToRna(input)
 
-Execute (complement of adenine is uracil):
-  AssertEqual 'U', OfDNA('A')
+Execute (RNA complement of guanine is cytosine):
+  let input = "G"
+  let expected = "C"
+  AssertEqual expected, ToRna(input)
 
-Execute (rna complement):
-  AssertEqual 'UGCACCAGAAUU', OfDNA('ACGTGGTCTTAA')
+Execute (RNA complement of thymine is adenine):
+  let input = "T"
+  let expected = "A"
+  AssertEqual expected, ToRna(input)
 
-Execute (dna correctly handles invalid input):
-  AssertEqual '', OfDNA('U')
+Execute (RNA complement of adenine is uracil):
+  let input = "A"
+  let expected = "U"
+  AssertEqual expected, ToRna(input)
 
-Execute (dna correctly handles completely invalid input):
-  AssertEqual '', OfDNA('XXX')
+Execute (RNA complement):
+  let input = "ACGTGGTCTTAA"
+  let expected = "UGCACCAGAAUU"
+  AssertEqual expected, ToRna(input)
 
-Execute (dna correctly handles partially invalid input):
-  AssertEqual '', OfDNA('ACGTXXXCTAA')
+Execute (correctly handles invalid input (RNA instead of DNA)):
+  let input = "U"
+  let expected = ''
+  AssertEqual expected, ToRna(input)
+
+Execute (correctly handles completely invalid DNA input):
+  let input = "XXX"
+  let expected = ''
+  AssertEqual expected, ToRna(input)
+
+Execute (correctly handles partially invalid DNA input):
+  let input = "ACGTXXXCTTAA"
+  let expected = ''
+  AssertEqual expected, ToRna(input)
+

@@ -1,9 +1,7 @@
 # Exercism Vim script Track
 
-[![Join the chat at https://gitter.im/exercism/vimscript](https://badges.gitter.im/exercism/vimscript.svg)](https://gitter.im/exercism/vimscript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 ![build status](https://travis-ci.org/exercism/vimscript.svg?branch=master)
-[![Join the chat at https://gitter.im/exercism/xvimscript](https://badges.gitter.im/exercism/xvimscript.svg)](https://gitter.im/exercism/xvimscript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/exercism/vimscript](https://badges.gitter.im/exercism/vimscript.svg)](https://gitter.im/exercism/vimscript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 We welcome any kind of contribution!
 
