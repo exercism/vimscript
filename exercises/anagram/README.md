@@ -6,6 +6,12 @@ Given `"listen"` and a list of candidates like `"enlists" "google"
 "inlets" "banana"` the program should return a list containing
 `"inlets"`.
 
+A few extra conditions:
+
+- Same words don't match.
+- Cases are treated insensitively.
+- The returned list is sorted.
+
 # How to run the tests
 
 If you don't know how to run Vader tests, see:
