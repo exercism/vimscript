@@ -59,7 +59,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "raindrops",
@@ -155,7 +157,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": []
+      "topics": [
+        "math"
+      ]
     },
     {
       "slug": "pangram",
