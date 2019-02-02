@@ -14,12 +14,12 @@
     {
       "github_username": "mhinz",
       "alumnus": false,
-      "show_on_website": false,
-      "name": null,
-      "link_text": null,
-      "link_url": null,
+      "show_on_website": true,
+      "name": "Marco Hinz",
+      "link_text": "My GitHub profile",
+      "link_url": "https://github.com/mhinz",
       "avatar_url": null,
-      "bio": null
+      "bio": "I love Vim. I've written many Vim plugins and work at Neovim in my spare time."
     },
     {
       "github_username": "kevinlitchfield",
