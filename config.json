@@ -1,7 +1,7 @@
 {
   "language": "Vim script",
   "active": true,
-  "blurb": "",
+  "blurb": "Vimscript (or VimL) is the programming language used for scripting the Vim text editor.",
   "test_pattern": "\\.vader$",
   "exercises": [
     {
