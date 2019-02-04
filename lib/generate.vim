@@ -15,9 +15,6 @@ function! s:generate_header(data)
         \ '"',
         \ '" Version: '. a:data.version,
         \ '"',
-        \ '',
-        \ 'Before:',
-        \ '  unlet! input expected',
         \ ])
 endfunction
 
@@ -29,18 +26,9 @@ function! s:generate_variable(name, value)
   return printf('  let %s = %s', a:name, value)
 endfunction
 
-function! s:generate_assert(property) abort
+function! s:generate_assert(property, arguments) abort
   let funcname = toupper(a:property[0]) . a:property[1:]
-  return printf('  AssertEqual expected, %s(input)', funcname)
-endfunction
-
-function! s:get_input_value(test) abort
-  let t = copy(a:test)
-  if has_key(t, 'comments')    | call remove(t, 'comments')    | endif
-  if has_key(t, 'description') | call remove(t, 'description') | endif
-  if has_key(t, 'expected')    | call remove(t, 'expected')    | endif
-  if has_key(t, 'property')    | call remove(t, 'property')    | endif
-  return items(t)[0][1]
+  return printf('  AssertEqual expected, %s(%s)', funcname, join(a:arguments, ', '))
 endfunction
 
 function! s:generate_tests(tests) abort
@@ -48,12 +36,21 @@ function! s:generate_tests(tests) abort
     if has_key(test, 'cases')
       call s:generate_tests(test.cases)
     else
+      let arguments = []
       call append(line('$'), printf('Execute (%s):', test.description))
-      call append(line('$'), s:generate_variable('input', s:get_input_value(test)))
+      for [arg, val] in sort(items(test.input))
+        call append(line('$'), s:generate_variable(arg, val))
+        let arguments += [arg]
+      endfor
       call append(line('$'), s:generate_variable('expected', test.expected))
-      call append(line('$'), [s:generate_assert(test.property), ''])
+      call append(line('$'), s:generate_assert(test.property, arguments))
+      call append(line('$'), '')
     endif
   endfor
+
+  if empty(getline(line('$')))
+    silent $delete _
+  endif
 endfunction
 
 function! s:replace_types() abort
