@@ -6,7 +6,7 @@
 "   :echo Anagram('foo', ['foo', 'bar', 'oof', 'Ofo'])
 "   ['Ofo', 'oof']
 "
-function! Anagram(word, candidates) abort
+function! FindAnagrams(candidates, subject) abort
 
   " your solution goes here
 
