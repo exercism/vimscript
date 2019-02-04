@@ -6,6 +6,14 @@
 "   :Generate word-count
 "
 
+if get(g:, 'loaded_netrwPlugin') != 0
+  echoerr 'This generator script needs the netrw plugin to be loaded.'
+  finish
+elseif !exists('*json_decode')
+  echoerr 'The function json_decode() is not available. This generator script needs a newer Vim version.'
+  finish
+endif
+
 function! s:data_url(slug) abort
   return printf('https://raw.githubusercontent.com/exercism/problem-specifications/master/exercises/%s/canonical-data.json', a:slug)
 endfunction

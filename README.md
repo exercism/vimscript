@@ -47,6 +47,3 @@ test data:
 This would fetch the [canonical test data](https://raw.githubusercontent.com/exercism/x-common/master/exercises/word-count/canonical-data.json),
 decode the JSON to Vim data types, iterate over the result, and put the tests in
 a new unnamed buffer.
-
-_The generator script requires Vim 7.4.1304+ for `json_decode()` and the netrw
-plugin (`:h netrw`) which is shipped by Vim and sourced by default._
