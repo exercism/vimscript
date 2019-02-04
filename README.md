@@ -48,21 +48,5 @@ This would fetch the [canonical test data](https://raw.githubusercontent.com/exe
 decode the JSON to Vim data types, iterate over the result, and put the tests in
 a new unnamed buffer.
 
-_This script requires Vim 7.4.1304+ for `json_decode()`. It also relies on the
-netrw plugin (`:h netrw`), but that one is shipped and sourced by default._
-
-#### Type mismatch exceptions
-
-Older Vims don't like changing types for the same variable. If your tests use
-global variables, `unlet!` them in a `Before` block at the top of the Vader file.
-
-When each test uses `let expected = ...`, then put this at the top:
-
-```vim
-Before:
-  unlet! expected
-```
-
-This is patched as of
-[Vim 7.4.1546](https://github.com/vim/vim/commit/f6f32c38bf3319144a84a01a154c8c91939e7acf),
-but we shouldn't assume versions in favor of compatibility.
+_The generator script requires Vim 7.4.1304+ for `json_decode()` and the netrw
+plugin (`:h netrw`) which is shipped by Vim and sourced by default._
