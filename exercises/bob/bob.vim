@@ -1,7 +1,7 @@
 "
-" This function takes any drivel and returns Bob's response.
+" This function takes any remark and returns Bob's response.
 "
-function! Answer(drivel) abort
+function! Response(remark) abort
 
   " your solution goes here
 

@@ -1,63 +1,131 @@
+"
+" Version: 1.4.0
+"
+
+Before:
+  unlet! heyBob expected
+
 Execute (stating something):
-  let drivel = 'Tom-ay-to, tom-aaah-to.'
-  AssertEqual 'Whatever.', Answer(drivel)
+  let heyBob = 'Tom-ay-to, tom-aaaah-to.'
+  let expected = "Whatever."
+  AssertEqual expected, Response(heyBob)
 
 Execute (shouting):
-  let drivel = 'WATCH OUT!'
-  AssertEqual 'Whoa, chill out!', Answer(drivel)
+  let heyBob = 'WATCH OUT!'
+  let expected = "Whoa, chill out!"
+  AssertEqual expected, Response(heyBob)
 
-Execute (asking question):
-  let drivel = 'Does this cryogenic chamber make me look fat?'
-  AssertEqual 'Sure.', Answer(drivel)
+Execute (shouting gibberish):
+  let heyBob = 'FCECDFCAAB'
+  let expected = "Whoa, chill out!"
+  AssertEqual expected, Response(heyBob)
 
-Execute (asking numeric question):
-  let drivel = 'You are, what, like 15?'
-  AssertEqual 'Sure.', Answer(drivel)
+Execute (asking a question):
+  let heyBob = 'Does this cryogenic chamber make me look fat?'
+  let expected = "Sure."
+  AssertEqual expected, Response(heyBob)
 
-Execute (talkig forcefully):
-  let drivel = "Let's go make out behind the gym!"
-  AssertEqual 'Whatever.', Answer(drivel)
+Execute (asking a numeric question):
+  let heyBob = 'You are, what, like 15?'
+  let expected = "Sure."
+  AssertEqual expected, Response(heyBob)
+
+Execute (asking gibberish):
+  let heyBob = 'fffbbcbeab?'
+  let expected = "Sure."
+  AssertEqual expected, Response(heyBob)
+
+Execute (talking forcefully):
+  let heyBob = 'Let''s go make out behind the gym!'
+  let expected = "Whatever."
+  AssertEqual expected, Response(heyBob)
 
 Execute (using acronyms in regular speech):
-  let drivel = "It's okay if you don't want to go to the DMV."
-  AssertEqual 'Whatever.', Answer(drivel)
+  let heyBob = 'It''s OK if you don''t want to go to the DMV.'
+  let expected = "Whatever."
+  AssertEqual expected, Response(heyBob)
 
-Execute (forceful questions):
-  let drivel = 'WHAT THE HELL WERE YOU THINKING?'
-  AssertEqual 'Whoa, chill out!', Answer(drivel)
+Execute (forceful question):
+  let heyBob = 'WHAT THE HELL WERE YOU THINKING?'
+  let expected = "Calm down, I know what I'm doing!"
+  AssertEqual expected, Response(heyBob)
 
 Execute (shouting numbers):
-  let drivel = '1, 2, 3 GO!'
-  AssertEqual 'Whoa, chill out!', Answer(drivel)
+  let heyBob = '1, 2, 3 GO!'
+  let expected = "Whoa, chill out!"
+  AssertEqual expected, Response(heyBob)
 
-Execute (only numbers):
-  let drivel = '1, 2, 3'
-  AssertEqual 'Whatever.', Answer(drivel)
+Execute (no letters):
+  let heyBob = '1, 2, 3'
+  let expected = "Whatever."
+  AssertEqual expected, Response(heyBob)
 
-Execute (question with only numbers):
-  let drivel = '4?'
-  AssertEqual 'Sure.', Answer(drivel)
+Execute (question with no letters):
+  let heyBob = '4?'
+  let expected = "Sure."
+  AssertEqual expected, Response(heyBob)
 
 Execute (shouting with special characters):
-  let drivel = 'ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!'
-  AssertEqual 'Whoa, chill out!', Answer(drivel)
+  let heyBob = 'ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!'
+  let expected = "Whoa, chill out!"
+  AssertEqual expected, Response(heyBob)
 
 Execute (shouting with no exclamation mark):
-  let drivel = 'I HATE YOU'
-  AssertEqual 'Whoa, chill out!', Answer(drivel)
+  let heyBob = 'I HATE THE DMV'
+  let expected = "Whoa, chill out!"
+  AssertEqual expected, Response(heyBob)
 
 Execute (statement containing question mark):
-  let drivel = 'Ending with ? means a question.'
-  AssertEqual 'Whatever.', Answer(drivel)
+  let heyBob = 'Ending with ? means a question.'
+  let expected = "Whatever."
+  AssertEqual expected, Response(heyBob)
+
+Execute (non-letters with question):
+  let heyBob = ':) ?'
+  let expected = "Sure."
+  AssertEqual expected, Response(heyBob)
 
 Execute (prattling on):
-  let drivel = 'Wait! Hang on. Are you going to be OK?'
-  AssertEqual 'Sure.', Answer(drivel)
+  let heyBob = 'Wait! Hang on. Are you going to be OK?'
+  let expected = "Sure."
+  AssertEqual expected, Response(heyBob)
 
 Execute (silence):
-  let drivel = ''
-  AssertEqual 'Fine. Be that way!', Answer(drivel)
+  let heyBob = ''
+  let expected = "Fine. Be that way!"
+  AssertEqual expected, Response(heyBob)
 
 Execute (prolonged silence):
-  let drivel = '           '
-  AssertEqual 'Fine. Be that way!', Answer(drivel)
+  let heyBob = '          '
+  let expected = "Fine. Be that way!"
+  AssertEqual expected, Response(heyBob)
+
+Execute (alternate silence):
+  let heyBob = "\t\t\t\t\t\t\t\t\t\t"
+  let expected = "Fine. Be that way!"
+  AssertEqual expected, Response(heyBob)
+
+Execute (multiple line question):
+  let heyBob = "\nDoes this cryogenic chamber make me look fat?\nNo."
+  let expected = "Whatever."
+  AssertEqual expected, Response(heyBob)
+
+Execute (starting with whitespace):
+  let heyBob = '         hmmmmmmm...'
+  let expected = "Whatever."
+  AssertEqual expected, Response(heyBob)
+
+Execute (ending with whitespace):
+  let heyBob = 'Okay if like my  spacebar  quite a bit?   '
+  let expected = "Sure."
+  AssertEqual expected, Response(heyBob)
+
+Execute (other whitespace):
+  let heyBob = "\n\r \t"
+  let expected = "Fine. Be that way!"
+  AssertEqual expected, Response(heyBob)
+
+Execute (non-question ending with whitespace):
+  let heyBob = 'This is a statement ending with whitespace      '
+  let expected = "Whatever."
+  AssertEqual expected, Response(heyBob)
