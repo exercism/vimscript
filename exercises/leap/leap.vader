@@ -1,11 +1,28 @@
-Execute (2000 is a leap year):
-  AssertEqual 1, IsLeap(2000)
+"
+" Version: 1.4.0
+"
 
-Execute (2015 is not a leap year):
-  AssertEqual 0, IsLeap(2015)
+Execute (year not divisible by 4: common year):
+  let year = 2015
+  let expected = 0
+  AssertEqual expected, LeapYear(year)
 
-Execute (2016 is a leap year):
-  AssertEqual 1, IsLeap(2016)
+Execute (year divisible by 4, not divisible by 100: leap year):
+  let year = 1996
+  let expected = 1
+  AssertEqual expected, LeapYear(year)
 
-Execute (2100 is not a leap year):
-  AssertEqual 0, IsLeap(2100)
+Execute (year divisible by 100, not divisible by 400: common year):
+  let year = 2100
+  let expected = 0
+  AssertEqual expected, LeapYear(year)
+
+Execute (year divisible by 400: leap year):
+  let year = 2000
+  let expected = 1
+  AssertEqual expected, LeapYear(year)
+
+Execute (year divisible by 200, not divisible by 400: common year):
+  let year = 1800
+  let expected = 0
+  AssertEqual expected, LeapYear(year)
