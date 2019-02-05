@@ -8,10 +8,10 @@
 "   36
 "   :echo SumOfSquares(3)
 "   14
-"   :echo Difference(3)
+"   :echo DifferenceOfSquares(3)
 "   22
 "
-function! Difference(number) abort
+function! DifferenceOfSquares(number) abort
   " your implemention goes here
 endfunction
 

@@ -1,4 +1,4 @@
-function! Difference(number) abort
+function! DifferenceOfSquares(number) abort
   return SquareOfSum(a:number) - SumOfSquares(a:number)
 endfunction
 
