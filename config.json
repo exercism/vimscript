@@ -41,6 +41,41 @@
       ]
     },
     {
+      "slug": "raindrops",
+      "uuid": "e75e2331-1494-4e70-9ad4-3396a6aeccc3",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "conditionals",
+        "filtering",
+        "strings"
+      ]
+    },
+    {
+      "slug": "scrabble-score",
+      "uuid": "55859980-03d6-4994-a8e2-120179a8f0e5",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "dict",
+        "loops",
+        "strings"
+      ]
+    },
+    {
+      "slug": "word-count",
+      "uuid": "d85603b2-f143-48bd-8184-67959b53b1d0",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "dict",
+        "loops"
+      ]
+    },
+    {
       "slug": "bob",
       "uuid": "345a440a-f995-4ead-9890-f5075c7f962e",
       "core": false,
@@ -81,29 +116,6 @@
       "topics": [
         "algorithms",
         "math"
-      ]
-    },
-    {
-      "slug": "raindrops",
-      "uuid": "e75e2331-1494-4e70-9ad4-3396a6aeccc3",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "conditionals",
-        "filtering",
-        "strings"
-      ]
-    },
-    {
-      "slug": "word-count",
-      "uuid": "d85603b2-f143-48bd-8184-67959b53b1d0",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 3,
-      "topics": [
-        "dict",
-        "loops"
       ]
     },
     {
@@ -165,18 +177,6 @@
       "topics": [
         "bitwise",
         "sorting"
-      ]
-    },
-    {
-      "slug": "scrabble-score",
-      "uuid": "55859980-03d6-4994-a8e2-120179a8f0e5",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 2,
-      "topics": [
-        "dict",
-        "loops",
-        "strings"
       ]
     },
     {
