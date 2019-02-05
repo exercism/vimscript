@@ -1,38 +1,29 @@
 "
-" Common test data version: 1.0.0
+" Version: 1.3.0
 "
 
-Before:
-  unlet! expected
-
 Execute (empty strand):
-  let expected = {
-        \ 'A': 0,
-        \ 'C': 0,
-        \ 'G': 0,
-        \ 'T': 0,
-        \ }
-  AssertEqual expected, NucleotideCount('')
+  let g:strand = ""
+  let g:expected = {'A': 0, 'C': 0, 'T': 0, 'G': 0}
+  AssertEqual g:expected, NucleotideCounts(g:strand)
+
+Execute (can count one nucleotide in single-character input):
+  let g:strand = "G"
+  let g:expected = {'A': 0, 'C': 0, 'T': 0, 'G': 1}
+  AssertEqual g:expected, NucleotideCounts(g:strand)
 
 Execute (strand with repeated nucleotide):
-  let expected = {
-        \ 'A': 0,
-        \ 'C': 0,
-        \ 'G': 7,
-        \ 'T': 0,
-        \ }
-  AssertEqual expected, NucleotideCount('GGGGGGG')
+  let g:strand = "GGGGGGG"
+  let g:expected = {'A': 0, 'C': 0, 'T': 0, 'G': 7}
+  AssertEqual g:expected, NucleotideCounts(g:strand)
 
 Execute (strand with multiple nucleotides):
-  let expected = {
-        \ 'A': 20,
-        \ 'C': 12,
-        \ 'G': 17,
-        \ 'T': 21,
-        \ }
-  AssertEqual expected, NucleotideCount('AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC')
+  let g:strand = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
+  let g:expected = {'A': 20, 'C': 12, 'T': 21, 'G': 17}
+  AssertEqual g:expected, NucleotideCounts(g:strand)
 
 Execute (strand with invalid nucleotides):
-  let expected = 'invalid nucleotide in strand'
-  AssertThrows call NucleotideCount('AGXXACT')
-  AssertEqual expected, g:vader_exception
+  let g:strand = "AGXXACT"
+  let g:expected = "Invalid nucleotide in strand"
+  AssertThrows call NucleotideCounts(g:strand)
+  AssertEqual g:expected, g:vader_exception

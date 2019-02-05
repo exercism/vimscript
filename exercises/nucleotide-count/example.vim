@@ -1,4 +1,4 @@
-function! NucleotideCount(strand) abort
+function! NucleotideCounts(strand) abort
   let counts = {
         \ 'A': 0,
         \ 'C': 0,
@@ -7,7 +7,7 @@ function! NucleotideCount(strand) abort
         \ }
 
   if a:strand =~# '[^ACGT]'
-    throw 'invalid nucleotide in strand'
+    throw 'Invalid nucleotide in strand'
   endif
 
   for nucleotide in split(a:strand, '\zs')

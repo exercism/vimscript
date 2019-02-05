@@ -4,13 +4,13 @@
 "
 " Examples:
 "
-"   :echo NucleotideCount('ACGTACGT')
+"   :echo NucleotideCounts('ACGTACGT')
 "   {'A': 2, 'C': 2, 'T': 2, 'G': 2}
 "
-"   :echo NucleotideCount('ACGTXACGT')
-"   E605: Exception not caught: invalid nucleotide in strand
+"   :echo NucleotideCounts('ACGTXACGT')
+"   E605: Exception not caught: Invalid nucleotide in strand
 "
 
-function! NucleotideCount(strand) abort
+function! NucleotideCounts(strand) abort
   " your code goes here
 endfunction
