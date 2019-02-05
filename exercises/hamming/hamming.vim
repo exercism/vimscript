@@ -4,9 +4,9 @@
 "
 " If the lengths of the strands don't match, throw this exception:
 "
-"     'The two strands must have the same length.'
+"     'left and right strands must be of equal length'
 "
-function! Hamming(strand1, strand2)
+function! Distance(strand1, strand2)
 
   " your solution goes here
 

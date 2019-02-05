@@ -4,15 +4,15 @@
 "
 " If the lengths of the strands don't match, throw this exception:
 "
-"     'The two strands must have the same length.'
+"     'left and right strands must be of equal length'
 "
-function! Hamming(strand1, strand2)
+function! Distance(strand1, strand2)
   if len(a:strand1) != len(a:strand2)
-    throw 'The two strands must have the same length.'
+    throw 'left and right strands must be of equal length'
   endif
-  let hamming = 0
+  let distance = 0
   for i in range(len(a:strand1))
-    let hamming += (a:strand1[i] != a:strand2[i])
+    let distance += (a:strand1[i] != a:strand2[i])
   endfor
-  return hamming
+  return distance
 endfunction
