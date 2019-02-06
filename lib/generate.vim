@@ -31,12 +31,24 @@ function! s:generate_variable(name, value)
   if type(a:value) == type('')
     let value = '"'. value .'"'
   endif
-  return printf('  let %s = %s', a:name, value)
+  call append(line('$'), printf('  let g:%s = %s', a:name, value))
 endfunction
 
-function! s:generate_assert(property, arguments) abort
-  let funcname = toupper(a:property[0]) . a:property[1:]
-  return printf('  AssertEqual expected, %s(%s)', funcname, join(a:arguments, ', '))
+function! s:generate_assert(test, arguments) abort
+  let funcname = toupper(a:test.property[0]) . a:test.property[1:]
+
+  if type(a:test.expected) == type({}) && has_key(a:test.expected, 'error')
+    call s:generate_variable('expected', a:test.expected.error)
+    call append(line('$'),
+          \ printf('  AssertThrows call %s(%s)', funcname, join(a:arguments, ', ')))
+    call append(line('$'), '  AssertEqual g:expected, g:vader_exception')
+  else
+    call s:generate_variable('expected', a:test.expected)
+    call append(line('$'),
+          \ printf('  AssertEqual g:expected, %s(%s)', funcname, join(a:arguments, ', ')))
+  endif
+
+  call append(line('$'), '')
 endfunction
 
 function! s:generate_tests(tests) abort
@@ -47,12 +59,10 @@ function! s:generate_tests(tests) abort
       let arguments = []
       call append(line('$'), printf('Execute (%s):', test.description))
       for [arg, val] in sort(items(test.input))
-        call append(line('$'), s:generate_variable(arg, val))
-        let arguments += [arg]
+        call s:generate_variable(arg, val)
+        let arguments += ['g:'.arg]
       endfor
-      call append(line('$'), s:generate_variable('expected', test.expected))
-      call append(line('$'), s:generate_assert(test.property, arguments))
-      call append(line('$'), '')
+      call s:generate_assert(test, arguments)
     endif
   endfor
 
