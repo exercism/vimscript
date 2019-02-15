@@ -1,8 +1,7 @@
-Execute (says hello using default argument):
-  AssertEqual "Hello, World!", Hello()
+"
+" Version: 1.1.0
+"
 
-Execute (says hello using name "Bram"):
-  AssertEqual "Hello, Bram!", Hello('Bram')
-
-Execute (says hello using name "Bill Joy"):
-  AssertEqual "Hello, Bill Joy!", Hello('Bill Joy')
+Execute (Say Hi!):
+  let g:expected = "Hello, World!"
+  AssertEqual g:expected, Hello()
