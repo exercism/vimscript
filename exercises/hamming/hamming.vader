@@ -33,15 +33,15 @@ Execute (long different strands):
   AssertEqual expected, Distance(strand1, strand2)
 
 Execute (disallow first strand longer):
-  let g:strand1 = "AATG"
-  let g:strand2 = "AAA"
+  let strand1 = "AATG"
+  let strand2 = "AAA"
   let expected = 'left and right strands must be of equal length'
-  AssertThrows call Distance(g:strand1, g:strand2)
+  AssertThrows call Distance(strand1, strand2)
   AssertEqual expected, g:vader_exception
 
 Execute (disallow second strand longer):
-  let g:strand1 = "ATA"
-  let g:strand2 = "AGTG"
+  let strand1 = "ATA"
+  let strand2 = "AGTG"
   let expected = 'left and right strands must be of equal length'
-  AssertThrows call Distance(g:strand1, g:strand2)
+  AssertThrows call Distance(strand1, strand2)
   AssertEqual expected, g:vader_exception
