@@ -3,7 +3,7 @@
 "
 " Example:
 "
-"   :echo Anagram('foo', ['foo', 'bar', 'oof', 'Ofo'])
+"   :echo FindAnagrams(['foo', 'bar', 'oof', 'Ofo'], 'foo')
 "   ['Ofo', 'oof']
 "
 function! FindAnagrams(candidates, subject) abort
