@@ -7,51 +7,62 @@ This track uses two tools to run the test suite and ensure best practices:
 
 #### Running tests
 
-1. Install [vader.vim](https://github.com/junegunn/vader.vim/#installation).
+1. put this in your `$HOME/.vimrc` file (needs to be done only once):
+
+    ```vim
+
+    " Test Plugin
+    " (see: https://github.com/junegunn/vader.vim/#installation)
+    call plug#begin()
+    Plug 'junegunn/vader.vim'
+    call plug#end()
+
+    " Test Harness
+    function! s:exercism_tests()
+      if expand('%:e') == 'vim'
+        let testfile = printf('%s/%s.vader', expand('%:p:h'),
+              \ tr(expand('%:p:h:t'), '-', '_'))
+        if !filereadable(testfile)
+          echoerr 'File does not exist: '. testfile
+          return
+        endif
+        source %
+        execute 'Vader' testfile
+      else
+        let sourcefile = printf('%s/%s.vim', expand('%:p:h'),
+              \ tr(expand('%:p:h:t'), '-', '_'))
+        if !filereadable(sourcefile)
+          echoerr 'File does not exist: '. sourcefile
+          return
+        endif
+        execute 'source' sourcefile
+        Vader
+      endif
+    endfunction
+
+    autocmd BufRead *.{vader,vim}
+          \ command! -buffer Test call s:exercism_tests()
+    ```
+
+1. Install the test plugin (needs to be done only once)
+    ```
+    :PlugInstall
+    ```
 1. Open your solution:
     ```
     $ vim exercise.vim
     ```
-1. Source the current file to make its global functions available to Vim:
-    ```
-    :source %
-    ```
 1. Run the tests:
     ```
-    :Vader exercise.vader
+    :Test
     ```
 
-Paths may vary.
-
-If you want a convenient shortcut to the above steps, put this in your vimrc:
-
-```vim
-function! s:exercism_tests()
-  if expand('%:e') == 'vim'
-    let testfile = printf('%s/%s.vader', expand('%:p:h'),
-          \ tr(expand('%:p:h:t'), '-', '_'))
-    if !filereadable(testfile)
-      echoerr 'File does not exist: '. testfile
-      return
-    endif
-    source %
-    execute 'Vader' testfile
-  else
-    let sourcefile = printf('%s/%s.vim', expand('%:p:h'),
-          \ tr(expand('%:p:h:t'), '-', '_'))
-    if !filereadable(sourcefile)
-      echoerr 'File does not exist: '. sourcefile
-      return
-    endif
-    execute 'source' sourcefile
-    Vader
-  endif
-endfunction
-
-autocmd BufRead *.{vader,vim}
-      \ command! -buffer Test call s:exercism_tests()
+**Note**: Paths may vary. replace `exercise` with the actual exercise name. For example, when running the tests for the `hello-world` exercise you'd open the solution using:
+```
+$ vim hello-world.vim
 ```
 
+If you want a convenient shortcut to the above 
 Afterwards open any `.vim` or `.vader` file from an exercise directory and run
 the `:Test` command.
 
