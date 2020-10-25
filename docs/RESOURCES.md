@@ -13,7 +13,7 @@
 - [IBM DeveloperWorks: Scripting the Vim
   editor](http://www.ibm.com/developerworks/views/linux/libraryview.jsp?sort_order=asc&sort_by=Title&search_by=scripting+the+vim+editor)
 
-#### Boooks
+#### Books
 
 There is only one good book about Vim out there: [Practical
 Vim](https://pragprog.com/book/dnvim2/practical-vim-second-edition).
