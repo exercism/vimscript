@@ -1,0 +1,24 @@
+name: vimscript / vint
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: Install project dependencies
+        run: pip install vim-vint
+
+      - name: Run exercism/vimscript ci (runs tests) for all exercises
+        run: vint .
