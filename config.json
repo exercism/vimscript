@@ -10,6 +10,10 @@
   },
   "blurb": "Vimscript (or VimL) is the programming language used for scripting the Vim text editor.",
   "version": 3,
+  "online_editor": {
+    "indent_style": "space",
+    "indent_size": 4
+  },
   "test_pattern": "\\.vader$",
   "exercises": [
     {
