@@ -1,5 +1,6 @@
 {
   "language": "Vim script",
+  "slug": "vimscript",
   "active": true,
   "status": {
     "concept_exercises": false,
