@@ -99,111 +99,6 @@
       ]
     },
     {
-      "slug": "rna-transcription",
-      "uuid": "b8bc605a-527d-48d3-9963-a8325be122c1",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "anagram",
-      "uuid": "20d6efaf-1dee-42ec-9461-d738ec1b1e17",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 5,
-      "topics": [
-        "filtering",
-        "parsing",
-        "sorting",
-        "strings"
-      ]
-    },
-    {
-      "slug": "difference-of-squares",
-      "uuid": "e6662c3e-9d5e-4744-977e-ed12f3171e1e",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 2,
-      "topics": [
-        "algorithms",
-        "math"
-      ]
-    },
-    {
-      "slug": "atbash-cipher",
-      "uuid": "2cd8b4dd-0c07-4e62-9d49-ec9697dc978b",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 3,
-      "topics": [
-        "algorithms",
-        "cryptography",
-        "strings",
-        "transforming"
-      ]
-    },
-    {
-      "slug": "roman-numerals",
-      "uuid": "c24cf39c-d9f2-437d-8962-514f9ec095fe",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 2,
-      "topics": [
-        "numbers",
-        "transforming"
-      ]
-    },
-    {
-      "slug": "phone-number",
-      "uuid": "a990dad9-e26c-45fc-939a-6484eb0b7546",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 3,
-      "topics": [
-        "conditionals",
-        "formatting",
-        "regexp",
-        "strings",
-        "transforming"
-      ]
-    },
-    {
-      "slug": "nucleotide-count",
-      "uuid": "ff92dd32-fa39-4b09-81ed-ab4b2ba4096d",
-      "core": false,
-      "unlocked_by": "word-count",
-      "difficulty": 4,
-      "topics": [
-        "dict",
-        "parsing",
-        "strings"
-      ]
-    },
-    {
-      "slug": "allergies",
-      "uuid": "6cd2b3dc-9f3e-4a69-916e-ba19e2814fe7",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 4,
-      "topics": [
-        "bitwise",
-        "sorting"
-      ]
-    },
-    {
-      "slug": "triangle",
-      "uuid": "33796a20-8325-4068-bdbd-e91519144b24",
-      "core": false,
-      "unlocked_by": null,
-      "difficulty": 3,
-      "topics": [
-        "booleans",
-        "conditionals",
-        "logic"
-      ]
-    },
-    {
       "slug": "etl",
       "uuid": "d0f80889-5c4e-4de6-b3a4-08a71a2e9c75",
       "core": false,
@@ -228,6 +123,72 @@
       ]
     },
     {
+      "slug": "nucleotide-count",
+      "uuid": "ff92dd32-fa39-4b09-81ed-ab4b2ba4096d",
+      "core": false,
+      "unlocked_by": "word-count",
+      "difficulty": 4,
+      "topics": [
+        "dict",
+        "parsing",
+        "strings"
+      ]
+    },
+    {
+      "slug": "rna-transcription",
+      "uuid": "b8bc605a-527d-48d3-9963-a8325be122c1",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "difference-of-squares",
+      "uuid": "e6662c3e-9d5e-4744-977e-ed12f3171e1e",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "algorithms",
+        "math"
+      ]
+    },
+    {
+      "slug": "pangram",
+      "uuid": "fa80ef6a-db6a-429d-ae7a-ceba0ba96dab",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "loops",
+        "strings"
+      ]
+    },
+    {
+      "slug": "roman-numerals",
+      "uuid": "c24cf39c-d9f2-437d-8962-514f9ec095fe",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "numbers",
+        "transforming"
+      ]
+    },
+    {
+      "slug": "atbash-cipher",
+      "uuid": "2cd8b4dd-0c07-4e62-9d49-ec9697dc978b",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "algorithms",
+        "cryptography",
+        "strings",
+        "transforming"
+      ]
+    },
+    {
       "slug": "largest-series-product",
       "uuid": "7f1d0f92-bd78-4ca7-a436-cf9c871df1b2",
       "core": false,
@@ -241,13 +202,52 @@
       ]
     },
     {
-      "slug": "pangram",
-      "uuid": "fa80ef6a-db6a-429d-ae7a-ceba0ba96dab",
+      "slug": "phone-number",
+      "uuid": "a990dad9-e26c-45fc-939a-6484eb0b7546",
       "core": false,
       "unlocked_by": null,
-      "difficulty": 2,
+      "difficulty": 3,
       "topics": [
-        "loops",
+        "conditionals",
+        "formatting",
+        "regexp",
+        "strings",
+        "transforming"
+      ]
+    },
+    {
+      "slug": "triangle",
+      "uuid": "33796a20-8325-4068-bdbd-e91519144b24",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "booleans",
+        "conditionals",
+        "logic"
+      ]
+    },
+    {
+      "slug": "allergies",
+      "uuid": "6cd2b3dc-9f3e-4a69-916e-ba19e2814fe7",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "bitwise",
+        "sorting"
+      ]
+    },
+    {
+      "slug": "anagram",
+      "uuid": "20d6efaf-1dee-42ec-9461-d738ec1b1e17",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "filtering",
+        "parsing",
+        "sorting",
         "strings"
       ]
     }
