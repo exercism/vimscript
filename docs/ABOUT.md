@@ -1,3 +1,5 @@
+# About
+
 [Vim](http://www.vim.org) is a decades old text editor that is still wildly popular among programmers and people who like working in terminal emulators.
 
 In Vim, keys don't always do the same things. 

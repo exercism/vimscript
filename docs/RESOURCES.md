@@ -1,4 +1,4 @@
-## RESOURCES
+# RESOURCES
 
 #### General resources
 

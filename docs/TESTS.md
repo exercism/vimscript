@@ -1,4 +1,4 @@
-## SETUP
+# SETUP
 
 This track uses two tools to run the test suite and ensure best practices:
 
