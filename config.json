@@ -17,16 +17,16 @@
   "test_pattern": "\\.vader$",
   "files": {
     "solution": [
-      "path/to/%{kebab_slug}.ext"
+      "%{snake_slug}.vim"
     ],
     "test": [
-      "path/to/%{kebab_slug}.ext"
+      "%{snake_slug}.vader"
     ],
     "example": [
-      "path/to/%{kebab_slug}.ext"
+      "example.vim"
     ],
     "exemplar": [
-      "path/to/%{kebab_slug}.ext"
+      "example.vim"
     ]
   },
   "exercises": {
