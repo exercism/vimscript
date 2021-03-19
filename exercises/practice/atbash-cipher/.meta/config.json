@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": [],
-    "test": [],
-    "example": []
+    "solution": [
+      "atbash_cipher.vim"
+    ],
+    "test": [
+      "atbash_cipher.vader"
+    ],
+    "example": [
+      "example.vim"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Atbash"
