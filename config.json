@@ -15,6 +15,20 @@
     "indent_size": 4
   },
   "test_pattern": "\\.vader$",
+  "files": {
+    "solution": [
+      "%{snake_slug}.vim"
+    ],
+    "test": [
+      "%{snake_slug}.vader"
+    ],
+    "example": [
+      "example.vim"
+    ],
+    "exemplar": [
+      "example.vim"
+    ]
+  },
   "exercises": {
     "concept": [],
     "practice": [
