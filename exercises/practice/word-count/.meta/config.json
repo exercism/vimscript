@@ -1,6 +1,12 @@
 {
   "blurb": "Given a phrase, count the occurrences of each word in that phrase.",
-  "authors": [],
+  "authors": [
+    "mhinz"
+  ],
+  "contributors": [
+    "kotp",
+    "kytrinyx"
+  ],
   "files": {
     "solution": [
       "word_count.vim"

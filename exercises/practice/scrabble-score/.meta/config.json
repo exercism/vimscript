@@ -1,6 +1,11 @@
 {
   "blurb": "Given a word, compute the Scrabble score for that word.",
-  "authors": [],
+  "authors": [
+    "mhinz"
+  ],
+  "contributors": [
+    "kotp"
+  ],
   "files": {
     "solution": [
       "scrabble_score.vim"
