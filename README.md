@@ -1,6 +1,7 @@
 # Exercism Vim script Track
 
-![build status](https://travis-ci.org/exercism/vimscript.svg?branch=master)
+[![Configlet Status](https://github.com/exercism/vimscript/workflows/configlet/badge.svg)]
+[![Exercise Test Status](https://github.com/exercism/vimscript/workflows/vimscript%20%2F%20main/badge.svg)]
 [![Join the chat at https://gitter.im/exercism/vimscript](https://badges.gitter.im/exercism/vimscript.svg)](https://gitter.im/exercism/vimscript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 We welcome any kind of contribution!
