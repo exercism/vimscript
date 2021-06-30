@@ -34,7 +34,7 @@ request.
 
 ## Writing test files
 
-#### Generating test files
+### Generating test files
 
 Use the [generator](lib/generate.vim) to create Vader files from their canonical
 test data:

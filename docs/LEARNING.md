@@ -1,4 +1,4 @@
-## LEARNING
+# LEARNING
 
 Vim comes with great documentation built in already. The interface to the
 documentation is the `:help` command.

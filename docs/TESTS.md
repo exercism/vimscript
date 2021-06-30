@@ -1,11 +1,11 @@
-## SETUP
+# SETUP
 
 This track uses two tools to run the test suite and ensure best practices:
 
 1. [vader.vim](https://github.com/junegunn/vader.vim)
 2. [vint](https://github.com/Kuniwak/vint)
 
-#### Running tests
+## Running tests
 
 1. Install [vader.vim](https://github.com/junegunn/vader.vim/#installation).
 1. Open your solution:
@@ -55,7 +55,7 @@ autocmd BufRead *.{vader,vim}
 Afterwards open any `.vim` or `.vader` file from an exercise directory and run
 the `:Test` command.
 
-#### Linting Vim files
+## Linting Vim files
 
 1. Install [vint](https://github.com/Kuniwak/vint#quick-start).
 1. Recursively lint all Vim files:
