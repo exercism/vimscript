@@ -1,6 +1,12 @@
 {
   "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",
-  "authors": [],
+  "authors": [
+    "mhinz"
+  ],
+  "contributors": [
+    "kotp",
+    "kytrinyx"
+  ],
   "files": {
     "solution": [
       "atbash_cipher.vim"
