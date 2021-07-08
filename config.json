@@ -18,7 +18,6 @@
   "test_runner": {
     "average_run_time": 3.0
   },
-  "test_pattern": "\\.vader$",
   "files": {
     "solution": [
       "%{snake_slug}.vim"
