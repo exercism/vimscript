@@ -14,7 +14,7 @@
       "allergies.vader"
     ],
     "example": [
-      "example.vim"
+      ".meta/example.vim"
     ]
   },
   "source": "Jumpstart Lab Warm-up",

@@ -15,7 +15,7 @@
       "difference_of_squares.vader"
     ],
     "example": [
-      "example.vim"
+      ".meta/example.vim"
     ]
   },
   "source": "Problem 6 at Project Euler",

@@ -14,7 +14,7 @@
       "triangle.vader"
     ],
     "example": [
-      "example.vim"
+      ".meta/example.vim"
     ]
   },
   "source": "The Ruby Koans triangle project, parts 1 & 2",

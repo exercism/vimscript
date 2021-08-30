@@ -15,7 +15,7 @@
       "hamming.vader"
     ],
     "example": [
-      "example.vim"
+      ".meta/example.vim"
     ]
   },
   "source": "The Calculating Point Mutations problem at Rosalind",

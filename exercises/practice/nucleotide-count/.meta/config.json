@@ -15,7 +15,7 @@
       "nucleotide_count.vader"
     ],
     "example": [
-      "example.vim"
+      ".meta/example.vim"
     ]
   },
   "source": "The Calculating DNA Nucleotides_problem at Rosalind",

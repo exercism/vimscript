@@ -14,7 +14,7 @@
       "pangram.vader"
     ],
     "example": [
-      "example.vim"
+      ".meta/example.vim"
     ]
   },
   "source": "Wikipedia",

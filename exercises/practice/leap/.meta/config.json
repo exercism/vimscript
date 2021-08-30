@@ -16,7 +16,7 @@
       "leap.vader"
     ],
     "example": [
-      "example.vim"
+      ".meta/example.vim"
     ]
   },
   "source": "JavaRanch Cattle Drive, exercise 3",

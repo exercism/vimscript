@@ -15,7 +15,7 @@
       "atbash_cipher.vader"
     ],
     "example": [
-      "example.vim"
+      ".meta/example.vim"
     ]
   },
   "source": "Wikipedia",
