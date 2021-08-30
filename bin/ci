@@ -13,9 +13,9 @@ set runtimepath+=tmp/vader.vim
 filetype plugin on
 syntax enable
 
-for file in glob('exercises/*/example.vim', 0, 1)
+for file in glob('exercises/practice/*/.meta/example.vim', 0, 1)
   execute 'source' file
 endfor
 EOF
 
-TERM=xterm HOME=/dev/null vim -XNu tmp/vimrc -i NONE -c 'Vader! exercises/*/*.vader'
+TERM=xterm HOME=/dev/null vim -XNu tmp/vimrc -i NONE -c 'Vader! exercises/practice/*/*.vader'
