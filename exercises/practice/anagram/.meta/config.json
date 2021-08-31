@@ -17,7 +17,7 @@
       "anagram.vader"
     ],
     "example": [
-      "example.vim"
+      ".meta/example.vim"
     ]
   },
   "source": "Inspired by the Extreme Startup game",

@@ -14,7 +14,7 @@
       "etl.vader"
     ],
     "example": [
-      "example.vim"
+      ".meta/example.vim"
     ]
   },
   "source": "The Jumpstart Lab team",

@@ -15,7 +15,7 @@
       "rna_transcription.vader"
     ],
     "example": [
-      "example.vim"
+      ".meta/example.vim"
     ]
   },
   "source": "Hyperphysics",

@@ -14,7 +14,7 @@
       "largest_series_product.vader"
     ],
     "example": [
-      "example.vim"
+      ".meta/example.vim"
     ]
   },
   "source": "A variation on Problem 8 at Project Euler",
