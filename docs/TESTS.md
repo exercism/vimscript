@@ -10,7 +10,6 @@ This track uses two tools to run the test suite and ensure best practices:
 1. put this in your `$HOME/.vimrc` file (needs to be done only once):
 
     ```vim
-
     " Test Plugin
     " (see: https://github.com/junegunn/vader.vim/#installation)
     call plug#begin()
