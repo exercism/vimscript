@@ -64,4 +64,4 @@ the `:Test` command.
     ```
 
 For more detailed information about the Vim script track, please see the
-[help page](http://exercism.io/languages/vimscript).
+[help page](http://exercism.org/languages/vimscript).
