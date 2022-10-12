@@ -125,7 +125,7 @@
       },
       {
         "slug": "etl",
-        "name": "Etl",
+        "name": "ETL",
         "uuid": "d0f80889-5c4e-4de6-b3a4-08a71a2e9c75",
         "practices": [],
         "prerequisites": [],
@@ -164,7 +164,7 @@
       },
       {
         "slug": "rna-transcription",
-        "name": "Rna Transcription",
+        "name": "RNA Transcription",
         "uuid": "b8bc605a-527d-48d3-9963-a8325be122c1",
         "practices": [],
         "prerequisites": [],
@@ -173,7 +173,7 @@
       },
       {
         "slug": "difference-of-squares",
-        "name": "Difference Of Squares",
+        "name": "Difference of Squares",
         "uuid": "e6662c3e-9d5e-4744-977e-ed12f3171e1e",
         "practices": [],
         "prerequisites": [],
