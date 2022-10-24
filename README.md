@@ -2,7 +2,6 @@
 
 [![Configlet](https://github.com/exercism/vimscript/actions/workflows/configlet.yml/badge.svg)](https://github.com/exercism/vimscript/actions/workflows/configlet.yml)
 ![Exercise Test Status](https://github.com/exercism/vimscript/workflows/vimscript%20%2F%20main/badge.svg)
-[![Join the chat at https://gitter.im/exercism/vimscript](https://badges.gitter.im/exercism/vimscript.svg)](https://gitter.im/exercism/vimscript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 We welcome any kind of contribution!
 
