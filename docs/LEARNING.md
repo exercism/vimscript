@@ -13,4 +13,4 @@ $ vimtutor
 
 Vim is decades old and still popular. You will find a lot of resources about it
 on the web, some better than others. The good ones are listed
-[here](http://www.exercism.org/languages/vimscript/resources).
+[here](https://exercism.org/docs/tracks/vimscript/resources).
