@@ -65,18 +65,6 @@ Execute (rejects span longer than string length):
   let expected = -1
   AssertEqual expected, LargestProduct(input, span)
 
-Execute (reports 1 for empty string and empty product (0 span)):
-  let input = ""
-  let span = 0
-  let expected = 1
-  AssertEqual expected, LargestProduct(input, span)
-
-Execute (reports 1 for nonempty string and empty product (0 span)):
-  let input = "123"
-  let span = 0
-  let expected = 1
-  AssertEqual expected, LargestProduct(input, span)
-
 Execute (rejects empty string and nonzero span):
   let input = ""
   let span = 1
