@@ -300,7 +300,7 @@
     },
     {
       "icon": "tooling",
-      "title": "Deeply integrated with Vim",
+      "title": "Deep Vim integration",
       "content": "Productivity win! Access and manipulate Vim internal data structures and settings with ease."
     },
     {
@@ -315,7 +315,7 @@
     },
     {
       "icon": "interop",
-      "title": "Integrates well with others",
+      "title": "Highly interoperable",
       "content": "Access files, shells, & other programs. All the power of external tooling without leaving Vim."
     },
     {
