@@ -292,7 +292,38 @@
     ]
   },
   "concepts": [],
-  "key_features": [],
+  "key_features": [
+    {
+      "icon": "extensible",
+      "title": "Extensible",
+      "content": "Looking for certain functionality?  It can be easily created and deployed."
+    },
+    {
+      "icon": "tooling",
+      "title": "Deep Vim integration",
+      "content": "Productivity win! Access and manipulate Vim internal data structures and settings with ease."
+    },
+    {
+      "icon": "expressive",
+      "title": "Expressive syntax",
+      "content": "Do a lot with a little. Write compact scripts that are highly readable."
+    },
+    {
+      "icon": "multi-paradigm",
+      "title": "Multi-paradigm",
+      "content": "Supports writing imperatively or functionally."
+    },
+    {
+      "icon": "interop",
+      "title": "Highly interoperable",
+      "content": "Access files, shells, & other programs. All the power of external tooling without leaving Vim."
+    },
+    {
+      "icon": "concurrency",
+      "title": "Event-driven programming",
+      "content": "Automatic code execution based on certain events or conditions like file opens or buffer saves."
+    }
+  ],
   "tags": [
     "paradigm/functional",
     "paradigm/imperative",
