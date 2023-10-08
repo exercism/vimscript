@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "BNANdras"
+  ],
+  "files": {
+    "solution": [
+      "resistor_color.vim"
+    ],
+    "test": [
+      "resistor_color.vader"
+    ],
+    "example": [
+      "example.vim"
+    ]
+  },
+  "blurb": "Convert a resistor band's color to its numeric representation.",
+  "source": "Maud de Vries, Erik Schierboom",
+  "source_url": "https://github.com/exercism/problem-specifications/issues/1458"
+}

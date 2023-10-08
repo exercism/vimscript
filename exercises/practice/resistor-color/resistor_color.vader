@@ -1,0 +1,18 @@
+
+Execute (Black):
+  let g:color = "black"
+  let g:expected = 0
+  AssertEqual g:expected, ColorCode(g:color)
+
+Execute (White):
+  let g:color = "white"
+  let g:expected = 9
+  AssertEqual g:expected, ColorCode(g:color)
+
+Execute (Orange):
+  let g:color = "orange"
+  let g:expected = 3
+  AssertEqual g:expected, ColorCode(g:color)
+Execute (Colors):
+  let g:expected = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white']
+  AssertEqual g:expected, Colors()
