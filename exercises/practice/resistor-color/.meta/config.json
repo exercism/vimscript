@@ -10,7 +10,7 @@
       "resistor_color.vader"
     ],
     "example": [
-      "example.vim"
+      ".meta/example.vim"
     ]
   },
   "blurb": "Convert a resistor band's color to its numeric representation.",
