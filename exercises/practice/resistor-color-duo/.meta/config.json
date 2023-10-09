@@ -4,10 +4,10 @@
   ],
   "files": {
     "solution": [
-      "resistor_color.vim"
+      "resistor_color_duo.vim"
     ],
     "test": [
-      "resistor_color.vader"
+      "resistor_color_duo.vader"
     ],
     "example": [
       ".meta/example.vim"
