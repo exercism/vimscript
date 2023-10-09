@@ -11,4 +11,3 @@ function! Score(x, y) abort
     return 0
   endif
 endfunction
-  
