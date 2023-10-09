@@ -1,0 +1,15 @@
+
+Execute (no name given):
+  let g:name = ''
+  let g:expected = "One for you, one for me."
+  AssertEqual g:expected, TwoFer(g:name)
+
+Execute (a name given):
+  let g:name = "Alice"
+  let g:expected = "One for Alice, one for me."
+  AssertEqual g:expected, TwoFer(g:name)
+
+Execute (another name given):
+  let g:name = "Bob"
+  let g:expected = "One for Bob, one for me."
+  AssertEqual g:expected, TwoFer(g:name)
