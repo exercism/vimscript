@@ -10,5 +10,5 @@
 "" One for Alice, one for me.
 ""
 function! TwoFer(name) abort
-  " your code goes here"
+  " your code goes here
 endfunction
