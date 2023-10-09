@@ -26,7 +26,7 @@
       "%{snake_slug}.vader"
     ],
     "example": [
-      "example.vim"
+      ".meta/example.vim"
     ],
     "exemplar": [
       "exemplar.vim"
