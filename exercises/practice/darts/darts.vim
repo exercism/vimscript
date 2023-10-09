@@ -12,5 +12,5 @@
 "" 10
 ""
 function! Score(x, y) abort
-  " your code goes here"
+  " your code goes here
 endfunction
