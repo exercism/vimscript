@@ -42,7 +42,11 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1,
-        "topics": [ "dict", "loops", "transforming" ]
+        "topics": [
+          "dict",
+          "loops",
+          "transforming"
+        ]
       },
       {
         "slug": "hello-world",
@@ -53,7 +57,7 @@
         "difficulty": 1,
         "topics": [
           "strings"
-      ]
+        ]
       },
       {
         "slug": "leap",
