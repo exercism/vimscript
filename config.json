@@ -91,6 +91,14 @@
         "difficulty": 1
       },
       {
+        "slug": "resistor-color-duo",
+        "name": "Resistor Color Duo",
+        "uuid": "8f00c858-c288-4dad-a7a8-a6592ce3dd15",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "rna-transcription",
         "name": "RNA Transcription",
         "uuid": "b8bc605a-527d-48d3-9963-a8325be122c1",
@@ -223,14 +231,6 @@
           "strings",
           "transforming"
         ]
-      },
-      {
-        "slug": "resistor-color-duo",
-        "name": "Resistor Color Duo",
-        "uuid": "8f00c858-c288-4dad-a7a8-a6592ce3dd15",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3
       },
       {
         "slug": "triangle",
