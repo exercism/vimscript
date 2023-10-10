@@ -36,6 +36,19 @@
     "concept": [],
     "practice": [
       {
+        "slug": "etl",
+        "name": "ETL",
+        "uuid": "d0f80889-5c4e-4de6-b3a4-08a71a2e9c75",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "dict",
+          "loops",
+          "transforming"
+        ]
+      },
+      {
         "slug": "hello-world",
         "name": "Hello World",
         "uuid": "a0d099f9-eda7-42d4-a4f6-284ae3178df1",
@@ -61,19 +74,6 @@
         ]
       },
       {
-        "slug": "hamming",
-        "name": "Hamming",
-        "uuid": "9cda4dfe-bdce-4a0b-9be2-ebafabd57271",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
-          "equality",
-          "loops",
-          "strings"
-        ]
-      },
-      {
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "e75e2331-1494-4e70-9ad4-3396a6aeccc3",
@@ -87,29 +87,29 @@
         ]
       },
       {
-        "slug": "scrabble-score",
-        "name": "Scrabble Score",
-        "uuid": "55859980-03d6-4994-a8e2-120179a8f0e5",
+        "slug": "resistor-color",
+        "name": "Resistor Color",
+        "uuid": "3fbff1c8-dd3d-4888-9406-af1c0a05e444",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2,
-        "topics": [
-          "dict",
-          "loops",
-          "strings"
-        ]
+        "difficulty": 1
       },
       {
-        "slug": "word-count",
-        "name": "Word Count",
-        "uuid": "d85603b2-f143-48bd-8184-67959b53b1d0",
+        "slug": "resistor-color-duo",
+        "name": "Resistor Color Duo",
+        "uuid": "8f00c858-c288-4dad-a7a8-a6592ce3dd15",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "dict",
-          "loops"
-        ]
+        "difficulty": 3
+      },
+      {
+        "slug": "rna-transcription",
+        "name": "RNA Transcription",
+        "uuid": "b8bc605a-527d-48d3-9963-a8325be122c1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": []
       },
       {
         "slug": "bob",
@@ -122,62 +122,6 @@
           "conditionals",
           "strings"
         ]
-      },
-      {
-        "slug": "etl",
-        "name": "ETL",
-        "uuid": "d0f80889-5c4e-4de6-b3a4-08a71a2e9c75",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "dict",
-          "loops",
-          "transforming"
-        ]
-      },
-      {
-        "slug": "beer-song",
-        "name": "Beer Song",
-        "uuid": "73babd80-2a68-490f-a451-120918e5311c",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "formatting",
-          "loops",
-          "strings"
-        ]
-      },
-      {
-        "slug": "nucleotide-count",
-        "name": "Nucleotide Count",
-        "uuid": "ff92dd32-fa39-4b09-81ed-ab4b2ba4096d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
-          "dict",
-          "parsing",
-          "strings"
-        ]
-      },
-      {
-        "slug": "resistor-color",
-        "name": "Resistor Color",
-        "uuid": "3fbff1c8-dd3d-4888-9406-af1c0a05e444",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
-      },
-      {
-        "slug": "rna-transcription",
-        "name": "RNA Transcription",
-        "uuid": "b8bc605a-527d-48d3-9963-a8325be122c1",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
       },
       {
         "slug": "difference-of-squares",
@@ -216,6 +160,27 @@
         ]
       },
       {
+        "slug": "scrabble-score",
+        "name": "Scrabble Score",
+        "uuid": "55859980-03d6-4994-a8e2-120179a8f0e5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": [
+          "dict",
+          "loops",
+          "strings"
+        ]
+      },
+      {
+        "slug": "two-fer",
+        "name": "Two Fer",
+        "uuid": "4d19f94f-c319-4b1d-8145-51ce01ad448d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "atbash-cipher",
         "name": "Atbash Cipher",
         "uuid": "2cd8b4dd-0c07-4e62-9d49-ec9697dc978b",
@@ -227,6 +192,19 @@
           "cryptography",
           "strings",
           "transforming"
+        ]
+      },
+      {
+        "slug": "beer-song",
+        "name": "Beer Song",
+        "uuid": "73babd80-2a68-490f-a451-120918e5311c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": [
+          "formatting",
+          "loops",
+          "strings"
         ]
       },
       {
@@ -244,14 +222,6 @@
         ]
       },
       {
-	"slug": "two-fer",
-	"name": "Two Fer",
-	"uuid": "4d19f94f-c319-4b1d-8145-51ce01ad448d",
-	"practices": [],
-	"prerequisites": [],
-	"difficulty":2
-      },
-      {
         "slug": "phone-number",
         "name": "Phone Number",
         "uuid": "a990dad9-e26c-45fc-939a-6484eb0b7546",
@@ -267,14 +237,6 @@
         ]
       },
       {
-        "slug": "resistor-color-duo",
-        "name": "Resistor Color Duo",
-        "uuid": "8f00c858-c288-4dad-a7a8-a6592ce3dd15",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3
-      },
-      {
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "33796a20-8325-4068-bdbd-e91519144b24",
@@ -285,6 +247,18 @@
           "booleans",
           "conditionals",
           "logic"
+          ]
+      },
+      {
+        "slug": "word-count",
+        "name": "Word Count",
+        "uuid": "d85603b2-f143-48bd-8184-67959b53b1d0",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": [
+          "dict",
+          "loops"
         ]
       },
       {
@@ -297,6 +271,32 @@
         "topics": [
           "bitwise",
           "sorting"
+        ]
+      },
+      {
+        "slug": "hamming",
+        "name": "Hamming",
+        "uuid": "9cda4dfe-bdce-4a0b-9be2-ebafabd57271",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "topics": [
+          "equality",
+          "loops",
+          "strings"
+        ]
+      },
+      {
+        "slug": "nucleotide-count",
+        "name": "Nucleotide Count",
+        "uuid": "ff92dd32-fa39-4b09-81ed-ab4b2ba4096d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "topics": [ 
+          "dict",
+          "parsing",
+          "strings"
         ]
       },
       {
