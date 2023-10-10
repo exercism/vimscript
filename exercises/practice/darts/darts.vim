@@ -5,7 +5,7 @@
 ""
 "" Example:
 ""
-"" :echo Score (11, 11)
+"" :echo Score(11, 11)
 "" 0
 ""
 "" :echo Score(0, 0)
