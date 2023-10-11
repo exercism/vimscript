@@ -1,5 +1,5 @@
 ""
-"" Format a message to another person as 'One for <name>, One for me.'
+"" Format a message to another person as 'One for <name>, one for me.'
 ""
 "" Example:
 ""
