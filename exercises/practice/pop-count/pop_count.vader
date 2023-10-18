@@ -1,0 +1,20 @@
+
+Execute (0 eggs):
+  let g:number = 0
+  let g:expected = 0
+  AssertEqual g:expected, EggCount(g:number)
+
+Execute (1 egg):
+  let g:number = 16
+  let g:expected = 1
+  AssertEqual g:expected, EggCount(g:number)
+
+Execute (4 eggs):
+  let g:number = 89
+  let g:expected = 4
+  AssertEqual g:expected, EggCount(g:number)
+
+Execute (13 eggs):
+  let g:number = 2000000000
+  let g:expected = 13
+  AssertEqual g:expected, EggCount(g:number)

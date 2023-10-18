@@ -148,6 +148,14 @@
         ]
       },
       {
+        "slug": "pop-count",
+        "name": "Pop Count",
+        "uuid": "9ef83f95-6fae-486a-9a42-d763961066cb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "c24cf39c-d9f2-437d-8962-514f9ec095fe",
