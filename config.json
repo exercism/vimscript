@@ -33,7 +33,6 @@
     ]
   },
   "exercises": {
-    "concept": [],
     "practice": [
       {
         "slug": "etl",
@@ -108,8 +107,7 @@
         "uuid": "b8bc605a-527d-48d3-9963-a8325be122c1",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
+        "difficulty": 1
       },
       {
         "slug": "bob",
@@ -247,7 +245,7 @@
           "booleans",
           "conditionals",
           "logic"
-          ]
+        ]
       },
       {
         "slug": "word-count",
@@ -293,7 +291,7 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4,
-        "topics": [ 
+        "topics": [
           "dict",
           "parsing",
           "strings"
@@ -315,50 +313,49 @@
       }
     ]
   },
-  "concepts": [],
   "key_features": [
     {
-      "icon": "extensible",
       "title": "Extensible",
-      "content": "Looking for certain functionality?  It can be easily created and deployed."
+      "content": "Looking for certain functionality?  It can be easily created and deployed.",
+      "icon": "extensible"
     },
     {
-      "icon": "tooling",
       "title": "Deep Vim integration",
-      "content": "Productivity win! Access and manipulate Vim internal data structures and settings with ease."
+      "content": "Productivity win! Access and manipulate Vim internal data structures and settings with ease.",
+      "icon": "tooling"
     },
     {
-      "icon": "expressive",
       "title": "Expressive syntax",
-      "content": "Do a lot with a little. Write compact scripts that are highly readable."
+      "content": "Do a lot with a little. Write compact scripts that are highly readable.",
+      "icon": "expressive"
     },
     {
-      "icon": "multi-paradigm",
       "title": "Multi-paradigm",
-      "content": "Supports writing imperatively or functionally."
+      "content": "Supports writing imperatively or functionally.",
+      "icon": "multi-paradigm"
     },
     {
-      "icon": "interop",
       "title": "Highly interoperable",
-      "content": "Access files, shells, & other programs. All the power of external tooling without leaving Vim."
+      "content": "Access files, shells, & other programs. All the power of external tooling without leaving Vim.",
+      "icon": "interop"
     },
     {
-      "icon": "concurrency",
       "title": "Event-driven programming",
-      "content": "Automatic code execution based on certain events or conditions like file opens or buffer saves."
+      "content": "Automatic code execution based on certain events or conditions like file opens or buffer saves.",
+      "icon": "concurrency"
     }
   ],
   "tags": [
+    "execution_mode/interpreted",
     "paradigm/functional",
     "paradigm/imperative",
     "paradigm/object_oriented",
+    "platform/linux",
+    "platform/mac",
+    "platform/windows",
+    "runtime/language_specific",
     "typing/dynamic",
     "typing/weak",
-    "execution_mode/interpreted",
-    "platform/windows",
-    "platform/mac",
-    "platform/linux",
-    "runtime/language_specific",
     "used_for/scripts"
   ]
 }
