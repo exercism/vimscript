@@ -136,6 +136,14 @@
         ]
       },
       {
+        "slug": "pop-count",
+        "name": "Eliud's Eggs",
+        "uuid": "9ef83f95-6fae-486a-9a42-d763961066cb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "fa80ef6a-db6a-429d-ae7a-ceba0ba96dab",
@@ -146,14 +154,6 @@
           "loops",
           "strings"
         ]
-      },
-      {
-        "slug": "pop-count",
-        "name": "Pop Count",
-        "uuid": "9ef83f95-6fae-486a-9a42-d763961066cb",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
       },
       {
         "slug": "roman-numerals",
