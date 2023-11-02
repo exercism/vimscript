@@ -1,0 +1,95 @@
+Execute (encode empty text):
+  let g:actual = Encode('')
+  let g:expected = ''
+  AssertEqual g:expected, g:actual
+
+Execute (encode one letter):
+  let g:actual = Encode('A')
+  let g:expected = 'A'
+  AssertEqual g:expected, g:actual
+
+Execute (encode two letters that repeat):
+  let g:actual = Encode('aa')
+  let g:expected = '2a'
+  AssertEqual g:expected, g:actual
+
+Execute (encode three letters that repeat):
+  let g:actual = Encode('aaa')
+  let g:expected = '3a'
+  AssertEqual g:expected, g:actual
+
+Execute (encode abaabbbabaaa):
+  let g:actual = Encode('abaabbbabaaa')
+  let g:expected = 'ab2a3bab3a'
+  AssertEqual g:expected, g:actual
+
+Execute (encode a very long text):
+  let g:actual = Encode('aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz')
+  let g:expected = '2a2b2c2d2e2f2g2h2i2j2k2l2m2n2o2p2q2r2s2t2u2v2w2x2y2z2'
+  AssertEqual g:expected, g:actual
+
+Execute (encode empty text):
+  let g:actual = Encode('')
+  let g:expected ''
+  AssertEqual g:expected, g:actual
+
+Execute (encode single characters only are encoded without count):
+  let g:actual = Encode('XYZ')
+  let g:expected = 'XYZ'
+  AssertEqual g:expected, g:actual
+
+Execute (encode text with no single characters):
+  let g:actual = Encode('AABBBCCCC')
+  let g:expected = '2A3B4C'
+  AssertEqual g:expected, g:actual
+
+Execute (encode single characters with repeated characters):
+  let g:actual = Encode('WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB')
+  let g:expected = '12WB12W3B24WB'
+  AssertEqual g:expected, g:actual
+
+Execute (encode multiple whitespace mixed in text):
+  let g:actual = Encode('  hsqq qww  ')
+  let g:expected = '2 hs2q q2w2 '
+  AssertEqual g:expected, g:actual
+
+Execute (encode lowercase characters):
+  let g:actual = Encode('aabbbcccc')
+  let g:expected = '2a3b4c'
+  AssertEqual g:expected, g:actual
+
+Execute (encode and then decode empty text gives empty text):
+  let g:actual = Decode(Encode(''))
+  let g:expected = ''
+  AssertEqual g:expected, g:actual
+
+Execute (decode single characters only):
+  let g:actual = Decode('XYZ')
+  let g:expected = 'XYZ'
+  AssertEqual g:expected, g:actual
+
+Execute (decode text with no single characters):
+  let g:actual = Decode('2A3B4C')
+  let g:expected = 'AABBBCCCC'
+  AssertEqual g:expected, g:actual
+
+Execute (decode single characters with repeated characters):
+  let g:actual = Decode('12WB12W3B24WB')
+  let g:expected = 'WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB'
+  AssertEqual g:expected, g:actual
+
+Execute (decode multiple whitespace mixed in text):
+  let g:actual = Decode('2 hs2q q2w2 ')
+  let g:expected = '  hsqq qww  '
+  AssertEqual g:expected, g:actual
+
+Execute (decode lower case text):
+  let g:actual = Decode('2a3b4c')
+  let g:expected = 'aabbbcccc'
+  AssertEqual g:expected, g:actual
+
+Execute (encode followed by decode gives same text'):
+  let g:actual = Decode(Encode('zzz ZZ  zZ'))
+  let g:expected = 'zzz ZZ  zZ'
+  AssertEqual g:expected, g:actual
+
