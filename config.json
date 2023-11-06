@@ -86,6 +86,14 @@
         ]
       },
       {
+        "slug": "dnd-character",
+        "name": "D&D Character",
+        "uuid": "eb38bf54-c597-4856-bf1d-3867d75ae586",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "etl",
         "name": "ETL",
         "uuid": "d0f80889-5c4e-4de6-b3a4-08a71a2e9c75",

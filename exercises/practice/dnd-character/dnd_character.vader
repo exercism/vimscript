@@ -1,0 +1,95 @@
+
+Execute (ability modifier for score 3 is -4):
+  let g:score = 3
+  let g:expected = -4
+  AssertEqual g:expected, Modifier(g:score)
+
+Execute (ability modifier for score 4 is -3):
+  let g:score = 4
+  let g:expected = -3
+  AssertEqual g:expected, Modifier(g:score)
+
+Execute (ability modifier for score 5 is -3):
+  let g:score = 5
+  let g:expected = -3
+  AssertEqual g:expected, Modifier(g:score)
+
+Execute (ability modifier for score 6 is -2):
+  let g:score = 6
+  let g:expected = -2
+  AssertEqual g:expected, Modifier(g:score)
+
+Execute (ability modifier for score 7 is -2):
+  let g:score = 7
+  let g:expected = -2
+  AssertEqual g:expected, Modifier(g:score)
+
+Execute (ability modifier for score 8 is -1):
+  let g:score = 8
+  let g:expected = -1
+  AssertEqual g:expected, Modifier(g:score)
+
+Execute (ability modifier for score 9 is -1):
+  let g:score = 9
+  let g:expected = -1
+  AssertEqual g:expected, Modifier(g:score)
+
+Execute (ability modifier for score 10 is 0):
+  let g:score = 10
+  let g:expected = 0
+  AssertEqual g:expected, Modifier(g:score)
+
+Execute (ability modifier for score 11 is 0):
+  let g:score = 11
+  let g:expected = 0
+  AssertEqual g:expected, Modifier(g:score)
+
+Execute (ability modifier for score 12 is +1):
+  let g:score = 12
+  let g:expected = 1
+  AssertEqual g:expected, Modifier(g:score)
+
+Execute (ability modifier for score 13 is +1):
+  let g:score = 13
+  let g:expected = 1
+  AssertEqual g:expected, Modifier(g:score)
+
+Execute (ability modifier for score 14 is +2):
+  let g:score = 14
+  let g:expected = 2
+  AssertEqual g:expected, Modifier(g:score)
+
+Execute (ability modifier for score 15 is +2):
+  let g:score = 15
+  let g:expected = 2
+  AssertEqual g:expected, Modifier(g:score)
+
+Execute (ability modifier for score 16 is +3):
+  let g:score = 16
+  let g:expected = 3
+  AssertEqual g:expected, Modifier(g:score)
+
+Execute (ability modifier for score 17 is +3):
+  let g:score = 17
+  let g:expected = 3
+  AssertEqual g:expected, Modifier(g:score)
+
+Execute (ability modifier for score 18 is +4):
+  let g:score = 18
+  let g:expected = 4
+  AssertEqual g:expected, Modifier(g:score)
+
+Execute (random ability is within range):
+  let g:score = Ability()
+  Assert g:score >= 3 && g:score <= 18
+
+Execute (random character is valid):
+  let g:char = Character()
+  let g:invalid_stats = keys(filter(g:char, 'g:char[v:key] < 3 || g:char[v:key] > 19'))
+  AssertEqual 0, len(g:invalid_stats)
+
+Execute (each ability is only calculated once):
+  let g:char = Character()
+  let g:strength1 = g:char["strength"]
+  let g:strength2 = g:char["strength"]
+  AssertEqual g:strength1, g:strength2
