@@ -86,6 +86,14 @@
         ]
       },
       {
+        "slug": "pop-count",
+        "name": "Eliud's Eggs",
+        "uuid": "9ef83f95-6fae-486a-9a42-d763961066cb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "etl",
         "name": "ETL",
         "uuid": "d0f80889-5c4e-4de6-b3a4-08a71a2e9c75",
