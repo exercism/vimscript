@@ -1,0 +1,156 @@
+
+Execute (single bit one to decimal):
+  let g:digits = [1]
+  let g:inputBase = 2
+  let g:outputBase = 10
+  let g:expected = [1]
+  AssertEqual g:expected, Rebase(g:digits, g:inputBase, g:outputBase)
+
+Execute (binary to single decimal):
+  let g:digits = [1, 0, 1]
+  let g:inputBase = 2
+  let g:outputBase = 10
+  let g:expected = [5]
+  AssertEqual g:expected, Rebase(g:digits, g:inputBase, g:outputBase)
+
+Execute (single decimal to binary):
+  let g:digits = [5]
+  let g:inputBase = 10
+  let g:outputBase = 2
+  let g:expected = [1, 0, 1]
+  AssertEqual g:expected, Rebase(g:digits, g:inputBase, g:outputBase)
+
+Execute (binary to multiple decimal):
+  let g:digits = [1, 0, 1, 0, 1, 0]
+  let g:inputBase = 2
+  let g:outputBase = 10
+  let g:expected = [4, 2]
+  AssertEqual g:expected, Rebase(g:digits, g:inputBase, g:outputBase)
+
+Execute (decimal to binary):
+  let g:digits = [4, 2]
+  let g:inputBase = 10
+  let g:outputBase = 2
+  let g:expected = [1, 0, 1, 0, 1, 0]
+  AssertEqual g:expected, Rebase(g:digits, g:inputBase, g:outputBase)
+
+Execute (trinary to hexadecimal):
+  let g:digits = [1, 1, 2, 0]
+  let g:inputBase = 3
+  let g:outputBase = 16
+  let g:expected = [2, 10]
+  AssertEqual g:expected, Rebase(g:digits, g:inputBase, g:outputBase)
+
+Execute (hexadecimal to trinary):
+  let g:digits = [2, 10]
+  let g:inputBase = 16
+  let g:outputBase = 3
+  let g:expected = [1, 1, 2, 0]
+  AssertEqual g:expected, Rebase(g:digits, g:inputBase, g:outputBase)
+
+Execute (15-bit integer):
+  let g:digits = [3, 46, 60]
+  let g:inputBase = 97
+  let g:outputBase = 73
+  let g:expected = [6, 10, 45]
+  AssertEqual g:expected, Rebase(g:digits, g:inputBase, g:outputBase)
+
+Execute (empty list):
+  let g:digits = []
+  let g:inputBase = 2
+  let g:outputBase = 10
+  let g:expected = [0]
+  AssertEqual g:expected, Rebase(g:digits, g:inputBase, g:outputBase)
+
+Execute (single zero):
+  let g:digits = [0]
+  let g:inputBase = 10
+  let g:outputBase = 2
+  let g:expected = [0]
+  AssertEqual g:expected, Rebase(g:digits, g:inputBase, g:outputBase)
+
+Execute (multiple zeros):
+  let g:digits = [0, 0, 0]
+  let g:inputBase = 10
+  let g:outputBase = 2
+  let g:expected = [0]
+  AssertEqual g:expected, Rebase(g:digits, g:inputBase, g:outputBase)
+
+Execute (leading zeros):
+  let g:digits = [0, 6, 0]
+  let g:inputBase = 7
+  let g:outputBase = 10
+  let g:expected = [4, 2]
+  AssertEqual g:expected, Rebase(g:digits, g:inputBase, g:outputBase)
+
+Execute (input base is one):
+  let g:digits = [0]
+  let g:inputBase = 1
+  let g:outputBase = 10
+  let g:expected = "input base must be >= 2"
+  AssertThrows call Rebase(g:digits, g:inputBase, g:outputBase)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (input base is zero):
+  let g:digits = []
+  let g:inputBase = 0
+  let g:outputBase = 10
+  let g:expected = "input base must be >= 2"
+  AssertThrows call Rebase(g:digits, g:inputBase, g:outputBase)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (input base is negative):
+  let g:digits = [1]
+  let g:inputBase = -2
+  let g:outputBase = 10
+  let g:expected = "input base must be >= 2"
+  AssertThrows call Rebase(g:digits, g:inputBase, g:outputBase)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (negative digit):
+  let g:digits = [1, -1, 1, 0, 1, 0]
+  let g:inputBase = 2
+  let g:outputBase = 10
+  let g:expected = "all digits must satisfy 0 <= d < input base"
+  AssertThrows call Rebase(g:digits, g:inputBase, g:outputBase)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (invalid positive digit):
+  let g:digits = [1, 2, 1, 0, 1, 0]
+  let g:inputBase = 2
+  let g:outputBase = 10
+  let g:expected = "all digits must satisfy 0 <= d < input base"
+  AssertThrows call Rebase(g:digits, g:inputBase, g:outputBase)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (output base is one):
+  let g:digits = [1, 0, 1, 0, 1, 0]
+  let g:inputBase = 2
+  let g:outputBase = 1
+  let g:expected = "output base must be >= 2"
+  AssertThrows call Rebase(g:digits, g:inputBase, g:outputBase)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (output base is zero):
+  let g:digits = [7]
+  let g:inputBase = 10
+  let g:outputBase = 0
+  let g:expected = "output base must be >= 2"
+  AssertThrows call Rebase(g:digits, g:inputBase, g:outputBase)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (output base is negative):
+  let g:digits = [1]
+  let g:inputBase = 2
+  let g:outputBase = -7
+  let g:expected = "output base must be >= 2"
+  AssertThrows call Rebase(g:digits, g:inputBase, g:outputBase)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (both bases are negative):
+  let g:digits = [1]
+  let g:inputBase = -2
+  let g:outputBase = -7
+  let g:expected = "input base must be >= 2"
+  AssertThrows call Rebase(g:digits, g:inputBase, g:outputBase)
+  AssertEqual g:expected, g:vader_exception
