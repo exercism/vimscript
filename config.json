@@ -99,6 +99,14 @@
         ]
       },
       {
+        "slug": "flatten-array",
+        "name": "Flatten Array",
+        "uuid": "091cf652-212f-44a6-8187-1a3acdb922e3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "hello-world",
         "name": "Hello World",
         "uuid": "a0d099f9-eda7-42d4-a4f6-284ae3178df1",
