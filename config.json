@@ -59,7 +59,8 @@
           "formatting",
           "loops",
           "strings"
-        ]
+        ],
+        "status": "deprecated"
       },
       {
         "slug": "bob",
@@ -94,6 +95,14 @@
         "difficulty": 3
       },
       {
+        "slug": "pop-count",
+        "name": "Eliud's Eggs",
+        "uuid": "9ef83f95-6fae-486a-9a42-d763961066cb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "etl",
         "name": "ETL",
         "uuid": "d0f80889-5c4e-4de6-b3a4-08a71a2e9c75",
@@ -105,6 +114,14 @@
           "loops",
           "transforming"
         ]
+      },
+      {
+        "slug": "flatten-array",
+        "name": "Flatten Array",
+        "uuid": "091cf652-212f-44a6-8187-1a3acdb922e3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       },
       {
         "slug": "hello-world",
@@ -235,6 +252,14 @@
         ]
       },
       {
+        "slug": "space-age",
+        "name": "Space Age",
+        "uuid": "b672d6aa-0b3c-4aa9-8959-dd6f65049508",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "33796a20-8325-4068-bdbd-e91519144b24",
@@ -257,7 +282,7 @@
       },
       {
         "slug": "queen-attack",
-        "name": "Queen Attach",
+        "name": "Queen Attack",
         "uuid": "c728a685-1b4e-4d77-9273-6ee42ca4fb0e",
         "practices": [],
         "prerequisites": [],
@@ -286,6 +311,14 @@
           "bitwise",
           "sorting"
         ]
+      },
+      {
+        "slug": "all-your-base",
+        "name": "All Your Base",
+        "uuid": "a489b452-cf01-4670-bfe4-ccfeac57b466",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
       },
       {
         "slug": "anagram",
