@@ -59,7 +59,8 @@
           "formatting",
           "loops",
           "strings"
-        ]
+        ],
+        "status": "deprecated"
       },
       {
         "slug": "bob",
