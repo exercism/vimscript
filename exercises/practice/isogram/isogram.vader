@@ -1,0 +1,70 @@
+
+Execute (empty string):
+  let g:phrase = ""
+  let g:expected = 1
+  AssertEqual g:expected, IsIsogram(g:phrase)
+
+Execute (isogram with only lower case characters):
+  let g:phrase = "isogram"
+  let g:expected = 1
+  AssertEqual g:expected, IsIsogram(g:phrase)
+
+Execute (word with one duplicated character):
+  let g:phrase = "eleven"
+  let g:expected = 0
+  AssertEqual g:expected, IsIsogram(g:phrase)
+
+Execute (word with one duplicated character from the end of the alphabet):
+  let g:phrase = "zzyzx"
+  let g:expected = 0
+  AssertEqual g:expected, IsIsogram(g:phrase)
+
+Execute (longest reported english isogram):
+  let g:phrase = "subdermatoglyphic"
+  let g:expected = 1
+  AssertEqual g:expected, IsIsogram(g:phrase)
+
+Execute (word with duplicated character in mixed case):
+  let g:phrase = "Alphabet"
+  let g:expected = 0
+  AssertEqual g:expected, IsIsogram(g:phrase)
+
+Execute (word with duplicated character in mixed case, lowercase first):
+  let g:phrase = "alphAbet"
+  let g:expected = 0
+  AssertEqual g:expected, IsIsogram(g:phrase)
+
+Execute (hypothetical isogrammic word with hyphen):
+  let g:phrase = "thumbscrew-japingly"
+  let g:expected = 1
+  AssertEqual g:expected, IsIsogram(g:phrase)
+
+Execute (hypothetical word with duplicated character following hyphen):
+  let g:phrase = "thumbscrew-jappingly"
+  let g:expected = 0
+  AssertEqual g:expected, IsIsogram(g:phrase)
+
+Execute (isogram with duplicated hyphen):
+  let g:phrase = "six-year-old"
+  let g:expected = 1
+  AssertEqual g:expected, IsIsogram(g:phrase)
+
+Execute (made-up name that is an isogram):
+  let g:phrase = "Emily Jung Schwartzkopf"
+  let g:expected = 1
+  AssertEqual g:expected, IsIsogram(g:phrase)
+
+Execute (duplicated character in the middle):
+  let g:phrase = "accentor"
+  let g:expected = 0
+  AssertEqual g:expected, IsIsogram(g:phrase)
+
+Execute (same first and last characters):
+  let g:phrase = "angola"
+  let g:expected = 0
+  AssertEqual g:expected, IsIsogram(g:phrase)
+
+Execute (word with duplicated character and with two hyphens):
+  let g:phrase = "up-to-date"
+  let g:expected = 0
+  AssertEqual g:expected, IsIsogram(g:phrase)
