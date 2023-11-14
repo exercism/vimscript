@@ -3,7 +3,7 @@ function! Modifier(score) abort
 endfunction
 
 function! Ability() abort
-    let l:rolls =  map(repeat([0], 4), 'RandInt(1, 6)')
+    let l:rolls =  map(repeat([0], 4), '(rand(g:seed) % 6) + 1')
     let l:kept = sort(l:rolls)[1:]
 
     let l:sum = 0
@@ -25,7 +25,4 @@ function! Character() abort
     \       'hitpoints': 10 + Modifier(l:constitution)}
 endfunction
 
-function! RandInt(Low, High) abort
-    let l:milisec = str2nr(matchstr(reltimestr(reltime()), '\v\.\zs\d+'))
-    return l:milisec % (a:High - a:Low + 1) + a:Low
-endfunction
+let g:seed = srand()
