@@ -127,6 +127,14 @@
         ]
       },
       {
+        "slug": "isogram",
+        "name": "Isogram",
+        "uuid": "07984b95-7ba6-4cb7-86be-09520df5cf88",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "largest-series-product",
         "name": "Largest Series Product",
         "uuid": "7f1d0f92-bd78-4ca7-a436-cf9c871df1b2",
