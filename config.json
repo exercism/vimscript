@@ -92,7 +92,7 @@
         "uuid": "eb38bf54-c597-4856-bf1d-3867d75ae586",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 4
       },
       {
         "slug": "pop-count",
