@@ -26,7 +26,7 @@ function! s:MainVerse(currentBottle) abort
   let l:casedOrdinal = s:SentenceCase(l:currentOrdinal)
   let l:bottleWord = s:Pluralize('bottle', a:currentBottle)
 
-  return $"{casedOrdinal} green {bottleWord} hanging on the wall,"
+  return l:casedOrdinal . ' green ' . l:bottleWord . ' hanging on the wall,'
 endfunction
 
 function! s:SecondaryVerse(currentBottle) abort
@@ -34,7 +34,7 @@ function! s:SecondaryVerse(currentBottle) abort
   let l:nextOrdinal =  get(s:decimal_to_ordinal, l:nextBottle, 'no')
   let l:bottleWord = s:Pluralize('bottle', l:nextBottle)
 
-  return $"There'll be {nextOrdinal} green {bottleWord} hanging on the wall."
+  return "There'll be " . l:nextOrdinal . ' green ' . l:bottleWord . ' hanging on the wall.'
 endfunction
 
 let s:decimal_to_ordinal = {
