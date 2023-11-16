@@ -183,6 +183,14 @@
         ]
       },
       {
+        "slug": "perfect-numbers",
+        "name": "Perfect Numbers",
+        "uuid": "499660d1-8cfa-4ff8-bbb8-d43e5f31c24b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "phone-number",
         "name": "Phone Number",
         "uuid": "a990dad9-e26c-45fc-939a-6484eb0b7546",
