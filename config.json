@@ -182,6 +182,14 @@
         ]
       },
       {
+        "slug": "protein-translation",
+        "name": "Protein Translaton",
+        "uuid": "4d510ad3-4d37-491a-99c6-892fbe5bd095",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "e75e2331-1494-4e70-9ad4-3396a6aeccc3",
