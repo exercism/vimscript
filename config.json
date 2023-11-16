@@ -33,8 +33,67 @@
     ]
   },
   "exercises": {
-    "concept": [],
     "practice": [
+      {
+        "slug": "atbash-cipher",
+        "name": "Atbash Cipher",
+        "uuid": "2cd8b4dd-0c07-4e62-9d49-ec9697dc978b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": [
+          "algorithms",
+          "cryptography",
+          "strings",
+          "transforming"
+        ]
+      },
+      {
+        "slug": "beer-song",
+        "name": "Beer Song",
+        "uuid": "73babd80-2a68-490f-a451-120918e5311c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": [
+          "formatting",
+          "loops",
+          "strings"
+        ],
+        "status": "deprecated"
+      },
+      {
+        "slug": "bob",
+        "name": "Bob",
+        "uuid": "345a440a-f995-4ead-9890-f5075c7f962e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": [
+          "conditionals",
+          "strings"
+        ]
+      },
+      {
+        "slug": "difference-of-squares",
+        "name": "Difference of Squares",
+        "uuid": "e6662c3e-9d5e-4744-977e-ed12f3171e1e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": [
+          "algorithms",
+          "math"
+        ]
+      },
+      {
+        "slug": "pop-count",
+        "name": "Eliud's Eggs",
+        "uuid": "9ef83f95-6fae-486a-9a42-d763961066cb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
       {
         "slug": "etl",
         "name": "ETL",
@@ -49,6 +108,14 @@
         ]
       },
       {
+        "slug": "flatten-array",
+        "name": "Flatten Array",
+        "uuid": "091cf652-212f-44a6-8187-1a3acdb922e3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "hello-world",
         "name": "Hello World",
         "uuid": "a0d099f9-eda7-42d4-a4f6-284ae3178df1",
@@ -57,6 +124,28 @@
         "difficulty": 1,
         "topics": [
           "strings"
+        ]
+      },
+      {
+        "slug": "isogram",
+        "name": "Isogram",
+        "uuid": "07984b95-7ba6-4cb7-86be-09520df5cf88",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "largest-series-product",
+        "name": "Largest Series Product",
+        "uuid": "7f1d0f92-bd78-4ca7-a436-cf9c871df1b2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": [
+          "algorithms",
+          "integers",
+          "math",
+          "sequences"
         ]
       },
       {
@@ -72,6 +161,41 @@
           "integers",
           "logic"
         ]
+      },
+      {
+        "slug": "pangram",
+        "name": "Pangram",
+        "uuid": "fa80ef6a-db6a-429d-ae7a-ceba0ba96dab",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": [
+          "loops",
+          "strings"
+        ]
+      },
+      {
+        "slug": "phone-number",
+        "name": "Phone Number",
+        "uuid": "a990dad9-e26c-45fc-939a-6484eb0b7546",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": [
+          "conditionals",
+          "formatting",
+          "regexp",
+          "strings",
+          "transforming"
+        ]
+      },
+      {
+        "slug": "protein-translation",
+        "name": "Protein Translaton",
+        "uuid": "4d510ad3-4d37-491a-99c6-892fbe5bd095",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
       },
       {
         "slug": "raindrops",
@@ -181,68 +305,12 @@
         ]
       },
       {
-        "slug": "two-fer",
-        "name": "Two Fer",
-        "uuid": "4d19f94f-c319-4b1d-8145-51ce01ad448d",
+        "slug": "space-age",
+        "name": "Space Age",
+        "uuid": "b672d6aa-0b3c-4aa9-8959-dd6f65049508",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
-      },
-      {
-        "slug": "atbash-cipher",
-        "name": "Atbash Cipher",
-        "uuid": "2cd8b4dd-0c07-4e62-9d49-ec9697dc978b",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "algorithms",
-          "cryptography",
-          "strings",
-          "transforming"
-        ]
-      },
-      {
-        "slug": "beer-song",
-        "name": "Beer Song",
-        "uuid": "73babd80-2a68-490f-a451-120918e5311c",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "formatting",
-          "loops",
-          "strings"
-        ]
-      },
-      {
-        "slug": "largest-series-product",
-        "name": "Largest Series Product",
-        "uuid": "7f1d0f92-bd78-4ca7-a436-cf9c871df1b2",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "algorithms",
-          "integers",
-          "math",
-          "sequences"
-        ]
-      },
-      {
-        "slug": "phone-number",
-        "name": "Phone Number",
-        "uuid": "a990dad9-e26c-45fc-939a-6484eb0b7546",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "conditionals",
-          "formatting",
-          "regexp",
-          "strings",
-          "transforming"
-        ]
+        "difficulty": 3
       },
       {
         "slug": "triangle",
@@ -255,7 +323,23 @@
           "booleans",
           "conditionals",
           "logic"
-          ]
+        ]
+      },
+      {
+        "slug": "two-fer",
+        "name": "Two Fer",
+        "uuid": "4d19f94f-c319-4b1d-8145-51ce01ad448d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "queen-attack",
+        "name": "Queen Attack",
+        "uuid": "c728a685-1b4e-4d77-9273-6ee42ca4fb0e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
       },
       {
         "slug": "word-count",
@@ -282,6 +366,28 @@
         ]
       },
       {
+        "slug": "all-your-base",
+        "name": "All Your Base",
+        "uuid": "a489b452-cf01-4670-bfe4-ccfeac57b466",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "anagram",
+        "name": "Anagram",
+        "uuid": "20d6efaf-1dee-42ec-9461-d738ec1b1e17",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "topics": [
+          "filtering",
+          "parsing",
+          "sorting",
+          "strings"
+        ]
+      },
+      {
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "9cda4dfe-bdce-4a0b-9be2-ebafabd57271",
@@ -301,72 +407,57 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4,
-        "topics": [ 
+        "topics": [
           "dict",
           "parsing",
-          "strings"
-        ]
-      },
-      {
-        "slug": "anagram",
-        "name": "Anagram",
-        "uuid": "20d6efaf-1dee-42ec-9461-d738ec1b1e17",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "topics": [
-          "filtering",
-          "parsing",
-          "sorting",
           "strings"
         ]
       }
     ]
   },
-  "concepts": [],
   "key_features": [
     {
-      "icon": "extensible",
       "title": "Extensible",
-      "content": "Looking for certain functionality?  It can be easily created and deployed."
+      "content": "Looking for certain functionality?  It can be easily created and deployed.",
+      "icon": "extensible"
     },
     {
-      "icon": "tooling",
       "title": "Deep Vim integration",
-      "content": "Productivity win! Access and manipulate Vim internal data structures and settings with ease."
+      "content": "Productivity win! Access and manipulate Vim internal data structures and settings with ease.",
+      "icon": "tooling"
     },
     {
-      "icon": "expressive",
       "title": "Expressive syntax",
-      "content": "Do a lot with a little. Write compact scripts that are highly readable."
+      "content": "Do a lot with a little. Write compact scripts that are highly readable.",
+      "icon": "expressive"
     },
     {
-      "icon": "multi-paradigm",
       "title": "Multi-paradigm",
-      "content": "Supports writing imperatively or functionally."
+      "content": "Supports writing imperatively or functionally.",
+      "icon": "multi-paradigm"
     },
     {
-      "icon": "interop",
       "title": "Highly interoperable",
-      "content": "Access files, shells, & other programs. All the power of external tooling without leaving Vim."
+      "content": "Access files, shells, & other programs. All the power of external tooling without leaving Vim.",
+      "icon": "interop"
     },
     {
-      "icon": "concurrency",
       "title": "Event-driven programming",
-      "content": "Automatic code execution based on certain events or conditions like file opens or buffer saves."
+      "content": "Automatic code execution based on certain events or conditions like file opens or buffer saves.",
+      "icon": "concurrency"
     }
   ],
   "tags": [
+    "execution_mode/interpreted",
     "paradigm/functional",
     "paradigm/imperative",
     "paradigm/object_oriented",
+    "platform/linux",
+    "platform/mac",
+    "platform/windows",
+    "runtime/language_specific",
     "typing/dynamic",
     "typing/weak",
-    "execution_mode/interpreted",
-    "platform/windows",
-    "platform/mac",
-    "platform/linux",
-    "runtime/language_specific",
     "used_for/scripts"
   ]
 }

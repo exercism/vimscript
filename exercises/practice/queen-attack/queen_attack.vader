@@ -1,0 +1,82 @@
+
+Execute (queen with a valid position):
+  let g:row = 2
+  let g:column = 2
+  let g:queen = Queen(g:row, g:column)
+  AssertEqual v:t_dict, type(queen)
+
+Execute (queen must have positive row):
+  let g:row = -2
+  let g:column = 2
+  let g:expected = "row not positive"
+  AssertThrows call Queen(g:row, g:column)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (queen must have row on board):
+  let g:row = 8
+  let g:column = 4
+  let g:expected = "row not on board"
+  AssertThrows call Queen(g:row, g:column)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (queen must have positive column):
+  let g:row = 2
+  let g:column = -2
+  let g:expected = "column not positive"
+  AssertThrows call Queen(g:row, g:column)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (queen must have column on board):
+  let g:row = 4
+  let g:column = 8
+  let g:expected = "column not on board"
+  AssertThrows call Queen(g:row, g:column)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (cannot attack):
+  let g:black_queen = Queen(6, 6)
+  let g:white_queen = Queen(2, 4)
+  let g:expected = 0
+  AssertEqual g:expected, g:black_queen.CanAttack(g:white_queen)
+
+Execute (can attack on same row):
+  let g:black_queen = Queen(2, 6)
+  let g:white_queen = Queen(2, 4)
+  let g:expected = 1
+  AssertEqual g:expected, g:black_queen.CanAttack(g:white_queen)
+
+Execute (can attack on same column):
+  let g:black_queen = Queen(2, 5)
+  let g:white_queen = Queen(4, 5)
+  let g:expected = 1
+  AssertEqual g:expected, g:black_queen.CanAttack(g:white_queen)
+
+Execute (can attack on first diagonal):
+  let g:black_queen = Queen(0, 4)
+  let g:white_queen = Queen(2, 2)
+  let g:expected = 1
+  AssertEqual g:expected, g:black_queen.CanAttack(g:white_queen)
+
+Execute (can attack on second diagonal):
+  let g:black_queen = Queen(3, 1)
+  let g:white_queen = Queen(2, 2)
+  let g:expected = 1
+  AssertEqual g:expected, g:black_queen.CanAttack(g:white_queen)
+
+Execute (can attack on third diagonal):
+  let g:black_queen = Queen(1, 1)
+  let g:white_queen = Queen(2, 2)
+  let g:expected = 1
+  AssertEqual g:expected, g:black_queen.CanAttack(g:white_queen)
+
+Execute (can attack on fourth diagonal):
+  let g:black_queen = Queen(0, 6)
+  let g:white_queen = Queen(1, 7)
+  let g:expected = 1
+  AssertEqual g:expected, g:black_queen.CanAttack(g:white_queen)
+
+Execute (cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal):
+  let g:black_queen = Queen(2, 5)
+  let g:white_queen = Queen(4, 1)
+  let g:expected = 0
+  AssertEqual g:expected, g:black_queen.CanAttack(g:white_queen)
