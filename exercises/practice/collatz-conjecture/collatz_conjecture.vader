@@ -1,0 +1,32 @@
+
+Execute (zero steps for one):
+  let g:number = 1
+  let g:expected = 0
+  AssertEqual g:expected, Steps(g:number)
+
+Execute (divide if even):
+  let g:number = 16
+  let g:expected = 4
+  AssertEqual g:expected, Steps(g:number)
+
+Execute (even and odd steps):
+  let g:number = 12
+  let g:expected = 9
+  AssertEqual g:expected, Steps(g:number)
+
+Execute (large number of even and odd steps):
+  let g:number = 1000000
+  let g:expected = 152
+  AssertEqual g:expected, Steps(g:number)
+
+Execute (zero is an error):
+  let g:number = 0
+  let g:expected = "Only positive integers are allowed"
+  AssertThrows call Steps(g:number)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (negative value is an error):
+  let g:number = -15
+  let g:expected = "Only positive integers are allowed"
+  AssertThrows call Steps(g:number)
+  AssertEqual g:expected, g:vader_exception
