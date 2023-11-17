@@ -1,4 +1,4 @@
-function! DartScore(x, y) abort
+function! Darts(x, y) abort
   let l:distance = sqrt(a:x * a:x + a:y * a:y)
   
   if l:distance <= 1

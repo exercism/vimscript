@@ -5,12 +5,12 @@
 "
 " Example:
 "
-" :echo DartScore(0, 0)
+" :echo Darts(0, 0)
 " 10
 "
-" :echo DartScore(11, 11)
+" :echo Darts(11, 11)
 " 0
 "
-function! DartScore(x, y) abort
+function! Darts(x, y) abort
   " your code goes here
 endfunction

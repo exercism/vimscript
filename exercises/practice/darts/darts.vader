@@ -3,76 +3,76 @@ Execute (Missed target):
   let g:x = -9
   let g:y = 9
   let g:expected = 0
-  AssertEqual g:expected, DartScore(g:x, g:y)
+  AssertEqual g:expected, Darts(g:x, g:y)
 
 Execute (On the outer circle):
   let g:x = 0
   let g:y = 10
   let g:expected = 1
-  AssertEqual g:expected, DartScore(g:x, g:y)
+  AssertEqual g:expected, Darts(g:x, g:y)
 
 Execute (On the middle circle):
   let g:x = -5
   let g:y = 0
   let g:expected = 5
-  AssertEqual g:expected, DartScore(g:x, g:y)
+  AssertEqual g:expected, Darts(g:x, g:y)
 
 Execute (On the inner circle):
   let g:x = 0
   let g:y = -1
   let g:expected = 10
-  AssertEqual g:expected, DartScore(g:x, g:y)
+  AssertEqual g:expected, Darts(g:x, g:y)
 
 Execute (Exactly on center):
   let g:x = 0
   let g:y = 0
   let g:expected = 10
-  AssertEqual g:expected, DartScore(g:x, g:y)
+  AssertEqual g:expected, Darts(g:x, g:y)
 
 Execute (Near the center):
   let g:x = -0.1
   let g:y = -0.1
   let g:expected = 10
-  AssertEqual g:expected, DartScore(g:x, g:y)
+  AssertEqual g:expected, Darts(g:x, g:y)
 
 Execute (Just within the inner circle):
   let g:x = 0.7
   let g:y = 0.7
   let g:expected = 10
-  AssertEqual g:expected, DartScore(g:x, g:y)
+  AssertEqual g:expected, Darts(g:x, g:y)
 
 Execute (Just outside the inner circle):
   let g:x = 0.8
   let g:y = -0.8
   let g:expected = 5
-  AssertEqual g:expected, DartScore(g:x, g:y)
+  AssertEqual g:expected, Darts(g:x, g:y)
 
 Execute (Just within the middle circle):
   let g:x = -3.5
   let g:y = 3.5
   let g:expected = 5
-  AssertEqual g:expected, DartScore(g:x, g:y)
+  AssertEqual g:expected, Darts(g:x, g:y)
 
 Execute (Just outside the middle circle):
   let g:x = -3.6
   let g:y = -3.6
   let g:expected = 1
-  AssertEqual g:expected, DartScore(g:x, g:y)
+  AssertEqual g:expected, Darts(g:x, g:y)
 
 Execute (Just within the outer circle):
   let g:x = -7.0
   let g:y = 7.0
   let g:expected = 1
-  AssertEqual g:expected, DartScore(g:x, g:y)
+  AssertEqual g:expected, Darts(g:x, g:y)
 
 Execute (Just outside the outer circle):
   let g:x = 7.1
   let g:y = -7.1
   let g:expected = 0
-  AssertEqual g:expected, DartScore(g:x, g:y)
+  AssertEqual g:expected, Darts(g:x, g:y)
 
 Execute (Asymmetric position between the inner and middle circles):
   let g:x = 0.5
   let g:y = -4
   let g:expected = 5
-  AssertEqual g:expected, DartScore(g:x, g:y)
+  AssertEqual g:expected, Darts(g:x, g:y)
