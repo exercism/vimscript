@@ -1,0 +1,153 @@
+
+Execute (Empty RNA sequence results in no proteins):
+  let g:strand = ""
+  let g:expected = []
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Methionine RNA sequence):
+  let g:strand = "AUG"
+  let g:expected = ['Methionine']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Phenylalanine RNA sequence 1):
+  let g:strand = "UUU"
+  let g:expected = ['Phenylalanine']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Phenylalanine RNA sequence 2):
+  let g:strand = "UUC"
+  let g:expected = ['Phenylalanine']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Leucine RNA sequence 1):
+  let g:strand = "UUA"
+  let g:expected = ['Leucine']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Leucine RNA sequence 2):
+  let g:strand = "UUG"
+  let g:expected = ['Leucine']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Serine RNA sequence 1):
+  let g:strand = "UCU"
+  let g:expected = ['Serine']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Serine RNA sequence 2):
+  let g:strand = "UCC"
+  let g:expected = ['Serine']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Serine RNA sequence 3):
+  let g:strand = "UCA"
+  let g:expected = ['Serine']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Serine RNA sequence 4):
+  let g:strand = "UCG"
+  let g:expected = ['Serine']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Tyrosine RNA sequence 1):
+  let g:strand = "UAU"
+  let g:expected = ['Tyrosine']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Tyrosine RNA sequence 2):
+  let g:strand = "UAC"
+  let g:expected = ['Tyrosine']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Cysteine RNA sequence 1):
+  let g:strand = "UGU"
+  let g:expected = ['Cysteine']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Cysteine RNA sequence 2):
+  let g:strand = "UGC"
+  let g:expected = ['Cysteine']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Tryptophan RNA sequence):
+  let g:strand = "UGG"
+  let g:expected = ['Tryptophan']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (STOP codon RNA sequence 1):
+  let g:strand = "UAA"
+  let g:expected = []
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (STOP codon RNA sequence 2):
+  let g:strand = "UAG"
+  let g:expected = []
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (STOP codon RNA sequence 3):
+  let g:strand = "UGA"
+  let g:expected = []
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Sequence of two protein codons translates into proteins):
+  let g:strand = "UUUUUU"
+  let g:expected = ['Phenylalanine', 'Phenylalanine']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Sequence of two different protein codons translates into proteins):
+  let g:strand = "UUAUUG"
+  let g:expected = ['Leucine', 'Leucine']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Translate RNA strand into correct protein list):
+  let g:strand = "AUGUUUUGG"
+  let g:expected = ['Methionine', 'Phenylalanine', 'Tryptophan']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Translation stops if STOP codon at beginning of sequence):
+  let g:strand = "UAGUGG"
+  let g:expected = []
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Translation stops if STOP codon at end of two-codon sequence):
+  let g:strand = "UGGUAG"
+  let g:expected = ['Tryptophan']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Translation stops if STOP codon at end of three-codon sequence):
+  let g:strand = "AUGUUUUAA"
+  let g:expected = ['Methionine', 'Phenylalanine']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Translation stops if STOP codon in middle of three-codon sequence):
+  let g:strand = "UGGUAGUGG"
+  let g:expected = ['Tryptophan']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Translation stops if STOP codon in middle of six-codon sequence):
+  let g:strand = "UGGUGUUAUUAAUGGUUU"
+  let g:expected = ['Tryptophan', 'Cysteine', 'Tyrosine']
+  AssertEqual g:expected, Proteins(g:strand)
+
+Execute (Non-existing codon can't translate):
+  let g:strand = "AAA"
+  let g:expected = "Invalid codon"
+  AssertThrows call Proteins(g:strand)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (Unknown amino acids, not part of a codon, can't translate):
+  let g:strand = "XYZ"
+  let g:expected = "Invalid codon"
+  AssertThrows call Proteins(g:strand)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (Incomplete RNA sequence can't translate):
+  let g:strand = "AUGU"
+  let g:expected = "Invalid codon"
+  AssertThrows call Proteins(g:strand)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (Incomplete RNA sequence can translate if valid until a STOP codon):
+  let g:strand = "UUCUUCUAAUGGU"
+  let g:expected = ['Phenylalanine', 'Phenylalanine']
+  AssertEqual g:expected, Proteins(g:strand)

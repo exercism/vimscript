@@ -75,6 +75,14 @@
         ]
       },
       {
+        "slug": "bottle-song",
+        "name": "Bottle Song",
+        "uuid": "cf3fad85-c7d7-42db-b27f-069be5ed4c22",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "4eed1dde-4e87-4cbf-834e-71da55128215",
@@ -135,6 +143,14 @@
         ]
       },
       {
+        "slug": "isogram",
+        "name": "Isogram",
+        "uuid": "07984b95-7ba6-4cb7-86be-09520df5cf88",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "largest-series-product",
         "name": "Largest Series Product",
         "uuid": "7f1d0f92-bd78-4ca7-a436-cf9c871df1b2",
@@ -175,6 +191,14 @@
         ]
       },
       {
+        "slug": "perfect-numbers",
+        "name": "Perfect Numbers",
+        "uuid": "499660d1-8cfa-4ff8-bbb8-d43e5f31c24b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "phone-number",
         "name": "Phone Number",
         "uuid": "a990dad9-e26c-45fc-939a-6484eb0b7546",
@@ -188,6 +212,14 @@
           "strings",
           "transforming"
         ]
+      },
+      {
+        "slug": "protein-translation",
+        "name": "Protein Translaton",
+        "uuid": "4d510ad3-4d37-491a-99c6-892fbe5bd095",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
       },
       {
         "slug": "raindrops",
@@ -217,6 +249,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 3
+      },
+      {
+        "slug": "reverse-string",
+        "name": "Reverse String",
+        "uuid": "8407dec6-24a8-41d6-8045-864fbfec8915",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       },
       {
         "slug": "rna-transcription",
