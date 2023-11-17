@@ -91,14 +91,6 @@
         "difficulty": 3
       },
       {
-        "slug": "binary-search",
-        "name": "Binary Search",
-        "uuid": "2de919b2-b81d-43c3-87c1-e6a8239139e3",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3
-      },
-      {
         "slug": "difference-of-squares",
         "name": "Difference of Squares",
         "uuid": "e6662c3e-9d5e-4744-977e-ed12f3171e1e",
