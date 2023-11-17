@@ -55,12 +55,12 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,
+        "status": "deprecated",
         "topics": [
           "formatting",
           "loops",
           "strings"
-        ],
-        "status": "deprecated"
+        ]
       },
       {
         "slug": "binary-search",
@@ -81,6 +81,14 @@
           "conditionals",
           "strings"
         ]
+      },
+      {
+        "slug": "darts",
+        "name": "Darts",
+        "uuid": "1ae2f1bd-5f62-4692-857d-faaf5223cad7",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       },
       {
         "slug": "bottle-song",
