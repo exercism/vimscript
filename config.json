@@ -55,12 +55,12 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,
+        "status": "deprecated",
         "topics": [
           "formatting",
           "loops",
           "strings"
-        ],
-        "status": "deprecated"
+        ]
       },
       {
         "slug": "bob",
@@ -264,8 +264,7 @@
         "uuid": "b8bc605a-527d-48d3-9963-a8325be122c1",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
+        "difficulty": 1
       },
       {
         "slug": "roman-numerals",
