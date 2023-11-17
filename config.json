@@ -83,6 +83,14 @@
         "difficulty": 2
       },
       {
+        "slug": "bottle-song",
+        "name": "Bottle Song",
+        "uuid": "cf3fad85-c7d7-42db-b27f-069be5ed4c22",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "difference-of-squares",
         "name": "Difference of Squares",
         "uuid": "e6662c3e-9d5e-4744-977e-ed12f3171e1e",
@@ -183,6 +191,14 @@
         ]
       },
       {
+        "slug": "perfect-numbers",
+        "name": "Perfect Numbers",
+        "uuid": "499660d1-8cfa-4ff8-bbb8-d43e5f31c24b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "phone-number",
         "name": "Phone Number",
         "uuid": "a990dad9-e26c-45fc-939a-6484eb0b7546",
@@ -233,6 +249,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 3
+      },
+      {
+        "slug": "reverse-string",
+        "name": "Reverse String",
+        "uuid": "8407dec6-24a8-41d6-8045-864fbfec8915",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       },
       {
         "slug": "rna-transcription",
