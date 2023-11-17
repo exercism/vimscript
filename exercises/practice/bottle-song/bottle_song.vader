@@ -1,0 +1,42 @@
+
+Execute (first generic verse):
+  let g:startBottles = 10
+  let g:takeDown = 1
+  let g:expected = ['Ten green bottles hanging on the wall,', 'Ten green bottles hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be nine green bottles hanging on the wall.']
+  AssertEqual g:expected, Recite(g:startBottles, g:takeDown)
+
+Execute (last generic verse):
+  let g:startBottles = 3
+  let g:takeDown = 1
+  let g:expected = ['Three green bottles hanging on the wall,', 'Three green bottles hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be two green bottles hanging on the wall.']
+  AssertEqual g:expected, Recite(g:startBottles, g:takeDown)
+
+Execute (verse with 2 bottles):
+  let g:startBottles = 2
+  let g:takeDown = 1
+  let g:expected = ['Two green bottles hanging on the wall,', 'Two green bottles hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be one green bottle hanging on the wall.']
+  AssertEqual g:expected, Recite(g:startBottles, g:takeDown)
+
+Execute (verse with 1 bottle):
+  let g:startBottles = 1
+  let g:takeDown = 1
+  let g:expected = ['One green bottle hanging on the wall,', 'One green bottle hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be no green bottles hanging on the wall.']
+  AssertEqual g:expected, Recite(g:startBottles, g:takeDown)
+
+Execute (first two verses):
+  let g:startBottles = 10
+  let g:takeDown = 2
+  let g:expected = ['Ten green bottles hanging on the wall,', 'Ten green bottles hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be nine green bottles hanging on the wall.', '', 'Nine green bottles hanging on the wall,', 'Nine green bottles hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be eight green bottles hanging on the wall.']
+  AssertEqual g:expected, Recite(g:startBottles, g:takeDown)
+
+Execute (last three verses):
+  let g:startBottles = 3
+  let g:takeDown = 3
+  let g:expected = ['Three green bottles hanging on the wall,', 'Three green bottles hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be two green bottles hanging on the wall.', '', 'Two green bottles hanging on the wall,', 'Two green bottles hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be one green bottle hanging on the wall.', '', 'One green bottle hanging on the wall,', 'One green bottle hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be no green bottles hanging on the wall.']
+  AssertEqual g:expected, Recite(g:startBottles, g:takeDown)
+
+Execute (all verses):
+  let g:startBottles = 10
+  let g:takeDown = 10
+  let g:expected = ['Ten green bottles hanging on the wall,', 'Ten green bottles hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be nine green bottles hanging on the wall.', '', 'Nine green bottles hanging on the wall,', 'Nine green bottles hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be eight green bottles hanging on the wall.', '', 'Eight green bottles hanging on the wall,', 'Eight green bottles hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be seven green bottles hanging on the wall.', '', 'Seven green bottles hanging on the wall,', 'Seven green bottles hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be six green bottles hanging on the wall.', '', 'Six green bottles hanging on the wall,', 'Six green bottles hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be five green bottles hanging on the wall.', '', 'Five green bottles hanging on the wall,', 'Five green bottles hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be four green bottles hanging on the wall.', '', 'Four green bottles hanging on the wall,', 'Four green bottles hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be three green bottles hanging on the wall.', '', 'Three green bottles hanging on the wall,', 'Three green bottles hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be two green bottles hanging on the wall.', '', 'Two green bottles hanging on the wall,', 'Two green bottles hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be one green bottle hanging on the wall.', '', 'One green bottle hanging on the wall,', 'One green bottle hanging on the wall,', 'And if one green bottle should accidentally fall,', 'There''ll be no green bottles hanging on the wall.']
+  AssertEqual g:expected, Recite(g:startBottles, g:takeDown)
