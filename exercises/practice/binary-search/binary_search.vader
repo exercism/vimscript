@@ -1,0 +1,71 @@
+
+Execute (finds a value in a list with one element):
+  let g:list = [6]
+  let g:value = 6
+  let g:expected = 0
+  AssertEqual g:expected, Find(g:list, g:value)
+
+Execute (finds a value in the middle of a list):
+  let g:list = [1, 3, 4, 6, 8, 9, 11]
+  let g:value = 6
+  let g:expected = 3
+  AssertEqual g:expected, Find(g:list, g:value)
+
+Execute (finds a value at the beginning of a list):
+  let g:list = [1, 3, 4, 6, 8, 9, 11]
+  let g:value = 1
+  let g:expected = 0
+  AssertEqual g:expected, Find(g:list, g:value)
+
+Execute (finds a value at the end of a list):
+  let g:list = [1, 3, 4, 6, 8, 9, 11]
+  let g:value = 11
+  let g:expected = 6
+  AssertEqual g:expected, Find(g:list, g:value)
+
+Execute (finds a value in a list of odd length):
+  let g:list = [1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634]
+  let g:value = 144
+  let g:expected = 9
+  AssertEqual g:expected, Find(g:list, g:value)
+
+Execute (finds a value in a list of even length):
+  let g:list = [1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]
+  let g:value = 21
+  let g:expected = 5
+  AssertEqual g:expected, Find(g:list, g:value)
+
+Execute (identifies that a value is not included in the list):
+  let g:list = [1, 3, 4, 6, 8, 9, 11]
+  let g:value = 7
+  let g:expected = "value not in list"
+  AssertThrows call Find(g:list, g:value)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (a value smaller than the list's smallest value is not found):
+  let g:list = [1, 3, 4, 6, 8, 9, 11]
+  let g:value = 0
+  let g:expected = "value not in list"
+  AssertThrows call Find(g:list, g:value)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (a value larger than the list's largest value is not found):
+  let g:list = [1, 3, 4, 6, 8, 9, 11]
+  let g:value = 13
+  let g:expected = "value not in list"
+  AssertThrows call Find(g:list, g:value)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (nothing is found in an empty list):
+  let g:list = []
+  let g:value = 1
+  let g:expected = "value not in list"
+  AssertThrows call Find(g:list, g:value)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (nothing is found when the left and right bounds cross):
+  let g:list = [1, 2]
+  let g:value = 0
+  let g:expected = "value not in list"
+  AssertThrows call Find(g:list, g:value)
+  AssertEqual g:expected, g:vader_exception
