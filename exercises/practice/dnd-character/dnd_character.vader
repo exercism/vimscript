@@ -85,11 +85,36 @@ Execute (random ability is within range):
 
 Execute (random character is valid):
   let g:char = Character()
-  let g:invalid_stats = keys(filter(g:char, 'g:char[v:key] < 3 || g:char[v:key] > 19'))
-  AssertEqual 0, len(g:invalid_stats)
+  let g:isValid = 1
 
-Execute (each ability is only calculated once):
-  let g:char = Character()
-  let g:strength1 = g:char["strength"]
-  let g:strength2 = g:char["strength"]
-  AssertEqual g:strength1, g:strength2
+  let g:abilities = ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma']
+  for g:ability in g:abilities
+    let g:score = g:char[g:ability]
+
+    let g:isValid = g:isValid && (g:score >= 3 && g:score <= 18)
+    if g:isValid == 0
+      break
+    endif
+  endfor
+  
+  let g:hitpoints = g:char['hitpoints']
+  let g:isValid = g:isValid && (g:hitpoints >= 6 && g:hitpoints <= 14)
+  AssertEqual 1,  isValid
+
+# track-specific test
+Execute (character is randomly generated):
+  let g:previous = Character()
+  let g:noChange = 0
+
+  for _ in range(1000)
+    let g:current = Character()
+    let g:noChange = g:current != g:previous
+
+    if g:noChange == 0
+      break
+    endif
+
+    let g:previous = g:current
+  endfor
+
+  AssertEqual 1, noChange
