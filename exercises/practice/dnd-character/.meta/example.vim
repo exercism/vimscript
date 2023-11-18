@@ -3,7 +3,7 @@ function! Modifier(score) abort
 endfunction
 
 function! Ability() abort
-    let l:rolls =  map(repeat([0], 4), '(rand(g:seed) % 6) + 1')
+    let l:rolls =  map(repeat([0], 4), '(rand() % 6) + 1')
     let l:kept = sort(l:rolls)[1:]
 
     let l:sum = 0
@@ -24,5 +24,3 @@ function! Character() abort
     \       'charisma': Ability(),
     \       'hitpoints': 10 + Modifier(l:constitution)}
 endfunction
-
-let g:seed = srand()
