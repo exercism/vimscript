@@ -159,6 +159,14 @@
         ]
       },
       {
+        "slug": "grains",
+        "name": "Grains",
+        "uuid": "99408193-d0ce-4c68-8cab-e680f3ed56a4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "isogram",
         "name": "Isogram",
         "uuid": "07984b95-7ba6-4cb7-86be-09520df5cf88",
