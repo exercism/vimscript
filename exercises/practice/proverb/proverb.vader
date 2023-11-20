@@ -1,0 +1,30 @@
+
+Execute (zero pieces):
+  let g:strings = []
+  let g:expected = []
+  AssertEqual g:expected, Recite(g:strings)
+
+Execute (one piece):
+  let g:strings = ['nail']
+  let g:expected = ['And all for the want of a nail.']
+  AssertEqual g:expected, Recite(g:strings)
+
+Execute (two pieces):
+  let g:strings = ['nail', 'shoe']
+  let g:expected = ['For want of a nail the shoe was lost.', 'And all for the want of a nail.']
+  AssertEqual g:expected, Recite(g:strings)
+
+Execute (three pieces):
+  let g:strings = ['nail', 'shoe', 'horse']
+  let g:expected = ['For want of a nail the shoe was lost.', 'For want of a shoe the horse was lost.', 'And all for the want of a nail.']
+  AssertEqual g:expected, Recite(g:strings)
+
+Execute (full proverb):
+  let g:strings = ['nail', 'shoe', 'horse', 'rider', 'message', 'battle', 'kingdom']
+  let g:expected = ['For want of a nail the shoe was lost.', 'For want of a shoe the horse was lost.', 'For want of a horse the rider was lost.', 'For want of a rider the message was lost.', 'For want of a message the battle was lost.', 'For want of a battle the kingdom was lost.', 'And all for the want of a nail.']
+  AssertEqual g:expected, Recite(g:strings)
+
+Execute (four pieces modernized):
+  let g:strings = ['pin', 'gun', 'soldier', 'battle']
+  let g:expected = ['For want of a pin the gun was lost.', 'For want of a gun the soldier was lost.', 'For want of a soldier the battle was lost.', 'And all for the want of a pin.']
+  AssertEqual g:expected, Recite(g:strings)
