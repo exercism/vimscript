@@ -1,4 +1,4 @@
-function! Recite(strings) abort
+function! Lines(strings) abort
   if len(a:strings) == 0
     return []
   endif
