@@ -91,14 +91,6 @@
         ]
       },
       {
-        "slug": "darts",
-        "name": "Darts",
-        "uuid": "1ae2f1bd-5f62-4692-857d-faaf5223cad7",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
         "slug": "bottle-song",
         "name": "Bottle Song",
         "uuid": "cf3fad85-c7d7-42db-b27f-069be5ed4c22",
@@ -110,6 +102,14 @@
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "4eed1dde-4e87-4cbf-834e-71da55128215",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "darts",
+        "name": "Darts",
+        "uuid": "1ae2f1bd-5f62-4692-857d-faaf5223cad7",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
@@ -164,6 +164,14 @@
         "difficulty": 2
       },
       {
+        "slug": "grains",
+        "name": "Grains",
+        "uuid": "99408193-d0ce-4c68-8cab-e680f3ed56a4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "hello-world",
         "name": "Hello World",
         "uuid": "a0d099f9-eda7-42d4-a4f6-284ae3178df1",
@@ -173,14 +181,6 @@
         "topics": [
           "strings"
         ]
-      },
-      {
-        "slug": "grains",
-        "name": "Grains",
-        "uuid": "99408193-d0ce-4c68-8cab-e680f3ed56a4",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
       },
       {
         "slug": "high-scores",
