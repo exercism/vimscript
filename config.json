@@ -291,6 +291,14 @@
         "difficulty": 1
       },
       {
+        "slug": "robot-simulator",
+        "name": "Robot Simulator",
+        "uuid": "ae38c201-f3c9-45d0-91ab-037b6aa03298",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "c24cf39c-d9f2-437d-8962-514f9ec095fe",

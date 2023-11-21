@@ -1,0 +1,201 @@
+Before (helper to compare robot simulators):
+  function! PositionAndDirectionSame(a, b) abort
+    return a:a.x ==# a:b.x &&
+    \      a:a.y ==# a:a.y &&
+    \      a:a.direction ==# a:b.direction
+  endfunction
+
+
+Execute (at origin facing north):
+  let g:direction = "north"
+  let g:x = 0
+  let g:y = 0
+
+  let g:robotSimulator = Create(g:direction, g:x, g:y)
+  let g:expected = {'direction': 'north', 'x': 0, 'y': 0}
+  Assert PositionAndDirectionSame(g:expected, g:robotSimulator)
+
+Execute (at negative position facing south):
+  let g:direction = "south"
+  let g:x = -1
+  let g:y = -1
+
+  let g:robotSimulator = Create(g:direction, g:x, g:y)
+  let g:expected = {'direction': 'south', 'x': -1, 'y': -1}
+  Assert PositionAndDirectionSame(g:expected, g:robotSimulator)
+
+Execute (changes north to east):
+  let g:direction = "north"
+  let g:x = 0
+  let g:y = 0
+  let g:instructions = "R"
+
+  let g:robotSimulator = Create(g:direction, g:x, g:y)
+  call robotSimulator.Move(g:instructions)  
+  let g:expected = {'direction': 'east', 'x': 0, 'y': 0}
+  Assert PositionAndDirectionSame(g:expected, g:robotSimulator)
+
+Execute (changes east to south):
+  let g:direction = "east"
+  let g:x = 0
+  let g:y = 0
+  let g:instructions = "R"
+
+  let g:robotSimulator = Create(g:direction, g:x, g:y)
+  call robotSimulator.Move(g:instructions)
+  let g:expected = {'direction': 'south', 'x': 0, 'y': 0}
+  Assert PositionAndDirectionSame(g:expected, g:robotSimulator)
+
+Execute (changes south to west):
+  let g:direction = "south"
+  let g:x = 0
+  let g:y = 0
+  let g:instructions = "R"
+
+  let g:robotSimulator = Create(g:direction, g:x, g:y)
+  call robotSimulator.Move(g:instructions)
+  let g:expected = {'direction': 'west', 'x': 0, 'y': 0}
+  Assert PositionAndDirectionSame(g:expected, g:robotSimulator)
+
+Execute (changes west to north):
+  let g:direction = "west"
+  let g:x = 0
+  let g:y = 0
+  let g:instructions = "R"
+
+  let g:robotSimulator = Create(g:direction, g:x, g:y)
+  call robotSimulator.Move(g:instructions)  
+  let g:expected = {'direction': 'north', 'x': 0, 'y': 0}
+  Assert PositionAndDirectionSame(g:expected, g:robotSimulator)
+
+Execute (changes north to west):
+  let g:direction = "north"
+  let g:x = 0
+  let g:y = 0
+  let g:instructions = "L"
+
+  let g:robotSimulator = Create(g:direction, g:x, g:y)
+  call robotSimulator.Move(g:instructions)  
+  let g:expected = {'direction': 'west', 'x': 0, 'y': 0}
+  Assert PositionAndDirectionSame(g:expected, g:robotSimulator)
+
+Execute (changes west to south):
+  let g:direction = "west"
+  let g:x = 0
+  let g:y = 0
+  let g:instructions = "L"
+
+  let g:robotSimulator = Create(g:direction, g:x, g:y)
+  call robotSimulator.Move(g:instructions)  
+  let g:expected = {'direction': 'south', 'x': 0, 'y': 0}
+  Assert PositionAndDirectionSame(g:expected, g:robotSimulator)
+
+Execute (changes south to east):
+  let g:direction = "south"
+  let g:x = 0
+  let g:y = 0
+  let g:instructions = "L"
+
+  let g:robotSimulator = Create(g:direction, g:x, g:y)
+  call robotSimulator.Move(g:instructions)  
+  let g:expected = {'direction': 'east', 'x': 0, 'y': 0}
+  Assert PositionAndDirectionSame(g:expected, g:robotSimulator)
+
+Execute (changes east to north):
+  let g:direction = "east"
+  let g:x = 0
+  let g:y = 0
+  let g:instructions = "L"
+
+  let g:robotSimulator = Create(g:direction, g:x, g:y)
+  call robotSimulator.Move(g:instructions)
+  let g:expected = {'direction': 'north', 'x': 0, 'y': 0}
+  Assert PositionAndDirectionSame(g:expected, g:robotSimulator)
+
+Execute (facing north increments Y):
+  let g:direction = "north"
+  let g:x = 0
+  let g:y = 0
+  let g:instructions = "A"
+
+  let g:robotSimulator = Create(g:direction, g:x, g:y)
+  call robotSimulator.Move(g:instructions)
+  let g:expected = {'direction': 'north', 'x': 0, 'y': 1}
+  Assert PositionAndDirectionSame(g:expected, g:robotSimulator)
+
+Execute (facing south decrements Y):
+  let g:direction = "south"
+  let g:x = 0
+  let g:y = 0
+  let g:instructions = "A"
+
+  let g:robotSimulator = Create(g:direction, g:x, g:y)
+  call robotSimulator.Move(g:instructions)  
+  let g:expected = {'direction': 'south', 'x': 0, 'y': -1}
+  Assert PositionAndDirectionSame(g:expected, g:robotSimulator)
+
+Execute (facing east increments X):
+  let g:direction = "east"
+  let g:x = 0
+  let g:y = 0
+  let g:instructions = "A"
+
+  let g:robotSimulator = Create(g:direction, g:x, g:y)
+  call robotSimulator.Move(g:instructions)  
+  let g:expected = {'direction': 'east', 'x': 1, 'y': 0}
+  Assert PositionAndDirectionSame(g:expected, g:robotSimulator)
+
+Execute (facing west decrements X):
+  let g:direction = "west"
+  let g:x = 0
+  let g:y = 0
+  let g:instructions = "A"
+
+  let g:robotSimulator = Create(g:direction, g:x, g:y)
+  call robotSimulator.Move(g:instructions)  
+  let g:expected = {'direction': 'west', 'x': -1, 'y': 0}
+  Assert PositionAndDirectionSame(g:expected, g:robotSimulator)
+
+Execute (moving east and north from README):
+  let g:direction = "north"
+  let g:x = 7
+  let g:y = 3
+  let g:instructions = "RAALAL"
+
+  let g:robotSimulator = Create(g:direction, g:x, g:y)
+  call robotSimulator.Move(g:instructions)  
+  let g:expected = {'direction': 'west', 'x': 9, 'y': 4}
+  Assert PositionAndDirectionSame(g:expected, g:robotSimulator)
+
+Execute (moving west and north):
+  let g:direction = "north"
+  let g:x = 0
+  let g:y = 0
+  let g:instructions = "LAAARALA"
+
+  let g:robotSimulator = Create(g:direction, g:x, g:y)
+  call robotSimulator.Move(g:instructions)
+  let g:expected = {'direction': 'west', 'x': -4, 'y': 1}
+  Assert PositionAndDirectionSame(g:expected, g:robotSimulator)
+
+Execute (moving west and south):
+  let g:direction = "east"
+  let g:x = 2
+  let g:y = -7
+  let g:instructions = "RRAAAAALA"
+
+  let g:robotSimulator = Create(g:direction, g:x, g:y)
+  call robotSimulator.Move(g:instructions)  
+  let g:expected = {'direction': 'south', 'x': -3, 'y': -8}
+  Assert PositionAndDirectionSame(g:expected, g:robotSimulator)
+
+Execute (moving east and north):
+  let g:direction = "south"
+  let g:x = 8
+  let g:y = 4
+  let g:instructions = "LAAARRRALLLL"
+
+  let g:robotSimulator = Create(g:direction, g:x, g:y)
+  call robotSimulator.Move(g:instructions)
+  let g:expected = {'direction': 'north', 'x': 11, 'y': 5}
+  Assert PositionAndDirectionSame(g:expected, g:robotSimulator)
