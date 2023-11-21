@@ -180,7 +180,9 @@
         "uuid": "99408193-d0ce-4c68-8cab-e680f3ed56a4",
         "practices": [],
         "prerequisites": [],
+        "difficulty": 2
       },
+      {
         "slug": "high-scores",
         "name": "High Scores",
         "uuid": "a0013679-117c-4ee4-852d-9b287adf7075",
