@@ -167,6 +167,14 @@
         ]
       },
       {
+        "slug": "high-scores",
+        "name": "High Scores",
+        "uuid": "a0013679-117c-4ee4-852d-9b287adf7075",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "isogram",
         "name": "Isogram",
         "uuid": "07984b95-7ba6-4cb7-86be-09520df5cf88",
