@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "high_scores.vim"
+    ],
+    "test": [
+      "high_scores.vader"
+    ],
+    "example": [
+      ".meta/example.vim"
+    ]
+  },
+  "blurb": "Manage a player's High Score list.",
+  "source": "Tribute to the eighties' arcade game Frogger"
+}

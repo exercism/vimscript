@@ -1,0 +1,84 @@
+
+Execute (keep on empty list returns empty list):
+  let g:list = []
+  let g:Predicate = {_ -> 1}
+  let g:expected = []
+  AssertEqual g:expected, Keep(g:list, g:Predicate)
+
+Execute (keeps everything):
+  let g:list = [1, 3, 5]
+  let g:Predicate = {_ -> 1}
+  let g:expected = [1, 3, 5]
+  AssertEqual g:expected, Keep(g:list, g:Predicate)
+
+Execute (keeps nothing):
+  let g:list = [1, 3, 5]
+  let g:Predicate = {_ -> 0}
+  let g:expected = []
+  AssertEqual g:expected, Keep(g:list, g:Predicate)
+
+Execute (keeps first and last):
+  let g:list = [1, 2, 3]
+  let g:Predicate = {x -> x % 2 == 1}
+  let g:expected = [1, 3]
+  AssertEqual g:expected, Keep(g:list, g:Predicate)
+
+Execute (keeps neither first nor last):
+  let g:list = [1, 2, 3]
+  let g:Predicate = {x -> x % 2 == 0}
+  let g:expected = [2]
+  AssertEqual g:expected, Keep(g:list, g:Predicate)
+
+Execute (keeps strings):
+  let g:list = ['apple', 'zebra', 'banana', 'zombies', 'cherimoya', 'zealot']
+  let g:Predicate = {x -> x[0] == 'z'}
+  let g:expected = ['zebra', 'zombies', 'zealot']
+  AssertEqual g:expected, Keep(g:list, g:Predicate)
+
+Execute (keeps lists):
+  let g:list = [[1, 2, 3], [5, 5, 5], [5, 1, 2], [2, 1, 2], [1, 5, 2], [2, 2, 1], [1, 2, 5]]
+  let g:Predicate = {x -> index(x, 5) != -1}
+  let g:expected = [[5, 5, 5], [5, 1, 2], [1, 5, 2], [1, 2, 5]]
+  AssertEqual g:expected, Keep(g:list, g:Predicate)
+
+Execute (discard on empty list returns empty list):
+  let g:list = []
+  let g:Predicate = {_ -> 1}
+  let g:expected = []
+  AssertEqual g:expected, Discard(g:list, g:Predicate)
+
+Execute (discards everything):
+  let g:list = [1, 3, 5]
+  let g:Predicate = {_ -> 1}
+  let g:expected = []
+  AssertEqual g:expected, Discard(g:list, g:Predicate)
+
+Execute (discards nothing):
+  let g:list = [1, 3, 5]
+  let g:Predicate = {_ -> 0}
+  let g:expected = [1, 3, 5]
+  AssertEqual g:expected, Discard(g:list, g:Predicate)
+
+Execute (discards first and last):
+  let g:list = [1, 2, 3]
+  let g:Predicate = {x -> x % 2 == 1}
+  let g:expected = [2]
+  AssertEqual g:expected, Discard(g:list, g:Predicate)
+
+Execute (discards neither first nor last):
+  let g:list = [1, 2, 3]
+  let g:Predicate = {x -> x % 2 == 0}
+  let g:expected = [1, 3]
+  AssertEqual g:expected, Discard(g:list, g:Predicate)
+
+Execute (discards strings):
+  let g:list = ['apple', 'zebra', 'banana', 'zombies', 'cherimoya', 'zealot']
+  let g:Predicate = {x -> x[0] == 'z'}
+  let g:expected = ['apple', 'banana', 'cherimoya']
+  AssertEqual g:expected, Discard(g:list, g:Predicate)
+
+Execute (discards lists):
+  let g:list = [[1, 2, 3], [5, 5, 5], [5, 1, 2], [2, 1, 2], [1, 5, 2], [2, 2, 1], [1, 2, 5]]
+  let g:Predicate = {x -> index(x, 5) != -1}
+  let g:expected = [[1, 2, 3], [2, 1, 2], [2, 2, 1]]
+  AssertEqual g:expected, Discard(g:list, g:Predicate)
