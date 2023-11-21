@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 "
 " Returns a string of five characters or less.
 " Unicode characters are supported.
