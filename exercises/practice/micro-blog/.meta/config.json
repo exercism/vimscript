@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "micro_blog.vim"
+    ],
+    "test": [
+      "micro_blog.vader"
+    ],
+    "example": [
+      ".meta/example.vim"
+    ]
+  },
+  "blurb": "Given an input string, truncate it to 5 characters."
+}
