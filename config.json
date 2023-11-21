@@ -316,6 +316,14 @@
         ]
       },
       {
+        "slug": "secret-handshake",
+        "name": "Secret Handshake",
+        "uuid": "776679f8-9821-4124-8760-ebe9f2df090d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "space-age",
         "name": "Space Age",
         "uuid": "b672d6aa-0b3c-4aa9-8959-dd6f65049508",
