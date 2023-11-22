@@ -463,6 +463,14 @@
         ]
       },
       {
+        "slug": "custom-set",
+        "name": "Custom Set",
+        "uuid": "42fcddbb-2acd-44dd-8aae-7c3f6daab41d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "9cda4dfe-bdce-4a0b-9be2-ebafabd57271",
