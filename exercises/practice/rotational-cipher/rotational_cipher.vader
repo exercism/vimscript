@@ -1,0 +1,60 @@
+
+Execute (rotate a by 0, same output as input):
+  let g:shiftKey = 0
+  let g:text = "a"
+  let g:expected = "a"
+  AssertEqual g:expected, Rotate(g:shiftKey, g:text)
+
+Execute (rotate a by 1):
+  let g:shiftKey = 1
+  let g:text = "a"
+  let g:expected = "b"
+  AssertEqual g:expected, Rotate(g:shiftKey, g:text)
+
+Execute (rotate a by 26, same output as input):
+  let g:shiftKey = 26
+  let g:text = "a"
+  let g:expected = "a"
+  AssertEqual g:expected, Rotate(g:shiftKey, g:text)
+
+Execute (rotate m by 13):
+  let g:shiftKey = 13
+  let g:text = "m"
+  let g:expected = "z"
+  AssertEqual g:expected, Rotate(g:shiftKey, g:text)
+
+Execute (rotate n by 13 with wrap around alphabet):
+  let g:shiftKey = 13
+  let g:text = "n"
+  let g:expected = "a"
+  AssertEqual g:expected, Rotate(g:shiftKey, g:text)
+
+Execute (rotate capital letters):
+  let g:shiftKey = 5
+  let g:text = "OMG"
+  let g:expected = "TRL"
+  AssertEqual g:expected, Rotate(g:shiftKey, g:text)
+
+Execute (rotate spaces):
+  let g:shiftKey = 5
+  let g:text = "O M G"
+  let g:expected = "T R L"
+  AssertEqual g:expected, Rotate(g:shiftKey, g:text)
+
+Execute (rotate numbers):
+  let g:shiftKey = 4
+  let g:text = "Testing 1 2 3 testing"
+  let g:expected = "Xiwxmrk 1 2 3 xiwxmrk"
+  AssertEqual g:expected, Rotate(g:shiftKey, g:text)
+
+Execute (rotate punctuation):
+  let g:shiftKey = 21
+  let g:text = "Let's eat, Grandma!"
+  let g:expected = "Gzo'n zvo, Bmviyhv!"
+  AssertEqual g:expected, Rotate(g:shiftKey, g:text)
+
+Execute (rotate all letters):
+  let g:shiftKey = 13
+  let g:text = "The quick brown fox jumps over the lazy dog."
+  let g:expected = "Gur dhvpx oebja sbk whzcf bire gur ynml qbt."
+  AssertEqual g:expected, Rotate(g:shiftKey, g:text)
