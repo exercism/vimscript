@@ -1,4 +1,4 @@
-function! Set(values = []) abort
+function! Set(values) abort
   let l:data = {}
   for l:value in a:values
     let l:data[l:value] = 1
@@ -38,7 +38,7 @@ function! CustomSetIsSubset(other) abort dict
 endfunction
 
 function! CustomSetIntersection(other) abort dict
-  let l:intersect = Set()
+  let l:intersect = Set([])
   for l:value in keys(self.values) + keys(a:other.values)
     if self.Contains(l:value) && a:other.Contains(l:value)
       call l:intersect.Add(l:value)
@@ -49,7 +49,7 @@ function! CustomSetIntersection(other) abort dict
 endfunction
 
 function! CustomSetDifference(other) abort dict
-  let l:difference = Set()
+  let l:difference = Set([])
 
   for l:value in keys(self.values)
     if !a:other.Contains(l:value)
@@ -61,7 +61,7 @@ function! CustomSetDifference(other) abort dict
 endfunction
 
 function! CustomSetUnion(other) abort dict
-  let l:union = Set()
+  let l:union = Set([])
   for l:value in keys(self.values) + keys(a:other.values)
     call l:union.Add(l:value)
   endfor
