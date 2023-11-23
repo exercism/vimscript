@@ -1,0 +1,71 @@
+
+Execute (slices of one from one):
+  let g:series = "1"
+  let g:sliceLength = 1
+  let g:expected = ['1']
+  AssertEqual g:expected, Slices(g:series, g:sliceLength)
+
+Execute (slices of one from two):
+  let g:series = "12"
+  let g:sliceLength = 1
+  let g:expected = ['1', '2']
+  AssertEqual g:expected, Slices(g:series, g:sliceLength)
+
+Execute (slices of two):
+  let g:series = "35"
+  let g:sliceLength = 2
+  let g:expected = ['35']
+  AssertEqual g:expected, Slices(g:series, g:sliceLength)
+
+Execute (slices of two overlap):
+  let g:series = "9142"
+  let g:sliceLength = 2
+  let g:expected = ['91', '14', '42']
+  AssertEqual g:expected, Slices(g:series, g:sliceLength)
+
+Execute (slices can include duplicates):
+  let g:series = "777777"
+  let g:sliceLength = 3
+  let g:expected = ['777', '777', '777', '777']
+  AssertEqual g:expected, Slices(g:series, g:sliceLength)
+
+Execute (slices of a long series):
+  let g:series = "918493904243"
+  let g:sliceLength = 5
+  let g:expected = ['91849', '18493', '84939', '49390', '93904', '39042', '90424', '04243']
+  AssertEqual g:expected, Slices(g:series, g:sliceLength)
+
+Execute (slice length is too large):
+  let g:series = "12345"
+  let g:sliceLength = 6
+  let g:expected = "slice length cannot be greater than series length"
+  AssertThrows call Slices(g:series, g:sliceLength)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (slice length is way too large):
+  let g:series = "12345"
+  let g:sliceLength = 42
+  let g:expected = "slice length cannot be greater than series length"
+  AssertThrows call Slices(g:series, g:sliceLength)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (slice length cannot be zero):
+  let g:series = "12345"
+  let g:sliceLength = 0
+  let g:expected = "slice length cannot be zero"
+  AssertThrows call Slices(g:series, g:sliceLength)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (slice length cannot be negative):
+  let g:series = "123"
+  let g:sliceLength = -1
+  let g:expected = "slice length cannot be negative"
+  AssertThrows call Slices(g:series, g:sliceLength)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (empty series is invalid):
+  let g:series = ""
+  let g:sliceLength = 1
+  let g:expected = "series cannot be empty"
+  AssertThrows call Slices(g:series, g:sliceLength)
+  AssertEqual g:expected, g:vader_exception
