@@ -1,0 +1,88 @@
+
+Execute (single digit strings can not be valid):
+  let g:value = "1"
+  Assert !IsValid(g:value)
+
+Execute (a single zero is invalid):
+  let g:value = "0"
+  Assert !IsValid(g:value)
+
+Execute (a simple valid SIN that remains valid if reversed):
+  let g:value = "059"
+  Assert IsValid(g:value)
+
+Execute (a simple valid SIN that becomes invalid if reversed):
+  let g:value = "59"
+  Assert IsValid(g:value)
+
+Execute (a valid Canadian SIN):
+  let g:value = "055 444 285"
+  Assert IsValid(g:value)
+
+Execute (invalid Canadian SIN):
+  let g:value = "055 444 286"
+  Assert !IsValid(g:value)
+
+Execute (invalid credit card):
+  let g:value = "8273 1232 7352 0569"
+  Assert !IsValid(g:value)
+
+Execute (invalid long number with an even remainder):
+  let g:value = "1 2345 6789 1234 5678 9012"
+  Assert !IsValid(g:value)
+
+Execute (invalid long number with a remainder divisible by 5):
+  let g:value = "1 2345 6789 1234 5678 9013"
+  Assert !IsValid(g:value)
+
+Execute (valid number with an even number of digits):
+  let g:value = "095 245 88"
+  Assert IsValid(g:value)
+
+Execute (valid number with an odd number of spaces):
+  let g:value = "234 567 891 234"
+  Assert IsValid(g:value)
+
+Execute (valid strings with a non-digit added at the end become invalid):
+  let g:value = "059a"
+  Assert !IsValid(g:value)
+
+Execute (valid strings with punctuation included become invalid):
+  let g:value = "055-444-285"
+  Assert !IsValid(g:value)
+
+Execute (valid strings with symbols included become invalid):
+  let g:value = "055# 444$ 285"
+  Assert !IsValid(g:value)
+
+Execute (single zero with space is invalid):
+  let g:value = " 0"
+  Assert !IsValid(g:value)
+
+Execute (more than a single zero is valid):
+  let g:value = "0000 0"
+  Assert IsValid(g:value)
+
+Execute (input digit 9 is correctly converted to output digit 9):
+  let g:value = "091"
+  Assert IsValid(g:value)
+
+Execute (very long input is valid):
+  let g:value = "9999999999 9999999999 9999999999 9999999999"
+  Assert IsValid(g:value)
+
+Execute (valid luhn with an odd number of digits and non zero first digit):
+  let g:value = "109"
+  Assert IsValid(g:value)
+
+Execute (using ascii value for non-doubled non-digit isn't allowed):
+  let g:value = "055b 444 285"
+  Assert !IsValid(g:value)
+
+Execute (using ascii value for doubled non-digit isn't allowed):
+  let g:value = ":9"
+  Assert !IsValid(g:value)
+
+Execute (non-numeric, non-space char in the middle with a sum that's divisible by 10 isn't allowed):
+  let g:value = "59%59"
+  Assert !IsValid(g:value)

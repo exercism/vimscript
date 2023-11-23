@@ -227,6 +227,14 @@
         ]
       },
       {
+        "slug": "luhn",
+        "name": "Luhn",
+        "uuid": "e2020329-442d-45da-ac89-ff15eade794e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "micro-blog",
         "name": "Micro Blog",
         "uuid": "726b5266-8fb7-4b15-b25c-868053b0b0f5",
