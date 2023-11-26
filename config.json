@@ -330,13 +330,6 @@
         "prerequisites": [],
         "difficulty": 2
       },
-        "slug": "run-length-encoding",
-        "name": "Run-Length Encoding",
-        "uuid": "1024a826-2f71-4833-9e96-59e0b0156f26",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3
-      },
       {
         "slug": "rna-transcription",
         "name": "RNA Transcription",
@@ -344,6 +337,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
+      },
+      {
+        "slug": "run-length-encoding",
+        "name": "Run-Length Encoding",
+        "uuid": "1024a826-2f71-4833-9e96-59e0b0156f26",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
       },
       {
         "slug": "robot-simulator",

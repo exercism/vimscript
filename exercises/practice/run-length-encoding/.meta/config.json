@@ -2,6 +2,9 @@
   "authors": [
     "KOTP"
   ],
+  "contributors": [
+    "BNAndras"
+  ],
   "files": {
     "solution": [
       "run_length_encoding.vim"
