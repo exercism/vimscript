@@ -40,3 +40,4 @@ function! Encode(string) abort
 
   return l:result
 endfunction
+
