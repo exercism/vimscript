@@ -28,6 +28,6 @@ function! Decode(string) abort
   " your code goes here
 endfunction
 
-function! RunLengthEncoding(name) abort
+function! Encode(string) abort
   " your code goes here
 endfunction
