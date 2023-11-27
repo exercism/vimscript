@@ -1,0 +1,130 @@
+
+Execute (append entries to a list and return the new list -> empty lists):
+  let g:list1 = []
+  let g:list2 = []
+  let g:expected = []
+  AssertEqual g:expected, Append(g:list1, g:list2)
+
+Execute (append entries to a list and return the new list -> list to empty list):
+  let g:list1 = []
+  let g:list2 = [1, 2, 3, 4]
+  let g:expected = [1, 2, 3, 4]
+  AssertEqual g:expected, Append(g:list1, g:list2)
+
+Execute (append entries to a list and return the new list -> empty list to list):
+  let g:list1 = [1, 2, 3, 4]
+  let g:list2 = []
+  let g:expected = [1, 2, 3, 4]
+  AssertEqual g:expected, Append(g:list1, g:list2)
+
+Execute (append entries to a list and return the new list -> non-empty lists):
+  let g:list1 = [1, 2]
+  let g:list2 = [2, 3, 4, 5]
+  let g:expected = [1, 2, 2, 3, 4, 5]
+  AssertEqual g:expected, Append(g:list1, g:list2)
+
+Execute (concatenate a list of lists -> empty list):
+  let g:lists = []
+  let g:expected = []
+  AssertEqual g:expected, Concat(g:lists)
+
+Execute (concatenate a list of lists -> list of lists):
+  let g:lists = [[1, 2], [3], [], [4, 5, 6]]
+  let g:expected = [1, 2, 3, 4, 5, 6]
+  AssertEqual g:expected, Concat(g:lists)
+
+Execute (concatenate a list of lists -> list of nested lists):
+  let g:lists = [[[1], [2]], [[3]], [[]], [[4, 5, 6]]]
+  let g:expected = [[1], [2], [3], [], [4, 5, 6]]
+  AssertEqual g:expected, Concat(g:lists)
+
+Execute (filter list returning only values that satisfy the filter function -> empty list):
+  let g:Function = {x -> x % 2 == 1}
+  let g:list = []
+  let g:expected = []
+  AssertEqual g:expected, Filter(g:list, g:Function)
+
+Execute (filter list returning only values that satisfy the filter function -> non-empty list):
+  let g:Function = {x -> x % 2 == 1}
+  let g:list = [1, 2, 3, 5]
+  let g:expected = [1, 3, 5]
+  AssertEqual g:expected, Filter(g:list, g:Function)
+
+Execute (returns the length of a list -> empty list):
+  let g:list = []
+  let g:expected = 0
+  AssertEqual g:expected, Length(g:list)
+
+Execute (returns the length of a list -> non-empty list):
+  let g:list = [1, 2, 3, 4]
+  let g:expected = 4
+  AssertEqual g:expected, Length(g:list)
+
+Execute (return a list of elements whose values equal the list value transformed by the mapping function -> empty list):
+  let g:Function = {x -> x + 1}
+  let g:list = []
+  let g:expected = []
+  AssertEqual g:expected, Map(g:list, g:Function)
+
+Execute (return a list of elements whose values equal the list value transformed by the mapping function -> non-empty list):
+  let g:Function = {x -> x + 1}
+  let g:list = [1, 3, 5, 7]
+  let g:expected = [2, 4, 6, 8]
+  AssertEqual g:expected, Map(g:list, g:Function)
+
+Execute (folds (reduces) the given list from the left with a function -> empty list):
+  let g:Function = {acc, el -> el * acc}
+  let g:initial = 2
+  let g:list = []
+  let g:expected = 2
+  AssertEqual g:expected, Foldl(g:list, g:Function, g:initial)
+
+Execute (folds (reduces) the given list from the left with a function -> direction independent function applied to non-empty list):
+  let g:Function = {acc, el -> el + acc}
+  let g:initial = 5
+  let g:list = [1, 2, 3, 4]
+  let g:expected = 15
+  AssertEqual g:expected, Foldl(g:list, g:Function, g:initial)
+
+Execute (folds (reduces) the given list from the left with a function -> direction dependent function applied to non-empty list):
+  let g:Function = {acc, el -> acc / el}
+  let g:initial = 5
+  let g:list = [2, 5]
+  let g:expected = 0
+  AssertEqual g:expected, Foldl(g:list, g:Function, g:initial)
+
+Execute (folds (reduces) the given list from the right with a function -> empty list):
+  let g:Function = {acc, el -> el * acc}
+  let g:initial = 2
+  let g:list = []
+  let g:expected = 2
+  AssertEqual g:expected, Foldr(g:list, g:Function, g:initial)
+
+Execute (folds (reduces) the given list from the right with a function -> direction independent function applied to non-empty list):
+  let g:Function = {acc, el -> el + acc}
+  let g:initial = 5
+  let g:list = [1, 2, 3, 4]
+  let g:expected = 15
+  AssertEqual g:expected, Foldr(g:list, g:Function, g:initial)
+
+Execute (folds (reduces) the given list from the right with a function -> direction dependent function applied to non-empty list):
+  let g:Function = {acc, el -> acc / el}
+  let g:initial = 5
+  let g:list = [2, 5]
+  let g:expected = 2
+  AssertEqual g:expected, Foldr(g:list, g:Function, g:initial)
+
+Execute (reverse the elements of the list -> empty list):
+  let g:list = []
+  let g:expected = []
+  AssertEqual g:expected, Reverse(g:list)
+
+Execute (reverse the elements of the list -> non-empty list):
+  let g:list = [1, 3, 5, 7]
+  let g:expected = [7, 5, 3, 1]
+  AssertEqual g:expected, Reverse(g:list)
+
+Execute (reverse the elements of the list -> list of lists is not flattened):
+  let g:list = [[1, 2], [3], [], [4, 5, 6]]
+  let g:expected = [[4, 5, 6], [], [3], [1, 2]]
+  AssertEqual g:expected, Reverse(g:list)

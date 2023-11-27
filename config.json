@@ -235,6 +235,14 @@
         "difficulty": 2
       },
       {
+        "slug": "list-ops",
+        "name": "List Ops",
+        "uuid": "0f106d85-0e09-48e2-a5cc-894a24c7876b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "micro-blog",
         "name": "Micro Blog",
         "uuid": "726b5266-8fb7-4b15-b25c-868053b0b0f5",
