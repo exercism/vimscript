@@ -24,7 +24,7 @@
 "" numbers contained within data to be decoded will always represent the count
 "" for the character that follows it.
 ""
-function! RunLengthDecoding(name) abort
+function! Decode(string) abort
   " your code goes here
 endfunction
 
