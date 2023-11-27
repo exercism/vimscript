@@ -31,3 +31,4 @@ endfunction
 function! Encode(string) abort
   " your code goes here
 endfunction
+
