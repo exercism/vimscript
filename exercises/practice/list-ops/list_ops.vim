@@ -26,6 +26,6 @@ function! Foldr(f, initial, list) abort
   " your code goes here
 endfunction
 
-function! Reverse(list) abort
+function! ReversalOf(list) abort
   " your code goes here
 endfunction

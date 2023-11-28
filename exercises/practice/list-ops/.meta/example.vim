@@ -66,7 +66,7 @@ function! Foldr(list, F, initial) abort
   return l:result
 endfunction
 
-function! Reverse(list) abort
+function! ReversalOf(list) abort
   let l:results = []
   for l:i in range(len(a:list) - 1, 0, -1)
     call add(l:results, a:list[l:i])
