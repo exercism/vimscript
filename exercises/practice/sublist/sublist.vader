@@ -1,0 +1,108 @@
+
+Execute (empty lists):
+  let g:listOne = []
+  let g:listTwo = []
+  let g:expected = "equal"
+  AssertEqual g:expected, Sublist(g:listOne, g:listTwo)
+
+Execute (empty list within non empty list):
+  let g:listOne = []
+  let g:listTwo = [1, 2, 3]
+  let g:expected = "sublist"
+  AssertEqual g:expected, Sublist(g:listOne, g:listTwo)
+
+Execute (non empty list contains empty list):
+  let g:listOne = [1, 2, 3]
+  let g:listTwo = []
+  let g:expected = "superlist"
+  AssertEqual g:expected, Sublist(g:listOne, g:listTwo)
+
+Execute (list equals itself):
+  let g:listOne = [1, 2, 3]
+  let g:listTwo = [1, 2, 3]
+  let g:expected = "equal"
+  AssertEqual g:expected, Sublist(g:listOne, g:listTwo)
+
+Execute (different lists):
+  let g:listOne = [1, 2, 3]
+  let g:listTwo = [2, 3, 4]
+  let g:expected = "unequal"
+  AssertEqual g:expected, Sublist(g:listOne, g:listTwo)
+
+Execute (false start):
+  let g:listOne = [1, 2, 5]
+  let g:listTwo = [0, 1, 2, 3, 1, 2, 5, 6]
+  let g:expected = "sublist"
+  AssertEqual g:expected, Sublist(g:listOne, g:listTwo)
+
+Execute (consecutive):
+  let g:listOne = [1, 1, 2]
+  let g:listTwo = [0, 1, 1, 1, 2, 1, 2]
+  let g:expected = "sublist"
+  AssertEqual g:expected, Sublist(g:listOne, g:listTwo)
+
+Execute (sublist at start):
+  let g:listOne = [0, 1, 2]
+  let g:listTwo = [0, 1, 2, 3, 4, 5]
+  let g:expected = "sublist"
+  AssertEqual g:expected, Sublist(g:listOne, g:listTwo)
+
+Execute (sublist in middle):
+  let g:listOne = [2, 3, 4]
+  let g:listTwo = [0, 1, 2, 3, 4, 5]
+  let g:expected = "sublist"
+  AssertEqual g:expected, Sublist(g:listOne, g:listTwo)
+
+Execute (sublist at end):
+  let g:listOne = [3, 4, 5]
+  let g:listTwo = [0, 1, 2, 3, 4, 5]
+  let g:expected = "sublist"
+  AssertEqual g:expected, Sublist(g:listOne, g:listTwo)
+
+Execute (at start of superlist):
+  let g:listOne = [0, 1, 2, 3, 4, 5]
+  let g:listTwo = [0, 1, 2]
+  let g:expected = "superlist"
+  AssertEqual g:expected, Sublist(g:listOne, g:listTwo)
+
+Execute (in middle of superlist):
+  let g:listOne = [0, 1, 2, 3, 4, 5]
+  let g:listTwo = [2, 3]
+  let g:expected = "superlist"
+  AssertEqual g:expected, Sublist(g:listOne, g:listTwo)
+
+Execute (at end of superlist):
+  let g:listOne = [0, 1, 2, 3, 4, 5]
+  let g:listTwo = [3, 4, 5]
+  let g:expected = "superlist"
+  AssertEqual g:expected, Sublist(g:listOne, g:listTwo)
+
+Execute (first list missing element from second list):
+  let g:listOne = [1, 3]
+  let g:listTwo = [1, 2, 3]
+  let g:expected = "unequal"
+  AssertEqual g:expected, Sublist(g:listOne, g:listTwo)
+
+Execute (second list missing element from first list):
+  let g:listOne = [1, 2, 3]
+  let g:listTwo = [1, 3]
+  let g:expected = "unequal"
+  AssertEqual g:expected, Sublist(g:listOne, g:listTwo)
+
+Execute (first list missing additional digits from second list):
+  let g:listOne = [1, 2]
+  let g:listTwo = [1, 22]
+  let g:expected = "unequal"
+  AssertEqual g:expected, Sublist(g:listOne, g:listTwo)
+
+Execute (order matters to a list):
+  let g:listOne = [1, 2, 3]
+  let g:listTwo = [3, 2, 1]
+  let g:expected = "unequal"
+  AssertEqual g:expected, Sublist(g:listOne, g:listTwo)
+
+Execute (same digits but different numbers):
+  let g:listOne = [1, 0, 1]
+  let g:listTwo = [10, 1]
+  let g:expected = "unequal"
+  AssertEqual g:expected, Sublist(g:listOne, g:listTwo)
