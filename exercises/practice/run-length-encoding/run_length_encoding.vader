@@ -1,0 +1,64 @@
+Execute (encode - empty string):
+  let g:string = ""
+  let g:expected = ""
+  AssertEqual g:expected, Encode(g:string)
+
+Execute (encode - single characters only are encoded without count):
+  let g:string = "XYZ"
+  let g:expected = "XYZ"
+  AssertEqual g:expected, Encode(g:string)
+
+Execute (encode - string with no single characters):
+  let g:string = "AABBBCCCC"
+  let g:expected = "2A3B4C"
+  AssertEqual g:expected, Encode(g:string)
+
+Execute (encode - single characters mixed with repeated characters):
+  let g:string = "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB"
+  let g:expected = "12WB12W3B24WB"
+  AssertEqual g:expected, Encode(g:string)
+
+Execute (encode - multiple whitespace mixed in string):
+  let g:string = "  hsqq qww  "
+  let g:expected = "2 hs2q q2w2 "
+  AssertEqual g:expected, Encode(g:string)
+
+Execute (encode - lowercase characters):
+  let g:string = "aabbbcccc"
+  let g:expected = "2a3b4c"
+  AssertEqual g:expected, Encode(g:string)
+
+Execute (decode - empty string):
+  let g:string = ""
+  let g:expected = ""
+  AssertEqual g:expected, Decode(g:string)
+
+Execute (decode - single characters only):
+  let g:string = "XYZ"
+  let g:expected = "XYZ"
+  AssertEqual g:expected, Decode(g:string)
+
+Execute (decode - string with no single characters):
+  let g:string = "2A3B4C"
+  let g:expected = "AABBBCCCC"
+  AssertEqual g:expected, Decode(g:string)
+
+Execute (decode - single characters with repeated characters):
+  let g:string = "12WB12W3B24WB"
+  let g:expected = "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB"
+  AssertEqual g:expected, Decode(g:string)
+
+Execute (decode - multiple whitespace mixed in string):
+  let g:string = "2 hs2q q2w2 "
+  let g:expected = "  hsqq qww  "
+  AssertEqual g:expected, Decode(g:string)
+
+Execute (decode - lowercase string):
+  let g:string = "2a3b4c"
+  let g:expected = "aabbbcccc"
+  AssertEqual g:expected, Decode(g:string)
+
+Execute (decode - encode followed by decode gives original string):
+  let g:string = "zzz ZZ  zZ"
+  let g:expected = "zzz ZZ  zZ"
+  AssertEqual g:expected, Decode(Encode(g:string))

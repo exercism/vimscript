@@ -1,0 +1,57 @@
+
+Execute (grains on square 1):
+  let g:square = 1
+  let g:expected = 1
+  AssertEqual g:expected, Square(g:square)
+
+Execute (grains on square 2):
+  let g:square = 2
+  let g:expected = 2
+  AssertEqual g:expected, Square(g:square)
+
+Execute (grains on square 3):
+  let g:square = 3
+  let g:expected = 4
+  AssertEqual g:expected, Square(g:square)
+
+Execute (grains on square 4):
+  let g:square = 4
+  let g:expected = 8
+  AssertEqual g:expected, Square(g:square)
+
+Execute (grains on square 16):
+  let g:square = 16
+  let g:expected = 32768
+  AssertEqual g:expected, Square(g:square)
+
+Execute (grains on square 32):
+  let g:square = 32
+  let g:expected = 2147483648
+  AssertEqual g:expected, Square(g:square)
+
+Execute (grains on square 64):
+  let g:square = 64
+  let g:expected = 9223372036854775807
+  AssertEqual g:expected, Square(g:square)
+
+Execute (square 0 is invalid):
+  let g:square = 0
+  let g:expected = "square must be between 1 and 64"
+  AssertThrows call Square(g:square)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (negative square is invalid):
+  let g:square = -1
+  let g:expected = "square must be between 1 and 64"
+  AssertThrows call Square(g:square)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (square greater than 64 is invalid):
+  let g:square = 65
+  let g:expected = "square must be between 1 and 64"
+  AssertThrows call Square(g:square)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (returns the total number of grains on the board):
+  let g:expected = 9223372036854775807
+  AssertEqual g:expected, Total()

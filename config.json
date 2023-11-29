@@ -8,7 +8,7 @@
     "representer": false,
     "analyzer": false
   },
-  "blurb": "Vimscript (or VimL) is the programming language used for scripting the Vim text editor.",
+  "blurb": "Vim script (or VimL) is the programming language used for scripting the Vim text editor.",
   "version": 3,
   "online_editor": {
     "indent_style": "space",
@@ -16,7 +16,7 @@
     "highlightjs_language": "vim"
   },
   "test_runner": {
-    "average_run_time": 3.0
+    "average_run_time": 3
   },
   "files": {
     "solution": [
@@ -26,15 +26,151 @@
       "%{snake_slug}.vader"
     ],
     "example": [
-      "example.vim"
+      ".meta/example.vim"
     ],
     "exemplar": [
       "exemplar.vim"
     ]
   },
   "exercises": {
-    "concept": [],
     "practice": [
+      {
+        "slug": "armstrong-numbers",
+        "name": "Armstrong Numbers",
+        "uuid": "120f7da8-658d-4779-b75c-7800b1e491f4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "atbash-cipher",
+        "name": "Atbash Cipher",
+        "uuid": "2cd8b4dd-0c07-4e62-9d49-ec9697dc978b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": [
+          "algorithms",
+          "cryptography",
+          "strings",
+          "transforming"
+        ]
+      },
+      {
+        "slug": "beer-song",
+        "name": "Beer Song",
+        "uuid": "73babd80-2a68-490f-a451-120918e5311c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "status": "deprecated",
+        "topics": [
+          "formatting",
+          "loops",
+          "strings"
+        ]
+      },
+      {
+        "slug": "binary-search",
+        "name": "Binary Search",
+        "uuid": "2de919b2-b81d-43c3-87c1-e6a8239139e3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "bob",
+        "name": "Bob",
+        "uuid": "345a440a-f995-4ead-9890-f5075c7f962e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": [
+          "conditionals",
+          "strings"
+        ]
+      },
+      {
+        "slug": "bottle-song",
+        "name": "Bottle Song",
+        "uuid": "cf3fad85-c7d7-42db-b27f-069be5ed4c22",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "collatz-conjecture",
+        "name": "Collatz Conjecture",
+        "uuid": "4eed1dde-4e87-4cbf-834e-71da55128215",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "darts",
+        "name": "Darts",
+        "uuid": "1ae2f1bd-5f62-4692-857d-faaf5223cad7",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "difference-of-squares",
+        "name": "Difference of Squares",
+        "uuid": "e6662c3e-9d5e-4744-977e-ed12f3171e1e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": [
+          "algorithms",
+          "math"
+        ]
+      },
+      {
+        "slug": "dnd-character",
+        "name": "D&D Character",
+        "uuid": "eb38bf54-c597-4856-bf1d-3867d75ae586",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "pop-count",
+        "name": "Eliud's Eggs",
+        "uuid": "9ef83f95-6fae-486a-9a42-d763961066cb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "etl",
+        "name": "ETL",
+        "uuid": "d0f80889-5c4e-4de6-b3a4-08a71a2e9c75",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "dict",
+          "loops",
+          "transforming"
+        ]
+      },
+      {
+        "slug": "flatten-array",
+        "name": "Flatten Array",
+        "uuid": "091cf652-212f-44a6-8187-1a3acdb922e3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "grains",
+        "name": "Grains",
+        "uuid": "99408193-d0ce-4c68-8cab-e680f3ed56a4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
       {
         "slug": "hello-world",
         "name": "Hello World",
@@ -44,6 +180,36 @@
         "difficulty": 1,
         "topics": [
           "strings"
+        ]
+      },
+      {
+        "slug": "high-scores",
+        "name": "High Scores",
+        "uuid": "a0013679-117c-4ee4-852d-9b287adf7075",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "isogram",
+        "name": "Isogram",
+        "uuid": "07984b95-7ba6-4cb7-86be-09520df5cf88",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "largest-series-product",
+        "name": "Largest Series Product",
+        "uuid": "7f1d0f92-bd78-4ca7-a436-cf9c871df1b2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": [
+          "algorithms",
+          "integers",
+          "math",
+          "sequences"
         ]
       },
       {
@@ -61,127 +227,28 @@
         ]
       },
       {
-        "slug": "hamming",
-        "name": "Hamming",
-        "uuid": "9cda4dfe-bdce-4a0b-9be2-ebafabd57271",
+        "slug": "luhn",
+        "name": "Luhn",
+        "uuid": "e2020329-442d-45da-ac89-ff15eade794e",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
-          "equality",
-          "loops",
-          "strings"
-        ]
+        "difficulty": 2
       },
       {
-        "slug": "raindrops",
-        "name": "Raindrops",
-        "uuid": "e75e2331-1494-4e70-9ad4-3396a6aeccc3",
+        "slug": "list-ops",
+        "name": "List Ops",
+        "uuid": "0f106d85-0e09-48e2-a5cc-894a24c7876b",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "conditionals",
-          "filtering",
-          "strings"
-        ]
+        "difficulty": 3
       },
       {
-        "slug": "scrabble-score",
-        "name": "Scrabble Score",
-        "uuid": "55859980-03d6-4994-a8e2-120179a8f0e5",
+        "slug": "micro-blog",
+        "name": "Micro Blog",
+        "uuid": "726b5266-8fb7-4b15-b25c-868053b0b0f5",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2,
-        "topics": [
-          "dict",
-          "loops",
-          "strings"
-        ]
-      },
-      {
-        "slug": "word-count",
-        "name": "Word Count",
-        "uuid": "d85603b2-f143-48bd-8184-67959b53b1d0",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "dict",
-          "loops"
-        ]
-      },
-      {
-        "slug": "bob",
-        "name": "Bob",
-        "uuid": "345a440a-f995-4ead-9890-f5075c7f962e",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "topics": [
-          "conditionals",
-          "strings"
-        ]
-      },
-      {
-        "slug": "etl",
-        "name": "ETL",
-        "uuid": "d0f80889-5c4e-4de6-b3a4-08a71a2e9c75",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "dict",
-          "loops",
-          "transforming"
-        ]
-      },
-      {
-        "slug": "beer-song",
-        "name": "Beer Song",
-        "uuid": "73babd80-2a68-490f-a451-120918e5311c",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "formatting",
-          "loops",
-          "strings"
-        ]
-      },
-      {
-        "slug": "nucleotide-count",
-        "name": "Nucleotide Count",
-        "uuid": "ff92dd32-fa39-4b09-81ed-ab4b2ba4096d",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4,
-        "topics": [
-          "dict",
-          "parsing",
-          "strings"
-        ]
-      },
-      {
-        "slug": "rna-transcription",
-        "name": "RNA Transcription",
-        "uuid": "b8bc605a-527d-48d3-9963-a8325be122c1",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": []
-      },
-      {
-        "slug": "difference-of-squares",
-        "name": "Difference of Squares",
-        "uuid": "e6662c3e-9d5e-4744-977e-ed12f3171e1e",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2,
-        "topics": [
-          "algorithms",
-          "math"
-        ]
+        "difficulty": 2
       },
       {
         "slug": "pangram",
@@ -196,44 +263,12 @@
         ]
       },
       {
-        "slug": "roman-numerals",
-        "name": "Roman Numerals",
-        "uuid": "c24cf39c-d9f2-437d-8962-514f9ec095fe",
+        "slug": "perfect-numbers",
+        "name": "Perfect Numbers",
+        "uuid": "499660d1-8cfa-4ff8-bbb8-d43e5f31c24b",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2,
-        "topics": [
-          "numbers",
-          "transforming"
-        ]
-      },
-      {
-        "slug": "atbash-cipher",
-        "name": "Atbash Cipher",
-        "uuid": "2cd8b4dd-0c07-4e62-9d49-ec9697dc978b",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "algorithms",
-          "cryptography",
-          "strings",
-          "transforming"
-        ]
-      },
-      {
-        "slug": "largest-series-product",
-        "name": "Largest Series Product",
-        "uuid": "7f1d0f92-bd78-4ca7-a436-cf9c871df1b2",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3,
-        "topics": [
-          "algorithms",
-          "integers",
-          "math",
-          "sequences"
-        ]
+        "difficulty": 3
       },
       {
         "slug": "phone-number",
@@ -251,6 +286,156 @@
         ]
       },
       {
+        "slug": "proverb",
+        "name": "Proverb",
+        "uuid": "d4c4e3a6-5ef6-436d-842a-9b93373db8be",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "protein-translation",
+        "name": "Protein Translaton",
+        "uuid": "4d510ad3-4d37-491a-99c6-892fbe5bd095",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "raindrops",
+        "name": "Raindrops",
+        "uuid": "e75e2331-1494-4e70-9ad4-3396a6aeccc3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "conditionals",
+          "filtering",
+          "strings"
+        ]
+      },
+      {
+        "slug": "resistor-color",
+        "name": "Resistor Color",
+        "uuid": "3fbff1c8-dd3d-4888-9406-af1c0a05e444",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "resistor-color-duo",
+        "name": "Resistor Color Duo",
+        "uuid": "8f00c858-c288-4dad-a7a8-a6592ce3dd15",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "reverse-string",
+        "name": "Reverse String",
+        "uuid": "8407dec6-24a8-41d6-8045-864fbfec8915",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "rna-transcription",
+        "name": "RNA Transcription",
+        "uuid": "b8bc605a-527d-48d3-9963-a8325be122c1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "run-length-encoding",
+        "name": "Run-Length Encoding",
+        "uuid": "1024a826-2f71-4833-9e96-59e0b0156f26",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "robot-simulator",
+        "name": "Robot Simulator",
+        "uuid": "ae38c201-f3c9-45d0-91ab-037b6aa03298",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "roman-numerals",
+        "name": "Roman Numerals",
+        "uuid": "c24cf39c-d9f2-437d-8962-514f9ec095fe",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": [
+          "numbers",
+          "transforming"
+        ]
+      },
+      {
+        "slug": "rotational-cipher",
+        "name": "Rotational Cipher",
+        "uuid": "90700a38-160f-41aa-a196-aa24e4ec13b9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "scrabble-score",
+        "name": "Scrabble Score",
+        "uuid": "55859980-03d6-4994-a8e2-120179a8f0e5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "topics": [
+          "dict",
+          "loops",
+          "strings"
+        ]
+      },
+      {
+        "slug": "secret-handshake",
+        "name": "Secret Handshake",
+        "uuid": "776679f8-9821-4124-8760-ebe9f2df090d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "series",
+        "name": "Series",
+        "uuid": "a17c6c90-7819-4caf-970d-26ff0ac99f3f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "space-age",
+        "name": "Space Age",
+        "uuid": "b672d6aa-0b3c-4aa9-8959-dd6f65049508",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "strain",
+        "name": "Strain",
+        "uuid": "b7dc9e1c-0b46-44c2-9c77-3949b95f920c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "sublist",
+        "name": "Sublist",
+        "uuid": "c92d40d6-4a36-426b-bc15-dca06d316231",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "33796a20-8325-4068-bdbd-e91519144b24",
@@ -261,6 +446,34 @@
           "booleans",
           "conditionals",
           "logic"
+        ]
+      },
+      {
+        "slug": "two-fer",
+        "name": "Two Fer",
+        "uuid": "4d19f94f-c319-4b1d-8145-51ce01ad448d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "queen-attack",
+        "name": "Queen Attack",
+        "uuid": "c728a685-1b4e-4d77-9273-6ee42ca4fb0e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "word-count",
+        "name": "Word Count",
+        "uuid": "d85603b2-f143-48bd-8184-67959b53b1d0",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": [
+          "dict",
+          "loops"
         ]
       },
       {
@@ -276,6 +489,14 @@
         ]
       },
       {
+        "slug": "all-your-base",
+        "name": "All Your Base",
+        "uuid": "a489b452-cf01-4670-bfe4-ccfeac57b466",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "anagram",
         "name": "Anagram",
         "uuid": "20d6efaf-1dee-42ec-9461-d738ec1b1e17",
@@ -288,22 +509,86 @@
           "sorting",
           "strings"
         ]
+      },
+      {
+        "slug": "custom-set",
+        "name": "Custom Set",
+        "uuid": "42fcddbb-2acd-44dd-8aae-7c3f6daab41d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "hamming",
+        "name": "Hamming",
+        "uuid": "9cda4dfe-bdce-4a0b-9be2-ebafabd57271",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "topics": [
+          "equality",
+          "loops",
+          "strings"
+        ]
+      },
+      {
+        "slug": "nucleotide-count",
+        "name": "Nucleotide Count",
+        "uuid": "ff92dd32-fa39-4b09-81ed-ab4b2ba4096d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4,
+        "topics": [
+          "dict",
+          "parsing",
+          "strings"
+        ]
       }
     ]
   },
-  "concepts": [],
-  "key_features": [],
+  "key_features": [
+    {
+      "title": "Extensible",
+      "content": "Looking for certain functionality?  It can be easily created and deployed.",
+      "icon": "extensible"
+    },
+    {
+      "title": "Deep Vim integration",
+      "content": "Productivity win! Access and manipulate Vim internal data structures and settings with ease.",
+      "icon": "tooling"
+    },
+    {
+      "title": "Expressive syntax",
+      "content": "Do a lot with a little. Write compact scripts that are highly readable.",
+      "icon": "expressive"
+    },
+    {
+      "title": "Multi-paradigm",
+      "content": "Supports writing imperatively or functionally.",
+      "icon": "multi-paradigm"
+    },
+    {
+      "title": "Highly interoperable",
+      "content": "Access files, shells, & other programs. All the power of external tooling without leaving Vim.",
+      "icon": "interop"
+    },
+    {
+      "title": "Event-driven programming",
+      "content": "Automatic code execution based on certain events or conditions like file opens or buffer saves.",
+      "icon": "concurrency"
+    }
+  ],
   "tags": [
+    "execution_mode/interpreted",
     "paradigm/functional",
     "paradigm/imperative",
     "paradigm/object_oriented",
+    "platform/linux",
+    "platform/mac",
+    "platform/windows",
+    "runtime/language_specific",
     "typing/dynamic",
     "typing/weak",
-    "execution_mode/interpreted",
-    "platform/windows",
-    "platform/mac",
-    "platform/linux",
-    "runtime/language_specific",
     "used_for/scripts"
   ]
 }

@@ -1,0 +1,60 @@
+
+Execute (English language short):
+  let g:phrase = "Hi"
+  let g:expected = "Hi"
+  AssertEqual g:expected, Truncate(g:phrase)
+
+Execute (English language long):
+  let g:phrase = "Hello there"
+  let g:expected = "Hello"
+  AssertEqual g:expected, Truncate(g:phrase)
+
+Execute (German language short (broth)):
+  let g:phrase = "brühe"
+  let g:expected = "brühe"
+  AssertEqual g:expected, Truncate(g:phrase)
+
+Execute (German language long (bear carpet → beards)):
+  let g:phrase = "Bärteppich"
+  let g:expected = "Bärte"
+  AssertEqual g:expected, Truncate(g:phrase)
+
+Execute (Bulgarian language short (good)):
+  let g:phrase = "Добър"
+  let g:expected = "Добър"
+  AssertEqual g:expected, Truncate(g:phrase)
+
+Execute (Greek language short (health)):
+  let g:phrase = "υγειά"
+  let g:expected = "υγειά"
+  AssertEqual g:expected, Truncate(g:phrase)
+
+Execute (Maths short):
+  let g:phrase = "a=πr²"
+  let g:expected = "a=πr²"
+  AssertEqual g:expected, Truncate(g:phrase)
+
+Execute (Maths long):
+  let g:phrase = "∅⊊ℕ⊊ℤ⊊ℚ⊊ℝ⊊ℂ"
+  let g:expected = "∅⊊ℕ⊊ℤ"
+  AssertEqual g:expected, Truncate(g:phrase)
+
+Execute (English and emoji short):
+  let g:phrase = "Fly 🛫"
+  let g:expected = "Fly 🛫"
+  AssertEqual g:expected, Truncate(g:phrase)
+
+Execute (Emoji short):
+  let g:phrase = "💇"
+  let g:expected = "💇"
+  AssertEqual g:expected, Truncate(g:phrase)
+
+Execute (Emoji long):
+  let g:phrase = "❄🌡🤧🤒🏥🕰😀"
+  let g:expected = "❄🌡🤧🤒🏥"
+  AssertEqual g:expected, Truncate(g:phrase)
+
+Execute (Royal Flush?):
+  let g:phrase = "🃎🂸🃅🃋🃍🃁🃊"
+  let g:expected = "🃎🂸🃅🃋🃍"
+  AssertEqual g:expected, Truncate(g:phrase)

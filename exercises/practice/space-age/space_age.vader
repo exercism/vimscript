@@ -1,0 +1,59 @@
+Before (helper to compare floats):
+  function! ApproximatelyEqual(a, b) abort
+    return abs(a:a - a:b) <= 0.01
+  endfunction
+
+Execute (age on Earth):
+  let g:planet = "Earth"
+  let g:seconds = 1000000000
+  let g:expected = 31.69
+  Assert ApproximatelyEqual(g:expected, Age(g:planet, g:seconds))
+
+Execute (age on Mercury):
+  let g:planet = "Mercury"
+  let g:seconds = 2134835688
+  let g:expected = 280.88
+  Assert ApproximatelyEqual(g:expected, Age(g:planet, g:seconds))
+
+Execute (age on Venus):
+  let g:planet = "Venus"
+  let g:seconds = 189839836
+  let g:expected = 9.78
+  Assert ApproximatelyEqual(g:expected, Age(g:planet, g:seconds))
+
+Execute (age on Mars):
+  let g:planet = "Mars"
+  let g:seconds = 2129871239
+  let g:expected = 35.88
+  Assert ApproximatelyEqual(g:expected, Age(g:planet, g:seconds))
+
+Execute (age on Jupiter):
+  let g:planet = "Jupiter"
+  let g:seconds = 901876382
+  let g:expected = 2.41
+  Assert ApproximatelyEqual(g:expected, Age(g:planet, g:seconds))
+
+Execute (age on Saturn):
+  let g:planet = "Saturn"
+  let g:seconds = 2000000000
+  let g:expected = 2.15
+  Assert ApproximatelyEqual(g:expected, Age(g:planet, g:seconds))
+
+Execute (age on Uranus):
+  let g:planet = "Uranus"
+  let g:seconds = 1210123456
+  let g:expected = 0.46
+  Assert ApproximatelyEqual(g:expected, Age(g:planet, g:seconds))
+
+Execute (age on Neptune):
+  let g:planet = "Neptune"
+  let g:seconds = 1821023456
+  let g:expected = 0.35
+  Assert ApproximatelyEqual(g:expected, Age(g:planet, g:seconds))
+
+Execute (invalid planet causes error):
+  let g:planet = "Sun"
+  let g:seconds = 680804807
+  let g:expected = "not a planet"
+  AssertThrows call Age(g:planet, g:seconds)
+  AssertEqual g:expected, g:vader_exception

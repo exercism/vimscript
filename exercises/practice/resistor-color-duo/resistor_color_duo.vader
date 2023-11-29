@@ -1,0 +1,35 @@
+
+Execute (Brown and black):
+  let g:colors = ['brown', 'black']
+  let g:expected = 10
+  AssertEqual g:expected, Value(g:colors)
+
+Execute (Blue and grey):
+  let g:colors = ['blue', 'grey']
+  let g:expected = 68
+  AssertEqual g:expected, Value(g:colors)
+
+Execute (Yellow and violet):
+  let g:colors = ['yellow', 'violet']
+  let g:expected = 47
+  AssertEqual g:expected, Value(g:colors)
+
+Execute (White and red):
+  let g:colors = ['white', 'red']
+  let g:expected = 92
+  AssertEqual g:expected, Value(g:colors)
+
+Execute (Orange and orange):
+  let g:colors = ['orange', 'orange']
+  let g:expected = 33
+  AssertEqual g:expected, Value(g:colors)
+
+Execute (Ignore additional colors):
+  let g:colors = ['green', 'brown', 'orange']
+  let g:expected = 51
+  AssertEqual g:expected, Value(g:colors)
+
+Execute (Black and brown, one-digit):
+  let g:colors = ['black', 'brown']
+  let g:expected = 1
+  AssertEqual g:expected, Value(g:colors)
