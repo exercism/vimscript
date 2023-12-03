@@ -1,0 +1,147 @@
+
+Execute (Empty list has length of zero):
+  let g:values = []
+  let g:list = SimpleLinkedList(g:values)
+  let g:expected = 0
+  AssertEqual g:expected, g:list.Length()
+
+Execute (Singleton list has length of one):
+  let g:values = [1]
+  let g:list = SimpleLinkedList(g:values)
+  let g:expected = 1
+  AssertEqual g:expected, g:list.Length()
+
+Execute (Non-empty list has correct length):
+  let g:values = [1, 2, 3]
+  let g:list = SimpleLinkedList(g:values)
+  let g:expected = 3
+  AssertEqual g:expected, g:list.Length()
+
+Execute (Test error on empty list head):
+  let g:values = []
+  let g:list = SimpleLinkedList(g:values)
+  let g:expected = "The list is empty"
+  AssertThrows call g:list.Head()
+  AssertEqual g:expected, g:vader_exception
+
+Execute (Singleton list has head):
+  let g:values = [1]
+  let g:list = SimpleLinkedList(g:values)
+  let g:expected = 1
+  AssertEqual g:expected, g:list.Head().Value()
+
+Execute (Non-empty list has correct head):
+  let g:values = [1, 2]
+  let g:list = SimpleLinkedList(g:values)
+  let g:expected = 2
+  AssertEqual g:expected, g:list.Head().Value()
+
+Execute (Can push to non-empty list):
+  let g:values = [1, 2, 3]
+  let g:list = SimpleLinkedList(g:values)
+  call g:list.Push(4)
+  let g:expected = 4
+  AssertEqual g:expected, g:list.Length()
+
+Execute (Pushing to empty list changes head):
+  let g:values = []
+  let g:list = SimpleLinkedList(g:values)
+  call g:list.Push(5)
+  AssertEqual 1, g:list.Length()
+  AssertEqual 5, g:list.Head().Value()
+
+Execute (Can pop from non-empty list):
+  let g:values = [3, 4, 5]
+  let g:list = SimpleLinkedList(g:values)
+  AssertEqual 5, g:list.Pop()
+  AssertEqual 2, g:list.Length()
+  AssertEqual 4, g:list.Head().Value()
+
+Execute (Pop from singleton list removes head):
+  let g:values = [1]
+  let g:list = SimpleLinkedList(g:values)
+  let g:expected = "The list is empty"
+  AssertEqual 1, g:list.Pop()
+  AssertThrows call g:list.Head()
+  AssertEqual g:expected, g:vader_exception
+
+Execute (Error on empty list pop):
+  let g:values = []
+  let g:list = SimpleLinkedList(g:values)
+  let g:expected = "The list is empty"
+  AssertThrows call g:list.Pop()
+  AssertEqual g:expected, g:vader_exception
+
+Execute (Error on empty list pop):
+  let g:values = []
+  let g:list = SimpleLinkedList(g:values)
+  let g:expected = "The list is empty"
+  AssertThrows call g:list.Pop()
+  AssertEqual g:expected, g:vader_exception
+
+Execute (Push and pop):
+  let g:values = [1, 2]
+  let g:list = SimpleLinkedList(g:values)
+  call g:list.Push(3)
+  AssertEqual 3, g:list.Length()
+  
+  for n in [3, 2, 1]
+    AssertEqual n, g:list.Pop()
+  endfor
+
+  AssertEqual 0, g:list.Length()
+  call g:list.Push(4)
+  AssertEqual 1, g:list.Length()
+  AssertEqual 4, g:list.Head().Value()
+
+Execute (Singleton list head has no next):
+  let g:values = [1]
+  let g:list = SimpleLinkedList(g:values)
+  AssertEqual v:null, g:list.Head().Next()
+
+Execute (Non-empty list traverse):
+  let g:values = range(10)
+  let g:list = SimpleLinkedList(g:values)
+  let g:current = g:list.Head()
+  for n in range(10)
+    AssertEqual current.Value(), 9 - n
+    let g:current = g:current.Next()
+  endfor
+  AssertEqual v:null, g:current
+
+Execute (Empty linked list to list is empty):
+  let g:values = []
+  let g:list = SimpleLinkedList(g:values)
+  let g:expected = []
+  AssertEqual g:expected, g:list.AsList()
+
+Execute (Singleton linked list to list is list with one element):
+  let g:values = [1]
+  let g:list = SimpleLinkedList(g:values)
+  let g:expected = [1]
+
+  AssertEqual g:expected, g:list.AsList()
+
+Execute (Non-empty linked list to list is list with all elements):
+  let g:values = [1, 2, 3]
+  let g:list = SimpleLinkedList(g:values)
+  let g:expected = [3, 2, 1]
+  AssertEqual g:expected, g:list.AsList()
+
+Execute (Reversed empty list is same list):
+  let g:values = []
+  let g:list = SimpleLinkedList(g:values)
+  let g:expected = []
+  AssertEqual g:expected, g:list.Reversed().AsList()
+
+Execute (Reversed singleton list is same list):
+  let g:values = [1]
+  let g:list = SimpleLinkedList(g:values)
+  let g:expected = [1]
+  AssertEqual g:expected, g:list.Reversed().AsList()
+
+Execute (Reversed non-empty list is reversed):
+  let g:values = [1, 2, 3]
+  let g:list = SimpleLinkedList(g:values)
+  let g:expected = [1, 2, 3]
+  AssertEqual g:expected, g:list.Reversed().AsList()

@@ -543,6 +543,14 @@
           "parsing",
           "strings"
         ]
+      },
+      {
+        "slug": "simple-linked-list",
+        "name": "Simple Linked List",
+        "uuid": "85054b17-d7c3-46f5-b44c-89b902ab794d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
       }
     ]
   },
