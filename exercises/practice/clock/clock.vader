@@ -1,0 +1,364 @@
+
+Execute (on the hour):
+  let g:hour = 8
+  let g:minute = 0
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "08:00"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (past the hour):
+  let g:hour = 11
+  let g:minute = 9
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "11:09"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (midnight is zero hours):
+  let g:hour = 24
+  let g:minute = 0
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "00:00"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (hour rolls over):
+  let g:hour = 25
+  let g:minute = 0
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "01:00"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (hour rolls over continuously):
+  let g:hour = 100
+  let g:minute = 0
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "04:00"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (sixty minutes is next hour):
+  let g:hour = 1
+  let g:minute = 60
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "02:00"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (minutes roll over):
+  let g:hour = 0
+  let g:minute = 160
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "02:40"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (minutes roll over continuously):
+  let g:hour = 0
+  let g:minute = 1723
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "04:43"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (hour and minutes roll over):
+  let g:hour = 25
+  let g:minute = 160
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "03:40"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (hour and minutes roll over continuously):
+  let g:hour = 201
+  let g:minute = 3001
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "11:01"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (hour and minutes roll over to exactly midnight):
+  let g:hour = 72
+  let g:minute = 8640
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "00:00"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (negative hour):
+  let g:hour = -1
+  let g:minute = 15
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "23:15"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (negative hour rolls over):
+  let g:hour = -25
+  let g:minute = 0
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "23:00"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (negative hour rolls over continuously):
+  let g:hour = -91
+  let g:minute = 0
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "05:00"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (negative minutes):
+  let g:hour = 1
+  let g:minute = -40
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "00:20"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (negative minutes roll over):
+  let g:hour = 1
+  let g:minute = -160
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "22:20"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (negative minutes roll over continuously):
+  let g:hour = 1
+  let g:minute = -4820
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "16:40"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (negative sixty minutes is previous hour):
+  let g:hour = 2
+  let g:minute = -60
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "01:00"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (negative hour and minutes both roll over):
+  let g:hour = -25
+  let g:minute = -160
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "20:20"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (negative hour and minutes both roll over continuously):
+  let g:hour = -121
+  let g:minute = -5810
+  let g:clock = Clock(g:hour, g:minute)
+  let g:expected = "22:10"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (add minutes):
+  let g:hour = 10
+  let g:minute = 0
+  let g:clock = Clock(g:hour, g:minute)
+  let g:value = 3
+  call g:clock.Add(g:value)
+  let g:expected = "10:03"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (add no minutes):
+  let g:hour = 6
+  let g:minute = 41
+  let g:clock = Clock(g:hour, g:minute)
+  let g:value = 0
+  call g:clock.Add(g:value)
+  let g:expected = "06:41"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (add to next hour):
+  let g:hour = 0
+  let g:minute = 45
+  let g:clock = Clock(g:hour, g:minute)
+  let g:value = 40
+  call g:clock.Add(g:value)
+  let g:expected = "01:25"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (add more than one hour):
+  let g:hour = 10
+  let g:minute = 0
+  let g:clock = Clock(g:hour, g:minute)
+  let g:value = 61
+  call g:clock.Add(g:value)
+  let g:expected = "11:01"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (add more than two hours with carry):
+  let g:hour = 0
+  let g:minute = 45
+  let g:clock = Clock(g:hour, g:minute)
+  let g:value = 160
+  call g:clock.Add(g:value)
+  let g:expected = "03:25"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (add across midnight):
+  let g:hour = 23
+  let g:minute = 59
+  let g:clock = Clock(g:hour, g:minute)
+  let g:value = 2
+  call g:clock.Add(g:value)
+  let g:expected = "00:01"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (add more than one day (1500 min = 25 hrs)):
+  let g:hour = 5
+  let g:minute = 32
+  let g:clock = Clock(g:hour, g:minute)
+  let g:value = 1500
+  call g:clock.Add(g:value)
+  let g:expected = "06:32"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (add more than two days):
+  let g:hour = 1
+  let g:minute = 1
+  let g:clock = Clock(g:hour, g:minute)
+  let g:value = 3500
+  call g:clock.Add(g:value)
+  let g:expected = "11:21"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (subtract minutes):
+  let g:hour = 10
+  let g:minute = 3
+  let g:clock = Clock(g:hour, g:minute)
+  let g:value = 3
+  call g:clock.Subtract(g:value)
+  let g:expected = "10:00"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (subtract to previous hour):
+  let g:hour = 10
+  let g:minute = 3
+  let g:clock = Clock(g:hour, g:minute)
+  let g:value = 30
+  call g:clock.Subtract(g:value)
+  let g:expected = "09:33"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (subtract more than an hour):
+  let g:hour = 10
+  let g:minute = 3
+  let g:clock = Clock(g:hour, g:minute)
+  let g:value = 70
+  call g:clock.Subtract(g:value)
+  let g:expected = "08:53"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (subtract across midnight):
+  let g:hour = 0
+  let g:minute = 3
+  let g:clock = Clock(g:hour, g:minute)
+  let g:value = 4
+  call g:clock.Subtract(g:value)
+  let g:expected = "23:59"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (subtract more than two hours):
+  let g:hour = 0
+  let g:minute = 0
+  let g:clock = Clock(g:hour, g:minute)
+  let g:value = 160
+  call g:clock.Subtract(g:value)
+  let g:expected = "21:20"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (subtract more than two hours with borrow):
+  let g:hour = 6
+  let g:minute = 15
+  let g:clock = Clock(g:hour, g:minute)
+  let g:value = 160
+  call g:clock.Subtract(g:value)
+  let g:expected = "03:35"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (subtract more than one day (1500 min = 25 hrs)):
+  let g:hour = 5
+  let g:minute = 32
+  let g:clock = Clock(g:hour, g:minute)
+  let g:value = 1500
+  call g:clock.Subtract(g:value)
+  let g:expected = "04:32"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (subtract more than two days):
+  let g:hour = 2
+  let g:minute = 20
+  let g:clock = Clock(g:hour, g:minute)
+  let g:value = 3000
+  call g:clock.Subtract(g:value)
+  let g:expected = "00:20"
+  AssertEqual g:expected, g:clock.ToString()
+
+Execute (clocks with same time):
+  let g:clock1 = Clock(15, 37)
+  let g:clock2 = Clock(15, 37)
+  AssertEqual g:clock1.ToString(), g:clock2.ToString()
+
+Execute (clocks a minute apart):
+  let g:clock1 = Clock(15, 36)
+  let g:clock2 = Clock(15, 37)
+  AssertNotEqual g:clock1.ToString(), g:clock2.ToString()
+
+Execute (clocks an hour apart):
+  let g:clock1 = Clock(14, 37)
+  let g:clock2 = Clock(15, 37)
+  AssertNotEqual g:clock1.ToString(), g:clock2.ToString()
+
+Execute (clocks with hour overflow):
+  let g:clock1 = Clock(10, 37)
+  let g:clock2 = Clock(34, 37)
+  AssertEqual g:clock1.ToString(), g:clock2.ToString()
+
+Execute (clocks with hour overflow by several days):
+  let g:clock1 = Clock(3, 11)
+  let g:clock2 = Clock(99, 11)
+  AssertEqual g:clock1.ToString(), g:clock2.ToString()
+
+Execute (clocks with negative hour):
+  let g:clock1 = Clock(22, 40)
+  let g:clock2 = Clock(-2, 40)
+  AssertEqual g:clock1.ToString(), g:clock2.ToString()
+
+Execute (clocks with negative hour that wraps):
+  let g:clock1 = Clock(17, 3)
+  let g:clock2 = Clock(-31, 3)
+  AssertEqual g:clock1.ToString(), g:clock2.ToString()
+
+Execute (clocks with negative hour that wraps multiple times):
+  let g:clock1 = Clock(13, 49)
+  let g:clock2 = Clock(-83, 49)
+  AssertEqual g:clock1.ToString(), g:clock2.ToString()
+
+Execute (clocks with minute overflow):
+  let g:clock1 = Clock(0, 1)
+  let g:clock2 = Clock(0, 1441)
+  AssertEqual g:clock1.ToString(), g:clock2.ToString()
+
+Execute (clocks with minute overflow by several days):
+  let g:clock1 = Clock(2, 2)
+  let g:clock2 = Clock(2, 4322)
+  AssertEqual g:clock1.ToString(), g:clock2.ToString()
+
+Execute (clocks with negative minute):
+  let g:clock1 = Clock(2, 40)
+  let g:clock2 = Clock(3, -20)
+  AssertEqual g:clock1.ToString(), g:clock2.ToString()
+
+Execute (clocks with negative minute that wraps):
+  let g:clock1 = Clock(4, 10)
+  let g:clock2 = Clock(5, -1490)
+  AssertEqual g:clock1.ToString(), g:clock2.ToString()
+
+Execute (clocks with negative minute that wraps multiple times):
+  let g:clock1 = Clock(6, 15)
+  let g:clock2 = Clock(6, -4305)
+  AssertEqual g:clock1.ToString(), g:clock2.ToString()
+
+Execute (clocks with negative hours and minutes):
+  let g:clock1 = Clock(7, 32)
+  let g:clock2 = Clock(-12, -268)
+  AssertEqual g:clock1.ToString(), g:clock2.ToString()
+
+Execute (clocks with negative hours and minutes that wrap):
+  let g:clock1 = Clock(18, 7)
+  let g:clock2 = Clock(-54, -11513)
+  AssertEqual g:clock1.ToString(), g:clock2.ToString()
+
+Execute (full clock and zeroed clock):
+  let g:clock1 = Clock(24, 0)
+  let g:clock2 = Clock(0, 0)
+  AssertEqual g:clock1.ToString(), g:clock2.ToString()
