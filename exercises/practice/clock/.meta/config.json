@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "contributors": [
+    "KOTP"
+  ],
+  "files": {
+    "solution": [
+      "clock.vim"
+    ],
+    "test": [
+      "clock.vader"
+    ],
+    "example": [
+      ".meta/example.vim"
+    ]
+  },
+  "blurb": "Implement a clock that handles times without dates.",
+  "source": "Pairing session with Erin Drummond"
+}
