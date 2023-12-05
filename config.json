@@ -568,6 +568,9 @@
         "prerequisites": [],
         "difficulty": 4
       }
+    ],
+    "foregone": [
+      "lens-person"
     ]
   },
   "key_features": [
