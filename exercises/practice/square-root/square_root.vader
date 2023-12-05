@@ -1,0 +1,30 @@
+
+Execute (root of 1):
+  let g:radicand = 1
+  let g:expected = 1
+  AssertEqual g:expected, SquareRoot(g:radicand)
+
+Execute (root of 4):
+  let g:radicand = 4
+  let g:expected = 2
+  AssertEqual g:expected, SquareRoot(g:radicand)
+
+Execute (root of 25):
+  let g:radicand = 25
+  let g:expected = 5
+  AssertEqual g:expected, SquareRoot(g:radicand)
+
+Execute (root of 81):
+  let g:radicand = 81
+  let g:expected = 9
+  AssertEqual g:expected, SquareRoot(g:radicand)
+
+Execute (root of 196):
+  let g:radicand = 196
+  let g:expected = 14
+  AssertEqual g:expected, SquareRoot(g:radicand)
+
+Execute (root of 65025):
+  let g:radicand = 65025
+  let g:expected = 255
+  AssertEqual g:expected, SquareRoot(g:radicand)
