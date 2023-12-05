@@ -540,6 +540,14 @@
         ]
       },
       {
+        "slug": "house",
+        "name": "House",
+        "uuid": "db139a5a-1471-4ced-8cfe-d4625c9318bd",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },  
+      {
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "ff92dd32-fa39-4b09-81ed-ab4b2ba4096d",
