@@ -1,3 +1,3 @@
 function! HighScores(scores) abort
-  " your implemention goes here
+  " your implementation goes here
 endfunction
