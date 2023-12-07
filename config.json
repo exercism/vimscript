@@ -35,6 +35,14 @@
   "exercises": {
     "practice": [
       {
+        "slug": "acronym",
+        "name": "Acronym",
+        "uuid": "370ac427-a90d-4bb1-8b76-d9c92866df51",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "armstrong-numbers",
         "name": "Armstrong Numbers",
         "uuid": "120f7da8-658d-4779-b75c-7800b1e491f4",
