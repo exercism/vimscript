@@ -1,0 +1,45 @@
+
+Execute (basic):
+  let g:phrase = "Portable Network Graphics"
+  let g:expected = "PNG"
+  AssertEqual g:expected, Abbreviate(g:phrase)
+
+Execute (lowercase words):
+  let g:phrase = "Ruby on Rails"
+  let g:expected = "ROR"
+  AssertEqual g:expected, Abbreviate(g:phrase)
+
+Execute (punctuation):
+  let g:phrase = "First In, First Out"
+  let g:expected = "FIFO"
+  AssertEqual g:expected, Abbreviate(g:phrase)
+
+Execute (all caps word):
+  let g:phrase = "GNU Image Manipulation Program"
+  let g:expected = "GIMP"
+  AssertEqual g:expected, Abbreviate(g:phrase)
+
+Execute (punctuation without whitespace):
+  let g:phrase = "Complementary metal-oxide semiconductor"
+  let g:expected = "CMOS"
+  AssertEqual g:expected, Abbreviate(g:phrase)
+
+Execute (very long abbreviation):
+  let g:phrase = "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me"
+  let g:expected = "ROTFLSHTMDCOALM"
+  AssertEqual g:expected, Abbreviate(g:phrase)
+
+Execute (consecutive delimiters):
+  let g:phrase = "Something - I made up from thin air"
+  let g:expected = "SIMUFTA"
+  AssertEqual g:expected, Abbreviate(g:phrase)
+
+Execute (apostrophes):
+  let g:phrase = "Halley's Comet"
+  let g:expected = "HC"
+  AssertEqual g:expected, Abbreviate(g:phrase)
+
+Execute (underscore emphasis):
+  let g:phrase = "The Road _Not_ Taken"
+  let g:expected = "TRNT"
+  AssertEqual g:expected, Abbreviate(g:phrase)
