@@ -12,13 +12,13 @@
 "   22
 "
 function! DifferenceOfSquares(number) abort
-  " your implemention goes here
+  " your implementation goes here
 endfunction
 
 function! SquareOfSum(number) abort
-  " your implemention goes here
+  " your implementation goes here
 endfunction
 
 function! SumOfSquares(number) abort
-  " your implemention goes here
+  " your implementation goes here
 endfunction

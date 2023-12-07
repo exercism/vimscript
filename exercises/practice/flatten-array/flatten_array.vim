@@ -11,5 +11,5 @@
 "   [0, 1, 2, 3]
 "
 function! Flatten(array) abort
-  " your implemention goes here
+  " your implementation goes here
 endfunction
