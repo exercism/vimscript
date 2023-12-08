@@ -259,6 +259,14 @@
         "difficulty": 3
       },
       {
+        "slug": "matrix",
+        "name": "Matrix",
+        "uuid": "b715c055-4b67-43a2-9e30-926b74ad3daf",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "micro-blog",
         "name": "Micro Blog",
         "uuid": "726b5266-8fb7-4b15-b25c-868053b0b0f5",

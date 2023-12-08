@@ -1,0 +1,56 @@
+
+Execute (extract row from one number matrix):
+  let g:string = "1"
+  let g:matrix = Matrix(g:string)
+  let g:index = 1
+  let g:expected = ["1"]
+  AssertEqual g:expected, g:matrix.Row(g:index)
+
+Execute (can extract row):
+  let g:string = "1 2\n3 4"
+  let g:matrix = Matrix(g:string)
+  let g:index = 2
+  let g:expected = ["3", "4"]
+  AssertEqual g:expected, g:matrix.Row(g:index)
+
+Execute (extract row where numbers have different widths):
+  let g:string = "1 2\n10 20"
+  let g:matrix = Matrix(g:string)
+  let g:index = 2
+  let g:expected = ["10", "20"]
+  AssertEqual g:expected, g:matrix.Row(g:index)
+
+Execute (can extract row from non-square matrix with no corresponding column):
+  let g:string = "1 2 3\n4 5 6\n7 8 9\n8 7 6"
+  let g:matrix = Matrix(g:string)
+  let g:index = 4
+  let g:expected = ["8", "7", "6"]
+  AssertEqual g:expected, g:matrix.Row(g:index)
+
+Execute (extract column from one number matrix):
+  let g:string = "1"
+  let g:matrix = Matrix(g:string)
+  let g:index = 1
+  let g:expected = ["1"]
+  AssertEqual g:expected, g:matrix.Column(g:index)
+
+Execute (can extract column):
+  let g:string = "1 2 3\n4 5 6\n7 8 9"
+  let g:matrix = Matrix(g:string)
+  let g:index = 3
+  let g:expected = ["3", "6", "9"]
+  AssertEqual g:expected, g:matrix.Column(g:index)
+
+Execute (can extract column from non-square matrix with no corresponding row):
+  let g:string = "1 2 3 4\n5 6 7 8\n9 8 7 6"
+  let g:matrix = Matrix(g:string)
+  let g:index = 4
+  let g:expected = ["4", "8", "6"]
+  AssertEqual g:expected, g:matrix.Column(g:index)
+
+Execute (extract column where numbers have different widths):
+  let g:string = "89 1903 3\n18 3 1\n9 4 800"
+  let g:matrix = Matrix(g:string)
+  let g:index = 2
+  let g:expected = ["1903", "3", "4"]
+  AssertEqual g:expected, g:matrix.Column(g:index)
