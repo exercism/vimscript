@@ -3,7 +3,7 @@
 "
 " Example:
 "
-"   :echo Transform({'1': ['a', 'b'], '2': ['c']})
+"   :echo Transform({'1': ['A', 'B'], '2': ['C']})
 "   {'a': 1, 'b': 1, 'c': 2}
 "
 
