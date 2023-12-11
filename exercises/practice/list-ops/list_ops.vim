@@ -6,7 +6,7 @@ function! Concat(lists) abort
   " your code goes here
 endfunction
 
-function! Filter(f, list) abort
+function! Filter(list, fn) abort
   " your code goes here
 endfunction
 
@@ -14,15 +14,15 @@ function! Length(list) abort
   " your code goes here
 endfunction
 
-function! Map(f, list) abort
+function! Map(list, fn) abort
   " your code goes here
 endfunction
 
-function! Foldl(f, initial, list) abort
+function! Foldl(list, fn, initial) abort
   " your code goes here
 endfunction
 
-function! Foldr(f, initial, list) abort
+function! Foldr(list, fn, initial) abort
   " your code goes here
 endfunction
 
