@@ -26,7 +26,7 @@ Your program should determine:
 - which bucket should end up with the desired number of liters - either bucket one or bucket two
 - how many liters are left in the other bucket
 
-Note: any time a change is made to either or both buckets counts as one (1) action.
+Note: it counts as one (1) action any time a change is made to either or both buckets.
 
 Example:
 Bucket one can hold up to 7 liters, and bucket two can hold up to 11 liters.
