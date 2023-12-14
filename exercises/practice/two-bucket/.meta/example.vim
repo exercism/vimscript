@@ -1,6 +1,6 @@
 function! TwoBucket(input) abort
   if !s:validate(a:input)
-    throw "impossible"
+    throw 'impossible'
   endif
   let twoBucket = s:initialize(a:input)
 
@@ -36,7 +36,7 @@ function! TwoBucket(input) abort
 endfunction
 
 function! s:result(moves, winner, loser) abort
-  return #{moves: a:moves, goalBucket: a:winner.name, otherBucket: a:loser.amount}
+  return {'moves': a:moves, 'goalBucket': a:winner.name, 'otherBucket': a:loser.amount}
 endfunction
 
 function! s:isFull(bucket) abort
@@ -76,11 +76,11 @@ endfunction
 
 function! s:initialize(input) abort
   let [b1, b2] = [
-                \ #{name: 'one', size: a:input.bucketOne, amount: 0},
-                \ #{name: 'two', size: a:input.bucketTwo, amount: 0},
-                \ ]
-  if a:input.startBucket == 'two'
+               \ {'name': 'one', 'size': a:input.bucketOne, 'amount': 0},
+               \ {'name': 'two', 'size': a:input.bucketTwo, 'amount': 0},
+               \ ]
+  if a:input.startBucket ==? 'two'
     let [b1, b2] = [b2, b1]
   endif
-  return #{goal: a:input.goal, start: b1, other: b2}
+  return {'goal': a:input.goal, 'start': b1, 'other': b2}
 endfunction
