@@ -18,6 +18,6 @@ endfunction
 "
 " Returns the total number of grains for a filled chessboard
 "
-function! Total(number) abort
+function! Total() abort
   " your code goes here
 endfunction
