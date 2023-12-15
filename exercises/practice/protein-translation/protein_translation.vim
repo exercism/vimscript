@@ -10,5 +10,5 @@
 "   E605: Exception not caught: Invalid codon
 "
 function! Proteins(strand) abort
-  " your code goes here'
+  " your code goes here
 endfunction
