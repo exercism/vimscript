@@ -4,7 +4,7 @@ function! IsIsogram(phrase) abort
     
     for l:char in split(l:phrase, '\zs')
         let l:cp = char2nr(char)
-        if (l:cp < 61 || l:cp > 123)
+        if (l:cp < 97 || l:cp > 122)
             continue
         endif
 
