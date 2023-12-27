@@ -1,53 +1,77 @@
-Execute (1 is a single I):
+Execute (1 is I):
   AssertEqual 'I', ToRoman(1)
 
-Execute (2 is two I's):
+Execute (2 is II):
   AssertEqual 'II', ToRoman(2)
 
-Execute (2 is three I's):
+Execute (3 is III):
   AssertEqual 'III', ToRoman(3)
 
-Execute (4, being 5 - 1, is IV):
+Execute (4 is IV):
   AssertEqual 'IV', ToRoman(4)
 
-Execute (5 is a single V):
+Execute (5 is V):
   AssertEqual 'V', ToRoman(5)
 
-Execute (6, being 5 + 1, is VI):
+Execute (6 is VI):
   AssertEqual 'VI', ToRoman(6)
 
-Execute (9, being 10 - 1, is IX):
+Execute (9 is IX):
   AssertEqual 'IX', ToRoman(9)
 
-Execute (20 is two X's):
+Execute (16 is XVI):
+  AssertEqual 'XVI', ToRoman(16)
+
+Execute (27 is XXVII):
   AssertEqual 'XXVII', ToRoman(27)
 
-Execute (48 is not 50 - 2, but rather 40 + 8):
+Execute (48 is XLVIII):
   AssertEqual 'XLVIII', ToRoman(48)
 
-Execute (50 is a single L):
+Execute (49 is XLIX):
+  AssertEqual 'XLIX', ToRoman(49)
+
+Execute (59 is LIX):
   AssertEqual 'LIX', ToRoman(59)
 
-Execute (90, being 100 - 10, is XC):
+Execute (69 is LXVI):
+  AssertEqual 'LXVI', ToRoman(69)
+
+Execute (93 is XCIII):
   AssertEqual 'XCIII', ToRoman(93)
 
-Execute (100 is a single C):
+Execute (141 is CXLI):
   AssertEqual 'CXLI', ToRoman(141)
 
-Execute (60, being 50 + 10, is LX):
+Execute (163 is CLXIII):
   AssertEqual 'CLXIII', ToRoman(163)
 
-Execute (400, being 500 - 100, is CD):
+Execute (166 is CLXVI):
+  AssertEqual 'CLXVI', ToRoman(166)
+
+Execute (402 is CDII):
   AssertEqual 'CDII', ToRoman(402)
 
-Execute (500 is a single D):
+Execute (575 is DLXXV):
   AssertEqual 'DLXXV', ToRoman(575)
 
-Execute (900, being 1000 - 100, is CM):
+Execute (666 is DCLXVI):
+  AssertEqual 'DCLXVI', ToRoman(666)
+
+Execute (911 is CMXI):
   AssertEqual 'CMXI', ToRoman(911)
 
-Execute (1000 is a single M):
+Execute (1024 is MXXIV):
   AssertEqual 'MXXIV', ToRoman(1024)
 
-Execute (3000 is three M's):
+Execute (1666 is MDCLXVI):
+  AssertEqual 'MDCLXVI', ToRoman(1666)
+
+Execute (3000 is MMM):
   AssertEqual 'MMM', ToRoman(3000)
+
+Execute (3001 is MMMI):
+  AssertEqual 'MMMI', ToRoman(3001)
+
+Execute (3999 is MMMCMXCIX):
+  AssertEqual 'MMMCMXCIX', ToRoman(3999)
