@@ -1,36 +1,34 @@
-"
-" Version: 1.1.0
-"
-
-Before:
-  unlet! input expected
-
-Execute (sentence empty):
+Execute (empty sentence):
   let input = ""
   let expected = 0
   AssertEqual expected, IsPangram(input)
 
-Execute (pangram with only lower case):
+Execute (perfect lower case):
+  let input = "abcdefghijklmnopqrstuvwxyz"
+  let expected = 1
+  AssertEqual expected, IsPangram(input)
+
+Execute (only lower case):
   let input = "the quick brown fox jumps over the lazy dog"
   let expected = 1
   AssertEqual expected, IsPangram(input)
 
-Execute (missing character 'x'):
+Execute (missing the letter 'x'):
   let input = "a quick movement of the enemy will jeopardize five gunboats"
   let expected = 0
   AssertEqual expected, IsPangram(input)
 
-Execute (another missing character 'x'):
-  let input = "the quick brown fish jumps over the lazy dog"
+Execute (missing the letter 'h'):
+  let input = "five boxing wizards jump quickly at it"
   let expected = 0
   AssertEqual expected, IsPangram(input)
 
-Execute (pangram with underscores):
+Execute (with underscores):
   let input = "the_quick_brown_fox_jumps_over_the_lazy_dog"
   let expected = 1
   AssertEqual expected, IsPangram(input)
 
-Execute (pangram with numbers):
+Execute (with numbers):
   let input = "the 1 quick brown fox jumps over the 2 lazy dogs"
   let expected = 1
   AssertEqual expected, IsPangram(input)
@@ -40,13 +38,12 @@ Execute (missing letters replaced by numbers):
   let expected = 0
   AssertEqual expected, IsPangram(input)
 
-Execute (pangram with mixed case and punctuation):
+Execute (mixed case and punctuation):
   let input = "\"Five quacking Zephyrs jolt my wax bed.\""
   let expected = 1
   AssertEqual expected, IsPangram(input)
 
-Execute (upper and lower case versions of the same character should not be counted separately):
-  let input = "the quick brown fox jumps over with lazy FX"
+Execute (a-m and A-M are 26 different characters but not a pangram):
+  let input = "abcdefghijklm ABCDEFGHIJKLM"
   let expected = 0
   AssertEqual expected, IsPangram(input)
-
