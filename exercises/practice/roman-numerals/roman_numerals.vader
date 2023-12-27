@@ -34,8 +34,8 @@ Execute (49 is XLIX):
 Execute (59 is LIX):
   AssertEqual 'LIX', ToRoman(59)
 
-Execute (69 is LXVI):
-  AssertEqual 'LXVI', ToRoman(69)
+Execute (66 is LXVI):
+  AssertEqual 'LXVI', ToRoman(66)
 
 Execute (93 is XCIII):
   AssertEqual 'XCIII', ToRoman(93)
