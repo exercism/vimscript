@@ -1,5 +1,5 @@
 "
-" Returns the postion of an item in a sorted list using a binary search
+" Returns the position of an item in a sorted list using a binary search
 " Throws an error if item isn't present
 " Example:
 "
