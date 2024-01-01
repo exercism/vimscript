@@ -70,3 +70,4 @@ Execute (no allergen score parts without highest valid score):
   let input = 257
   let expected = ['eggs']
   AssertEqual expected, List(input)
+  
