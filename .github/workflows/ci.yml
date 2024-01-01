@@ -16,7 +16,11 @@ jobs:
       - name: Install project dependencies
         run: |
           sudo apt-get update -q
-          sudo apt-get install vim-gtk
+          sudo apt-get install libncurses5-dev libncursesw5-dev git make build-essential
+          git clone https://github.com/vim/vim.git
+          cd vim/src
+          sudo make
+          sudo make install
 
       - name: Run exercism/vimscript ci (runs tests) for all exercises
         run: bin/ci
