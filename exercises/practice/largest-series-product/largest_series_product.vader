@@ -72,8 +72,10 @@ Execute (rejects empty string and nonzero span):
   AssertEqual expected, LargestProduct(input, span)
 
 Execute (rejects invalid character in digits):
-  AssertThrows call LargestProduct('1234a5', 2)
-  AssertEqual 'invalid input', g:vader_exception
+  let input = "1234a5"
+  let span = 2
+  let expected = -1
+  AssertEqual expected, LargestProduct(input, span)
 
 Execute (rejects negative span):
   let input = "12345"
