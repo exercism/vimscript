@@ -593,6 +593,14 @@
         "difficulty": 4
       },
       {
+        "slug": "transpose",
+        "name": "Transpose",
+        "uuid": "3a719b2a-8a73-44ed-864d-9b2180135a2b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "two-bucket",
         "name": "Two Bucket",
         "uuid": "169da6e9-6b5c-4d5d-8fa4-e9ddad2cfd7f",
