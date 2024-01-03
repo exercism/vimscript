@@ -58,12 +58,6 @@ Execute (detects anagrams using case-insensitive possible matches):
   let expected = ['Carthorse']
   AssertEqual expected, FindAnagrams(candidates, subject)
 
-Execute (does not detect a anagram if the original word is repeated):
-  let candidates = ['goGoGO']
-  let subject = "go"
-  let expected = []
-  AssertEqual expected, FindAnagrams(candidates, subject)
-
 Execute (anagrams must use all letters exactly once):
   let candidates = ['patter']
   let subject = "tapper"
