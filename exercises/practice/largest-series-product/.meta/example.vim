@@ -9,6 +9,9 @@ function! LargestProduct(digits, span) abort
 
   for i in range(len(a:digits) - a:span + 1)
     let tmp = s:product(a:digits[i : i + a:span - 1])
+    if tmp == -1
+      return -1
+    endif
     if tmp > max
       let max = tmp
     endif
@@ -22,7 +25,7 @@ function! s:product(digits) abort
 
   for digit in split(a:digits[1:], '\zs')
     if digit !~? '\d'
-      throw 'invalid input'
+      return -1
     endif
     let prod = prod * digit
   endfor
