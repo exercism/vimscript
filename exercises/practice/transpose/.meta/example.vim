@@ -5,7 +5,7 @@ function! Transpose(lines) abort
 
   let l:substituted = []
   let l:max_row_length = 0
-  for l:row in split(a:lines, '\\n')
+  for l:row in split(a:lines, "\n")
     let l:row = substitute(l:row, ' ', '*', 'g')
     if len(l:row) > l:max_row_length
       let l:max_row_length = len(l:row)
@@ -37,5 +37,5 @@ function! Transpose(lines) abort
     call add(l:results, l:row)
   endfor
 
-  return join(l:results, '\n')
+  return join(l:results, "\n")
 endfunction
