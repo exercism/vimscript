@@ -4,13 +4,10 @@
 "
 " Example:
 "
-"   :echo Transpose('ABC\nDEF')
-"   " ABC
-"   " DEF
-"   ADn\BE\nCF
-"   " AD
-"   " BE
-"   " CF
+"   :echo Transpose("ABC\nDEF")
+"   AD
+"   BE
+"   CF
 "
 function! Transpose(lines) abort
   " your code goes here

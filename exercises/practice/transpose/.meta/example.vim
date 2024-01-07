@@ -5,20 +5,17 @@ function! Transpose(lines) abort
 
   let l:substituted = []
   let l:max_row_length = 0
-  for l:row in split(a:lines, '\\n')
+  for l:row in reverse(split(a:lines, "\n"))
     let l:row = substitute(l:row, ' ', '*', 'g')
     if len(l:row) > l:max_row_length
       let l:max_row_length = len(l:row)
+    else
+      let l:row .= repeat(' ', l:max_row_length - len(l:row))
     endif
-
     call add(l:substituted, l:row)
   endfor
 
-  let l:padded = []
-  for l:row in l:substituted
-    let l:row .= repeat(' ', l:max_row_length - len(l:row))
-    call add(l:padded, l:row)
-  endfor
+  let l:padded = reverse(l:substituted)
 
   let l:zipped = []
   let l:count = len(l:padded[0])
@@ -37,5 +34,5 @@ function! Transpose(lines) abort
     call add(l:results, l:row)
   endfor
 
-  return join(l:results, '\n')
+  return join(l:results, "\n")
 endfunction
