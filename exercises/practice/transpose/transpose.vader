@@ -2,83 +2,83 @@
 Execute (empty string):
   let g:lines = []
   let g:expected = []
-  let g:lines = join(g:lines, '\n')
-  let g:expected = join(g:expected, '\n')
+  let g:lines = join(g:lines, "\n")
+  let g:expected = join(g:expected, "\n")
   AssertEqual g:expected, Transpose(g:lines)
 
 Execute (two characters in a row):
   let g:lines = ['A1']
   let g:expected = ['A', '1']
-  let g:lines = join(g:lines, '\n')
-  let g:expected = join(g:expected, '\n')
+  let g:lines = join(g:lines, "\n")
+  let g:expected = join(g:expected, "\n")
   AssertEqual g:expected, Transpose(g:lines)
 
 Execute (two characters in a column):
   let g:lines = ['A', '1']
   let g:expected = ['A1']
-  let g:lines = join(g:lines, '\n')
-  let g:expected = join(g:expected, '\n')
+  let g:lines = join(g:lines, "\n")
+  let g:expected = join(g:expected, "\n")
   AssertEqual g:expected, Transpose(g:lines)
 
 Execute (simple):
   let g:lines = ['ABC', '123']
   let g:expected = ['A1', 'B2', 'C3']
-  let g:lines = join(g:lines, '\n')
-  let g:expected = join(g:expected, '\n')
+  let g:lines = join(g:lines, "\n")
+  let g:expected = join(g:expected, "\n")
   AssertEqual g:expected, Transpose(g:lines)
 
 Execute (single line):
   let g:lines = ['Single line.']
   let g:expected = ['S', 'i', 'n', 'g', 'l', 'e', ' ', 'l', 'i', 'n', 'e', '.']
-  let g:lines = join(g:lines, '\n')
-  let g:expected = join(g:expected, '\n')
+  let g:lines = join(g:lines, "\n")
+  let g:expected = join(g:expected, "\n")
   AssertEqual g:expected, Transpose(g:lines)
 
 Execute (first line longer than second line):
   let g:lines = ['The fourth line.', 'The fifth line.']
   let g:expected = ['TT', 'hh', 'ee', '  ', 'ff', 'oi', 'uf', 'rt', 'th', 'h ', ' l', 'li', 'in', 'ne', 'e.', '.']
-  let g:lines = join(g:lines, '\n')
-  let g:expected = join(g:expected, '\n')
+  let g:lines = join(g:lines, "\n")
+  let g:expected = join(g:expected, "\n")
   AssertEqual g:expected, Transpose(g:lines)
 
 Execute (second line longer than first line):
   let g:lines = ['The first line.', 'The second line.']
   let g:expected = ['TT', 'hh', 'ee', '  ', 'fs', 'ie', 'rc', 'so', 'tn', ' d', 'l ', 'il', 'ni', 'en', '.e', ' .']
-  let g:lines = join(g:lines, '\n')
-  let g:expected = join(g:expected, '\n')
+  let g:lines = join(g:lines, "\n")
+  let g:expected = join(g:expected, "\n")
   AssertEqual g:expected, Transpose(g:lines)
 
 Execute (mixed line length):
   let g:lines = ['The longest line.', 'A long line.', 'A longer line.', 'A line.']
   let g:expected = ['TAAA', 'h   ', 'elll', ' ooi', 'lnnn', 'ogge', 'n e.', 'glr', 'ei ', 'snl', 'tei', ' .n', 'l e', 'i .', 'n', 'e', '.']
-  let g:lines = join(g:lines, '\n')
-  let g:expected = join(g:expected, '\n')
+  let g:lines = join(g:lines, "\n")
+  let g:expected = join(g:expected, "\n")
   AssertEqual g:expected, Transpose(g:lines)
 
 Execute (square):
   let g:lines = ['HEART', 'EMBER', 'ABUSE', 'RESIN', 'TREND']
   let g:expected = ['HEART', 'EMBER', 'ABUSE', 'RESIN', 'TREND']
-  let g:lines = join(g:lines, '\n')
-  let g:expected = join(g:expected, '\n')
+  let g:lines = join(g:lines, "\n")
+  let g:expected = join(g:expected, "\n")
   AssertEqual g:expected, Transpose(g:lines)
 
 Execute (rectangle):
   let g:lines = ['FRACTURE', 'OUTLINED', 'BLOOMING', 'SEPTETTE']
   let g:expected = ['FOBS', 'RULE', 'ATOP', 'CLOT', 'TIME', 'UNIT', 'RENT', 'EDGE']
-  let g:lines = join(g:lines, '\n')
-  let g:expected = join(g:expected, '\n')
+  let g:lines = join(g:lines, "\n")
+  let g:expected = join(g:expected, "\n")
   AssertEqual g:expected, Transpose(g:lines)
 
 Execute (triangle):
   let g:lines = ['T', 'EE', 'AAA', 'SSSS', 'EEEEE', 'RRRRRR']
   let g:expected = ['TEASER', ' EASER', '  ASER', '   SER', '    ER', '     R']
-  let g:lines = join(g:lines, '\n')
-  let g:expected = join(g:expected, '\n')
+  let g:lines = join(g:lines, "\n")
+  let g:expected = join(g:expected, "\n")
   AssertEqual g:expected, Transpose(g:lines)
 
 Execute (jagged triangle):
   let g:lines = ['11', '2', '3333', '444', '555555', '66666']
   let g:expected = ['123456', '1 3456', '  3456', '  3 56', '    56', '    5']
-  let g:lines = join(g:lines, '\n')
-  let g:expected = join(g:expected, '\n')
+  let g:lines = join(g:lines, "\n")
+  let g:expected = join(g:expected, "\n")
   AssertEqual g:expected, Transpose(g:lines)
