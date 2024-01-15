@@ -1,0 +1,27 @@
+{
+    "introduction": {
+      "authors": [
+        "BNAndras"
+      ]
+    },
+    "approaches": [
+      {
+        "uuid": "2e660e58-f799-4396-b07d-d0f067efbef3",
+        "slug": "boolean-chain",
+        "title": "Boolean Chaining",
+        "blurb": "Use operators to check boolean values in a chain",
+        "authors": [
+          "BNAndras"
+        ]
+      },
+      {
+        "uuid": "669b6557-0bf4-43fd-a500-f88eed0a151c",
+        "slug": "if-else-statements",
+        "title": "If Else Statements",
+        "blurb": "Use the cond form to check boolean values sequentially.",
+        "authors": [
+          "BNAndras"
+        ]
+      }
+    ]
+}
