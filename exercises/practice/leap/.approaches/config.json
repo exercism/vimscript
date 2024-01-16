@@ -18,7 +18,7 @@
         "uuid": "669b6557-0bf4-43fd-a500-f88eed0a151c",
         "slug": "if-else-statements",
         "title": "If Else Statements",
-        "blurb": "Use the cond form to check boolean values sequentially.",
+        "blurb": "Use if else statements to check boolean values sequentially.",
         "authors": [
           "BNAndras"
         ]
