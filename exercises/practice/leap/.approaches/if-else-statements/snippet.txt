@@ -1,0 +1,8 @@
+function! LeapYear(year) abort
+  if a:year % 400 == 0 
+    return 1
+  elseif a:year % 100 == 0
+    return 0
+  elseif a:year % 4 == 0
+    return 1
+# cut for snippet brevity
