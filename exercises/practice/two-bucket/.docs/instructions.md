@@ -11,7 +11,7 @@ There are some rules that your solution must follow:
      b) the second bucket is full
   2. Emptying a bucket and doing nothing to the other.
   3. Filling a bucket and doing nothing to the other.
-- After an action, you must not arrive at a state where the starting bucket is empty and the other bucket is full.
+- After an action, you may not arrive at a state where the starting bucket is empty and the other bucket is full.
 
 Your program will take as input:
 
@@ -26,7 +26,7 @@ Your program should determine:
 - which bucket should end up with the desired number of liters - either bucket one or bucket two
 - how many liters are left in the other bucket
 
-Note: it counts as one (1) action any time a change is made to either or both buckets.
+Note: any time a change is made to either or both buckets counts as one (1) action.
 
 Example:
 Bucket one can hold up to 7 liters, and bucket two can hold up to 11 liters.
@@ -39,7 +39,7 @@ Bucket one can hold 3 liters, and bucket two can hold up to 5 liters.
 You are told you must start with bucket one.
 So your first action is to fill bucket one.
 You choose to empty bucket one for your second action.
-For your third action, you must not fill bucket two, because this violates the third rule -- you must not end up in a state after any action where the starting bucket is empty and the other bucket is full.
+For your third action, you may not fill bucket two, because this violates the third rule -- you may not end up in a state after any action where the starting bucket is empty and the other bucket is full.
 
 Written with <3 at [Fullstack Academy][fullstack] by Lindsay Levine.
 

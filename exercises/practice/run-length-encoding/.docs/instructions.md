@@ -1,21 +1,20 @@
 # Instructions
 
-Write the function that uses the run-length encoding and decoding algorithms to encode and decode a string.
+Implement run-length encoding and decoding.
 
-Run-length encoding (RLE) is a simple form of data compression where runs of consecutive identical data elements are replaced with one data value and count.
+Run-length encoding (RLE) is a simple form of data compression, where runs (consecutive data elements) are replaced by just one data value and count.
 
-Example:
+For example we can represent the original 53 characters with only 13.
 
+```text
 "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB"  ->  "12WB12W3B24WB"
+```
 
 RLE allows the original data to be perfectly reconstructed from the compressed data, which makes it a lossless data compression.
 
-Example:
-
+```text
 "AABCCCDEEEE"  ->  "2AB3CD4E"  ->  "AABCCCDEEEE"
+```
 
-For simplicity, you can assume that the unencoded string will only contain the letters A through Z. (either upper or lower case) and whitespace.
-
-This means that the encoded data will not contain any numbers, so that any numbers contained within data to be decoded will always represent the count for the character that follows it.
-
-
+For simplicity, you can assume that the unencoded string will only contain the letters A through Z (either lower or upper case) and whitespace.
+This way data to be encoded will never contain any numbers and numbers inside data to be decoded always represent the count for the following character.
