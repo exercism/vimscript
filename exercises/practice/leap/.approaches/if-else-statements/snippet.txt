@@ -5,8 +5,4 @@ function! LeapYear(year) abort
     return 0
   elseif a:year % 4 == 0
     return 1
-  endif
-  else
-    return 0
-  endif
-endfunction
+# cut for snippet brevity
