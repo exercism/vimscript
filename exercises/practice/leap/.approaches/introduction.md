@@ -35,4 +35,4 @@ For more information, check the [if else statements approach][approach-if-else-s
 
 [modulo-operator]: https://en.wikipedia.org/wiki/Modulo
 [approach-boolean-chain]: https://exercism.org/tracks/vimscript/exercises/leap/approaches/boolean-chain
-[approach-if-else-statements]: https://exercism.org/tracks/vimscript/exercises/leap/if-else-statements
+[approach-if-else-statements]: https://exercism.org/tracks/vimscript/exercises/leap/approaches/if-else-statements
