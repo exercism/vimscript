@@ -1,0 +1,8 @@
+let s:rules = [[3, 'Pling'], [5, 'Plang'], [7, 'Plong']]
+
+function! Raindrops(number) abort
+  let l:str = ''
+  for [l:factor, l:sound] in s:rules
+    if a:number % l:factor == 0
+      let l:str .= l:sound
+# cut for snippet brevity
