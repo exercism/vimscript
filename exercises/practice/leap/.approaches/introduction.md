@@ -1,6 +1,6 @@
 # Introduction
 
-There are two idiomatic approaches highlighted here for his exercise.
+There are two idiomatic approaches highlighted here for this exercise.
 Both involve checking if a year is evenly divisible by 4, 100, and 400 using [the modulo operator '%'][modulo-operator].
 
 ## General guidance
