@@ -1,6 +1,6 @@
 # Introduction
 
-There are two idiomatic approaches highlighted here for his exercise.
+There are two idiomatic approaches highlighted here for this exercise.
 Both involve checking if a year is evenly divisible by 4, 100, and 400 using [the modulo operator '%'][modulo-operator].
 
 ## General guidance
@@ -35,4 +35,4 @@ For more information, check the [if else statements approach][approach-if-else-s
 
 [modulo-operator]: https://en.wikipedia.org/wiki/Modulo
 [approach-boolean-chain]: https://exercism.org/tracks/vimscript/exercises/leap/approaches/boolean-chain
-[approach-if-else-statements]: https://exercism.org/tracks/vimscript/exercises/leap/if-else-statements
+[approach-if-else-statements]: https://exercism.org/tracks/vimscript/exercises/leap/approaches/if-else-statements
