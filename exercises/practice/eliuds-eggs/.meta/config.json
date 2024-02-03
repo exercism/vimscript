@@ -4,10 +4,10 @@
   ],
   "files": {
     "solution": [
-      "pop_count.vim"
+      "eliuds_eggs.vim"
     ],
     "test": [
-      "pop_count.vader"
+      "eliuds_eggs.vader"
     ],
     "example": [
       ".meta/example.vim"
