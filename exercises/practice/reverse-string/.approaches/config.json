@@ -1,0 +1,22 @@
+{
+  "approaches": [
+    {
+      "uuid": "b7d9f537-d0f7-4f80-b22a-c74ad88b949f",
+      "slug": "list-of-characters",
+      "title": "Reverse a List of Characters",
+      "blurb": "Explode the string into a list of characters and reverse the list",
+      "authors": [
+        "BNAndras"
+      ]
+    },
+    {
+      "uuid": "8a1adc50-f84f-4d3d-acdb-26c1677d4c69",
+      "slug": "looping-in-reverse",
+      "title": "Looping in Reverse",
+      "blurb": "Loop over the string backwards and build up a new string",
+      "authors": [
+        "BNAndras"
+      ]
+    }
+  ]
+}
