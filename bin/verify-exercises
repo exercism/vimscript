@@ -24,7 +24,6 @@ run_test() {
 
 for concept_exercise_dir in ./exercises/concept/*/; do
     if [ -d $concept_exercise_dir ]; then
-        echo "Checking $(basename "${concept_exercise_dir}") exercise..."
         run_test $concept_exercise_dir
     fi
 done
@@ -32,7 +31,6 @@ done
 # Verify the Practice Exercises
 for practice_exercise_dir in ./exercises/practice/*/; do
     if [ -d $practice_exercise_dir ]; then
-        echo "Checking $(basename "${practice_exercise_dir}") exercise..."
         run_test $practice_exercise_dir
     fi
 done
