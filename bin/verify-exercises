@@ -6,9 +6,9 @@ run_test() {
     slug=$(basename $1)
     temp_dir=${temp_dir_base}/${slug}
     mkdir -p ${temp_dir}
-    
+
     cp -r "$1/." $temp_dir
-    slug_snakecase=echo $slug | tr "-" "_" 
+    slug_snakecase=$(echo "$slug" | tr '-' '_')
     cp $temp_dir/.meta/example.vim $temp_dir/$slug_snakecase.vim
 
     (cd /opt/test-runner && bin/run.sh $slug $temp_dir $temp_dir) || exit 1
