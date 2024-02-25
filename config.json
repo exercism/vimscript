@@ -611,6 +611,7 @@
       }
     ],
     "foregone": [
+      "parallel-letter-frequency",
       "lens-person"
     ]
   },
