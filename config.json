@@ -611,8 +611,9 @@
       }
     ],
     "foregone": [
+      "bank-account",
+      "lens-person",
       "parallel-letter-frequency",
-      "lens-person"
     ]
   },
   "key_features": [
