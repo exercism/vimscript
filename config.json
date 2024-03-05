@@ -544,6 +544,14 @@
         ]
       },
       {
+        "slug": "circular-buffer",
+        "name": "Circular Buffer",
+        "uuid": "75477d21-a1cb-4ed8-8be9-0c9260cbecf9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "custom-set",
         "name": "Custom Set",
         "uuid": "42fcddbb-2acd-44dd-8aae-7c3f6daab41d",
@@ -571,7 +579,7 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4
-      },  
+      },
       {
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
