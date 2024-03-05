@@ -103,3 +103,4 @@ Execute (initial clear does not affect wrapping around):
   AssertEqual g:buffer.Read(), 4
   AssertThrows call g:buffer.Read()
   AssertEqual "Empty buffer", g:vader_exception
+  
