@@ -4,7 +4,7 @@
 "
 " If the lengths of the strands don't match, throw this exception:
 "
-"     'left and right strands must be of equal length'
+"     'strands must be of equal length'
 "
 function! Distance(strand1, strand2)
 
