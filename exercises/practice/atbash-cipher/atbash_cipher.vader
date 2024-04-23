@@ -48,3 +48,11 @@ Execute (decode all the letters):
   AssertEqual
     \ 'thequickbrownfoxjumpsoverthelazydog',
     \ AtbashDecode('gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt')
+
+Execute (decode with too many spaces):
+  AssertEqual 'exercism', AtbashDecode('vc vix    r hn')
+
+Execute (decode with no spaces):
+  AssertEqual 'anobstacleisoftenasteppingstone', AtbashDecode('zmlyhgzxovrhlugvmzhgvkkrmthglmv')
+
+
