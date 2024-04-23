@@ -1,131 +1,125 @@
-"
-" Version: 1.4.0
-"
-
-Before:
-  unlet! heyBob expected
 
 Execute (stating something):
-  let heyBob = 'Tom-ay-to, tom-aaaah-to.'
-  let expected = "Whatever."
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "Tom-ay-to, tom-aaaah-to."
+  let g:expected = "Whatever."
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (shouting):
-  let heyBob = 'WATCH OUT!'
-  let expected = "Whoa, chill out!"
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "WATCH OUT!"
+  let g:expected = "Whoa, chill out!"
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (shouting gibberish):
-  let heyBob = 'FCECDFCAAB'
-  let expected = "Whoa, chill out!"
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "FCECDFCAAB"
+  let g:expected = "Whoa, chill out!"
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (asking a question):
-  let heyBob = 'Does this cryogenic chamber make me look fat?'
-  let expected = "Sure."
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "Does this cryogenic chamber make me look fat?"
+  let g:expected = "Sure."
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (asking a numeric question):
-  let heyBob = 'You are, what, like 15?'
-  let expected = "Sure."
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "You are, what, like 15?"
+  let g:expected = "Sure."
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (asking gibberish):
-  let heyBob = 'fffbbcbeab?'
-  let expected = "Sure."
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "fffbbcbeab?"
+  let g:expected = "Sure."
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (talking forcefully):
-  let heyBob = 'Let''s go make out behind the gym!'
-  let expected = "Whatever."
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "Hi there!"
+  let g:expected = "Whatever."
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (using acronyms in regular speech):
-  let heyBob = 'It''s OK if you don''t want to go to the DMV.'
-  let expected = "Whatever."
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "It's OK if you don't want to go work for NASA."
+  let g:expected = "Whatever."
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (forceful question):
-  let heyBob = 'WHAT THE HELL WERE YOU THINKING?'
-  let expected = "Calm down, I know what I'm doing!"
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "WHAT'S GOING ON?"
+  let g:expected = "Calm down, I know what I'm doing!"
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (shouting numbers):
-  let heyBob = '1, 2, 3 GO!'
-  let expected = "Whoa, chill out!"
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "1, 2, 3 GO!"
+  let g:expected = "Whoa, chill out!"
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (no letters):
-  let heyBob = '1, 2, 3'
-  let expected = "Whatever."
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "1, 2, 3"
+  let g:expected = "Whatever."
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (question with no letters):
-  let heyBob = '4?'
-  let expected = "Sure."
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "4?"
+  let g:expected = "Sure."
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (shouting with special characters):
-  let heyBob = 'ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!'
-  let expected = "Whoa, chill out!"
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"
+  let g:expected = "Whoa, chill out!"
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (shouting with no exclamation mark):
-  let heyBob = 'I HATE THE DMV'
-  let expected = "Whoa, chill out!"
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "I HATE THE DENTIST"
+  let g:expected = "Whoa, chill out!"
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (statement containing question mark):
-  let heyBob = 'Ending with ? means a question.'
-  let expected = "Whatever."
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "Ending with ? means a question."
+  let g:expected = "Whatever."
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (non-letters with question):
-  let heyBob = ':) ?'
-  let expected = "Sure."
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = ":) ?"
+  let g:expected = "Sure."
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (prattling on):
-  let heyBob = 'Wait! Hang on. Are you going to be OK?'
-  let expected = "Sure."
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "Wait! Hang on. Are you going to be OK?"
+  let g:expected = "Sure."
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (silence):
-  let heyBob = ''
-  let expected = "Fine. Be that way!"
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = ""
+  let g:expected = "Fine. Be that way!"
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (prolonged silence):
-  let heyBob = '          '
-  let expected = "Fine. Be that way!"
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "          "
+  let g:expected = "Fine. Be that way!"
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (alternate silence):
-  let heyBob = "\t\t\t\t\t\t\t\t\t\t"
-  let expected = "Fine. Be that way!"
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "\t\t\t\t\t\t\t\t\t\t"
+  let g:expected = "Fine. Be that way!"
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (multiple line question):
-  let heyBob = "\nDoes this cryogenic chamber make me look fat?\nNo."
-  let expected = "Whatever."
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "\nDoes this cryogenic chamber make me look fat?\nNo."
+  let g:expected = "Whatever."
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (starting with whitespace):
-  let heyBob = '         hmmmmmmm...'
-  let expected = "Whatever."
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "         hmmmmmmm..."
+  let g:expected = "Whatever."
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (ending with whitespace):
-  let heyBob = 'Okay if like my  spacebar  quite a bit?   '
-  let expected = "Sure."
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "Okay if like my  spacebar  quite a bit?   "
+  let g:expected = "Sure."
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (other whitespace):
-  let heyBob = "\n\r \t"
-  let expected = "Fine. Be that way!"
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "\n\r \t"
+  let g:expected = "Fine. Be that way!"
+  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (non-question ending with whitespace):
-  let heyBob = 'This is a statement ending with whitespace      '
-  let expected = "Whatever."
-  AssertEqual expected, Response(heyBob)
+  let g:heyBob = "This is a statement ending with whitespace      "
+  let g:expected = "Whatever."
+  AssertEqual g:expected, Response(g:heyBob)
