@@ -1,28 +1,45 @@
-"
-" Version: 1.4.0
-"
 
-Execute (year not divisible by 4: common year):
-  let year = 2015
-  let expected = 0
-  AssertEqual expected, LeapYear(year)
+Execute (year not divisible by 4 in common year):
+  let g:year = 2015
+  let g:expected = 0
+  AssertEqual g:expected, LeapYear(g:year)
 
-Execute (year divisible by 4, not divisible by 100: leap year):
-  let year = 1996
-  let expected = 1
-  AssertEqual expected, LeapYear(year)
+Execute (year divisible by 2, not divisible by 4 in common year):
+  let g:year = 1970
+  let g:expected = 0
+  AssertEqual g:expected, LeapYear(g:year)
 
-Execute (year divisible by 100, not divisible by 400: common year):
-  let year = 2100
-  let expected = 0
-  AssertEqual expected, LeapYear(year)
+Execute (year divisible by 4, not divisible by 100 in leap year):
+  let g:year = 1996
+  let g:expected = 1
+  AssertEqual g:expected, LeapYear(g:year)
 
-Execute (year divisible by 400: leap year):
-  let year = 2000
-  let expected = 1
-  AssertEqual expected, LeapYear(year)
+Execute (year divisible by 4 and 5 is still a leap year):
+  let g:year = 1960
+  let g:expected = 1
+  AssertEqual g:expected, LeapYear(g:year)
 
-Execute (year divisible by 200, not divisible by 400: common year):
-  let year = 1800
-  let expected = 0
-  AssertEqual expected, LeapYear(year)
+Execute (year divisible by 100, not divisible by 400 in common year):
+  let g:year = 2100
+  let g:expected = 0
+  AssertEqual g:expected, LeapYear(g:year)
+
+Execute (year divisible by 100 but not by 3 is still not a leap year):
+  let g:year = 1900
+  let g:expected = 0
+  AssertEqual g:expected, LeapYear(g:year)
+
+Execute (year divisible by 400 is leap year):
+  let g:year = 2000
+  let g:expected = 1
+  AssertEqual g:expected, LeapYear(g:year)
+
+Execute (year divisible by 400 but not by 125 is still a leap year):
+  let g:year = 2400
+  let g:expected = 1
+  AssertEqual g:expected, LeapYear(g:year)
+
+Execute (year divisible by 200, not divisible by 400 in common year):
+  let g:year = 1800
+  let g:expected = 0
+  AssertEqual g:expected, LeapYear(g:year)
