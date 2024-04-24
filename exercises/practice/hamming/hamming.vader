@@ -1,47 +1,58 @@
-"
-" Version: 2.2.0
-"
 
 Execute (empty strands):
-  let strand1 = ""
-  let strand2 = ""
-  let expected = 0
-  AssertEqual expected, Distance(strand1, strand2)
+  let g:strand1 = ""
+  let g:strand2 = ""
+  let g:expected = 0
+  AssertEqual g:expected, Distance(g:strand1, g:strand2)
 
 Execute (single letter identical strands):
-  let strand1 = "A"
-  let strand2 = "A"
-  let expected = 0
-  AssertEqual expected, Distance(strand1, strand2)
+  let g:strand1 = "A"
+  let g:strand2 = "A"
+  let g:expected = 0
+  AssertEqual g:expected, Distance(g:strand1, g:strand2)
 
 Execute (single letter different strands):
-  let strand1 = "G"
-  let strand2 = "T"
-  let expected = 1
-  AssertEqual expected, Distance(strand1, strand2)
+  let g:strand1 = "G"
+  let g:strand2 = "T"
+  let g:expected = 1
+  AssertEqual g:expected, Distance(g:strand1, g:strand2)
 
 Execute (long identical strands):
-  let strand1 = "GGACTGAAATCTG"
-  let strand2 = "GGACTGAAATCTG"
-  let expected = 0
-  AssertEqual expected, Distance(strand1, strand2)
+  let g:strand1 = "GGACTGAAATCTG"
+  let g:strand2 = "GGACTGAAATCTG"
+  let g:expected = 0
+  AssertEqual g:expected, Distance(g:strand1, g:strand2)
 
 Execute (long different strands):
-  let strand1 = "GGACGGATTCTG"
-  let strand2 = "AGGACGGATTCT"
-  let expected = 9
-  AssertEqual expected, Distance(strand1, strand2)
+  let g:strand1 = "GGACGGATTCTG"
+  let g:strand2 = "AGGACGGATTCT"
+  let g:expected = 9
+  AssertEqual g:expected, Distance(g:strand1, g:strand2)
 
 Execute (disallow first strand longer):
   let g:strand1 = "AATG"
   let g:strand2 = "AAA"
-  let expected = 'left and right strands must be of equal length'
+  let g:expected = "strands must be of equal length"
   AssertThrows call Distance(g:strand1, g:strand2)
-  AssertEqual expected, g:vader_exception
+  AssertEqual g:expected, g:vader_exception
 
 Execute (disallow second strand longer):
   let g:strand1 = "ATA"
   let g:strand2 = "AGTG"
-  let expected = 'left and right strands must be of equal length'
+  let g:expected = "strands must be of equal length"
   AssertThrows call Distance(g:strand1, g:strand2)
-  AssertEqual expected, g:vader_exception
+  AssertEqual g:expected, g:vader_exception
+
+Execute (disallow empty first strand):
+  let g:strand1 = ""
+  let g:strand2 = "G"
+  let g:expected = "strands must be of equal length"
+  AssertThrows call Distance(g:strand1, g:strand2)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (disallow empty second strand):
+  let g:strand1 = "G"
+  let g:strand2 = ""
+  let g:expected = "strands must be of equal length"
+  AssertThrows call Distance(g:strand1, g:strand2)
+  AssertEqual g:expected, g:vader_exception
