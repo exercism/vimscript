@@ -73,5 +73,8 @@ Execute (3000 is MMM):
 Execute (3001 is MMMI):
   AssertEqual 'MMMI', ToRoman(3001)
 
+Execute (3888 is MMMDCCCLXXXVIII):
+  AssertEqual 'MMMDCCCLXXXVIII', ToRoman(3888)
+
 Execute (3999 is MMMCMXCIX):
   AssertEqual 'MMMCMXCIX', ToRoman(3999)
