@@ -45,7 +45,7 @@ function! SpiralMatrix(n)
 
     let l:results = []
     for l:i in range(0, len(l:matrix) - 1, a:n)
-        call add(l:results, l:matrix[l:i:l:i + a:n - 1])
+        call add(l:results, l:matrix[l:i : l:i + a:n - 1])
     endfor
 
     return l:results
