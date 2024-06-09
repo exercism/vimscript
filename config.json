@@ -610,6 +610,14 @@
         "difficulty": 4
       },
       {
+        "slug": "spiral-matrix",
+        "name": "Spiral Matrix",
+        "uuid": "a9cf7720-d21e-4ab6-9ec3-78a8c44c348b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "transpose",
         "name": "Transpose",
         "uuid": "3a719b2a-8a73-44ed-864d-9b2180135a2b",
