@@ -1,89 +1,108 @@
+
 Execute (no matches):
-  let candidates = ['hello', 'world', 'zombies', 'pants']
-  let subject = "diaper"
-  let expected = []
-  AssertEqual expected, FindAnagrams(candidates, subject)
+  let g:candidates = ['hello', 'world', 'zombies', 'pants']
+  let g:subject = "diaper"
+  let g:expected = []
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
 
 Execute (detects two anagrams):
-  let candidates = ['lemons', 'cherry', 'melons']
-  let subject = "solemn"
-  let expected = ['lemons', 'melons']
-  AssertEqual expected, FindAnagrams(candidates, subject)
+  let g:candidates = ['lemons', 'cherry', 'melons']
+  let g:subject = "solemn"
+  let g:expected = ['lemons', 'melons']
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
 
 Execute (does not detect anagram subsets):
-  let candidates = ['dog', 'goody']
-  let subject = "good"
-  let expected = []
-  AssertEqual expected, FindAnagrams(candidates, subject)
+  let g:candidates = ['dog', 'goody']
+  let g:subject = "good"
+  let g:expected = []
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
 
 Execute (detects anagram):
-  let candidates = ['enlists', 'google', 'inlets', 'banana']
-  let subject = "listen"
-  let expected = ['inlets']
-  AssertEqual expected, FindAnagrams(candidates, subject)
+  let g:candidates = ['enlists', 'google', 'inlets', 'banana']
+  let g:subject = "listen"
+  let g:expected = ['inlets']
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
 
 Execute (detects three anagrams):
-  let candidates = ['gallery', 'ballerina', 'regally', 'clergy', 'largely', 'leading']
-  let subject = "allergy"
-  let expected = ['gallery', 'regally', 'largely']
-  AssertEqual expected, FindAnagrams(candidates, subject)
+  let g:candidates = ['gallery', 'ballerina', 'regally', 'clergy', 'largely', 'leading']
+  let g:subject = "allergy"
+  let g:expected = ['gallery', 'regally', 'largely']
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
 
 Execute (detects multiple anagrams with different case):
-  let candidates = ['Eons', 'ONES']
-  let subject = "nose"
-  let expected = ['Eons', 'ONES']
-  AssertEqual expected, FindAnagrams(candidates, subject)
+  let g:candidates = ['Eons', 'ONES']
+  let g:subject = "nose"
+  let g:expected = ['Eons', 'ONES']
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
 
 Execute (does not detect non-anagrams with identical checksum):
-  let candidates = ['last']
-  let subject = "mass"
-  let expected = []
-  AssertEqual expected, FindAnagrams(candidates, subject)
+  let g:candidates = ['last']
+  let g:subject = "mass"
+  let g:expected = []
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
 
 Execute (detects anagrams case-insensitively):
-  let candidates = ['cashregister', 'Carthorse', 'radishes']
-  let subject = "Orchestra"
-  let expected = ['Carthorse']
-  AssertEqual expected, FindAnagrams(candidates, subject)
+  let g:candidates = ['cashregister', 'Carthorse', 'radishes']
+  let g:subject = "Orchestra"
+  let g:expected = ['Carthorse']
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
 
 Execute (detects anagrams using case-insensitive subject):
-  let candidates = ['cashregister', 'carthorse', 'radishes']
-  let subject = "Orchestra"
-  let expected = ['carthorse']
-  AssertEqual expected, FindAnagrams(candidates, subject)
+  let g:candidates = ['cashregister', 'carthorse', 'radishes']
+  let g:subject = "Orchestra"
+  let g:expected = ['carthorse']
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
 
 Execute (detects anagrams using case-insensitive possible matches):
-  let candidates = ['cashregister', 'Carthorse', 'radishes']
-  let subject = "orchestra"
-  let expected = ['Carthorse']
-  AssertEqual expected, FindAnagrams(candidates, subject)
+  let g:candidates = ['cashregister', 'Carthorse', 'radishes']
+  let g:subject = "orchestra"
+  let g:expected = ['Carthorse']
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
+
+Execute (does not detect an anagram if the original word is repeated):
+  let g:candidates = ['goGoGO']
+  let g:subject = "go"
+  let g:expected = []
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
 
 Execute (anagrams must use all letters exactly once):
-  let candidates = ['patter']
-  let subject = "tapper"
-  let expected = []
-  AssertEqual expected, FindAnagrams(candidates, subject)
+  let g:candidates = ['patter']
+  let g:subject = "tapper"
+  let g:expected = []
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
 
 Execute (words are not anagrams of themselves):
-  let candidates = ['BANANA']
-  let subject = "BANANA"
-  let expected = []
-  AssertEqual expected, FindAnagrams(candidates, subject)
+  let g:candidates = ['BANANA']
+  let g:subject = "BANANA"
+  let g:expected = []
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
 
 Execute (words are not anagrams of themselves even if letter case is partially different):
-  let candidates = ['Banana']
-  let subject = "BANANA"
-  let expected = []
-  AssertEqual expected, FindAnagrams(candidates, subject)
+  let g:candidates = ['Banana']
+  let g:subject = "BANANA"
+  let g:expected = []
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
 
 Execute (words are not anagrams of themselves even if letter case is completely different):
-  let candidates = ['banana']
-  let subject = "BANANA"
-  let expected = []
-  AssertEqual expected, FindAnagrams(candidates, subject)
+  let g:candidates = ['banana']
+  let g:subject = "BANANA"
+  let g:expected = []
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
 
 Execute (words other than themselves can be anagrams):
-  let candidates = ['LISTEN', 'Silent']
-  let subject = "LISTEN"
-  let expected = ['Silent']
-  AssertEqual expected, FindAnagrams(candidates, subject)
+  let g:candidates = ['LISTEN', 'Silent']
+  let g:subject = "LISTEN"
+  let g:expected = ['Silent']
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
+
+Execute (handles case of greek letters):
+  let g:candidates = ['ΒΓΑ', 'ΒΓΔ', 'γβα', 'αβγ']
+  let g:subject = "ΑΒΓ"
+  let g:expected = ['ΒΓΑ', 'γβα']
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
+
+Execute (different characters may have the same bytes):
+  let g:candidates = ['€a']
+  let g:subject = "a⬂"
+  let g:expected = []
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
