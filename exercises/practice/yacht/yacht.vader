@@ -1,0 +1,174 @@
+
+Execute (Yacht):
+  let g:category = "yacht"
+  let g:dice = [5, 5, 5, 5, 5]
+  let g:expected = 50
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Not Yacht):
+  let g:category = "yacht"
+  let g:dice = [1, 3, 3, 2, 5]
+  let g:expected = 0
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Ones):
+  let g:category = "ones"
+  let g:dice = [1, 1, 1, 3, 5]
+  let g:expected = 3
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Ones, out of order):
+  let g:category = "ones"
+  let g:dice = [3, 1, 1, 5, 1]
+  let g:expected = 3
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (No ones):
+  let g:category = "ones"
+  let g:dice = [4, 3, 6, 5, 5]
+  let g:expected = 0
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Twos):
+  let g:category = "twos"
+  let g:dice = [2, 3, 4, 5, 6]
+  let g:expected = 2
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Fours):
+  let g:category = "fours"
+  let g:dice = [1, 4, 1, 4, 1]
+  let g:expected = 8
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Yacht counted as threes):
+  let g:category = "threes"
+  let g:dice = [3, 3, 3, 3, 3]
+  let g:expected = 15
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Yacht of 3s counted as fives):
+  let g:category = "fives"
+  let g:dice = [3, 3, 3, 3, 3]
+  let g:expected = 0
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Fives):
+  let g:category = "fives"
+  let g:dice = [1, 5, 3, 5, 3]
+  let g:expected = 10
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Sixes):
+  let g:category = "sixes"
+  let g:dice = [2, 3, 4, 5, 6]
+  let g:expected = 6
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Full house two small, three big):
+  let g:category = "full house"
+  let g:dice = [2, 2, 4, 4, 4]
+  let g:expected = 16
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Full house three small, two big):
+  let g:category = "full house"
+  let g:dice = [5, 3, 3, 5, 3]
+  let g:expected = 19
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Two pair is not a full house):
+  let g:category = "full house"
+  let g:dice = [2, 2, 4, 4, 5]
+  let g:expected = 0
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Four of a kind is not a full house):
+  let g:category = "full house"
+  let g:dice = [1, 4, 4, 4, 4]
+  let g:expected = 0
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Yacht is not a full house):
+  let g:category = "full house"
+  let g:dice = [2, 2, 2, 2, 2]
+  let g:expected = 0
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Four of a Kind):
+  let g:category = "four of a kind"
+  let g:dice = [6, 6, 4, 6, 6]
+  let g:expected = 24
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Yacht can be scored as Four of a Kind):
+  let g:category = "four of a kind"
+  let g:dice = [3, 3, 3, 3, 3]
+  let g:expected = 12
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Full house is not Four of a Kind):
+  let g:category = "four of a kind"
+  let g:dice = [3, 3, 3, 5, 5]
+  let g:expected = 0
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Little Straight):
+  let g:category = "little straight"
+  let g:dice = [3, 5, 4, 1, 2]
+  let g:expected = 30
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Little Straight as Big Straight):
+  let g:category = "big straight"
+  let g:dice = [1, 2, 3, 4, 5]
+  let g:expected = 0
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Four in order but not a little straight):
+  let g:category = "little straight"
+  let g:dice = [1, 1, 2, 3, 4]
+  let g:expected = 0
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (No pairs but not a little straight):
+  let g:category = "little straight"
+  let g:dice = [1, 2, 3, 4, 6]
+  let g:expected = 0
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Minimum is 1, maximum is 5, but not a little straight):
+  let g:category = "little straight"
+  let g:dice = [1, 1, 3, 4, 5]
+  let g:expected = 0
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Big Straight):
+  let g:category = "big straight"
+  let g:dice = [4, 6, 2, 5, 3]
+  let g:expected = 30
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Big Straight as little straight):
+  let g:category = "little straight"
+  let g:dice = [6, 5, 4, 3, 2]
+  let g:expected = 0
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (No pairs but not a big straight):
+  let g:category = "big straight"
+  let g:dice = [6, 5, 4, 3, 1]
+  let g:expected = 0
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Choice):
+  let g:category = "choice"
+  let g:dice = [3, 3, 5, 6, 6]
+  let g:expected = 23
+  AssertEqual g:expected, Score(g:category, g:dice)
+
+Execute (Yacht as choice):
+  let g:category = "choice"
+  let g:dice = [2, 2, 2, 2, 2]
+  let g:expected = 10
+  AssertEqual g:expected, Score(g:category, g:dice)
