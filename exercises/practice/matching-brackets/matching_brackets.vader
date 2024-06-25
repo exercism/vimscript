@@ -1,0 +1,62 @@
+
+Execute (paired square brackets):
+  Assert IsPaired("[]")
+
+Execute (empty string):
+  Assert IsPaired("")
+
+Execute (unpaired brackets):
+  Assert !IsPaired("[[")
+
+Execute (wrong ordered brackets):
+  Assert !IsPaired("}{")
+
+Execute (wrong closing bracket):
+  Assert !IsPaired("{]")
+
+Execute (paired with whitespace):
+  Assert IsPaired("{ }")
+
+Execute (partially paired brackets):
+  Assert !IsPaired("{[])")
+
+Execute (simple nested brackets):
+  Assert IsPaired("{[]}")
+
+Execute (several paired brackets):
+  Assert IsPaired("{}[]")
+
+Execute (paired and nested brackets):
+  Assert IsPaired("([{}({}[])])")
+
+Execute (unopened closing brackets):
+  Assert !IsPaired("{[)][]}")
+
+Execute (unpaired and nested brackets):
+  Assert !IsPaired("([{])")
+
+Execute (paired and wrong nested brackets):
+  Assert !IsPaired("[({]})")
+
+Execute (paired and wrong nested brackets but innermost are correct):
+  Assert !IsPaired("[({}])")
+
+Execute (paired and incomplete brackets):
+  Assert !IsPaired("{}[")
+
+Execute (too many closing brackets):
+  Assert !IsPaired("[]]")
+
+Execute (early unexpected brackets):
+  Assert !IsPaired(")()")
+
+Execute (early mismatched brackets):
+  Assert !IsPaired("{)()")
+
+Execute (math expression):
+  Assert IsPaired("(((185 + 223.85) * 15) - 543)/2")
+
+Execute (complex latex expression):
+  let g:value = "\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ \\mathrm{e}^{x} &... x^2 \\end{array}\\right)"
+  Assert IsPaired(g:value)
+
