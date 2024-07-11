@@ -618,6 +618,14 @@
         ]
       },
       {
+        "slug": "pascals-triangle",
+        "name": "Pascal's Triangle",
+        "uuid": "909fe38c-b083-4dfe-81a5-d494dd1a1d19",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "simple-linked-list",
         "name": "Simple Linked List",
         "uuid": "85054b17-d7c3-46f5-b44c-89b902ab794d",
