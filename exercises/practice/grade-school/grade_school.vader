@@ -1,0 +1,143 @@
+Before:
+  let g:school = GradeSchool()
+
+Execute (Roster is empty when no student is added):
+  let g:expected = []
+  AssertEqual g:expected, g:school.Roster()
+
+Execute (Add a student):
+  Assert g:school.Add('Aimee', 2)
+
+Execute (Student is added to the roster):
+  call g:school.Add('Aimee', 2)
+  AssertEqual ['Aimee'], g:school.Roster()
+
+Execute (Adding multiple students in the same grade in the roster):
+  Assert g:school.Add('Blair', 2)
+  Assert g:school.Add('James', 2)
+  Assert g:school.Add('Paul', 2)
+
+Execute (Multiple students in the same grade are added to the roster):
+  call g:school.Add('Blair', 2)
+  call g:school.Add('James', 2)
+  call g:school.Add('Paul', 2)
+
+  let g:expected = ['Blair', 'James', 'Paul']
+  AssertEqual g:expected, g:school.Roster()
+
+Execute (Cannot add student to same grade in the roster more than once):
+  call g:school.Add('Blair', 2)
+  Assert g:school.Add('James', 2)
+  Assert !g:school.Add('James', 2)
+  call g:school.Add('Paul', 2)
+
+Execute (Student not added to same grade in the roster more than once):
+  call g:school.Add('Blair', 2)
+  call g:school.Add('James', 2)
+  call g:school.Add('James', 2)
+  call g:school.Add('Paul', 2)
+
+  let g:expected = ['Blair', 'James', 'Paul']
+  AssertEqual g:expected, g:school.Roster()
+
+Execute (Adding students in multiple grades):
+  Assert g:school.Add('Chelsea', 3)
+  Assert g:school.Add('Logan', 7)
+
+Execute (Students in multiple grades are added to the roster):
+  call g:school.Add('Chelsea', 3)
+  call g:school.Add('Logan', 7)
+
+  let g:expected = ['Chelsea', 'Logan']
+  AssertEqual g:expected, g:school.Roster()
+
+Execute (Cannot add same student to multiple grades in the roster):
+  let g:students = [['Blair', 2], ['James', 2], ['James', 3], ['Paul', 3]]
+  call g:school.Add('Blair', 2)
+  Assert g:school.Add('James', 2)
+  Assert !g:school.Add('James', 3)
+  call g:school.Add('Paul', 3)
+
+Execute (Student not added to multiple grades in the roster):
+  call g:school.Add('Blair', 2)
+  call g:school.Add('James', 2)
+  call g:school.Add('James', 3)
+  call g:school.Add('Paul', 3)
+
+  let g:expected = ['Blair', 'James', 'Paul']
+  AssertEqual g:expected, g:school.Roster()
+
+Execute (Students are sorted by grades in the roster):
+  call g:school.Add('Jim', 3)
+  call g:school.Add('Peter', 2)
+  call g:school.Add('Anna', 1)
+
+  let g:expected = ['Anna', 'Peter', 'Jim']
+  AssertEqual g:expected, g:school.Roster()
+
+Execute (Students are sorted by name in the roster):
+  call g:school.Add('Peter', 2)
+  call g:school.Add('Zoe', 2)
+  call g:school.Add('Alex', 2)
+
+  let g:expected = ['Alex', 'Peter', 'Zoe']
+  AssertEqual g:expected, g:school.Roster()
+
+Execute (Students are sorted by grades and then by name in the roster):
+  call g:school.Add('Peter', 2)
+  call g:school.Add('Anna', 1)
+  call g:school.Add('Barb', 1)
+  call g:school.Add('Zoe', 2)
+  call g:school.Add('Alex', 2)
+  call g:school.Add('Jim', 3)
+  call g:school.Add('Charlie', 1)
+
+  let g:expected = ['Anna', 'Barb', 'Charlie', 'Alex', 'Peter', 'Zoe', 'Jim']
+  AssertEqual g:expected, g:school.Roster()
+
+Execute (Grade is empty if no students in the roster):
+  AssertEqual [], g:school.Grade(1)
+
+Execute (Grade is empty if no students in that grade):
+  call g:school.Add('Peter', 2)
+  call g:school.Add('Zoe', 2)
+  call g:school.Add('Alex', 2)
+  call g:school.Add('Jim', 3)
+
+  let g:expected = []
+  AssertEqual expected, g:school.Grade(1)
+
+Execute (Student not added to same grade more than once):
+  call g:school.Add('Blair', 2)
+  call g:school.Add('James', 2)
+  call g:school.Add('James', 2)
+  call g:school.Add('Paul', 2)
+
+  let g:expected = ['Blair', 'James', 'Paul']
+  AssertEqual expected, g:school.Grade(2)
+
+Execute (Student not added to multiple grades):
+  call g:school.Add('Blair', 2)
+  call g:school.Add('James', 2)
+  call g:school.Add('James', 3)
+  call g:school.Add('Paul', 3)
+
+  let g:expected = ['Blair', 'James']
+  AssertEqual expected, g:school.Grade(2)
+
+Execute (Student not added to other grade for multiple grades):
+  call g:school.Add('Blair', 2)
+  call g:school.Add('James', 2)
+  call g:school.Add('James', 3)
+  call g:school.Add('Paul', 3)
+
+  let g:expected = ['Paul']
+  AssertEqual expected, g:school.Grade(3)
+
+Execute (Students are sorted by name in a grade):
+  call g:school.Add('Franklin', 5)
+  call g:school.Add('Bradley', 5)
+  call g:school.Add('Jeff', 1)
+
+  let g:expected = ['Bradley', 'Franklin']
+  AssertEqual expected, g:school.Grade(5)
