@@ -48,4 +48,3 @@ let s:studentPositions = {
 \   'Kincaid':  [20, 21],
 \   'Larry':    [22, 23]
 \ }
-

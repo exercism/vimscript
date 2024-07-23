@@ -1,4 +1,3 @@
-
 Execute (garden with single student):
   let g:diagram = "RC\nGG"
   let g:student = "Alice"
@@ -100,4 +99,3 @@ Execute (full garden - for Larry, last student's garden):
   let g:student = "Larry"
   let g:expected = ['grass', 'violets', 'clover', 'violets']
   AssertEqual g:expected, Plants(g:diagram, g:student)
-

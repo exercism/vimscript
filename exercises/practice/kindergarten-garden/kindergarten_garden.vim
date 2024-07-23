@@ -10,4 +10,3 @@
 function! Plants(diagram, student) abort
   " your implementation goes here
 endfunction
-
