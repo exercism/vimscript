@@ -1,0 +1,103 @@
+
+Execute (garden with single student):
+  let g:diagram = "RC\nGG"
+  let g:student = "Alice"
+  let g:expected = ['radishes', 'clover', 'grass', 'grass']
+  AssertEqual g:expected, Plants(g:diagram, g:student)
+
+Execute (different garden with single student):
+  let g:diagram = "VC\nRC"
+  let g:student = "Alice"
+  let g:expected = ['violets', 'clover', 'radishes', 'clover']
+  AssertEqual g:expected, Plants(g:diagram, g:student)
+
+Execute (garden with two students):
+  let g:diagram = "VVCG\nVVRC"
+  let g:student = "Bob"
+  let g:expected = ['clover', 'grass', 'radishes', 'clover']
+  AssertEqual g:expected, Plants(g:diagram, g:student)
+
+Execute (second student's garden):
+  let g:diagram = "VVCCGG\nVVCCGG"
+  let g:student = "Bob"
+  let g:expected = ['clover', 'clover', 'clover', 'clover']
+  AssertEqual g:expected, Plants(g:diagram, g:student)
+
+Execute (third student's garden):
+  let g:diagram = "VVCCGG\nVVCCGG"
+  let g:student = "Charlie"
+  let g:expected = ['grass', 'grass', 'grass', 'grass']
+  AssertEqual g:expected, Plants(g:diagram, g:student)
+
+Execute (full garden - for Alice):
+  let g:diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
+  let g:student = "Alice"
+  let g:expected = ['violets', 'radishes', 'violets', 'radishes']
+  AssertEqual g:expected, Plants(g:diagram, g:student)
+
+Execute (full garden - for Bob):
+  let g:diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
+  let g:student = "Bob"
+  let g:expected = ['clover', 'grass', 'clover', 'clover']
+  AssertEqual g:expected, Plants(g:diagram, g:student)
+
+Execute (full garden - for Charlie):
+  let g:diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
+  let g:student = "Charlie"
+  let g:expected = ['violets', 'violets', 'clover', 'grass']
+  AssertEqual g:expected, Plants(g:diagram, g:student)
+
+Execute (full garden - for David):
+  let g:diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
+  let g:student = "David"
+  let g:expected = ['radishes', 'violets', 'clover', 'radishes']
+  AssertEqual g:expected, Plants(g:diagram, g:student)
+
+Execute (full garden - for Eve):
+  let g:diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
+  let g:student = "Eve"
+  let g:expected = ['clover', 'grass', 'radishes', 'grass']
+  AssertEqual g:expected, Plants(g:diagram, g:student)
+
+Execute (full garden - for Fred):
+  let g:diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
+  let g:student = "Fred"
+  let g:expected = ['grass', 'clover', 'violets', 'clover']
+  AssertEqual g:expected, Plants(g:diagram, g:student)
+
+Execute (full garden - for Ginny):
+  let g:diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
+  let g:student = "Ginny"
+  let g:expected = ['clover', 'grass', 'grass', 'clover']
+  AssertEqual g:expected, Plants(g:diagram, g:student)
+
+Execute (full garden - for Harriet):
+  let g:diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
+  let g:student = "Harriet"
+  let g:expected = ['violets', 'radishes', 'radishes', 'violets']
+  AssertEqual g:expected, Plants(g:diagram, g:student)
+
+Execute (full garden - for Ileana):
+  let g:diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
+  let g:student = "Ileana"
+  let g:expected = ['grass', 'clover', 'violets', 'clover']
+  AssertEqual g:expected, Plants(g:diagram, g:student)
+
+Execute (full garden - for Joseph):
+  let g:diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
+  let g:student = "Joseph"
+  let g:expected = ['violets', 'clover', 'violets', 'grass']
+  AssertEqual g:expected, Plants(g:diagram, g:student)
+
+Execute (full garden - for Kincaid, second to last student's garden):
+  let g:diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
+  let g:student = "Kincaid"
+  let g:expected = ['grass', 'clover', 'clover', 'grass']
+  AssertEqual g:expected, Plants(g:diagram, g:student)
+
+Execute (full garden - for Larry, last student's garden):
+  let g:diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
+  let g:student = "Larry"
+  let g:expected = ['grass', 'violets', 'clover', 'violets']
+  AssertEqual g:expected, Plants(g:diagram, g:student)
+
