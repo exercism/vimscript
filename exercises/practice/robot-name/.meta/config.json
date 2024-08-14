@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "robot_name.vim"
+    ],
+    "test": [
+      "robot_name.vader"
+    ],
+    "example": [
+      ".meta/example.vim"
+    ]
+  },
+  "blurb": "Manage robot factory settings.",
+  "source": "A debugging session with Paul Blackwell at gSchool."
+}
