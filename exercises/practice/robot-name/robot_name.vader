@@ -1,0 +1,27 @@
+Execute (robot has a name):
+  let g:robot = Create()
+  Assert g:robot.name =~# '\v^[A-Z]{2}\d{3}$'
+
+Execute (different robots have different names):
+  let g:robot1 = Create()
+  let g:robot2 = Create()
+  Assert g:robot.name != robot2.name
+
+Execute (can reset the robot name):
+  let g:robot = Create()
+  let g:originalName = robot.name
+  call g:robot.Reset()
+  Assert g:robot.name != g:originalName
+
+Execute (robot name is valid after reset):
+  let g:robot = Create()
+  call g:robot.Reset()
+  Assert g:robot.name =~# '\v^[A-Z]{2}\d{3}$'
+
+Execute (robot names should be unique):
+  let g:seen = {}
+  for i in range(10000)
+    let g:current = Create()
+    Assert !has_key(g:seen, g:current.name)
+    let g:seen[g:current.name] = 1
+  endfor
