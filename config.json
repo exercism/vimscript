@@ -650,6 +650,14 @@
         "difficulty": 5
       },
       {
+        "slug": "pig-latin",
+        "name": "Pig Latin",
+        "uuid": "303c1115-7530-421b-b5a1-a9a9eb790a66",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "simple-linked-list",
         "name": "Simple Linked List",
         "uuid": "85054b17-d7c3-46f5-b44c-89b902ab794d",

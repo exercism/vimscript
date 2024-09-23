@@ -1,0 +1,108 @@
+Execute (word beginning with a):
+  let g:phrase = "apple"
+  let g:expected = "appleay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (word beginning with e):
+  let g:phrase = "ear"
+  let g:expected = "earay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (word beginning with i):
+  let g:phrase = "igloo"
+  let g:expected = "iglooay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (word beginning with o):
+  let g:phrase = "object"
+  let g:expected = "objectay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (word beginning with u):
+  let g:phrase = "under"
+  let g:expected = "underay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (word beginning with a vowel and followed by a qu):
+  let g:phrase = "equal"
+  let g:expected = "equalay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (word beginning with p):
+  let g:phrase = "pig"
+  let g:expected = "igpay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (word beginning with k):
+  let g:phrase = "koala"
+  let g:expected = "oalakay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (word beginning with x):
+  let g:phrase = "xenon"
+  let g:expected = "enonxay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (word beginning with q without a following u):
+  let g:phrase = "qat"
+  let g:expected = "atqay"
+  AssertEqual g:expected, Translate(g:phrase)
+Execute (word beginning with ch):
+  let g:phrase = "chair"
+  let g:expected = "airchay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (word beginning with qu):
+  let g:phrase = "queen"
+  let g:expected = "eenquay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (word beginning with qu and a preceding consonant):
+  let g:phrase = "square"
+  let g:expected = "aresquay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (word beginning with th):
+  let g:phrase = "therapy"
+  let g:expected = "erapythay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (word beginning with thr):
+  let g:phrase = "thrush"
+  let g:expected = "ushthray"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (word beginning with sch):
+  let g:phrase = "school"
+  let g:expected = "oolschay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (word beginning with yt):
+  let g:phrase = "yttria"
+  let g:expected = "yttriaay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (word beginning with xr):
+  let g:phrase = "xray"
+  let g:expected = "xrayay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (y is treated like a consonant at the beginning of a word):
+  let g:phrase = "yellow"
+  let g:expected = "ellowyay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (y is treated like a vowel at the end of a consonant cluster):
+  let g:phrase = "rhythm"
+  let g:expected = "ythmrhay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (y as second letter in two letter word):
+  let g:phrase = "my"
+  let g:expected = "ymay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (a whole phrase):
+  let g:phrase = "quick fast run"
+  let g:expected = "ickquay astfay unray"
+  AssertEqual g:expected, Translate(g:phrase)
