@@ -1,0 +1,56 @@
+Execute (valid isbn):
+  Assert IsValid("3-598-21508-8")
+
+Execute (invalid isbn check digit):
+  Assert !IsValid("3-598-21508-9")
+
+Execute (valid isbn with a check digit of 10):
+  Assert IsValid("3-598-21507-X")
+
+Execute (check digit is a character other than X):
+  Assert !IsValid("3-598-21507-A")
+
+Execute (invalid check digit in isbn is not treated as zero):
+  Assert !IsValid("4-598-21507-B")
+
+Execute (invalid character in isbn is not treated as zero):
+  Assert !IsValid("3-598-P1581-X")
+
+Execute (X is only valid as a check digit):
+  Assert !IsValid("3-598-2X507-9")
+
+Execute (valid isbn without separating dashes):
+  Assert IsValid("3598215088")
+
+Execute (isbn without separating dashes and X as check digit):
+  Assert IsValid("359821507X")
+
+Execute (isbn without check digit and dashes):
+  Assert !IsValid("359821507")
+
+Execute (too long isbn and no dashes):
+  Assert !IsValid("3598215078X")
+
+Execute (too short isbn):
+  Assert !IsValid("00")
+
+Execute (isbn without check digit):
+  Assert !IsValid("3-598-21507")
+
+Execute (check digit of X should not be used for 0):
+  Assert !IsValid("3-598-21515-X")
+
+Execute (empty isbn):
+  Assert !IsValid("")
+
+Execute (input is 9 characters):
+  Assert !IsValid("134456729")
+
+Execute (invalid characters are not ignored after checking length):
+  Assert !IsValid("3132P34035")
+
+Execute (invalid characters are not ignored before checking length):
+  Assert !IsValid("3598P215088")
+
+Execute (input is too long but contains a valid isbn):
+  Assert !IsValid("98245726788")

@@ -208,6 +208,14 @@
         "difficulty": 3
       },
       {
+        "slug": "isbn-verifier",
+        "name": "ISBN Verifier",
+        "uuid": "7d93584a-6367-4b04-af4c-50f893a40a9a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "isogram",
         "name": "Isogram",
         "uuid": "07984b95-7ba6-4cb7-86be-09520df5cf88",
