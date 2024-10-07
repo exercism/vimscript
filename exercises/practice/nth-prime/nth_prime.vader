@@ -1,0 +1,25 @@
+Execute (first prime):
+  let g:number = 1
+  let g:expected = 2
+  AssertEqual g:expected, Prime(g:number)
+
+Execute (second prime):
+  let g:number = 2
+  let g:expected = 3
+  AssertEqual g:expected, Prime(g:number)
+
+Execute (sixth prime):
+  let g:number = 6
+  let g:expected = 13
+  AssertEqual g:expected, Prime(g:number)
+
+Execute (big prime):
+  let g:number = 10001
+  let g:expected = 104743
+  AssertEqual g:expected, Prime(g:number)
+
+Execute (there is no zeroth prime):
+  let g:number = 0
+  let g:expected = 'there is no zeroth prime'
+  AssertThrows call Prime(g:number)
+  AssertEqual g:expected, g:vader_exception

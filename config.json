@@ -292,6 +292,14 @@
         "difficulty": 2
       },
       {
+        "slug": "nth-prime",
+        "name": "Nth Prime",
+        "uuid": "30726f91-c0b9-47fc-8574-f1ff7e5179d3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "fa80ef6a-db6a-429d-ae7a-ceba0ba96dab",
