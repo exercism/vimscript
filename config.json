@@ -335,6 +335,14 @@
         ]
       },
       {
+        "slug": "prime-factors",
+        "name": "Prime Factors",
+        "uuid": "858b9e88-5c1c-48c7-9888-596d47a01d6e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "proverb",
         "name": "Proverb",
         "uuid": "d4c4e3a6-5ef6-436d-842a-9b93373db8be",

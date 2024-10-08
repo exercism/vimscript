@@ -1,0 +1,35 @@
+Execute (no factors):
+  AssertEqual [], Factors(1)
+
+Execute (prime number):
+  AssertEqual [2], Factors(2)
+
+Execute (another prime number):
+  AssertEqual [3], Factors(3)
+
+Execute (square of a prime):
+  AssertEqual [3, 3], Factors(9)
+
+Execute (product of first prime):
+  AssertEqual [2, 2], Factors(4)
+
+Execute (cube of a prime):
+  AssertEqual [2, 2, 2], Factors(8)
+
+Execute (product of second prime):
+  AssertEqual [3, 3, 3], Factors(27)
+
+Execute (product of third prime):
+  AssertEqual [5, 5, 5, 5], Factors(625)
+
+Execute (product of first and second prime):
+  AssertEqual [2, 3], Factors(6)
+
+Execute (product of primes and non-primes):
+  AssertEqual [2, 2, 3], Factors(12)
+
+Execute (product of primes):
+  AssertEqual [5, 17, 23, 461], Factors(901255)
+
+Execute (factors include a large prime):
+  AssertEqual [11, 9539, 894119], Factors(93819012551)
