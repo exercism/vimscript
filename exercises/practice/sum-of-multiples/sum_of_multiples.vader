@@ -1,0 +1,95 @@
+Execute (no multiples within limit):
+  let g:factors = [3, 5]
+  let g:limit = 1
+  let g:expected = 0
+  AssertEqual g:expected, Sum(g:factors, g:limit)
+
+Execute (one factor has multiples within limit):
+  let g:factors = [3, 5]
+  let g:limit = 4
+  let g:expected = 3
+  AssertEqual g:expected, Sum(g:factors, g:limit)
+
+Execute (more than one multiple within limit):
+  let g:factors = [3]
+  let g:limit = 7
+  let g:expected = 9
+  AssertEqual g:expected, Sum(g:factors, g:limit)
+
+Execute (more than one factor with multiples within limit):
+  let g:factors = [3, 5]
+  let g:limit = 10
+  let g:expected = 23
+  AssertEqual g:expected, Sum(g:factors, g:limit)
+
+Execute (each multiple is only counted once):
+  let g:factors = [3, 5]
+  let g:limit = 100
+  let g:expected = 2318
+  AssertEqual g:expected, Sum(g:factors, g:limit)
+
+Execute (a much larger limit):
+  let g:factors = [3, 5]
+  let g:limit = 1000
+  let g:expected = 233168
+  AssertEqual g:expected, Sum(g:factors, g:limit)
+
+Execute (three factors):
+  let g:factors = [7, 13, 17]
+  let g:limit = 20
+  let g:expected = 51
+  AssertEqual g:expected, Sum(g:factors, g:limit)
+
+Execute (factors not relatively prime):
+  let g:factors = [4, 6]
+  let g:limit = 15
+  let g:expected = 30
+  AssertEqual g:expected, Sum(g:factors, g:limit)
+
+Execute (some pairs of factors relatively prime and some not):
+  let g:factors = [5, 6, 8]
+  let g:limit = 150
+  let g:expected = 4419
+  AssertEqual g:expected, Sum(g:factors, g:limit)
+
+Execute (one factor is a multiple of another):
+  let g:factors = [5, 25]
+  let g:limit = 51
+  let g:expected = 275
+  AssertEqual g:expected, Sum(g:factors, g:limit)
+
+Execute (much larger factors):
+  let g:factors = [43, 47]
+  let g:limit = 10000
+  let g:expected = 2203160
+  AssertEqual g:expected, Sum(g:factors, g:limit)
+
+Execute (all numbers are multiples of 1):
+  let g:factors = [1]
+  let g:limit = 100
+  let g:expected = 4950
+  AssertEqual g:expected, Sum(g:factors, g:limit)
+
+Execute (no factors means an empty sum):
+  let g:factors = []
+  let g:limit = 10000
+  let g:expected = 0
+  AssertEqual g:expected, Sum(g:factors, g:limit)
+
+Execute (the only multiple of 0 is 0):
+  let g:factors = [0]
+  let g:limit = 1
+  let g:expected = 0
+  AssertEqual g:expected, Sum(g:factors, g:limit)
+
+Execute (the factor 0 does not affect the sum of multiples of other factors):
+  let g:factors = [3, 0]
+  let g:limit = 4
+  let g:expected = 3
+  AssertEqual g:expected, Sum(g:factors, g:limit)
+
+Execute (solutions using include-exclude must extend to cardinality greater than 3):
+  let g:factors = [2, 3, 5, 7, 11]
+  let g:limit = 10000
+  let g:expected = 39614537
+  AssertEqual g:expected, Sum(g:factors, g:limit)

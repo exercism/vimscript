@@ -509,6 +509,14 @@
         "difficulty": 3
       },
       {
+        "slug": "sum-of-multiples",
+        "name": "Sum of Multiples",
+        "uuid": "fd01910f-030d-4d77-b7bc-019bd29b64ae",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "33796a20-8325-4068-bdbd-e91519144b24",
