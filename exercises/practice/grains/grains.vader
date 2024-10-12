@@ -51,6 +51,7 @@ Execute (square greater than 49 is invalid):
   let g:expected = "square must be between 1 and 49"
   AssertThrows call Square(g:square)
   AssertEqual g:expected, g:vader_exception
-Execute (returns the total number of grains on the board):
+
+Execute (returns the total number of grains on the board for 49 squares):
   let g:expected = 562949953421311
   AssertEqual g:expected, Total()
