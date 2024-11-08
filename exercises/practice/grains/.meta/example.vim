@@ -1,39 +1,59 @@
-" add two strings as numbers from right to left, as if by hand
-function! StringAdd(a, b) abort
-  " zero-left-pad so the numbers are the same length
-  let len = max([strlen(a:a), strlen(a:b)])
-  let a = printf('%0*s', len, a:a)
-  let b = printf('%0*s', len, a:b)
-  let result = ""
-  let carry = 0
+" Helper function to add two large numbers represented as strings
+function! StringAdd(num1, num2)
+    let carry = 0
+    let result = ''
 
-  for i in range(len - 1, 0, -1)
-    let c = carry + str2nr(strpart(a, i, 1)) + str2nr(strpart(b, i, 1))
-    let result = $"{c % 10}{result}"
-    let carry = c / 10
-  endfor
-  return trim($"{carry}{result}", '0', 1)
+    " Pad the shorter number with leading zeros
+    let len1 = strlen(a:num1)
+    let len2 = strlen(a:num2)
+    if len1 < len2
+        let a:num1 = repeat('0', len2 - len1) . a:num1
+    elseif len2 < len1
+        let a:num2 = repeat('0', len1 - len2) . a:num2
+    endif
+
+    " Add digits from right to left
+    for i in range(strlen(a:num1) - 1, 0, -1)
+        let sum = str2nr(a:num1[i]) + str2nr(a:num2[i]) + carry
+        let carry = sum >= 10 ? 1 : 0
+        let result = string(sum % 10) . result
+    endfor
+
+    " Add the last carry if it exists
+    if carry > 0
+        let result = '1' . result
+    endif
+
+    return result
 endfunction
 
-" populate the squares, doubling each previous, cache in the script scope
-let s:grains = ['1']
-for i in range(1, 63)
-  eval add(s:grains, StringAdd(s:grains[i - 1], s:grains[i - 1]))
-endfor
+" Function to calculate grains on a specific square using string manipulation
+function! Square(n)
+    if a:n < 1 || a:n > 64
+        throw 'square must be between 1 and 64'
+    endif
 
-" return the grains on square `number`
-function! Square(number) abort
-  if a:number < 1 || a:number > 64
-    throw 'square must be between 1 and 64'
-  endif
-  return s:grains[a:number - 1]
+    " Start with 1 grain on the first square
+    let grains = '1'
+    for i in range(2, a:n)
+        " Double the grains by adding it to itself
+        let grains = StringAdd(grains, grains)
+    endfor
+
+    return grains
 endfunction
 
-" return the total number of grains
-function! Total() abort
-  let total = '0'
-  for i in range(64)
-    let total = StringAdd(total, s:grains[i])
-  endfor
-  return total
+" Function to calculate the total grains on the chessboard using string manipulation
+function! Total()
+    let total = '0'
+
+    " Accumulate grains for each square from 1 to 64
+    let grains = '1'
+    for i in range(1, 64)
+        let total = StringAdd(total, grains)
+        " Double grains for the next square
+        let grains = StringAdd(grains, grains)
+    endfor
+
+    return total
 endfunction
