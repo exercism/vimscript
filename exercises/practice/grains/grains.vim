@@ -1,7 +1,7 @@
 "
-" Returns the number of grains on a chessboard square given the grains on each square
-" double from the previous square. 
-" Throws an error if the square is below 1 or above 49.
+" Returns the number of grains (as a string) on a chessboard square given the
+" grains on each square double from the previous square. 
+" Throws an error if the square is below 1 or above 64.
 "
 " Examples:
 "
@@ -9,14 +9,14 @@
 "   32768
 "
 "   :echo Square(-1)
-"   E605: Exception not caught: square must be between 1 and 49
+"   E605: Exception not caught: square must be between 1 and 64
 "
 function! Square(number) abort
   " your code goes here
 endfunction
 
 "
-" Returns the total number of grains for a filled chessboard
+" Returns the total number of grains (as a string) for a filled chessboard
 "
 function! Total() abort
   " your code goes here

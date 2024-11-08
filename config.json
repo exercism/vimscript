@@ -185,7 +185,12 @@
         "uuid": "99408193-d0ce-4c68-8cab-e680f3ed56a4",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 5,
+        "topics": [
+          "math",
+          "strings",
+          "loops"
+        ]
       },
       {
         "slug": "hello-world",

@@ -6,6 +6,7 @@ According to [the Vim docs][number]:
 
 That means that Vim cannot express any number `2^63` or greater as an integer.
 
-For the purposes of this exercise, we will declare that in Vimland, chess boards are 7x7 and have **49** squares.
+For this exercise, you will return the values as strings.
+That means you will have to implement a way to do addition on two _string_ operands.
 
 [number]: https://vimhelp.org/eval.txt.html#expr-number
