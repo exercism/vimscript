@@ -1,4 +1,4 @@
-" Helper function to add two large numbers represented as strings
+" Helper function to add two numbers represented as strings
 function! StringAdd(num1, num2)
     let carry = 0
     let result = ''
