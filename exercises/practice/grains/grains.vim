@@ -1,6 +1,6 @@
 "
-" Returns the number of grains on a chessboard square given the grains on each square
-" double from the previous square. 
+" Returns the number of grains (as a string) on a chessboard square given the
+" grains on each square double from the previous square. 
 " Throws an error if the square is below 1 or above 64.
 "
 " Examples:
@@ -16,7 +16,7 @@ function! Square(number) abort
 endfunction
 
 "
-" Returns the total number of grains for a filled chessboard
+" Returns the total number of grains (as a string) for a filled chessboard
 "
 function! Total() abort
   " your code goes here
