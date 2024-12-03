@@ -1,0 +1,22 @@
+{
+  "approaches": [
+    {
+      "uuid": "8338d92d-8719-4c1b-aabe-95821881c4cd",
+      "slug": "if-else-statements",
+      "title": "If Else Statements",
+      "blurb": "Use conditional logic to test each factor rule",
+      "authors": [
+        "BNAndras"
+      ]
+    },
+    {
+      "uuid": "c214970f-ff2b-43a2-93a6-6478c8ec1c63",
+      "slug": "list-of-rules",
+      "title": "Looping Over List of Rules",
+      "blurb": "Loop over a list of factor rules and apply them",
+      "authors": [
+        "BNAndras"
+      ]
+    }
+  ]
+}
