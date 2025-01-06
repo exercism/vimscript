@@ -99,10 +99,6 @@ Execute (alternate silence):
   let g:expected = "Fine. Be that way!"
   AssertEqual g:expected, Response(g:heyBob)
 
-Execute (multiple line question):
-  let g:heyBob = "\nDoes this cryogenic chamber make me look fat?\nNo."
-  let g:expected = "Whatever."
-  AssertEqual g:expected, Response(g:heyBob)
 
 Execute (starting with whitespace):
   let g:heyBob = "         hmmmmmmm..."
@@ -122,4 +118,9 @@ Execute (other whitespace):
 Execute (non-question ending with whitespace):
   let g:heyBob = "This is a statement ending with whitespace      "
   let g:expected = "Whatever."
+  AssertEqual g:expected, Response(g:heyBob)
+
+Execute (multiple line question):
+  let g:heyBob = "\nDoes this cryogenic chamber make\n me look fat?"
+  let g:expected = "Sure."
   AssertEqual g:expected, Response(g:heyBob)
