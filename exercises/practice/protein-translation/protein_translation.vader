@@ -129,6 +129,11 @@ Execute (Translation stops if STOP codon in middle of six-codon sequence):
   let g:expected = ['Tryptophan', 'Cysteine', 'Tyrosine']
   AssertEqual g:expected, Proteins(g:strand)
 
+Execute (Sequence of two non-STOP codons does not translate to a STOP codon):
+  let g:strand = "AUGAUG"
+  let g:expected = ['Methionine', 'Methionine']
+  AssertEqual g:expected, Proteins(g:strand)
+
 Execute (Non-existing codon can't translate):
   let g:strand = "AAA"
   let g:expected = "Invalid codon"
