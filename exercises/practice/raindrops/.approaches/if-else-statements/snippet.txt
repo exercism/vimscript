@@ -1,0 +1,8 @@
+function! Raindrops(number) abort
+  let l:str = ''
+  if a:number % 3 == 0
+    let l:str .= 'Pling'
+  endif
+  if a:number % 5 == 0
+    let l:str .= 'Plang'
+# cut for snippet brevity
