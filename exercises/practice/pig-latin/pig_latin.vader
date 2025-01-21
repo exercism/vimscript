@@ -1,3 +1,4 @@
+
 Execute (word beginning with a):
   let g:phrase = "apple"
   let g:expected = "appleay"
@@ -27,7 +28,6 @@ Execute (word beginning with a vowel and followed by a qu):
   let g:phrase = "equal"
   let g:expected = "equalay"
   AssertEqual g:expected, Translate(g:phrase)
-
 Execute (word beginning with p):
   let g:phrase = "pig"
   let g:expected = "igpay"
@@ -46,6 +46,11 @@ Execute (word beginning with x):
 Execute (word beginning with q without a following u):
   let g:phrase = "qat"
   let g:expected = "atqay"
+  AssertEqual g:expected, Translate(g:phrase)
+
+Execute (word beginning with consonant and vowel containing qu):
+  let g:phrase = "liquid"
+  let g:expected = "iquidlay"
   AssertEqual g:expected, Translate(g:phrase)
 Execute (word beginning with ch):
   let g:phrase = "chair"
