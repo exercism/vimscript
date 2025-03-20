@@ -1,54 +1,74 @@
-Before:
-  if exists('expected')
-    unlet expected
-  endif
-
 Execute (count one word):
-  let phrase   = 'word'
-  let expected = {'word': 1}
-  AssertEqual expected, WordCount(phrase)
+  let g:sentence = "word"
+  let g:expected = {'word': 1}
+  AssertEqual g:expected, WordCount(g:sentence)
 
 Execute (count one of each word):
-  let phrase   = 'one of each'
-  let expected = {'one': 1, 'of': 1, 'each': 1}
-  AssertEqual expected, WordCount(phrase)
+  let g:sentence = "one of each"
+  let g:expected = {'of': 1, 'one': 1, 'each': 1}
+  AssertEqual g:expected, WordCount(g:sentence)
 
 Execute (multiple occurrences of a word):
-  let phrase   = 'one fish two fish red fish blue fish'
-  let expected = {'one': 1, 'fish': 4, 'two': 1, 'red': 1, 'blue': 1}
-  AssertEqual expected, WordCount(phrase)
+  let g:sentence = "one fish two fish red fish blue fish"
+  let g:expected = {'one': 1, 'blue': 1, 'two': 1, 'fish': 4, 'red': 1}
+  AssertEqual g:expected, WordCount(g:sentence)
 
 Execute (handles cramped lists):
-  let phrase   = 'one,two,three'
-  let expected = {'one': 1, 'two': 1, 'three': 1}
-  AssertEqual expected, WordCount(phrase)
+  let g:sentence = "one,two,three"
+  let g:expected = {'one': 1, 'two': 1, 'three': 1}
+  AssertEqual g:expected, WordCount(g:sentence)
 
 Execute (handles expanded lists):
-  let phrase   = "one,\ntwo,\nthree"
-  let expected = {'one': 1, 'two': 1, 'three': 1}
-  AssertEqual expected, WordCount(phrase)
+  let g:sentence = "one,\ntwo,\nthree"
+  let g:expected = {'one': 1, 'two': 1, 'three': 1}
+  AssertEqual g:expected, WordCount(g:sentence)
 
 Execute (ignore punctuation):
-  let phrase   = 'car: carpet as java: javascript!!&@$%^&'
-  let expected = {'car': 1, 'carpet': 1, 'as': 1, 'java': 1, 'javascript': 1}
-  AssertEqual expected, WordCount(phrase)
+  let g:sentence = "car: carpet as java: javascript!!&@$%^&"
+  let g:expected = {'car': 1, 'carpet': 1, 'as': 1, 'java': 1, 'javascript': 1}
+  AssertEqual g:expected, WordCount(g:sentence)
 
 Execute (include numbers):
-  let phrase   = 'testing, 1, 2 testing'
-  let expected = {'testing': 2, '1': 1, '2': 1}
-  AssertEqual expected, WordCount(phrase)
+  let g:sentence = "testing, 1, 2 testing"
+  let g:expected = {'1': 1, 'testing': 2, '2': 1}
+  AssertEqual g:expected, WordCount(g:sentence)
 
 Execute (normalize case):
-  let phrase   = 'go Go GO Stop stop'
-  let expected = {'go': 3, 'stop': 2}
-  AssertEqual expected, WordCount(phrase)
+  let g:sentence = "go Go GO Stop stop"
+  let g:expected = {'go': 3, 'stop': 2}
+  AssertEqual g:expected, WordCount(g:sentence)
 
 Execute (with apostrophes):
-  let phrase   = "First: don't laugh. Then: don't cry."
-  let expected = {'first': 1, 'don''t': 2, 'laugh': 1, 'then': 1, 'cry': 1}
-  AssertEqual expected, WordCount(phrase)
+  let g:sentence = "First: don't laugh. Then: don't cry."
+  let g:expected = {'first': 1, 'laugh': 1, 'then': 1, "don't": 2, 'cry': 1}
+  AssertEqual g:expected, WordCount(g:sentence)
+
+Execute (with apostrophes):
+  let g:sentence = "'First: don't laugh. Then: don't cry. You're getting it.'"
+  let g:expected = {'first': 1, 'laugh': 1, 'then': 1, 'getting': 1, 'it': 1, "you're": 1, "don't": 2, 'cry': 1}
+  AssertEqual g:expected, WordCount(g:sentence)
 
 Execute (with quotations):
-  let phrase   = "Joe can't tell between 'large' and large."
-  let expected = {'joe': 1, 'can''t': 1, 'tell': 1, 'between': 1, 'large': 2, 'and': 1}
-  AssertEqual expected, WordCount(phrase)
+  let g:sentence = "Joe can't tell between 'large' and large."
+  let g:expected = {'large': 2, "can't": 1, 'and': 1, 'tell': 1, 'joe': 1, 'between': 1}
+  AssertEqual g:expected, WordCount(g:sentence)
+
+Execute (substrings from the beginning):
+  let g:sentence = "Joe can't tell between app, apple and a."
+  let g:expected = {'a': 1, 'apple': 1, 'and': 1, "can't": 1, 'app': 1, 'tell': 1, 'joe': 1, 'between': 1}
+  AssertEqual g:expected, WordCount(g:sentence)
+
+Execute (multiple spaces not detected as a word):
+  let g:sentence = " multiple   whitespaces"
+  let g:expected = {'whitespaces': 1, 'multiple': 1}
+  AssertEqual g:expected, WordCount(g:sentence)
+
+Execute (alternating word separators not detected as a word):
+  let g:sentence = ",\n,one,\n ,two \n 'three'"
+  let g:expected = {'one': 1, 'two': 1, 'three': 1}
+  AssertEqual g:expected, WordCount(g:sentence)
+
+Execute (quotation for word with apostrophe):
+  let g:sentence = "can, can't, 'can't'"
+  let g:expected = {"can't": 2, "can": 1}
+  AssertEqual g:expected, WordCount(g:sentence)
