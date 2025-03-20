@@ -184,6 +184,12 @@ Execute (difference of two non-empty sets is a set of elements that are only in 
   let g:expected = Set([1, 3])
   AssertEqual g:expected, g:set1.Difference(g:set2)
 
+Execute (difference removes all duplicates in the first set):
+  let g:set1 = Set([1, 1])
+  let g:set2 = Set([1])
+  let g:expected = Set([])
+  AssertEqual g:expected, g:set1.Difference(g:set2)
+
 Execute (union of empty sets is an empty set):
   let g:set1 = Set([])
   let g:set2 = Set([])
