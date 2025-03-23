@@ -6,6 +6,12 @@ Execute (no matches):
   AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
 
 Execute (detects two anagrams):
+  let g:candidates = ['stream', 'pigeon', 'maters']
+  let g:subject = "master"
+  let g:expected = ['stream', 'maters']
+  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
+
+Execute (detects two anagrams):
   let g:candidates = ['lemons', 'cherry', 'melons']
   let g:subject = "solemn"
   let g:expected = ['lemons', 'melons']
@@ -57,12 +63,6 @@ Execute (detects anagrams using case-insensitive possible matches):
   let g:candidates = ['cashregister', 'Carthorse', 'radishes']
   let g:subject = "orchestra"
   let g:expected = ['Carthorse']
-  AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
-
-Execute (does not detect an anagram if the original word is repeated):
-  let g:candidates = ['goGoGO']
-  let g:subject = "go"
-  let g:expected = []
   AssertEqual g:expected, FindAnagrams(g:candidates, g:subject)
 
 Execute (anagrams must use all letters exactly once):

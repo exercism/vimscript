@@ -28,3 +28,18 @@ Execute (an even-sized word):
   let g:value = "drawer"
   let g:expected = "reward"
   AssertEqual g:expected, Reverse(g:value)
+
+Execute (wide characters):
+  let g:value = "子猫"
+  let g:expected = "猫子"
+  AssertEqual g:expected, Reverse(g:value)
+
+Execute (grapheme cluster with pre-combined form):
+  let g:value = "Würstchenstand"
+  let g:expected = "dnatsnehctsrüW"
+  AssertEqual g:expected, Reverse(g:value)
+
+Execute (grapheme clusters):
+  let g:value = "ผู้เขียนโปรแกรม"
+  let g:expected = "มรกแรปโนยขีเผู้"
+  AssertEqual g:expected, Reverse(g:value)
