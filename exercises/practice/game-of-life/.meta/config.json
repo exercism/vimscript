@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "game_of_life.vim"
+    ],
+    "test": [
+      "game_of_life.vader"
+    ],
+    "example": [
+      ".meta/example.vim"
+    ]
+  },
+  "blurb": "Implement Conway's Game of Life.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+}

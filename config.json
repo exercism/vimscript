@@ -123,6 +123,14 @@
         "difficulty": 2
       },
       {
+        "slug": "game-of-life",
+        "name": "Conway's Game of Life",
+        "uuid": "6e275aa3-4af6-45d6-be39-1f68d098afd3",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "darts",
         "name": "Darts",
         "uuid": "1ae2f1bd-5f62-4692-857d-faaf5223cad7",

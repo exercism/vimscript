@@ -1,0 +1,91 @@
+Execute (empty matrix):
+  let g:matrix = []
+  let g:expected = []
+  AssertEqual g:expected, Tick(g:matrix)
+
+Execute (live cells with zero live neighbors die):
+  let g:matrix = [
+  \ [0, 0, 0],
+  \ [0, 1, 0],
+  \ [0, 0, 0]]
+  let g:expected = [
+  \ [0, 0, 0],
+  \ [0, 0, 0],
+  \ [0, 0, 0]]
+  AssertEqual g:expected, Tick(g:matrix)
+
+Execute (live cells with only one live neighbor die):
+  let g:matrix = [
+  \ [0, 0, 0],
+  \ [0, 1, 0],
+  \ [0, 1, 0]]
+  let g:expected = [
+  \ [0, 0, 0],
+  \ [0, 0, 0],
+  \ [0, 0, 0]]
+  AssertEqual g:expected, Tick(g:matrix)
+
+Execute (live cells with two live neighbors stay alive):
+  let g:matrix = [
+  \ [1, 0, 1],
+  \ [1, 0, 1],
+  \ [1, 0, 1]]
+  let g:expected = [
+  \ [0, 0, 0],
+  \ [1, 0, 1],
+  \ [0, 0, 0]]
+  AssertEqual g:expected, Tick(g:matrix)
+
+Execute (live cells with three live neighbors stay alive):
+  let g:matrix = [
+  \ [0, 1, 0],
+  \ [1, 0, 0],
+  \ [1, 1, 0]]
+  let g:expected = [
+  \ [0, 0, 0],
+  \ [1, 0, 0],
+  \ [1, 1, 0]]
+  AssertEqual g:expected, Tick(g:matrix)
+
+Execute (dead cells with three live neighbors become alive):
+  let g:matrix = [
+  \ [1, 1, 0],
+  \ [0, 0, 0],
+  \ [1, 0, 0]]
+  let g:expected = [
+  \ [0, 0, 0],
+  \ [1, 1, 0],
+  \ [0, 0, 0]]
+  AssertEqual g:expected, Tick(g:matrix)
+
+Execute (live cells with four or more neighbors die):
+  let g:matrix = [
+  \ [1, 1, 1],
+  \ [1, 1, 1],
+  \ [1, 1, 1]]
+  let g:expected = [
+  \ [1, 0, 1],
+  \ [0, 0, 0],
+  \ [1, 0, 1]]
+  AssertEqual g:expected, Tick(g:matrix)
+
+Execute (bigger matrix):
+  let g:matrix = [
+  \ [1, 1, 0, 1, 1, 0, 0, 0],
+  \ [1, 0, 1, 1, 0, 0, 0, 0],
+  \ [1, 1, 1, 0, 0, 1, 1, 1],
+  \ [0, 0, 0, 0, 0, 1, 1, 0],
+  \ [1, 0, 0, 0, 1, 1, 0, 0],
+  \ [1, 1, 0, 0, 0, 1, 1, 1],
+  \ [0, 0, 1, 0, 1, 0, 0, 1], 
+  \ [1, 0, 0, 0, 0, 0, 1, 1]]
+  let g:expected = [
+  \ [1, 1, 0, 1, 1, 0, 0, 0],
+  \ [0, 0, 0, 0, 0, 1, 1, 0],
+  \ [1, 0, 1, 1, 1, 1, 0, 1],
+  \ [1, 0, 0, 0, 0, 0, 0, 1],
+  \ [1, 1, 0, 0, 1, 0, 0, 1],
+  \ [1, 1, 0, 1, 0, 0, 0, 1],
+  \ [1, 0, 0, 0, 0, 0, 0, 0],
+  \ [0, 0, 0, 0, 0, 0, 1, 1]]
+  AssertEqual g:expected, Tick(g:matrix)
