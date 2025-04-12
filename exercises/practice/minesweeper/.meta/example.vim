@@ -10,7 +10,7 @@ function! Annotate(minefield) abort
   for l:row in range(l:rows)
     let l:marked = []
     for l:col in range(l:cols)
-      if a:minefield[l:row][l:col] == '*'
+      if a:minefield[l:row][l:col] ==# '*'
         call add(l:marked, '*')
       else
         let l:count = 0
@@ -23,7 +23,7 @@ function! Annotate(minefield) abort
             if l:newRow == l:row && l:newCol == l:col
               continue
             endif
-            if a:minefield[l:newRow][l:newCol] == '*'
+            if a:minefield[l:newRow][l:newCol] ==# '*'
                 let l:count += 1
             endif
           endfor
