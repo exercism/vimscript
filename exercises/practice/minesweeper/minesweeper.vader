@@ -1,0 +1,125 @@
+Execute (no rows):
+  let g:minefield = []
+  let g:expected = []
+  AssertEqual g:expected, Annotate(g:minefield)
+
+Execute (no columns):
+  let g:minefield = ['']
+  let g:expected = ['']
+  AssertEqual g:expected, Annotate(g:minefield)
+
+Execute (no mines):
+  let g:minefield = [
+  \ '   ',
+  \ '   ',
+  \ '   ']
+  let g:expected = [
+  \ '   ',
+  \ '   ',
+  \ '   ']
+  AssertEqual g:expected, Annotate(g:minefield)
+
+Execute (minefield with only mines):
+  let g:minefield = [
+  \ '***',
+  \ '***',
+  \ '***']
+  let g:expected = [
+  \ '***',
+  \ '***', 
+  \ '***']
+  AssertEqual g:expected, Annotate(g:minefield)
+
+Execute (mine surrounded by spaces):
+  let g:minefield = [
+  \ '   ',
+  \ ' * ',
+  \ '   ']
+  let g:expected = [
+  \ '111',
+  \ '1*1',
+  \ '111']
+  AssertEqual g:expected, Annotate(g:minefield)
+
+Execute (space surrounded by mines):
+  let g:minefield = [
+  \ '***',
+  \ '* *',
+  \ '***']
+  let g:expected = [
+  \ '***',
+  \ '*8*',
+  \ '***']
+  AssertEqual g:expected, Annotate(g:minefield)
+
+Execute (horizontal line):
+  let g:minefield = [' * * ']
+  let g:expected = ['1*2*1']
+  AssertEqual g:expected, Annotate(g:minefield)
+
+Execute (horizontal line, mines at edges):
+  let g:minefield = ['*   *']
+  let g:expected = ['*1 1*']
+  AssertEqual g:expected, Annotate(g:minefield)
+
+Execute (vertical line):
+  let g:minefield = [
+  \ ' ',
+  \ '*',
+  \ ' ',
+  \ '*',
+  \ ' ']
+  let g:expected = [
+  \ '1',
+  \ '*',
+  \ '2',
+  \ '*',
+  \ '1']
+  AssertEqual g:expected, Annotate(g:minefield)
+
+Execute (vertical line, mines at edges):
+  let g:minefield = [
+  \ '*',
+  \ ' ',
+  \ ' ',
+  \ ' ',
+  \ '*']
+  let g:expected = [
+  \ '*',
+  \ '1',
+  \ ' ', 
+  \ '1',
+  \ '*']
+  AssertEqual g:expected, Annotate(g:minefield)
+
+Execute (cross):
+  let g:minefield = [
+  \ '  *  ',
+  \ '  *  ',
+  \ '*****',
+  \ '  *  ',
+  \ '  *  ']
+  let g:expected = [
+  \ ' 2*2 ',
+  \ '25*52',
+  \ '*****',
+  \ '25*52',
+  \ ' 2*2 ']
+  AssertEqual g:expected, Annotate(g:minefield)
+
+Execute (large minefield):
+  let g:minefield = [
+  \ ' *  * ',
+  \ '  *   ',
+  \ '    * ',
+  \ '   * *',
+  \ ' *  * ',
+  \ '      ']
+  let g:expected = [
+  \ '1*22*1',
+  \ '12*322',
+  \ ' 123*2',
+  \ '112*4*',
+  \ '1*22*2',
+  \ '111111']
+  AssertEqual g:expected, Annotate(g:minefield)

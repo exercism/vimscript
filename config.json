@@ -673,6 +673,14 @@
         "difficulty": 5
       },
       {
+        "slug": "minesweeper",
+        "name": "Minesweeper",
+        "uuid": "ece26c46-07dc-49ae-bac2-10353fb340b5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "ff92dd32-fa39-4b09-81ed-ab4b2ba4096d",
