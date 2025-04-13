@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "minesweeper.vim"
+    ],
+    "test": [
+      "minesweeper.vader"
+    ],
+    "example": [
+      ".meta/example.vim"
+    ]
+  },
+  "blurb": "Add the numbers to a minesweeper board."
+}
