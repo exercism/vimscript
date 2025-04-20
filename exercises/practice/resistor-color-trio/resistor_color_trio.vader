@@ -1,0 +1,39 @@
+Execute (Orange and orange and black):
+  let g:colors = ['orange', 'orange', 'black']
+  AssertEqual '33 ohms', Label(g:colors)
+
+Execute (Blue and grey and brown):
+  let g:colors = ['blue', 'grey', 'brown']
+  AssertEqual '680 ohms', Label(g:colors)
+
+Execute (Red and black and red):
+  let g:colors = ['red', 'black', 'red']
+  AssertEqual '2 kiloohms', Label(g:colors)
+
+Execute (Green and brown and orange):
+  let g:colors = ['green', 'brown', 'orange']
+  AssertEqual '51 kiloohms', Label(g:colors)
+
+Execute (Yellow and violet and yellow):
+  let g:colors = ['yellow', 'violet', 'yellow']
+  AssertEqual '470 kiloohms', Label(g:colors)
+
+Execute (Blue and violet and blue):
+  let g:colors = ['blue', 'violet', 'blue']
+  AssertEqual '67 megaohms', Label(g:colors)
+
+Execute (Minimum possible value):
+  let g:colors = ['black', 'black', 'black']
+  AssertEqual '0 ohms', Label(g:colors)
+
+Execute (Maximum possible value):
+  let g:colors = ['white', 'white', 'white']
+  AssertEqual '99 gigaohms', Label(g:colors)
+
+Execute (First two colors make an invalid octal number):
+  let g:colors = ['black', 'grey', 'black']
+  AssertEqual '8 ohms', Label(g:colors)
+
+Execute (Ignore extra colors):
+  let g:colors = ['blue', 'green', 'yellow', 'orange']
+  AssertEqual '650 kiloohms', Label(g:colors)
