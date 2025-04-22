@@ -1,0 +1,284 @@
+Execute (first day a partridge in a pear tree):
+  let g:expected = join([
+  \ 'On the first day of Christmas my true love gave to me:',
+  \ 'a Partridge in a Pear Tree.'], ' ')
+  AssertEqual g:expected, Recite(1, 1)
+
+Execute (second day two turtle doves):
+  let g:expected = join([
+  \ 'On the second day of Christmas my true love gave to me:',
+  \ 'two Turtle Doves,',
+  \ 'and a Partridge in a Pear Tree.'], ' ')
+  AssertEqual g:expected, Recite(2, 2)
+
+Execute (third day three french hens):
+  let g:expected = join([
+  \ 'On the third day of Christmas my true love gave to me:',
+  \ 'three French Hens,',
+  \ 'two Turtle Doves,',
+  \ 'and a Partridge in a Pear Tree.'], ' ')
+  AssertEqual g:expected, Recite(3, 3)
+
+Execute (fourth day four calling birds):
+  let g:expected = join([
+  \ 'On the fourth day of Christmas my true love gave to me:',
+  \ 'four Calling Birds,',
+  \ 'three French Hens,',
+  \ 'two Turtle Doves,',
+  \ 'and a Partridge in a Pear Tree.'], ' ')
+  AssertEqual g:expected, Recite(4, 4)
+
+Execute (fifth day five gold rings):
+  let g:expected = join([
+  \ 'On the fifth day of Christmas my true love gave to me:',
+  \ 'five Gold Rings,',
+  \ 'four Calling Birds,',
+  \ 'three French Hens,',
+  \ 'two Turtle Doves,',
+  \ 'and a Partridge in a Pear Tree.'], ' ')
+  AssertEqual g:expected, Recite(5, 5)
+
+Execute (sixth day six geese-a-laying):
+  let g:expected = join([
+  \ 'On the sixth day of Christmas my true love gave to me:',
+  \ 'six Geese-a-Laying,',
+  \ 'five Gold Rings,',
+  \ 'four Calling Birds,',
+  \ 'three French Hens,',
+  \ 'two Turtle Doves,',
+  \ 'and a Partridge in a Pear Tree.'], ' ')
+  AssertEqual g:expected, Recite(6, 6)
+
+Execute (seventh day seven swans-a-swimming):
+  let g:expected = join([
+  \ 'On the seventh day of Christmas my true love gave to me:',
+  \ 'seven Swans-a-Swimming,',
+  \ 'six Geese-a-Laying,',
+  \ 'five Gold Rings,',
+  \ 'four Calling Birds,',
+  \ 'three French Hens,',
+  \ 'two Turtle Doves,',
+  \ 'and a Partridge in a Pear Tree.'], ' ')
+  AssertEqual g:expected, Recite(7, 7)
+
+Execute (eighth day eight maids-a-milking):
+  let g:expected = join([
+  \ 'On the eighth day of Christmas my true love gave to me:',
+  \ 'eight Maids-a-Milking,',
+  \ 'seven Swans-a-Swimming,',
+  \ 'six Geese-a-Laying,',
+  \ 'five Gold Rings,',
+  \ 'four Calling Birds,',
+  \ 'three French Hens,',
+  \ 'two Turtle Doves,',
+  \ 'and a Partridge in a Pear Tree.'], ' ')
+  AssertEqual g:expected, Recite(8, 8)
+
+Execute (ninth day nine ladies dancing):
+  let g:expected = join([
+  \ 'On the ninth day of Christmas my true love gave to me:',
+  \ 'nine Ladies Dancing,',
+  \ 'eight Maids-a-Milking,',
+  \ 'seven Swans-a-Swimming,',
+  \ 'six Geese-a-Laying,',
+  \ 'five Gold Rings,',
+  \ 'four Calling Birds,',
+  \ 'three French Hens,',
+  \ 'two Turtle Doves,',
+  \ 'and a Partridge in a Pear Tree.'], ' ')
+  AssertEqual g:expected, Recite(9, 9)
+
+Execute (tenth day ten lords-a-leaping):
+  let g:expected = join([
+  \ 'On the tenth day of Christmas my true love gave to me:',
+  \ 'ten Lords-a-Leaping,',
+  \ 'nine Ladies Dancing,',
+  \ 'eight Maids-a-Milking,',
+  \ 'seven Swans-a-Swimming,',
+  \ 'six Geese-a-Laying,',
+  \ 'five Gold Rings,',
+  \ 'four Calling Birds,',
+  \ 'three French Hens,',
+  \ 'two Turtle Doves,',
+  \ 'and a Partridge in a Pear Tree.'], ' ')
+  AssertEqual g:expected, Recite(10, 10)
+
+Execute (eleventh day eleven pipers piping):
+  let g:expected = join([
+  \ 'On the eleventh day of Christmas my true love gave to me:',
+  \ 'eleven Pipers Piping,',
+  \ 'ten Lords-a-Leaping,',
+  \ 'nine Ladies Dancing,',
+  \ 'eight Maids-a-Milking,',
+  \ 'seven Swans-a-Swimming,',
+  \ 'six Geese-a-Laying,',
+  \ 'five Gold Rings,',
+  \ 'four Calling Birds,',
+  \ 'three French Hens,',
+  \ 'two Turtle Doves,',
+  \ 'and a Partridge in a Pear Tree.'], ' ')
+  AssertEqual g:expected, Recite(11, 11)
+
+Execute (twelfth day twelve drummers drumming):
+  let g:expected = join([
+  \ 'On the twelfth day of Christmas my true love gave to me:',
+  \ 'twelve Drummers Drumming,',
+  \ 'eleven Pipers Piping,',
+  \ 'ten Lords-a-Leaping,',
+  \ 'nine Ladies Dancing,',
+  \ 'eight Maids-a-Milking,',
+  \ 'seven Swans-a-Swimming,',
+  \ 'six Geese-a-Laying,',
+  \ 'five Gold Rings,',
+  \ 'four Calling Birds,',
+  \ 'three French Hens,',
+  \ 'two Turtle Doves,',
+  \ 'and a Partridge in a Pear Tree.'], ' ')
+  AssertEqual g:expected, Recite(12, 12)
+
+Execute (recites first three verses of the song):
+  let g:expected = join([
+  \  join([
+  \    'On the first day of Christmas my true love gave to me:',
+  \    'a Partridge in a Pear Tree.'], ' '),
+  \  join([
+  \    'On the second day of Christmas my true love gave to me:',
+  \    'two Turtle Doves,',
+  \    'and a Partridge in a Pear Tree.'], ' '),
+  \  join([
+  \    'On the third day of Christmas my true love gave to me:',
+  \    'three French Hens,',
+  \    'two Turtle Doves,',
+  \    'and a Partridge in a Pear Tree.'], ' ')], '\n')
+  AssertEqual g:expected, Recite(1, 3)
+
+Execute (recites three verses from the middle of the song):
+  let g:expected = join([
+  \  join([
+  \    'On the fourth day of Christmas my true love gave to me:',
+  \    'four Calling Birds,',
+  \    'three French Hens,',
+  \    'two Turtle Doves,',
+  \    'and a Partridge in a Pear Tree.'], ' '),
+  \  join([
+  \    'On the fifth day of Christmas my true love gave to me:',
+  \    'five Gold Rings,',
+  \    'four Calling Birds,',
+  \    'three French Hens,',
+  \    'two Turtle Doves,',
+  \    'and a Partridge in a Pear Tree.'], ' '),
+  \  join([
+  \    'On the sixth day of Christmas my true love gave to me:',
+  \    'six Geese-a-Laying,',
+  \    'five Gold Rings,',
+  \    'four Calling Birds,',
+  \    'three French Hens,',
+  \    'two Turtle Doves,',
+  \    'and a Partridge in a Pear Tree.'], ' ')], '\n')
+  AssertEqual g:expected, Recite(4, 6)
+
+Execute (recites the whole song):
+  let g:expected = join([
+  \  join([
+  \    'On the first day of Christmas my true love gave to me:',
+  \    'a Partridge in a Pear Tree.'], ' '),
+  \  join([
+  \    'On the second day of Christmas my true love gave to me:',
+  \    'two Turtle Doves,',
+  \    'and a Partridge in a Pear Tree.'], ' '),
+  \  join([
+  \    'On the third day of Christmas my true love gave to me:',
+  \    'three French Hens,',
+  \    'two Turtle Doves,',
+  \    'and a Partridge in a Pear Tree.'], ' '),
+  \  join([
+  \    'On the fourth day of Christmas my true love gave to me:',
+  \    'four Calling Birds,',
+  \    'three French Hens,',
+  \    'two Turtle Doves,',
+  \    'and a Partridge in a Pear Tree.'], ' '),
+  \  join([
+  \    'On the fifth day of Christmas my true love gave to me:',
+  \    'five Gold Rings,',
+  \    'four Calling Birds,',
+  \    'three French Hens,',
+  \    'two Turtle Doves,',
+  \    'and a Partridge in a Pear Tree.'], ' '),
+  \  join([
+  \    'On the sixth day of Christmas my true love gave to me:',
+  \    'six Geese-a-Laying,',
+  \    'five Gold Rings,',
+  \    'four Calling Birds,',
+  \    'three French Hens,',
+  \    'two Turtle Doves,',
+  \    'and a Partridge in a Pear Tree.'], ' '),
+  \  join([
+  \    'On the seventh day of Christmas my true love gave to me:',
+  \    'seven Swans-a-Swimming,',
+  \    'six Geese-a-Laying,',
+  \    'five Gold Rings,',
+  \    'four Calling Birds,',
+  \    'three French Hens,',
+  \    'two Turtle Doves,',
+  \    'and a Partridge in a Pear Tree.'], ' '),
+  \  join([
+  \    'On the eighth day of Christmas my true love gave to me:',
+  \    'eight Maids-a-Milking,',
+  \    'seven Swans-a-Swimming,',
+  \    'six Geese-a-Laying,',
+  \    'five Gold Rings,',
+  \    'four Calling Birds,',
+  \    'three French Hens,',
+  \    'two Turtle Doves,',
+  \    'and a Partridge in a Pear Tree.'], ' '),
+  \  join([
+  \    'On the ninth day of Christmas my true love gave to me:',
+  \    'nine Ladies Dancing,',
+  \    'eight Maids-a-Milking,',
+  \    'seven Swans-a-Swimming,',
+  \    'six Geese-a-Laying,',
+  \    'five Gold Rings,',
+  \    'four Calling Birds,',
+  \    'three French Hens,',
+  \    'two Turtle Doves,',
+  \    'and a Partridge in a Pear Tree.'], ' '),
+  \  join([
+  \    'On the tenth day of Christmas my true love gave to me:',
+  \    'ten Lords-a-Leaping,',
+  \    'nine Ladies Dancing,',
+  \    'eight Maids-a-Milking,',
+  \    'seven Swans-a-Swimming,',
+  \    'six Geese-a-Laying,',
+  \    'five Gold Rings,',
+  \    'four Calling Birds,',
+  \    'three French Hens,',
+  \    'two Turtle Doves,',
+  \    'and a Partridge in a Pear Tree.'], ' '),
+  \  join([
+  \    'On the eleventh day of Christmas my true love gave to me:',
+  \    'eleven Pipers Piping,',
+  \    'ten Lords-a-Leaping,',
+  \    'nine Ladies Dancing,',
+  \    'eight Maids-a-Milking,',
+  \    'seven Swans-a-Swimming,',
+  \    'six Geese-a-Laying,',
+  \    'five Gold Rings,',
+  \    'four Calling Birds,',
+  \    'three French Hens,',
+  \    'two Turtle Doves,',
+  \    'and a Partridge in a Pear Tree.'], ' '),
+  \  join([
+  \    'On the twelfth day of Christmas my true love gave to me:',
+  \    'twelve Drummers Drumming,',
+  \    'eleven Pipers Piping,',
+  \    'ten Lords-a-Leaping,',
+  \    'nine Ladies Dancing,',
+  \    'eight Maids-a-Milking,',
+  \    'seven Swans-a-Swimming,',
+  \    'six Geese-a-Laying,',
+  \    'five Gold Rings,',
+  \    'four Calling Birds,',
+  \    'three French Hens,',
+  \    'two Turtle Doves,',
+  \    'and a Partridge in a Pear Tree.'], ' ')], '\n')
+  AssertEqual g:expected, Recite(1, 12)
