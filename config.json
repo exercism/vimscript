@@ -652,6 +652,14 @@
         "difficulty": 4
       },
       {
+        "slug": "diamond",
+        "name": "Diamond",
+        "uuid": "79acd8ec-adf4-4163-8361-0f71950213fb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "grade-school",
         "name": "Grade School",
         "uuid": "17234e84-78aa-4afc-9bad-aa1ca0483d28",
