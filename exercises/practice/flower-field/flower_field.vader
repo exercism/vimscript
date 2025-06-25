@@ -1,0 +1,125 @@
+Execute (no rows):
+  let g:garden = []
+  let g:expected = []
+  AssertEqual g:expected, Annotate(g:garden)
+
+Execute (no columns):
+  let g:garden = ['']
+  let g:expected = ['']
+  AssertEqual g:expected, Annotate(g:garden)
+
+Execute (no flowers):
+  let g:garden = [
+  \ '   ',
+  \ '   ',
+  \ '   ']
+  let g:expected = [
+  \ '   ',
+  \ '   ',
+  \ '   ']
+  AssertEqual g:expected, Annotate(g:garden)
+
+Execute (garden full of flowers):
+  let g:garden = [
+  \ '***',
+  \ '***',
+  \ '***']
+  let g:expected = [
+  \ '***',
+  \ '***', 
+  \ '***']
+  AssertEqual g:expected, Annotate(g:garden)
+
+Execute (flower surrounded by spaces):
+  let g:garden = [
+  \ '   ',
+  \ ' * ',
+  \ '   ']
+  let g:expected = [
+  \ '111',
+  \ '1*1',
+  \ '111']
+  AssertEqual g:expected, Annotate(g:garden)
+
+Execute (space surrounded by flowers):
+  let g:garden = [
+  \ '***',
+  \ '* *',
+  \ '***']
+  let g:expected = [
+  \ '***',
+  \ '*8*',
+  \ '***']
+  AssertEqual g:expected, Annotate(g:garden)
+
+Execute (horizontal line):
+  let g:garden = [' * * ']
+  let g:expected = ['1*2*1']
+  AssertEqual g:expected, Annotate(g:garden)
+
+Execute (horizontal line, flowers at edges):
+  let g:garden = ['*   *']
+  let g:expected = ['*1 1*']
+  AssertEqual g:expected, Annotate(g:garden)
+
+Execute (vertical line):
+  let g:garden = [
+  \ ' ',
+  \ '*',
+  \ ' ',
+  \ '*',
+  \ ' ']
+  let g:expected = [
+  \ '1',
+  \ '*',
+  \ '2',
+  \ '*',
+  \ '1']
+  AssertEqual g:expected, Annotate(g:garden)
+
+Execute (vertical line, flowers at edges):
+  let g:garden = [
+  \ '*',
+  \ ' ',
+  \ ' ',
+  \ ' ',
+  \ '*']
+  let g:expected = [
+  \ '*',
+  \ '1',
+  \ ' ', 
+  \ '1',
+  \ '*']
+  AssertEqual g:expected, Annotate(g:garden)
+
+Execute (cross):
+  let g:garden = [
+  \ '  *  ',
+  \ '  *  ',
+  \ '*****',
+  \ '  *  ',
+  \ '  *  ']
+  let g:expected = [
+  \ ' 2*2 ',
+  \ '25*52',
+  \ '*****',
+  \ '25*52',
+  \ ' 2*2 ']
+  AssertEqual g:expected, Annotate(g:garden)
+
+Execute (large garden):
+  let g:garden = [
+  \ ' *  * ',
+  \ '  *   ',
+  \ '    * ',
+  \ '   * *',
+  \ ' *  * ',
+  \ '      ']
+  let g:expected = [
+  \ '1*22*1',
+  \ '12*322',
+  \ ' 123*2',
+  \ '112*4*',
+  \ '1*22*2',
+  \ '111111']
+  AssertEqual g:expected, Annotate(g:garden)
