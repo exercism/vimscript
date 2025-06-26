@@ -660,6 +660,14 @@
         "difficulty": 5
       },
       {
+        "slug": "flower-field",
+        "name": "Flower Field",
+        "uuid": "237d19eb-1045-45d7-95a8-4f33e44b87cc",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "grade-school",
         "name": "Grade School",
         "uuid": "17234e84-78aa-4afc-9bad-aa1ca0483d28",
@@ -702,7 +710,8 @@
         "uuid": "ece26c46-07dc-49ae-bac2-10353fb340b5",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 5
+        "difficulty": 5,
+        "status": "deprecated"
       },
       {
         "slug": "nucleotide-count",

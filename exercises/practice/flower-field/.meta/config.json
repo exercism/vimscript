@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "flower_field.vim"
+    ],
+    "test": [
+      "flower_field.vader"
+    ],
+    "example": [
+      ".meta/example.vim"
+    ]
+  },
+  "blurb": "Mark all the flowers in a garden."
+}
