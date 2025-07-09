@@ -636,6 +636,14 @@
         ]
       },
       {
+        "slug": "change",
+        "name": "Change",
+        "uuid": "25347375-b351-4206-9f6e-bb0e28dd1fb9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "circular-buffer",
         "name": "Circular Buffer",
         "uuid": "75477d21-a1cb-4ed8-8be9-0c9260cbecf9",

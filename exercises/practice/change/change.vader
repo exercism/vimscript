@@ -1,0 +1,80 @@
+Execute (change for 1 cent):
+  let g:coins = [1, 5, 10, 25]
+  let g:target = 1
+  let g:expected = [1]
+  AssertEqual g:expected, FindFewestCoins(g:coins, g:target)
+
+Execute (single coin change):
+  let g:coins = [1, 5, 10, 25, 100]
+  let g:target = 25
+  let g:expected = [25]
+  AssertEqual g:expected, FindFewestCoins(g:coins, g:target)
+
+Execute (multiple coin change):
+  let g:coins = [1, 5, 10, 25, 100]
+  let g:target = 15
+  let g:expected = [5, 10]
+  AssertEqual g:expected, FindFewestCoins(g:coins, g:target)
+
+Execute (change with Lilliputian Coins):
+  let g:coins = [1, 4, 15, 20, 50]
+  let g:target = 23
+  let g:expected = [4, 4, 15]
+  AssertEqual g:expected, FindFewestCoins(g:coins, g:target)
+
+Execute (change with Lower Elbonia Coins):
+  let g:coins = [1, 5, 10, 21, 25]
+  let g:target = 63
+  let g:expected = [21, 21, 21]
+  AssertEqual g:expected, FindFewestCoins(g:coins, g:target)
+
+Execute (large target values):
+  let g:coins = [1, 2, 5, 10, 20, 50, 100]
+  let g:target = 999
+  let g:expected = [2, 2, 5, 20, 20, 50, 100, 100, 100, 100, 100, 100, 100, 100, 100]
+  AssertEqual g:expected, FindFewestCoins(g:coins, g:target)
+
+Execute (possible change without unit coins available):
+  let g:coins = [2, 5, 10, 20, 50]
+  let g:target = 21
+  let g:expected = [2, 2, 2, 5, 10]
+  AssertEqual g:expected, FindFewestCoins(g:coins, g:target)
+
+Execute (another possible change without unit coins available):
+  let g:coins = [4, 5]
+  let g:target = 27
+  let g:expected = [4, 4, 4, 5, 5, 5]
+  AssertEqual g:expected, FindFewestCoins(g:coins, g:target)
+
+Execute (a greedy approach is not optimal):
+  let g:coins = [1, 10, 11]
+  let g:target = 20
+  let g:expected = [10, 10]
+  AssertEqual g:expected, FindFewestCoins(g:coins, g:target)
+
+Execute (no coins make 0 change):
+  let g:coins = [1, 5, 10, 21, 25]
+  let g:target = 0
+  let g:expected = []
+  AssertEqual g:expected, FindFewestCoins(g:coins, g:target)
+
+Execute (error testing for change smaller than the smallest of coins):
+  let g:coins = [5, 10]
+  let g:target = 3
+  let g:expected = "can't make target with given coins"
+  AssertThrows call FindFewestCoins(g:coins, g:target)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (error if no combination can add up to target):
+  let g:coins = [5, 10]
+  let g:target = 94
+  let g:expected = "can't make target with given coins"
+  AssertThrows call FindFewestCoins(g:coins, g:target)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (cannot find negative change values):
+  let g:coins = [1, 2, 5]
+  let g:target = -5
+  let g:expected = "target can't be negative"
+  AssertThrows call FindFewestCoins(g:coins, g:target)
+  AssertEqual g:expected, g:vader_exception
