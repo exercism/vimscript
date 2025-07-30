@@ -1,0 +1,31 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "tournament.vim"
+    ],
+    "test": [
+      "tournament.vader"
+    ],
+    "editor": [
+      "inputs/01.txt",
+      "inputs/02.txt",
+      "inputs/03.txt",
+      "inputs/04.txt",
+      "inputs/05.txt",
+      "inputs/06.txt",
+      "inputs/07.txt",
+      "inputs/08.txt",
+      "inputs/09.txt",
+      "inputs/10.txt",
+      "inputs/11.txt",
+      "inputs/12.txt"
+    ],
+    "example": [
+      ".meta/example.vim"
+    ]
+  },
+  "blurb": "Tally the results of a small football competition."
+}
