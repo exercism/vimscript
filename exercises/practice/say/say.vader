@@ -1,0 +1,96 @@
+Execute (zero):
+  let g:number = 0
+  let g:expected = "zero"
+  AssertEqual g:expected, Say(g:number)
+
+Execute (one):
+  let g:number = 1
+  let g:expected = "one"
+  AssertEqual g:expected, Say(g:number)
+
+Execute (fourteen):
+  let g:number = 14
+  let g:expected = "fourteen"
+  AssertEqual g:expected, Say(g:number)
+
+Execute (twenty):
+  let g:number = 20
+  let g:expected = "twenty"
+  AssertEqual g:expected, Say(g:number)
+
+Execute (twenty-two):
+  let g:number = 22
+  let g:expected = "twenty-two"
+  AssertEqual g:expected, Say(g:number)
+
+Execute (thirty):
+  let g:number = 30
+  let g:expected = "thirty"
+  AssertEqual g:expected, Say(g:number)
+
+Execute (ninety-nine):
+  let g:number = 99
+  let g:expected = "ninety-nine"
+  AssertEqual g:expected, Say(g:number)
+
+Execute (one hundred):
+  let g:number = 100
+  let g:expected = "one hundred"
+  AssertEqual g:expected, Say(g:number)
+
+Execute (one hundred twenty-three):
+  let g:number = 123
+  let g:expected = "one hundred twenty-three"
+  AssertEqual g:expected, Say(g:number)
+
+Execute (two hundred):
+  let g:number = 200
+  let g:expected = "two hundred"
+  AssertEqual g:expected, Say(g:number)
+
+Execute (nine hundred ninety-nine):
+  let g:number = 999
+  let g:expected = "nine hundred ninety-nine"
+  AssertEqual g:expected, Say(g:number)
+
+Execute (one thousand):
+  let g:number = 1000
+  let g:expected = "one thousand"
+  AssertEqual g:expected, Say(g:number)
+
+Execute (one thousand two hundred thirty-four):
+  let g:number = 1234
+  let g:expected = "one thousand two hundred thirty-four"
+  AssertEqual g:expected, Say(g:number)
+
+Execute (one million):
+  let g:number = 1000000
+  let g:expected = "one million"
+  AssertEqual g:expected, Say(g:number)
+
+Execute (one million two thousand three hundred forty-five):
+  let g:number = 1002345
+  let g:expected = "one million two thousand three hundred forty-five"
+  AssertEqual g:expected, Say(g:number)
+
+Execute (one billion):
+  let g:number = 1000000000
+  let g:expected = "one billion"
+  AssertEqual g:expected, Say(g:number)
+
+Execute (a big number):
+  let g:number = 987654321123
+  let g:expected = "nine hundred eighty-seven billion six hundred fifty-four million three hundred twenty-one thousand one hundred twenty-three"
+  AssertEqual g:expected, Say(g:number)
+
+Execute (numbers below zero are out of range):
+  let g:number = -1
+  let g:expected = "input out of range"
+  AssertThrows call Say(g:number)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (numbers above 999,999,999,999 are out of range):
+  let g:number = 1000000000000
+  let g:expected = "input out of range"
+  AssertThrows call Say(g:number)
+  AssertEqual g:expected, g:vader_exception
