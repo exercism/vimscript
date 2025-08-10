@@ -468,6 +468,14 @@
         "difficulty": 3
       },
       {
+        "slug": "saddle-points",
+        "name": "Saddle Points",
+        "uuid": "13894e67-0f5f-42d7-86b3-4ce12b9cba4e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "scrabble-score",
         "name": "Scrabble Score",
         "uuid": "55859980-03d6-4994-a8e2-120179a8f0e5",
