@@ -1,0 +1,74 @@
+Execute (Can identify single saddle point):
+  let g:matrix = [[9, 8, 7],
+  \               [5, 3, 2],
+  \               [6, 6, 7]]
+  let g:expected = [{'row': 2, 'column': 1}]
+  let g:result = sort(SaddlePoints(g:matrix))
+  AssertEqual g:expected, g:result
+
+Execute (Can identify that empty matrix has no saddle points):
+  let g:matrix = [[]]
+  let g:expected = []
+  let g:result = sort(SaddlePoints(g:matrix))
+  AssertEqual g:expected, g:result
+
+Execute (Can identify lack of saddle points when there are none):
+  let g:matrix = [[1, 2, 3],
+  \               [3, 1, 2],
+  \               [2, 3, 1]]
+  let g:expected = []
+  let g:result = sort(SaddlePoints(g:matrix))
+  AssertEqual g:expected, g:result
+
+Execute (Can identify multiple saddle points in a column):
+  let g:matrix = [[4, 5, 4],
+  \               [3, 5, 5],
+  \               [1, 5, 4]]
+  let g:expected = [{'row': 1, 'column': 2},
+  \                 {'row': 2, 'column': 2},
+  \                 {'row': 3, 'column': 2}]
+  let g:result = sort(SaddlePoints(g:matrix))
+  AssertEqual g:expected, g:result
+
+Execute (Can identify multiple saddle points in a row):
+  let g:matrix = [[6, 7, 8],
+  \               [5, 5, 5],
+  \               [7, 5, 6]]
+  let g:expected = [{'row': 2, 'column': 1},
+  \                 {'row': 2, 'column': 2},
+  \                 {'row': 2, 'column': 3}]
+  let g:result = sort(SaddlePoints(g:matrix))
+  AssertEqual g:expected, g:result
+
+Execute (Can identify saddle point in bottom right corner):
+  let g:matrix = [[8, 7, 9],
+  \               [6, 7, 6],
+  \               [3, 2, 5]]
+  let g:expected = [{'row': 3, 'column': 3}]
+  let g:result = sort(SaddlePoints(g:matrix))
+  AssertEqual g:expected, g:result
+
+Execute (Can identify saddle points in a non square matrix):
+  let g:matrix = [[3, 1, 3],
+  \               [3, 2, 4]]
+  let g:expected = [{'row': 1, 'column': 1},
+  \                 {'row': 1, 'column': 3}]
+  let g:result = sort(SaddlePoints(g:matrix))
+  AssertEqual g:expected, g:result
+
+Execute (Can identify that saddle points in a single column matrix are those with the minimum value):
+  let g:matrix = [[2],
+  \               [1],
+  \               [4],
+  \               [1]]
+  let g:expected = [{'row': 2, 'column': 1},
+  \                 {'row': 4, 'column': 1}]
+  let g:result = sort(SaddlePoints(g:matrix))
+  AssertEqual g:expected, g:result
+
+Execute (Can identify that saddle points in a single row matrix are those with the maximum value):
+  let g:matrix = [[2, 5, 3, 5]]
+  let g:expected = [{'row': 1, 'column': 2},
+  \                 {'row': 1, 'column': 4}]
+  let g:result = sort(SaddlePoints(g:matrix))
+  AssertEqual g:expected, g:result
