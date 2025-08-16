@@ -767,6 +767,14 @@
         "difficulty": 5
       },
       {
+        "slug": "say",
+        "name": "Say",
+        "uuid": "fe349bef-fa91-439a-bed2-1ac12c4ad5d1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "simple-linked-list",
         "name": "Simple Linked List",
         "uuid": "85054b17-d7c3-46f5-b44c-89b902ab794d",
