@@ -20,7 +20,7 @@ Execute (equilateral - all zero sides is not a triangle):
   let g:expected = 0
   AssertEqual g:expected, Equilateral(g:input)
 
-Execute (equilateal - sides may be floats):
+Execute (equilateral - sides may be floats):
   let g:input = [0.5, 0.5, 0.5]
   let g:expected = 1
   AssertEqual g:expected, Equilateral(g:input)
