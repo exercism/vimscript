@@ -14,10 +14,10 @@
 "   thequickbrownfoxjumpsoverthelazydog
 "
 
-function! AtbashDecode(cipher) abort
+function! AtbashEncode(plaintext) abort
   " your code goes here
 endfunction
 
-function! AtbashEncode(plaintext) abort
+function! AtbashDecode(cipher) abort
   " your code goes here
 endfunction
