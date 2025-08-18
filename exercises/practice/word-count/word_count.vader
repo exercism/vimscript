@@ -39,11 +39,6 @@ Execute (normalize case):
   AssertEqual g:expected, WordCount(g:sentence)
 
 Execute (with apostrophes):
-  let g:sentence = "First: don't laugh. Then: don't cry."
-  let g:expected = {'first': 1, 'laugh': 1, 'then': 1, "don't": 2, 'cry': 1}
-  AssertEqual g:expected, WordCount(g:sentence)
-
-Execute (with apostrophes):
   let g:sentence = "'First: don't laugh. Then: don't cry. You're getting it.'"
   let g:expected = {'first': 1, 'laugh': 1, 'then': 1, 'getting': 1, 'it': 1, "you're": 1, "don't": 2, 'cry': 1}
   AssertEqual g:expected, WordCount(g:sentence)
