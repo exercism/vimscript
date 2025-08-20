@@ -1,0 +1,4 @@
+Allegoric Alaskans;Blithering Badgers;loss
+Devastating Donkeys;Allegoric Alaskans;loss
+Courageous Californians;Blithering Badgers;draw
+Allegoric Alaskans;Courageous Californians;win
