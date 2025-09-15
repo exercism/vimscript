@@ -34,6 +34,18 @@ Execute (Measure using bucket one of size 2 and bucket two of size 3 - start wit
   let g:game = TwoBucket(g:input)
   AssertEqual g:expected, g:game.Measure()
 
+Execute (Measure using bucket one much bigger than bucket two):
+  let g:input = { "bucketOne": 5, "bucketTwo": 1, "goal": 2, "startBucket": "one" }
+  let g:expected = { "moves": 6, "goalBucket": "one", "otherBucket": 1 }
+  let g:game = TwoBucket(g:input)
+  AssertEqual g:expected, g:game.Measure()
+
+Execute (Measure using bucket one much smaller than bucket two):
+  let g:input = { "bucketOne": 3, "bucketTwo": 15, "goal": 9, "startBucket": "one" }
+  let g:expected = { "moves": 6, "goalBucket": "two", "otherBucket": 0 }
+  let g:game = TwoBucket(g:input)
+  AssertEqual g:expected, g:game.Measure()
+
 Execute (Not possible to reach the goal):
   let g:input = { "bucketOne": 6, "bucketTwo": 15, "goal": 5, "startBucket": "one" }
   let g:expected = "impossible"
