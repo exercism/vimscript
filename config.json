@@ -272,6 +272,14 @@
         ]
       },
       {
+        "slug": "line-up",
+        "name": "Line Up",
+        "uuid": "759c4de8-cfb4-4846-af7e-468c40601f7c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "luhn",
         "name": "Luhn",
         "uuid": "e2020329-442d-45da-ac89-ff15eade794e",
