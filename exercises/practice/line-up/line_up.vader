@@ -1,0 +1,114 @@
+
+Execute (format smallest non-exceptional ordinal numeral 4):
+  let g:name = "Gianna"
+  let g:number = 4
+  let g:expected = "Gianna, you are the 4th customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
+
+Execute (format greatest single digit non-exceptional ordinal numeral 9):
+  let g:name = "Maarten"
+  let g:number = 9
+  let g:expected = "Maarten, you are the 9th customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
+
+Execute (format non-exceptional ordinal numeral 5):
+  let g:name = "Petronila"
+  let g:number = 5
+  let g:expected = "Petronila, you are the 5th customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
+
+Execute (format non-exceptional ordinal numeral 6):
+  let g:name = "Attakullakulla"
+  let g:number = 6
+  let g:expected = "Attakullakulla, you are the 6th customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
+
+Execute (format non-exceptional ordinal numeral 7):
+  let g:name = "Kate"
+  let g:number = 7
+  let g:expected = "Kate, you are the 7th customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
+
+Execute (format non-exceptional ordinal numeral 8):
+  let g:name = "Maximiliano"
+  let g:number = 8
+  let g:expected = "Maximiliano, you are the 8th customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
+
+Execute (format exceptional ordinal numeral 1):
+  let g:name = "Mary"
+  let g:number = 1
+  let g:expected = "Mary, you are the 1st customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
+
+Execute (format exceptional ordinal numeral 2):
+  let g:name = "Haruto"
+  let g:number = 2
+  let g:expected = "Haruto, you are the 2nd customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
+
+Execute (format exceptional ordinal numeral 3):
+  let g:name = "Henriette"
+  let g:number = 3
+  let g:expected = "Henriette, you are the 3rd customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
+
+Execute (format smallest two digit non-exceptional ordinal numeral 10):
+  let g:name = "Alvarez"
+  let g:number = 10
+  let g:expected = "Alvarez, you are the 10th customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
+
+Execute (format non-exceptional ordinal numeral 11):
+  let g:name = "Jacqueline"
+  let g:number = 11
+  let g:expected = "Jacqueline, you are the 11th customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
+
+Execute (format non-exceptional ordinal numeral 12):
+  let g:name = "Juan"
+  let g:number = 12
+  let g:expected = "Juan, you are the 12th customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
+
+Execute (format non-exceptional ordinal numeral 13):
+  let g:name = "Patricia"
+  let g:number = 13
+  let g:expected = "Patricia, you are the 13th customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
+
+Execute (format exceptional ordinal numeral 21):
+  let g:name = "Washi"
+  let g:number = 21
+  let g:expected = "Washi, you are the 21st customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
+
+Execute (format exceptional ordinal numeral 62):
+  let g:name = "Nayra"
+  let g:number = 62
+  let g:expected = "Nayra, you are the 62nd customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
+
+Execute (format exceptional ordinal numeral 100):
+  let g:name = "John"
+  let g:number = 100
+  let g:expected = "John, you are the 100th customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
+
+Execute (format exceptional ordinal numeral 101):
+  let g:name = "Zeinab"
+  let g:number = 101
+  let g:expected = "Zeinab, you are the 101st customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
+
+Execute (format non-exceptional ordinal numeral 112):
+  let g:name = "Knud"
+  let g:number = 112
+  let g:expected = "Knud, you are the 112th customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
+
+Execute (format exceptional ordinal numeral 123):
+  let g:name = "Yma"
+  let g:number = 123
+  let g:expected = "Yma, you are the 123rd customer we serve today. Thank you!"
+  AssertEqual g:expected, Format(g:name, g:number)
