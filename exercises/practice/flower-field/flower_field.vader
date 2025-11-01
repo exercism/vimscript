@@ -123,3 +123,8 @@ Execute (large garden):
   \ '1*22*2',
   \ '111111']
   AssertEqual g:expected, Annotate(g:garden)
+
+Execute (multiple adjacent flowers):
+  let g:garden = [' ** ']
+  let g:expected = ['1**1']
+  AssertEqual g:expected, Annotate(g:garden)
