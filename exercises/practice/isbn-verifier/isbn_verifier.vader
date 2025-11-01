@@ -19,6 +19,12 @@ Execute (invalid character in isbn is not treated as zero):
 Execute (X is only valid as a check digit):
   Assert !IsValid("3-598-2X507-9")
 
+Execute (only one check digit is allowed):
+  Assert !IsValid("3-598-21508-96")
+
+Execute (X is not substituted by the value 10):
+  Assert !IsValid("3-598-2X507-5")
+
 Execute (valid isbn without separating dashes):
   Assert IsValid("3598215088")
 
