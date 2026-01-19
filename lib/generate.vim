@@ -141,7 +141,7 @@ function! s:generate_tests(tests, ...) abort
       call s:generate_tests(test.cases, 0)
     else
       let arguments = []
-      if line('$') > 1 && getline(line('$')) != ''
+      if line('$') > 1 && getline(line('$')) !=# ''
         call append(line('$'), '')
       endif
       call append(line('$'), printf('Execute (%s):', test.description))
