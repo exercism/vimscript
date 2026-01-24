@@ -561,6 +561,14 @@
         "difficulty": 2
       },
       {
+        "slug": "tournament",
+        "name": "Tournament",
+        "uuid": "452756cd-f85d-4853-8775-59a15abdc61e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "33796a20-8325-4068-bdbd-e91519144b24",
@@ -805,15 +813,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
-      },
-      {
-        "slug": "tournament",
-        "name": "Tournament",
-        "uuid": "452756cd-f85d-4853-8775-59a15abdc61e",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5,
-        "status": "wip"
       },
       {
         "slug": "transpose",

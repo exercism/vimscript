@@ -1,16 +1,15 @@
 let s:HEADER = 'Team                           | MP |  W |  D |  L |  P'
 
-function! Tally(relative_input_csv) abort
-  let l:lines = readfile(a:relative_input_csv)
-  if empty(l:lines)
-    return s:HEADER
+function! Tally(lines) abort
+  if empty(a:lines)
+    return [s:HEADER]
   endif
 
-  let l:team_data = s:ProcessGameResults(l:lines)
+  let l:team_data = s:ProcessGameResults(a:lines)
   let l:team_standings = s:PrepareStandings(l:team_data)
   let l:rows = s:BuildTableRows(l:team_standings)
 
-  return s:HEADER . "\n" . join(l:rows, "\n")
+  return [s:HEADER] + l:rows
 endfunction
 
 function! s:ProcessGameResults(lines) abort
@@ -59,12 +58,12 @@ function! s:BuildTableRows(teams) abort
   let l:rows = []
   for l:team_data in a:teams
     let l:row = printf('%-30s | %2d | %2d | %2d | %2d | %2d',
-												\ l:team_data['name'],
-												\ l:team_data['MP'],
-												\ l:team_data['W'],
-												\ l:team_data['D'],
-												\ l:team_data['L'],
-												\ l:team_data['P'])
+                      \ l:team_data['name'],
+                      \ l:team_data['MP'],
+                      \ l:team_data['W'],
+                      \ l:team_data['D'],
+                      \ l:team_data['L'],
+                      \ l:team_data['P'])
     call add(l:rows, l:row)
   endfor
 

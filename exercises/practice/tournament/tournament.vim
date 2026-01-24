@@ -1,3 +1,3 @@
-function! Tally(relative_input_csv) abort
+function! Tally(lines) abort
   " your code goes here
 endfunction

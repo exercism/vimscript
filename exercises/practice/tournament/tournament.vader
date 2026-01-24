@@ -1,88 +1,59 @@
 Execute (just the header if no input):
-  let g:expected = 'Team                           | MP |  W |  D |  L |  P'
-  AssertEqual g:expected, Tally('inputs/01.txt')
+  let g:rows = []
+  let g:expected = ['Team                           | MP |  W |  D |  L |  P']
+  AssertEqual g:expected, Tally(g:rows)
 
 Execute (a win is three points, a loss is zero points):
-  let g:expected = join([
-  \ 'Team                           | MP |  W |  D |  L |  P',
-  \ 'Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3',
-  \ 'Blithering Badgers             |  1 |  0 |  0 |  1 |  0'], "\n")
-  AssertEqual g:expected, Tally('inputs/02.txt')
+  let g:rows = ['Allegoric Alaskans;Blithering Badgers;win']
+  let g:expected = ['Team                           | MP |  W |  D |  L |  P', 'Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3', 'Blithering Badgers             |  1 |  0 |  0 |  1 |  0']
+  AssertEqual g:expected, Tally(g:rows)
 
 Execute (a win can also be expressed as a loss):
-  let g:expected = join([
-  \ 'Team                           | MP |  W |  D |  L |  P',
-  \ 'Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3',
-  \ 'Blithering Badgers             |  1 |  0 |  0 |  1 |  0'], "\n")
-  AssertEqual g:expected, Tally('inputs/03.txt')
+  let g:rows = ['Blithering Badgers;Allegoric Alaskans;loss']
+  let g:expected = ['Team                           | MP |  W |  D |  L |  P', 'Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3', 'Blithering Badgers             |  1 |  0 |  0 |  1 |  0']
+  AssertEqual g:expected, Tally(g:rows)
 
 Execute (a different team can win):
-  let g:expected = join([
-  \ 'Team                           | MP |  W |  D |  L |  P',
-  \ 'Blithering Badgers             |  1 |  1 |  0 |  0 |  3',
-  \ 'Allegoric Alaskans             |  1 |  0 |  0 |  1 |  0'], "\n")
-  AssertEqual g:expected, Tally('inputs/04.txt')
+  let g:rows = ['Blithering Badgers;Allegoric Alaskans;win']
+  let g:expected = ['Team                           | MP |  W |  D |  L |  P', 'Blithering Badgers             |  1 |  1 |  0 |  0 |  3', 'Allegoric Alaskans             |  1 |  0 |  0 |  1 |  0']
+  AssertEqual g:expected, Tally(g:rows)
 
 Execute (a draw is one point each):
-  let g:expected = join([
-  \ 'Team                           | MP |  W |  D |  L |  P',
-  \ 'Allegoric Alaskans             |  1 |  0 |  1 |  0 |  1',
-  \ 'Blithering Badgers             |  1 |  0 |  1 |  0 |  1'], "\n")
-  AssertEqual g:expected, Tally('inputs/05.txt')
+  let g:rows = ['Allegoric Alaskans;Blithering Badgers;draw']
+  let g:expected = ['Team                           | MP |  W |  D |  L |  P', 'Allegoric Alaskans             |  1 |  0 |  1 |  0 |  1', 'Blithering Badgers             |  1 |  0 |  1 |  0 |  1']
+  AssertEqual g:expected, Tally(g:rows)
 
 Execute (There can be more than one match):
-  let g:expected = join([
-  \ 'Team                           | MP |  W |  D |  L |  P',
-  \ 'Allegoric Alaskans             |  2 |  2 |  0 |  0 |  6',
-  \ 'Blithering Badgers             |  2 |  0 |  0 |  2 |  0'], "\n")
-  AssertEqual g:expected, Tally('inputs/06.txt')
+  let g:rows = ['Allegoric Alaskans;Blithering Badgers;win', 'Allegoric Alaskans;Blithering Badgers;win']
+  let g:expected = ['Team                           | MP |  W |  D |  L |  P', 'Allegoric Alaskans             |  2 |  2 |  0 |  0 |  6', 'Blithering Badgers             |  2 |  0 |  0 |  2 |  0']
+  AssertEqual g:expected, Tally(g:rows)
 
 Execute (There can be more than one winner):
-  let g:expected = join([
-  \ 'Team                           | MP |  W |  D |  L |  P',
-  \ 'Allegoric Alaskans             |  2 |  1 |  0 |  1 |  3',
-  \ 'Blithering Badgers             |  2 |  1 |  0 |  1 |  3'], "\n")
-  AssertEqual g:expected, Tally('inputs/07.txt')
-  
+  let g:rows = ['Allegoric Alaskans;Blithering Badgers;loss', 'Allegoric Alaskans;Blithering Badgers;win']
+  let g:expected = ['Team                           | MP |  W |  D |  L |  P', 'Allegoric Alaskans             |  2 |  1 |  0 |  1 |  3', 'Blithering Badgers             |  2 |  1 |  0 |  1 |  3']
+  AssertEqual g:expected, Tally(g:rows)
 
 Execute (There can be more than two teams):
-  let g:expected = join([
-  \ 'Team                           | MP |  W |  D |  L |  P',
-  \ 'Allegoric Alaskans             |  2 |  2 |  0 |  0 |  6',
-  \ 'Blithering Badgers             |  2 |  1 |  0 |  1 |  3',
-  \ 'Courageous Californians        |  2 |  0 |  0 |  2 |  0'], "\n")
-  AssertEqual g:expected, Tally('inputs/08.txt')
-  
+  let g:rows = ['Allegoric Alaskans;Blithering Badgers;win', 'Blithering Badgers;Courageous Californians;win', 'Courageous Californians;Allegoric Alaskans;loss']
+  let g:expected = ['Team                           | MP |  W |  D |  L |  P', 'Allegoric Alaskans             |  2 |  2 |  0 |  0 |  6', 'Blithering Badgers             |  2 |  1 |  0 |  1 |  3', 'Courageous Californians        |  2 |  0 |  0 |  2 |  0']
+  AssertEqual g:expected, Tally(g:rows)
+
 Execute (typical input):
-  let g:expected = join([
-  \ 'Team                           | MP |  W |  D |  L |  P',
-  \ 'Devastating Donkeys            |  3 |  2 |  1 |  0 |  7',
-  \ 'Allegoric Alaskans             |  3 |  2 |  0 |  1 |  6',
-  \ 'Blithering Badgers             |  3 |  1 |  0 |  2 |  3',
-  \ 'Courageous Californians        |  3 |  0 |  1 |  2 |  1'], "\n")
-  AssertEqual g:expected, Tally('inputs/09.txt')
+  let g:rows = ['Allegoric Alaskans;Blithering Badgers;win', 'Devastating Donkeys;Courageous Californians;draw', 'Devastating Donkeys;Allegoric Alaskans;win', 'Courageous Californians;Blithering Badgers;loss', 'Blithering Badgers;Devastating Donkeys;loss', 'Allegoric Alaskans;Courageous Californians;win']
+  let g:expected = ['Team                           | MP |  W |  D |  L |  P', 'Devastating Donkeys            |  3 |  2 |  1 |  0 |  7', 'Allegoric Alaskans             |  3 |  2 |  0 |  1 |  6', 'Blithering Badgers             |  3 |  1 |  0 |  2 |  3', 'Courageous Californians        |  3 |  0 |  1 |  2 |  1']
+  AssertEqual g:expected, Tally(g:rows)
 
 Execute (incomplete competition (not all pairs have played)):
-  let g:expected = join([
-  \ 'Team                           | MP |  W |  D |  L |  P',
-  \ 'Allegoric Alaskans             |  3 |  2 |  0 |  1 |  6',
-  \ 'Blithering Badgers             |  2 |  1 |  1 |  0 |  4',
-  \ 'Courageous Californians        |  2 |  0 |  1 |  1 |  1',
-  \ 'Devastating Donkeys            |  1 |  0 |  0 |  1 |  0'], "\n")
-  AssertEqual g:expected, Tally('inputs/10.txt')
-  
+  let g:rows = ['Allegoric Alaskans;Blithering Badgers;loss', 'Devastating Donkeys;Allegoric Alaskans;loss', 'Courageous Californians;Blithering Badgers;draw', 'Allegoric Alaskans;Courageous Californians;win']
+  let g:expected = ['Team                           | MP |  W |  D |  L |  P', 'Allegoric Alaskans             |  3 |  2 |  0 |  1 |  6', 'Blithering Badgers             |  2 |  1 |  1 |  0 |  4', 'Courageous Californians        |  2 |  0 |  1 |  1 |  1', 'Devastating Donkeys            |  1 |  0 |  0 |  1 |  0']
+  AssertEqual g:expected, Tally(g:rows)
+
 Execute (ties broken alphabetically):
-  let g:expected = join([
-  \ 'Team                           | MP |  W |  D |  L |  P',
-  \ 'Allegoric Alaskans             |  3 |  2 |  1 |  0 |  7',
-  \ 'Courageous Californians        |  3 |  2 |  1 |  0 |  7',
-  \ 'Blithering Badgers             |  3 |  0 |  1 |  2 |  1',
-  \ 'Devastating Donkeys            |  3 |  0 |  1 |  2 |  1'], "\n")
-  AssertEqual g:expected, Tally('inputs/11.txt')
+  let g:rows = ['Courageous Californians;Devastating Donkeys;win', 'Allegoric Alaskans;Blithering Badgers;win', 'Devastating Donkeys;Allegoric Alaskans;loss', 'Courageous Californians;Blithering Badgers;win', 'Blithering Badgers;Devastating Donkeys;draw', 'Allegoric Alaskans;Courageous Californians;draw']
+  let g:expected = ['Team                           | MP |  W |  D |  L |  P', 'Allegoric Alaskans             |  3 |  2 |  1 |  0 |  7', 'Courageous Californians        |  3 |  2 |  1 |  0 |  7', 'Blithering Badgers             |  3 |  0 |  1 |  2 |  1', 'Devastating Donkeys            |  3 |  0 |  1 |  2 |  1']
+  AssertEqual g:expected, Tally(g:rows)
 
 Execute (ensure points sorted numerically):
-  let g:expected = join([
-  \ 'Team                           | MP |  W |  D |  L |  P',
-  \ 'Devastating Donkeys            |  5 |  4 |  0 |  1 | 12',
-  \ 'Blithering Badgers             |  5 |  1 |  0 |  4 |  3'], "\n")
-  AssertEqual g:expected, Tally('inputs/12.txt')
+  let g:rows = ['Devastating Donkeys;Blithering Badgers;win', 'Devastating Donkeys;Blithering Badgers;win', 'Devastating Donkeys;Blithering Badgers;win', 'Devastating Donkeys;Blithering Badgers;win', 'Blithering Badgers;Devastating Donkeys;win']
+  let g:expected = ['Team                           | MP |  W |  D |  L |  P', 'Devastating Donkeys            |  5 |  4 |  0 |  1 | 12', 'Blithering Badgers             |  5 |  1 |  0 |  4 |  3']
+  AssertEqual g:expected, Tally(g:rows)
