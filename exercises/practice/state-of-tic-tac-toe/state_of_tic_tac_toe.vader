@@ -1,0 +1,138 @@
+Execute (Finished game where X won via left column victory):
+  let g:board = ['XOO', 'X  ', 'X  ']
+  let g:expected = 'win'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Finished game where X won via middle column victory):
+  let g:board = ['OXO', ' X ', ' X ']
+  let g:expected = 'win'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Finished game where X won via right column victory):
+  let g:board = ['OOX', '  X', '  X']
+  let g:expected = 'win'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Finished game where O won via left column victory):
+  let g:board = ['OXX', 'OX ', 'O  ']
+  let g:expected = 'win'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Finished game where O won via middle column victory):
+  let g:board = ['XOX', ' OX', ' O ']
+  let g:expected = 'win'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Finished game where O won via right column victory):
+  let g:board = ['XXO', ' XO', '  O']
+  let g:expected = 'win'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Finished game where X won via top row victory):
+  let g:board = ['XXX', 'XOO', 'O  ']
+  let g:expected = 'win'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Finished game where X won via middle row victory):
+  let g:board = ['O  ', 'XXX', ' O ']
+  let g:expected = 'win'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Finished game where X won via bottom row victory):
+  let g:board = [' OO', 'O X', 'XXX']
+  let g:expected = 'win'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Finished game where O won via top row victory):
+  let g:board = ['OOO', 'XXO', 'XX ']
+  let g:expected = 'win'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Finished game where O won via middle row victory):
+  let g:board = ['XX ', 'OOO', 'X  ']
+  let g:expected = 'win'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Finished game where O won via bottom row victory):
+  let g:board = ['XOX', ' XX', 'OOO']
+  let g:expected = 'win'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Finished game where X won via falling diagonal victory):
+  let g:board = ['XOO', ' X ', '  X']
+  let g:expected = 'win'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Finished game where X won via rising diagonal victory):
+  let g:board = ['O X', 'OX ', 'X  ']
+  let g:expected = 'win'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Finished game where O won via falling diagonal victory):
+  let g:board = ['OXX', 'OOX', 'X O']
+  let g:expected = 'win'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Finished game where O won via rising diagonal victory):
+  let g:board = ['  O', ' OX', 'OXX']
+  let g:expected = 'win'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Finished game where X won via a row and a column victory):
+  let g:board = ['XXX', 'XOO', 'XOO']
+  let g:expected = 'win'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Finished game where X won via two diagonal victories):
+  let g:board = ['XOX', 'OXO', 'XOX']
+  let g:expected = 'win'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Draw):
+  let g:board = ['XOX', 'XXO', 'OXO']
+  let g:expected = 'draw'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Another draw):
+  let g:board = ['XXO', 'OXX', 'XOO']
+  let g:expected = 'draw'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Ongoing game: one move in):
+  let g:board = ['   ', 'X  ', '   ']
+  let g:expected = 'ongoing'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Ongoing game: two moves in):
+  let g:board = ['O  ', ' X ', '   ']
+  let g:expected = 'ongoing'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Ongoing game: five moves in):
+  let g:board = ['X  ', ' XO', 'OX ']
+  let g:expected = 'ongoing'
+  AssertEqual g:expected, Gamestate(g:board)
+
+Execute (Invalid board: X went twice):
+  let g:board = ['XX ', '   ', '   ']
+  let g:expected = 'Wrong turn order: X went twice'
+  AssertThrows call Gamestate(g:board)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (Invalid board: O started):
+  let g:board = ['OOX', '   ', '   ']
+  let g:expected = 'Wrong turn order: O started'
+  AssertThrows call Gamestate(g:board)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (Invalid board: X won and O kept playing):
+  let g:board = ['XXX', 'OOO', '   ']
+  let g:expected = 'Impossible board: game should have ended after the game was won'
+  AssertThrows call Gamestate(g:board)
+  AssertEqual g:expected, g:vader_exception
+
+Execute (Invalid board: players kept playing after a win):
+  let g:board = ['XXX', 'OOO', 'XOX']
+  let g:expected = 'Impossible board: game should have ended after the game was won'
+  AssertThrows call Gamestate(g:board)
+  AssertEqual g:expected, g:vader_exception
