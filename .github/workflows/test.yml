@@ -13,11 +13,5 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
-      - name: Checkout vader.vim
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-        with:
-          repository: junegunn/vader.vim
-          path: deps/vader
-
       - name: Verify all exercises
         run: bin/verify-exercises
