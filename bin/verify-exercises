@@ -2,23 +2,55 @@
 
 temp_dir_base=$(mktemp -d)
 
+echo "Cloning vader.vim to temporary directory"
+VADER_TEMP_DIR=$(mktemp -d)
+trap "rm -rf '$VADER_TEMP_DIR'" EXIT
+
+git clone --depth 1 https://github.com/junegunn/vader.vim.git "$VADER_TEMP_DIR/vader.vim" > /dev/null 2>&1
+VADER_PATH="$VADER_TEMP_DIR/vader.vim"
+
 run_test() {
-    slug=$(basename $1)
+    slug=${1%/}
+    slug=${slug##*/}
     temp_dir=${temp_dir_base}/${slug}
     mkdir -p ${temp_dir}
 
     cp -r "$1/." $temp_dir
-    slug_snakecase=$(echo "$slug" | tr '-' '_')
-    cp $temp_dir/.meta/example.vim $temp_dir/$slug_snakecase.vim
+    slug_file=${slug//-/_}
+    
+    if [ -f "$temp_dir/.meta/exemplar.vim" ]; then
+        cp $temp_dir/.meta/exemplar.vim $temp_dir/$slug_file.vim
+    elif [ -f "$temp_dir/.meta/example.vim" ]; then
+        cp $temp_dir/.meta/example.vim $temp_dir/$slug_file.vim
+    else
+        echo "ERROR: Missing example/exemplar solution for $slug"
+        exit 1
+    fi
+    
+    echo -n "Running tests for $slug: "
+    
+    start_time=$(date +%s.%N)
+    output=$(vim -es -Nu <(cat <<VIMRC
+set nocompatible
+set backspace=indent,eol,start
+set runtimepath+=$VADER_PATH
+set runtimepath+=$temp_dir
+filetype off
+filetype plugin indent on
+syntax enable
+VIMRC
+) -c "source $temp_dir/$slug_file.vim" -c "Vader! $temp_dir/$slug_file.vader" 2>&1)
 
-    (cd /opt/test-runner && bin/run.sh $slug $temp_dir $temp_dir) || exit 1
-
-    test_status="$(jq -r '.status' $temp_dir/results.json)"
-
-    if [ "$test_status" != "pass" ]; then
-    	echo "Tests for $slug have failed:"
-    	cat $temp_dir/results.json
-    	exit 1
+    exit_code=$?
+    end_time=$(date +%s.%N)
+    duration=$(echo "$end_time - $start_time" | bc)
+    
+    if [ $exit_code -ne 0 ]; then
+        echo "FAILED!"
+        echo "$output" | sed -n '/^Starting Vader:/,$p'
+        exit 1
+    else
+        printf "ok (%.2fs)\n" "$duration"
     fi
 }
 
