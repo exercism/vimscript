@@ -9,9 +9,6 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-24.04
-    container:
-      image: exercism/vimscript-test-runner
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
