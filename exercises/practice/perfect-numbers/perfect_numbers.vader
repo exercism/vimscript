@@ -1,67 +1,71 @@
-
 Execute (Smallest perfect number is classified correctly):
   let g:number = 6
-  let g:expected = "perfect"
+  let g:expected = 'perfect'
   AssertEqual g:expected, Classify(g:number)
 
 Execute (Medium perfect number is classified correctly):
   let g:number = 28
-  let g:expected = "perfect"
+  let g:expected = 'perfect'
   AssertEqual g:expected, Classify(g:number)
 
 Execute (Large perfect number is classified correctly):
   let g:number = 33550336
-  let g:expected = "perfect"
+  let g:expected = 'perfect'
   AssertEqual g:expected, Classify(g:number)
 
 Execute (Smallest abundant number is classified correctly):
   let g:number = 12
-  let g:expected = "abundant"
+  let g:expected = 'abundant'
   AssertEqual g:expected, Classify(g:number)
 
 Execute (Medium abundant number is classified correctly):
   let g:number = 30
-  let g:expected = "abundant"
+  let g:expected = 'abundant'
   AssertEqual g:expected, Classify(g:number)
 
 Execute (Large abundant number is classified correctly):
   let g:number = 33550335
-  let g:expected = "abundant"
+  let g:expected = 'abundant'
+  AssertEqual g:expected, Classify(g:number)
+
+Execute (Perfect square abundant number is classified correctly):
+  let g:number = 196
+  let g:expected = 'abundant'
   AssertEqual g:expected, Classify(g:number)
 
 Execute (Smallest prime deficient number is classified correctly):
   let g:number = 2
-  let g:expected = "deficient"
+  let g:expected = 'deficient'
   AssertEqual g:expected, Classify(g:number)
 
 Execute (Smallest non-prime deficient number is classified correctly):
   let g:number = 4
-  let g:expected = "deficient"
+  let g:expected = 'deficient'
   AssertEqual g:expected, Classify(g:number)
 
 Execute (Medium deficient number is classified correctly):
   let g:number = 32
-  let g:expected = "deficient"
+  let g:expected = 'deficient'
   AssertEqual g:expected, Classify(g:number)
 
 Execute (Large deficient number is classified correctly):
   let g:number = 33550337
-  let g:expected = "deficient"
+  let g:expected = 'deficient'
   AssertEqual g:expected, Classify(g:number)
 
 Execute (Edge case (no factors other than itself) is classified correctly):
   let g:number = 1
-  let g:expected = "deficient"
+  let g:expected = 'deficient'
   AssertEqual g:expected, Classify(g:number)
 
 Execute (Zero is rejected (as it is not a positive integer)):
   let g:number = 0
-  let g:expected = "Classification is only possible for positive integers."
+  let g:expected = 'Classification is only possible for positive integers.'
   AssertThrows call Classify(g:number)
   AssertEqual g:expected, g:vader_exception
 
 Execute (Negative integer is rejected (as it is not a positive integer)):
   let g:number = -1
-  let g:expected = "Classification is only possible for positive integers."
+  let g:expected = 'Classification is only possible for positive integers.'
   AssertThrows call Classify(g:number)
   AssertEqual g:expected, g:vader_exception
