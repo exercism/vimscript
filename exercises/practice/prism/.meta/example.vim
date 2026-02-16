@@ -33,8 +33,9 @@ function! FindSequence(prisms, start) abort
       
       " bail if outside relative tolerance (scale by distance)
       let l:scale = 1.0
-      if (l:dist * l:dist) > 1.0
-        let l:scale = l:dist * l:dist
+      let l:dist_sq = l:dist * l:dist
+      if l:dist_sq > 1.0
+        let l:scale = l:dist_sq
       endif
       if l:crossSq >= 1.0e-6 * l:scale
         continue
