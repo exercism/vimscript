@@ -32,7 +32,10 @@ function! FindSequence(prisms, start) abort
       let l:crossSq = l:crossX * l:crossX + l:crossY * l:crossY
       
       " bail if outside relative tolerance (scale by distance)
-      let l:scale = max([1.0, l:dist * l:dist])
+      let l:scale = 1.0
+      if (l:dist * l:dist) > 1.0
+        let l:scale = l:dist * l:dist
+      endif
       if l:crossSq >= 1.0e-6 * l:scale
         continue
       endif
