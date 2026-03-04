@@ -791,6 +791,14 @@
         "difficulty": 5
       },
       {
+        "slug": "prism",
+        "name": "Prism",
+        "uuid": "4a8f6569-71cc-437d-9bda-e297e275f4f9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "relative-distance",
         "name": "Relative Distance",
         "uuid": "7b9866ac-c408-4487-98cc-eca051df33ec",
