@@ -113,8 +113,59 @@ function! s:filter_test_cases(cases, excluded_uuids) abort
   return filtered
 endfunction
 
-function! s:generate_variable(name, value)
-  call append(line('$'), printf('  let g:%s = %s', a:name, string(a:value)))
+function! s:dict_literal(dict) abort
+  if empty(a:dict)
+    return ['{}']
+  endif
+
+  let lines = ['{']
+  let key_names = sort(keys(a:dict))
+  let last_key = key_names[-1]
+
+  for key_name in key_names
+    let key_fragment = string(key_name) . ': '
+    let value = a:dict[key_name]
+
+    if type(value) ==# type({})
+      let entry_lines = s:dict_literal(value)
+      let entry_lines[0] = key_fragment . entry_lines[0]
+    else
+      let entry_lines = [key_fragment . string(value)]
+    endif
+
+    let entry_lines = s:indent_lines(entry_lines)
+    if key_name !=# last_key
+      let entry_lines[-1] .= ','
+    endif
+    call extend(lines, entry_lines)
+  endfor
+
+  call add(lines, '}')
+  return lines
+endfunction
+
+function! s:indent_lines(lines) abort
+  let indented = []
+  for line in a:lines
+    call add(indented, '  ' . line)
+  endfor
+  return indented
+endfunction
+
+function! s:generate_variable(name, value) abort
+  let binding = printf('  let g:%s = ', a:name)
+  let inline = binding . string(a:value)
+
+  if strdisplaywidth(inline) <= 80 || type(a:value) !=# type({})
+    call append(line('$'), inline)
+    return
+  endif
+
+  let value_lines = s:dict_literal(a:value)
+  call append(line('$'), binding . value_lines[0])
+  for line in value_lines[1:]
+    call append(line('$'), '  \ ' . line)
+  endfor
 endfunction
 
 function! s:generate_assert(test, arguments) abort
