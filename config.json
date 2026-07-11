@@ -655,6 +655,14 @@
         ]
       },
       {
+        "slug": "binary-search-tree",
+        "name": "Binary Search Tree",
+        "uuid": "4e8df8d7-2ca6-4c2b-9e0f-1f6a05ac8c57",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "camicia",
         "name": "Camicia",
         "uuid": "dfbaf50b-b67e-49d8-ba5f-881f5e1eb991",
