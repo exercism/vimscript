@@ -1,0 +1,11 @@
+function! MostCommonWord(text) abort
+  let counts = {}
+  let best = ''
+  for word in split(tolower(a:text), ' ')
+    let counts[word] = get(counts, word, 0) + 1
+    if counts[word] > get(counts, best, 0)
+      let best = word
+    endif
+  endfor
+  return printf('"%s" appears %d times', best, counts[best])
+endfunction
