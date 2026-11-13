@@ -1,4 +1,3 @@
-
 Execute (single digit strings can not be valid):
   let g:value = "1"
   Assert !IsValid(g:value)
