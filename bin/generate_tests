@@ -79,15 +79,15 @@ def quote(obj) -> str:
             obj = obj.replace(pattern, replace)
         return '"' + obj + '"'
     if isinstance(obj, list):
-        return "{ " + ", ".join(quote(i) for i in obj or [0]) + " }"
+        return "[" + ", ".join(quote(i) for i in obj) + "]"
     if isinstance(obj, dict):
         return quote(" ".join(f"{key}:{value}" for key, value in obj.items()))
     return TypeError(f"quote for type {type(obj)} not supported")
 
 
-def camel_to_snake(name: str) -> str:
-    """Filter `camel_to_snake` that converts a camel case string to snake case."""
-    return re.sub(r"([a-z])([A-Z])", (lambda m: f"{m.group(1)}_{m.group(2).lower()}"), name)
+def camel_to_screaming(name: str) -> str:
+    """Filter `camel_to_screaming` that converts a camel case string to screaming case."""
+    return name[0].upper() + name[1:]
 
 
 def jinja_env(exercise: pathlib.Path) -> jinja2.Environment:
@@ -95,7 +95,7 @@ def jinja_env(exercise: pathlib.Path) -> jinja2.Environment:
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(exercise / ".meta"))
     # C quoting of arbitrary data objects.
     env.filters["quote"] = quote
-    env.filters["camel_to_snake"] = camel_to_snake
+    env.filters["camel_to_screaming"] = camel_to_screaming
     return env
 
 
@@ -105,7 +105,7 @@ def generate(specs: pathlib.Path, exercise: pathlib.Path) -> None:
     translation = str.maketrans({i: "_" for i in string.punctuation + " "})
     for case in cases:
         case["test_function"] = "test_" + re.sub("_+", "_", case["description"].lower().translate(translation).strip("_"))
-        case["property_function"] = camel_to_snake(case["property"])
+        case["property_function"] = camel_to_screaming(case["property"])
         if len(case.get("input", {}).values()) == 1:
             case["given"] = list(case["input"].values())[0]
 
