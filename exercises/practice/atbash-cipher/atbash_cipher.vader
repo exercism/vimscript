@@ -3,56 +3,72 @@
 "   - encoding from English to atbash cipher
 "   - decoding from atbash cipher to all-lowercase-mashed-together English
 
-" Test encoding from English to atbash
-
 Execute (encode yes):
-  AssertEqual 'bvh', AtbashEncode('yes')
+  AssertEqual
+    \ "bvh",
+    \ AtbashEncode("yes")
 
 Execute (encode no):
-  AssertEqual 'ml', AtbashEncode('no')
+  AssertEqual
+    \ "ml",
+    \ AtbashEncode("no")
 
 Execute (encode OMG):
-  AssertEqual 'lnt', AtbashEncode('OMG')
+  AssertEqual
+    \ "lnt",
+    \ AtbashEncode("OMG")
 
 Execute (encode spaces):
-  AssertEqual 'lnt', AtbashEncode('O M G')
+  AssertEqual
+    \ "lnt",
+    \ AtbashEncode("O M G")
 
 Execute (encode mindblowingly):
-  AssertEqual 'nrmwy oldrm tob', AtbashEncode('mindblowingly')
+  AssertEqual
+    \ "nrmwy oldrm tob",
+    \ AtbashEncode("mindblowingly")
 
 Execute (encode numbers):
-  AssertEqual 'gvhgr mt123 gvhgr mt', AtbashEncode('Testing,1 2 3, testing.')
+  AssertEqual
+    \ "gvhgr mt123 gvhgr mt",
+    \ AtbashEncode("Testing,1 2 3, testing.")
 
 Execute (encode deep thought):
-  AssertEqual 'gifgs rhurx grlm', AtbashEncode('Truth is fiction.')
+  AssertEqual
+    \ "gifgs rhurx grlm",
+    \ AtbashEncode("Truth is fiction.")
 
 Execute (encode all the letters):
   AssertEqual
-    \ 'gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt',
-    \ AtbashEncode('The quick brown fox jumps over the lazy dog.')
-
-" Test decoding from atbash to English
+    \ "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt",
+    \ AtbashEncode("The quick brown fox jumps over the lazy dog.")
 
 Execute (decode exercism):
-  AssertEqual 'exercism', AtbashDecode('vcvix rhn')
+  AssertEqual
+    \ "exercism",
+    \ AtbashDecode("vcvix rhn")
 
 Execute (decode a sentence):
   AssertEqual
-    \ 'anobstacleisoftenasteppingstone',
-    \ AtbashDecode('zmlyh gzxov rhlug vmzhg vkkrm thglm v')
+    \ "anobstacleisoftenasteppingstone",
+    \ AtbashDecode("zmlyh gzxov rhlug vmzhg vkkrm thglm v")
 
 Execute (decode numbers):
-  AssertEqual 'testing123testing', AtbashDecode('gvhgr mt123 gvhgr mt')
+  AssertEqual
+    \ "testing123testing",
+    \ AtbashDecode("gvhgr mt123 gvhgr mt")
 
 Execute (decode all the letters):
   AssertEqual
-    \ 'thequickbrownfoxjumpsoverthelazydog',
-    \ AtbashDecode('gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt')
+    \ "thequickbrownfoxjumpsoverthelazydog",
+    \ AtbashDecode("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt")
 
 Execute (decode with too many spaces):
-  AssertEqual 'exercism', AtbashDecode('vc vix    r hn')
+  AssertEqual
+    \ "exercism",
+    \ AtbashDecode("vc vix    r hn")
 
 Execute (decode with no spaces):
-  AssertEqual 'anobstacleisoftenasteppingstone', AtbashDecode('zmlyhgzxovrhlugvmzhgvkkrmthglmv')
-
-
+  AssertEqual
+    \ "anobstacleisoftenasteppingstone",
+    \ AtbashDecode("zmlyhgzxovrhlugvmzhgvkkrmthglmv")
