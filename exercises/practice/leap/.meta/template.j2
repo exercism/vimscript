@@ -1,0 +1,6 @@
+{% for case in cases %}
+Execute ({{ case.description }}):
+  let g:year = {{ case.given | quote }}
+  let g:expected = {{ case.expected | quote }}
+  AssertEqual g:expected, LeapYear(g:year)
+{% endfor %}

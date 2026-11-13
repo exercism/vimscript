@@ -1,4 +1,3 @@
-
 Execute (year not divisible by 4 in common year):
   let g:year = 2015
   let g:expected = 0

@@ -1,0 +1,6 @@
+{% for case in cases %}
+Execute ({{ case.description }}):
+  let input = {{ case.given | quote }}
+  let expected = {{ case.expected | quote }}
+  AssertEqual expected, IsPangram(input)
+{% endfor %}
