@@ -1,0 +1,12 @@
+{% for case in cases %}
+Execute ({{ case.description }}):
+  let g:number = {{ case.given | quote }}
+{%- if not case.expect_error %}
+  let g:expected = {{ case.expected | quote }}
+  AssertEqual g:expected, {{ case.property_function }}(g:number)
+{%- else %}
+  let g:expected = {{ case.expect_error_msg | quote }}
+  AssertThrows call Steps(g:number)
+  AssertEqual g:expected, g:vader_exception
+{%- endif %}
+{% endfor %}

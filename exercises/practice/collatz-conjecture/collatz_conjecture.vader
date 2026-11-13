@@ -1,4 +1,3 @@
-
 Execute (zero steps for one):
   let g:number = 1
   let g:expected = 0
