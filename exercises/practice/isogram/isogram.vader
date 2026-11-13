@@ -1,4 +1,3 @@
-
 Execute (empty string):
   let g:phrase = ""
   let g:expected = 1
