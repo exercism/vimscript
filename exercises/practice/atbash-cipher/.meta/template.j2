@@ -1,0 +1,10 @@
+" The tests are divided into two groups:
+"
+"   - encoding from English to atbash cipher
+"   - decoding from atbash cipher to all-lowercase-mashed-together English
+{% for case in cases %}
+Execute ({{ case.description }}):
+  AssertEqual
+    \ {{ case.expected | quote }},
+    \ Atbash{{ case.property_function }}({{ case.given | quote }})
+{% endfor %}
