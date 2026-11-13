@@ -72,9 +72,7 @@ def quote(obj) -> str:
         return 0
     if obj is None:
         return "NULL"
-    if isinstance(obj, float):
-        return f"{obj}F"
-    if isinstance(obj, int):
+    if isinstance(obj, (int, float)):
         return f"{obj}"
     if isinstance(obj, str):
         for pattern, replace in [("\\", r"\\"), ("\n", r"\n"), ("\r", r"\r"), ('"', r'\"')]:

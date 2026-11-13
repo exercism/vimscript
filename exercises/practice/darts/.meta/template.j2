@@ -1,0 +1,7 @@
+{% for case in cases %}
+Execute ({{ case.description }}):
+  let g:x = {{ case.input.x | quote }}
+  let g:y = {{ case.input.y | quote }}
+  let g:expected = {{ case.expected | quote }}
+  AssertEqual g:expected, Darts(g:x, g:y)
+{% endfor %}
