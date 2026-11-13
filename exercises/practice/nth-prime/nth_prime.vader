@@ -20,6 +20,6 @@ Execute (big prime):
 
 Execute (there is no zeroth prime):
   let g:number = 0
-  let g:expected = 'there is no zeroth prime'
+  let g:expected = "there is no zeroth prime"
   AssertThrows call Prime(g:number)
   AssertEqual g:expected, g:vader_exception
