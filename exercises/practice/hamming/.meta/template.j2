@@ -1,0 +1,13 @@
+{% for case in cases %}
+Execute ({{ case.description }}):
+  let g:strand1 = {{ case.input.strand1 | quote }}
+  let g:strand2 = {{ case.input.strand2 | quote }}
+{%- if not case.expect_error %}
+  let g:expected = {{ case.expected | quote }}
+  AssertEqual g:expected, {{ case.property_function }}(g:strand1, g:strand2)
+{%- else %}
+  let g:expected = {{ case.expect_error_msg | quote }}
+  AssertThrows call {{ case.property_function }}(g:strand1, g:strand2)
+  AssertEqual g:expected, g:vader_exception
+{%- endif %}
+{% endfor %}

@@ -1,4 +1,3 @@
-
 Execute (empty strands):
   let g:strand1 = ""
   let g:strand2 = ""
