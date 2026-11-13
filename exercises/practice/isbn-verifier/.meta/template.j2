@@ -1,0 +1,4 @@
+{% for case in cases %}
+Execute ({{ case.description }}):
+  Assert {% if not case.expected %}!{% endif %}{{ case.property_function }}({{ case.given | quote }})
+{% endfor %}
