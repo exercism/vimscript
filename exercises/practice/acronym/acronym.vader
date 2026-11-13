@@ -1,4 +1,3 @@
-
 Execute (basic):
   let g:phrase = "Portable Network Graphics"
   let g:expected = "PNG"
