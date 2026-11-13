@@ -1,0 +1,4 @@
+{% for case in cases %}
+Execute ({{ case.description }}):
+  AssertEqual {{ case.expected | quote }}, Raindrops({{ case.given }})
+{% endfor %}
