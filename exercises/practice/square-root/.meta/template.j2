@@ -1,0 +1,6 @@
+{% for case in cases %}
+Execute ({{ case.description }}):
+  let g:radicand = {{ case.given | quote }}
+  let g:expected = {{ case.expected | quote }}
+  AssertEqual g:expected, {{ case.property_function }}(g:radicand)
+{% endfor %}

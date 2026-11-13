@@ -1,4 +1,3 @@
-
 Execute (root of 1):
   let g:radicand = 1
   let g:expected = 1
