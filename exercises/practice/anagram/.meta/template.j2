@@ -1,0 +1,7 @@
+{% for case in cases %}
+Execute ({{ case.description }}):
+  let g:candidates = {{ case.input.candidates | quote }}
+  let g:subject = {{ case.input.subject | quote }}
+  let g:expected = {{ case.expected | quote }}
+  AssertEqual g:expected, {{ case.property_function }}(g:candidates, g:subject)
+{% endfor %}
