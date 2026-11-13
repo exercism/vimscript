@@ -1,0 +1,5 @@
+{% for case in cases %}
+Execute ({{ case.description }}):
+  let g:value = {{ case.given | quote }}
+  Assert {% if not case.expected %}!{% endif %}IsValid(g:value)
+{% endfor %}
