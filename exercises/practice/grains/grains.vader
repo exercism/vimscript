@@ -1,4 +1,3 @@
-
 Execute (grains on square 1):
   let g:square = 1
   let g:expected = "1"
