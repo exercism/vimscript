@@ -1,7 +1,3 @@
-"
-" Version: 1.0.0
-"
-
 Before:
   unlet! input expected
 
@@ -59,4 +55,3 @@ Execute (entire alphabet available):
   let input = "abcdefghijklmnopqrstuvwxyz"
   let expected = 87
   AssertEqual expected, Score(input)
-

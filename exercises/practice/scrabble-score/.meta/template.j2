@@ -1,0 +1,10 @@
+Before:
+  unlet! input expected
+
+{%- for case in cases %}
+
+Execute ({{ case.descriptions | join(" - ") }}):
+  let input = {{ case.given | quote }}
+  let expected = {{ case.expected | quote }}
+  AssertEqual expected, {{ case.property_function }}(input)
+{%- endfor %}
