@@ -1,0 +1,44 @@
+{%- macro let_inputs(case) %}
+  {%- for k, v in case.input.items() -%}
+  let g:{{ k }} = {{ v | quote }}
+  {%- if not loop.last %}
+  {% endif %}
+  {%- endfor -%}
+{%- endmacro %}
+
+{%- macro let_expected(case) -%}
+  {%- if case.expect_error -%}
+  let g:expected = {{ case.expect_error_msg | quote }}
+  {%- else -%}
+  let g:expected = {{ case.expected | quote }}
+  {%- endif -%}
+{%- endmacro %}
+
+{%- macro check(case) -%}
+  {%- if case.expect_error -%}
+  AssertThrows call
+  {%- else -%}
+  AssertEqual g:expected,
+  {%- endif %} {{ case.property_function }}(
+  {%- for k in case.input -%}
+  g:{{ k }}
+  {%- if not loop.last %}, {% endif -%}
+  {%- endfor -%}
+  )
+  {%- if case.expect_error %}
+  AssertEqual g:expected, g:vader_exception
+  {%- endif %}
+{%- endmacro %}
+
+{%- for case in cases %}
+Execute ({{ case.descriptions | join(" - ") }}):
+  {%- if case.input %}
+  {{ let_inputs(case) }}
+  {%- endif %}
+  {{ let_expected(case) }}
+  {%- if case.property == "consistency" %}
+  AssertEqual g:expected, Decode(Encode(g:string))  
+  {%- else %}
+  {{ check(case) }}
+  {%- endif %}
+{% endfor %}
