@@ -1,4 +1,3 @@
-
 Execute (an empty string):
   let g:value = ""
   let g:expected = ""
