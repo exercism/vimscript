@@ -1,0 +1,21 @@
+Before:
+  unlet! input expected
+
+{%- for case in cases %}
+
+Execute ({{ case.description }}):
+  let input = {{ case.given | quote }}
+  let expected = {{ case.expected | quote }}
+  AssertEqual expected, {{ case.property_function }}(input)
+{%- endfor %}
+{% set extra_cases = {
+      "correctly handles invalid input (RNA instead of DNA)": "U",
+      "correctly handles completely invalid DNA input": "XXX",
+      "correctly handles partially invalid DNA input": "ACGTXXXCTTAA",
+    } %}
+{%- for description, given in extra_cases.items() %}
+Execute ({{ description }}):
+  let input = {{ given | quote }}
+  let expected = ''
+  AssertEqual expected, ToRna(input)
+{% endfor %}
