@@ -1,4 +1,3 @@
-
 Execute (English language short):
   let g:phrase = "Hi"
   let g:expected = "Hi"

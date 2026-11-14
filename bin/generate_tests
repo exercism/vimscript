@@ -85,6 +85,11 @@ def quote(obj) -> str:
     return TypeError(f"quote for type {type(obj)} not supported")
 
 
+def binary(num: int, padding: int = 0) -> str:
+    """Filter `binary` that converts an int to a binary string."""
+    return f"{num:0{padding}b}"
+
+
 def camel_to_screaming(name: str) -> str:
     """Filter `camel_to_screaming` that converts a camel case string to screaming case."""
     return name[0].upper() + name[1:]
@@ -94,6 +99,7 @@ def jinja_env(exercise: pathlib.Path) -> jinja2.Environment:
     """Return a configured Jinja env with filters added."""
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(exercise / ".meta"))
     # C quoting of arbitrary data objects.
+    env.filters["binary"] = binary
     env.filters["quote"] = quote
     env.filters["camel_to_screaming"] = camel_to_screaming
     return env
