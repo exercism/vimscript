@@ -1,0 +1,30 @@
+{%- macro let_expected(case) -%}
+  {%- if case.expect_error -%}
+  let g:expected = {{ case.expect_error_msg | quote }}
+  {%- else -%}
+  let g:expected = {{ case.expected | quote }}
+  {%- endif -%}
+{%- endmacro %}
+
+{%- macro check(case) -%}
+  {%- if case.expect_error -%}
+  AssertThrows call
+  {%- else -%}
+  AssertEqual g:expected,
+  {%- endif %} {{ case.property_function }}(
+  {%- for k in case.input -%}
+  g:{{ k }}
+  {%- if not loop.last %}, {% endif -%}
+  {%- endfor -%}
+  )
+  {%- if case.expect_error %}
+  AssertEqual g:expected, g:vader_exception
+  {%- endif %}
+{%- endmacro %}
+
+{%- for case in cases %}
+Execute ({{ case.descriptions | join(" - ") }}):
+  let g:number = {{ case.given | binary(padding=5) | quote }}
+  {{ let_expected(case) }}
+  {{ check(case) }}
+{% endfor %}
