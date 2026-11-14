@@ -58,7 +58,7 @@ Execute (decode - lowercase string):
   let g:expected = "aabbbcccc"
   AssertEqual g:expected, Decode(g:string)
 
-Execute (decode - encode followed by decode gives original string):
+Execute (consistency - encode followed by decode gives original string):
   let g:string = "zzz ZZ  zZ"
   let g:expected = "zzz ZZ  zZ"
   AssertEqual g:expected, Decode(Encode(g:string))
