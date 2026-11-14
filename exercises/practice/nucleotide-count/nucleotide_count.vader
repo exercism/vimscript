@@ -1,25 +1,21 @@
-"
-" Version: 1.3.0
-"
-
 Execute (empty strand):
   let g:strand = ""
-  let g:expected = {'A': 0, 'C': 0, 'T': 0, 'G': 0}
+  let g:expected = {'A': 0, 'C': 0, 'G': 0, 'T': 0}
   AssertEqual g:expected, NucleotideCounts(g:strand)
 
 Execute (can count one nucleotide in single-character input):
   let g:strand = "G"
-  let g:expected = {'A': 0, 'C': 0, 'T': 0, 'G': 1}
+  let g:expected = {'A': 0, 'C': 0, 'G': 1, 'T': 0}
   AssertEqual g:expected, NucleotideCounts(g:strand)
 
 Execute (strand with repeated nucleotide):
   let g:strand = "GGGGGGG"
-  let g:expected = {'A': 0, 'C': 0, 'T': 0, 'G': 7}
+  let g:expected = {'A': 0, 'C': 0, 'G': 7, 'T': 0}
   AssertEqual g:expected, NucleotideCounts(g:strand)
 
 Execute (strand with multiple nucleotides):
   let g:strand = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
-  let g:expected = {'A': 20, 'C': 12, 'T': 21, 'G': 17}
+  let g:expected = {'A': 20, 'C': 12, 'G': 17, 'T': 21}
   AssertEqual g:expected, NucleotideCounts(g:strand)
 
 Execute (strand with invalid nucleotides):
