@@ -1,9 +1,10 @@
-"
-" Version: 1.0.1
-"
-
 Before:
   unlet! input expected
+
+Execute (Empty RNA sequence):
+  let input = ""
+  let expected = ""
+  AssertEqual expected, ToRna(input)
 
 Execute (RNA complement of cytosine is guanine):
   let input = "C"
@@ -44,4 +45,3 @@ Execute (correctly handles partially invalid DNA input):
   let input = "ACGTXXXCTTAA"
   let expected = ''
   AssertEqual expected, ToRna(input)
-
