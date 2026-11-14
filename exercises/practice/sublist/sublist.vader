@@ -1,4 +1,3 @@
-
 Execute (empty lists):
   let g:listOne = []
   let g:listTwo = []
