@@ -1,0 +1,14 @@
+{% for case in cases %}
+Execute ({{ case.description }}):
+  let g:legacy = {
+  {%- for k, v in case.given.items() %}
+  \ '{{ k }}': {{ v | quote }}
+  {%- if not loop.last %},{% else %}}{% endif %}
+  {%- endfor %}
+  let g:expected = {
+  {%- for k, v in case.expected.items() %}
+  \ '{{ k }}': {{ v | quote }}
+  {%- if not loop.last %},{% else %}}{% endif %}
+  {%- endfor %}
+  AssertEqual g:expected, {{ case.property_function }}(g:legacy)
+{% endfor %}
