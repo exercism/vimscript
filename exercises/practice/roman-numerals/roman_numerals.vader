@@ -1,80 +1,134 @@
 Execute (1 is I):
-  AssertEqual "I", ToRoman(1)
+  let g:number = 1
+  let g:expected = "I"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (2 is II):
-  AssertEqual "II", ToRoman(2)
+  let g:number = 2
+  let g:expected = "II"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (3 is III):
-  AssertEqual "III", ToRoman(3)
+  let g:number = 3
+  let g:expected = "III"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (4 is IV):
-  AssertEqual "IV", ToRoman(4)
+  let g:number = 4
+  let g:expected = "IV"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (5 is V):
-  AssertEqual "V", ToRoman(5)
+  let g:number = 5
+  let g:expected = "V"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (6 is VI):
-  AssertEqual "VI", ToRoman(6)
+  let g:number = 6
+  let g:expected = "VI"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (9 is IX):
-  AssertEqual "IX", ToRoman(9)
+  let g:number = 9
+  let g:expected = "IX"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (16 is XVI):
-  AssertEqual "XVI", ToRoman(16)
+  let g:number = 16
+  let g:expected = "XVI"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (27 is XXVII):
-  AssertEqual "XXVII", ToRoman(27)
+  let g:number = 27
+  let g:expected = "XXVII"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (48 is XLVIII):
-  AssertEqual "XLVIII", ToRoman(48)
+  let g:number = 48
+  let g:expected = "XLVIII"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (49 is XLIX):
-  AssertEqual "XLIX", ToRoman(49)
+  let g:number = 49
+  let g:expected = "XLIX"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (59 is LIX):
-  AssertEqual "LIX", ToRoman(59)
+  let g:number = 59
+  let g:expected = "LIX"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (66 is LXVI):
-  AssertEqual "LXVI", ToRoman(66)
+  let g:number = 66
+  let g:expected = "LXVI"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (93 is XCIII):
-  AssertEqual "XCIII", ToRoman(93)
+  let g:number = 93
+  let g:expected = "XCIII"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (141 is CXLI):
-  AssertEqual "CXLI", ToRoman(141)
+  let g:number = 141
+  let g:expected = "CXLI"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (163 is CLXIII):
-  AssertEqual "CLXIII", ToRoman(163)
+  let g:number = 163
+  let g:expected = "CLXIII"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (166 is CLXVI):
-  AssertEqual "CLXVI", ToRoman(166)
+  let g:number = 166
+  let g:expected = "CLXVI"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (402 is CDII):
-  AssertEqual "CDII", ToRoman(402)
+  let g:number = 402
+  let g:expected = "CDII"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (575 is DLXXV):
-  AssertEqual "DLXXV", ToRoman(575)
+  let g:number = 575
+  let g:expected = "DLXXV"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (666 is DCLXVI):
-  AssertEqual "DCLXVI", ToRoman(666)
+  let g:number = 666
+  let g:expected = "DCLXVI"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (911 is CMXI):
-  AssertEqual "CMXI", ToRoman(911)
+  let g:number = 911
+  let g:expected = "CMXI"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (1024 is MXXIV):
-  AssertEqual "MXXIV", ToRoman(1024)
+  let g:number = 1024
+  let g:expected = "MXXIV"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (1666 is MDCLXVI):
-  AssertEqual "MDCLXVI", ToRoman(1666)
+  let g:number = 1666
+  let g:expected = "MDCLXVI"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (3000 is MMM):
-  AssertEqual "MMM", ToRoman(3000)
+  let g:number = 3000
+  let g:expected = "MMM"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (3001 is MMMI):
-  AssertEqual "MMMI", ToRoman(3001)
+  let g:number = 3001
+  let g:expected = "MMMI"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (3888 is MMMDCCCLXXXVIII):
-  AssertEqual "MMMDCCCLXXXVIII", ToRoman(3888)
+  let g:number = 3888
+  let g:expected = "MMMDCCCLXXXVIII"
+  AssertEqual g:expected, ToRoman(g:number)
 
 Execute (3999 is MMMCMXCIX):
-  AssertEqual "MMMCMXCIX", ToRoman(3999)
+  let g:number = 3999
+  let g:expected = "MMMCMXCIX"
+  AssertEqual g:expected, ToRoman(g:number)

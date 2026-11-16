@@ -1,4 +1,5 @@
+{%- import "generator_macros.j2" as macros -%}
+
 {% for case in cases %}
-Execute ({{ case.description }}):
-  AssertEqual {{ case.expected | quote }}, ToRoman({{ case.given }})
+{{ macros.test_equal(case, "ToRoman", case.input.keys()) }}
 {% endfor %}

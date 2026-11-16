@@ -1,49 +1,49 @@
 Execute (empty sentence):
-  let input = ""
-  let expected = 0
-  AssertEqual expected, IsPangram(input)
+  let g:sentence = ""
+  let g:expected = 0
+  AssertEqual g:expected, IsPangram(g:sentence)
 
 Execute (perfect lower case):
-  let input = "abcdefghijklmnopqrstuvwxyz"
-  let expected = 1
-  AssertEqual expected, IsPangram(input)
+  let g:sentence = "abcdefghijklmnopqrstuvwxyz"
+  let g:expected = 1
+  AssertEqual g:expected, IsPangram(g:sentence)
 
 Execute (only lower case):
-  let input = "the quick brown fox jumps over the lazy dog"
-  let expected = 1
-  AssertEqual expected, IsPangram(input)
+  let g:sentence = "the quick brown fox jumps over the lazy dog"
+  let g:expected = 1
+  AssertEqual g:expected, IsPangram(g:sentence)
 
 Execute (missing the letter 'x'):
-  let input = "a quick movement of the enemy will jeopardize five gunboats"
-  let expected = 0
-  AssertEqual expected, IsPangram(input)
+  let g:sentence = "a quick movement of the enemy will jeopardize five gunboats"
+  let g:expected = 0
+  AssertEqual g:expected, IsPangram(g:sentence)
 
 Execute (missing the letter 'h'):
-  let input = "five boxing wizards jump quickly at it"
-  let expected = 0
-  AssertEqual expected, IsPangram(input)
+  let g:sentence = "five boxing wizards jump quickly at it"
+  let g:expected = 0
+  AssertEqual g:expected, IsPangram(g:sentence)
 
 Execute (with underscores):
-  let input = "the_quick_brown_fox_jumps_over_the_lazy_dog"
-  let expected = 1
-  AssertEqual expected, IsPangram(input)
+  let g:sentence = "the_quick_brown_fox_jumps_over_the_lazy_dog"
+  let g:expected = 1
+  AssertEqual g:expected, IsPangram(g:sentence)
 
 Execute (with numbers):
-  let input = "the 1 quick brown fox jumps over the 2 lazy dogs"
-  let expected = 1
-  AssertEqual expected, IsPangram(input)
+  let g:sentence = "the 1 quick brown fox jumps over the 2 lazy dogs"
+  let g:expected = 1
+  AssertEqual g:expected, IsPangram(g:sentence)
 
 Execute (missing letters replaced by numbers):
-  let input = "7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog"
-  let expected = 0
-  AssertEqual expected, IsPangram(input)
+  let g:sentence = "7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog"
+  let g:expected = 0
+  AssertEqual g:expected, IsPangram(g:sentence)
 
 Execute (mixed case and punctuation):
-  let input = "\"Five quacking Zephyrs jolt my wax bed.\""
-  let expected = 1
-  AssertEqual expected, IsPangram(input)
+  let g:sentence = "\"Five quacking Zephyrs jolt my wax bed.\""
+  let g:expected = 1
+  AssertEqual g:expected, IsPangram(g:sentence)
 
 Execute (a-m and A-M are 26 different characters but not a pangram):
-  let input = "abcdefghijklm ABCDEFGHIJKLM"
-  let expected = 0
-  AssertEqual expected, IsPangram(input)
+  let g:sentence = "abcdefghijklm ABCDEFGHIJKLM"
+  let g:expected = 0
+  AssertEqual g:expected, IsPangram(g:sentence)
