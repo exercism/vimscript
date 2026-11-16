@@ -1,7 +1,5 @@
+{%- import "generator_macros.j2" as macros -%}
+
 {% for case in cases %}
-Execute ({{ case.description }}):
-  let g:candidates = {{ case.input.candidates | quote }}
-  let g:subject = {{ case.input.subject | quote }}
-  let g:expected = {{ case.expected | quote }}
-  AssertEqual g:expected, {{ case.property_function }}(g:candidates, g:subject)
+{{ macros.test_equal(case, case.property_function, ["candidates", "subject"]) }}
 {% endfor %}

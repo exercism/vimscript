@@ -1,0 +1,8 @@
+{%- macro test_equal(case, function, params) -%}
+Execute ({{ case.description }}):
+ {%- for param in params %}
+  let g:{{ param }} = {{ case.input[param] | quote }}
+ {%- endfor %}
+  let g:expected = {{ case.expected | quote }}
+  AssertEqual g:expected, {{ function }}({% for param in params %}g:{{param}}{% if not loop.last %}, {% endif %}{% endfor %})
+{%- endmacro -%}
