@@ -179,10 +179,12 @@ def main():
     exercises = args.exercises
     # Generate all exercises with templates if none are specified as args.
     if not exercises:
-        exercises = [
-            i.parent.parent
-            for i in pathlib.Path("exercises/practice").glob("*/.meta/template.j2")
-        ]
+        exercises = sorted(
+            {
+                i.parent.parent
+                for i in pathlib.Path("exercises/practice").glob("*/.meta/template.*.j2")
+            }
+        )
     else:
         # Turn strings to paths and make them relative to the practice exercises.
         out = []
