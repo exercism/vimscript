@@ -30,20 +30,3 @@ request.
     ```
     $ vint .
     ```
-
-## Writing test files
-
-### Generating test files
-
-Use the [generator](lib/generate.vim) to create Vader files from their canonical
-test data:
-
-```vim
-" in Vim
-:source lib/generate.vim
-:Generate word-count
-```
-
-This would fetch the [canonical test data](https://raw.githubusercontent.com/exercism/x-common/master/exercises/word-count/canonical-data.json),
-decode the JSON to Vim data types, iterate over the result, and put the tests in
-a new unnamed buffer.
