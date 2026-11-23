@@ -1,0 +1,15 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{% for case in cases %}
+Execute ({{ case.description | replace("an array", "a list") | replace("array", "list") }}):
+  let g:list = {{ case.input.array | quote }}
+  let g:value = {{ case.input.value }}
+ {%- if not case.expect_error %}
+  let g:expected = {{ case.expected }}
+  AssertEqual g:expected, Find(g:list, g:value)
+ {%- else %}
+  let g:expected = {{ case.expect_error_msg | replace("array", "list") | quote }}
+  AssertThrows call Find(g:list, g:value)
+  AssertEqual g:expected, g:vader_exception
+ {%- endif %}
+{% endfor %}
