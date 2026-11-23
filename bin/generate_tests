@@ -182,7 +182,7 @@ def main():
         exercises = sorted(
             {
                 i.parent.parent
-                for i in pathlib.Path("exercises/practice").glob("*/.meta/template.*.j2")
+                for i in pathlib.Path("exercises/practice").glob("*/.meta/template.j2")
             }
         )
     else:
