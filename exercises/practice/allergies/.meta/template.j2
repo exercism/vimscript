@@ -1,0 +1,9 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{% for case in cases %}
+{%- if case.property == "allergicTo" %}
+{{ macros.test_equal(case, case.property_function, ["score", "item"]) }}
+{%- else %}
+{{ macros.test_equal(case, case.property_function, case.input.keys()) }}
+{%- endif %}
+{% endfor %}
