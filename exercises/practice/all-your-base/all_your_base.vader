@@ -1,4 +1,3 @@
-
 Execute (single bit one to decimal):
   let g:digits = [1]
   let g:inputBase = 2
