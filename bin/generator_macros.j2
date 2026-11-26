@@ -1,7 +1,20 @@
+{%- macro render_var_assignment(name, value) -%}
+  {%- if value is sequence and not value is string and value | length > 10 -%}
+  let g:{{ name }} = [
+    {%- for elements in value | batch(15) %}
+    \ {{ elements | map("quote") | join(", ") }}{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  \ ]
+  {%- else -%}
+  let g:{{ name }} = {{ value | quote }}
+  {%- endif -%}
+{%- endmacro -%}
+
+
 {%- macro test_equal(case, function, params) -%}
 Execute ({{ case.description }}):
  {%- for param in params %}
-  let g:{{ param }} = {{ case.input[param] | quote }}
+  {{ render_var_assignment(param, case.input[param]) }}
  {%- endfor %}
  {%- if case.expect_error %}
   let g:expected = {{ case.expect_error_msg | quote }}
