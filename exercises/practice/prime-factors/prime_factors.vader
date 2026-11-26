@@ -1,35 +1,59 @@
 Execute (no factors):
-  AssertEqual [], Factors(1)
+  let g:value = 1
+  let g:expected = []
+  AssertEqual g:expected, Factors(g:value)
 
 Execute (prime number):
-  AssertEqual [2], Factors(2)
+  let g:value = 2
+  let g:expected = [2]
+  AssertEqual g:expected, Factors(g:value)
 
 Execute (another prime number):
-  AssertEqual [3], Factors(3)
+  let g:value = 3
+  let g:expected = [3]
+  AssertEqual g:expected, Factors(g:value)
 
 Execute (square of a prime):
-  AssertEqual [3, 3], Factors(9)
+  let g:value = 9
+  let g:expected = [3, 3]
+  AssertEqual g:expected, Factors(g:value)
 
 Execute (product of first prime):
-  AssertEqual [2, 2], Factors(4)
+  let g:value = 4
+  let g:expected = [2, 2]
+  AssertEqual g:expected, Factors(g:value)
 
 Execute (cube of a prime):
-  AssertEqual [2, 2, 2], Factors(8)
+  let g:value = 8
+  let g:expected = [2, 2, 2]
+  AssertEqual g:expected, Factors(g:value)
 
 Execute (product of second prime):
-  AssertEqual [3, 3, 3], Factors(27)
+  let g:value = 27
+  let g:expected = [3, 3, 3]
+  AssertEqual g:expected, Factors(g:value)
 
 Execute (product of third prime):
-  AssertEqual [5, 5, 5, 5], Factors(625)
+  let g:value = 625
+  let g:expected = [5, 5, 5, 5]
+  AssertEqual g:expected, Factors(g:value)
 
 Execute (product of first and second prime):
-  AssertEqual [2, 3], Factors(6)
+  let g:value = 6
+  let g:expected = [2, 3]
+  AssertEqual g:expected, Factors(g:value)
 
 Execute (product of primes and non-primes):
-  AssertEqual [2, 2, 3], Factors(12)
+  let g:value = 12
+  let g:expected = [2, 2, 3]
+  AssertEqual g:expected, Factors(g:value)
 
 Execute (product of primes):
-  AssertEqual [5, 17, 23, 461], Factors(901255)
+  let g:value = 901255
+  let g:expected = [5, 17, 23, 461]
+  AssertEqual g:expected, Factors(g:value)
 
 Execute (factors include a large prime):
-  AssertEqual [11, 9539, 894119], Factors(93819012551)
+  let g:value = 93819012551
+  let g:expected = [11, 9539, 894119]
+  AssertEqual g:expected, Factors(g:value)
