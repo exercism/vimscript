@@ -1,0 +1,41 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{% for case in cases %}
+Execute ({{ case.descriptions | join(": ") }}):
+  {%- for name, value in case.input.items() %}
+   {%- if name.startswith("set") %}
+  let g:{{ name }} = Set({{ value | quote }})
+   {%- else %}
+  let g:{{ name }} = {{ value | quote }}
+   {%- endif %}
+  {%- endfor %}
+  {%- if not case.expected is boolean %}
+  let g:expected = Set({{ case.expected | quote }})
+  {%- endif %}
+
+  {%- if case.property == "empty" %}
+
+  Assert {% if not case.expected %}!{% endif %}g:set.IsEmpty()
+  {%- elif case.property == "contains" %}
+
+  Assert {% if not case.expected %}!{% endif %}g:set.Contains(g:element)
+  {%- elif case.property == "subset" %}
+
+  Assert {% if not case.expected %}!{% endif %}g:set1.IsSubset(g:set2)
+  {%- elif case.property == "disjoint" %}
+
+  Assert {% if not case.expected %}!{% endif %}g:set1.IsDisjoint(g:set2)
+  {%- elif case.property == "equal" %}
+
+  Assert g:set1.values {% if case.expected %}=={% else %}!={% endif %} g:set2.values
+  {%- elif case.property == "add" %}
+  call g:set.Add(element)
+
+  AssertEqual g:expected, g:set
+  {%- elif case.property in ["intersection", "difference", "union"] %}
+
+  AssertEqual g:expected, g:set1.{{ case.property_function }}(g:set2)
+  {%- else %}
+  NOT COVERED
+  {%- endif %}
+{% endfor %}
