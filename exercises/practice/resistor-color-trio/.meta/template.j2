@@ -1,0 +1,8 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{% for case in cases %}
+Execute ({{ case.description }}):
+  let g:colors = {{ case.given | quote }}
+  let g:expected = {{ "%d %s" | format(case.expected.value, case.expected.unit) | quote }}
+  AssertEqual g:expected, {{ case.property_function }}(g:colors)
+{% endfor %}
