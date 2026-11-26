@@ -9,7 +9,7 @@ trap "rm -rf '$VADER_TEMP_DIR'" EXIT
 git clone --depth 1 https://github.com/junegunn/vader.vim.git "$VADER_TEMP_DIR/vader.vim" > /dev/null 2>&1
 VADER_PATH="$VADER_TEMP_DIR/vader.vim"
 
-run_test() {
+verify_exercise() {
     slug=${1%/}
     slug=${slug##*/}
     temp_dir=${temp_dir_base}/${slug}
@@ -54,15 +54,21 @@ VIMRC
     fi
 }
 
-for concept_exercise_dir in ./exercises/concept/*/; do
-    if [ -d $concept_exercise_dir ]; then
-        run_test $concept_exercise_dir
-    fi
-done
+verify_exercises() {
+    local exercise_slug
+    exercise_slug="${1}"
 
-# Verify the Practice Exercises
-for practice_exercise_dir in ./exercises/practice/*/; do
-    if [ -d $practice_exercise_dir ]; then
-        run_test $practice_exercise_dir
-    fi
-done
+    shopt -s nullglob
+    count=0
+    for exercise_dir in ./exercises/{concept,practice}/${exercise_slug}/; do
+        if [[ -d "${exercise_dir}" ]]; then
+            verify_exercise "${exercise_dir}"
+            ((++count))
+        fi
+    done
+    ((count > 0)) || die 'no matching exercises found!'
+}
+
+
+exercise_slug="${1:-*}"
+verify_exercises "${exercise_slug}"
