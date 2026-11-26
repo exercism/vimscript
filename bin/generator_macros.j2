@@ -1,8 +1,8 @@
 {%- macro render_var_assignment(name, value) -%}
-  {%- if value is sequence and not value is string and value | length > 10 -%}
+  {%- if value is sequence and not value is string and value | length > 15 -%}
   let g:{{ name }} = [
     {%- for elements in value | batch(15) %}
-    \ {{ elements | map("quote") | join(", ") }}{% if not loop.last %},{% endif %}
+  \ {{ elements | map("quote") | join(", ") }}{% if not loop.last %},{% endif %}
     {%- endfor %}
   \ ]
   {%- else -%}
@@ -16,12 +16,12 @@ Execute ({{ case.description }}):
  {%- for param in params %}
   {{ render_var_assignment(param, case.input[param]) }}
  {%- endfor %}
- {%- if case.expect_error %}
+ {%- if not case.expect_error %}
+  {{ render_var_assignment("expected", case.expected) }}
+  AssertEqual g:expected, {{ function }}({% for param in params %}g:{{param}}{% if not loop.last %}, {% endif %}{% endfor %})
+ {%- else %}
   let g:expected = {{ case.expect_error_msg | quote }}
   AssertThrows call {{ function }}({% for param in params %}g:{{param}}{% if not loop.last %}, {% endif %}{% endfor %})
   AssertEqual g:expected, g:vader_exception
- {%- else %}
-  let g:expected = {{ case.expected | quote }}
-  AssertEqual g:expected, {{ function }}({% for param in params %}g:{{param}}{% if not loop.last %}, {% endif %}{% endfor %})
  {%- endif %}
 {%- endmacro -%}
