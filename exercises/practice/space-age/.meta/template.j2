@@ -1,0 +1,20 @@
+{%- import "generator_macros.j2" as macros -%}
+
+Before (helper to compare floats):
+  function! ApproximatelyEqual(a, b) abort
+    return abs(a:a - a:b) <= 0.01
+  endfunction
+{% for case in cases %}
+Execute ({{ case.description }}):
+ {%- for param in case.input.keys() %}
+  let g:{{ param }} = {{ case.input[param] | quote }}
+ {%- endfor %}
+ {%- if case.expect_error %}
+  let g:expected = {{ case.expect_error_msg | quote }}
+  AssertThrows call {{ case.property_function }}({% for param in case.input.keys() %}g:{{param}}{% if not loop.last %}, {% endif %}{% endfor %})
+  AssertEqual g:expected, g:vader_exception
+ {%- else %}
+  let g:expected = {{ case.expected | quote }}
+  Assert ApproximatelyEqual(g:expected, {{ case.property_function }}({% for param in case.input.keys() %}g:{{param}}{% if not loop.last %}, {% endif %}{% endfor %}))
+ {%- endif %}
+{% endfor %}
