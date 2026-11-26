@@ -1,11 +1,20 @@
+{%- macro render_multiline_list(value) -%}
+  {%- if value[0] | quote | length > 10 -%}
+    {%- set batch_size = 1 -%}
+  {%- else -%}
+    {%- set batch_size = 15 -%}
+  {%- endif -%}
+[
+  {%- for elements in value | batch(batch_size) %}
+\ {{ elements | map("quote") | join(", ") }}{% if not loop.last %},{% endif %}
+  {%- endfor %}
+\ ]
+{%- endmacro -%}
+
 {%- macro render_var_assignment(name, value) -%}
   {%- if value is sequence and not value is string and (value | length > 15 or value | quote | length > 80)  -%}
   {%- if value[0] | quote | length > 10 %}{% set batch_size = 1 %}{% else %}{% set batch_size = 15 %}{% endif -%}
-  let g:{{ name }} = [
-    {%- for elements in value | batch(batch_size) %}
-  \ {{ elements | map("quote") | join(", ") }}{% if not loop.last %},{% endif %}
-    {%- endfor %}
-  \ ]
+  let g:{{ name }} = {{ render_multiline_list(value) | indent(width=2, first=False) }}
   {%- else -%}
   let g:{{ name }} = {{ value | quote }}
   {%- endif -%}

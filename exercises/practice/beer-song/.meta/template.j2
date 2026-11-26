@@ -1,0 +1,17 @@
+{%- import "generator_macros.j2" as macros -%}
+
+{% for case in cases %}
+Execute ({{ case.description }}):
+ {%- if case.input.takeDown == 1 %}
+  let g:bottles = {{ case.input.startBottles | quote }}
+  let g:expected = join({{ macros.render_multiline_list(case.expected + [""]) | indent(width=2) }}, "\n")
+
+  AssertEqual g:expected, Verse(g:bottles)
+ {%- else %}
+  let g:start = {{ case.input.startBottles | quote }}
+  let g:end = {{ case.input.startBottles - case.input.takeDown + 1 }}
+  let g:expected = join({{ macros.render_multiline_list(case.expected + [""]) | indent(width=2) }}, "\n")
+
+  AssertEqual g:expected, Verses(g:start, g:end)
+ {%- endif %}
+{% endfor %}
