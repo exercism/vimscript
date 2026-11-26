@@ -1,72 +1,289 @@
-"
-" Version: 1.0.0
-"
+Execute (testing for eggs allergy: not allergic to anything):
+  let g:score = 0
+  let g:item = "eggs"
+  let g:expected = 0
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
 
-Before:
-  unlet! input expected
+Execute (testing for eggs allergy: allergic only to eggs):
+  let g:score = 1
+  let g:item = "eggs"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
 
-Execute (no allergies means not allergic):
-  let input = 0
-  AssertEqual 0, AllergicTo(input, 'peanuts')
-  AssertEqual 0, AllergicTo(input, 'cats')
-  AssertEqual 0, AllergicTo(input, 'strawberries')
+Execute (testing for eggs allergy: allergic to eggs and something else):
+  let g:score = 3
+  let g:item = "eggs"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
 
-Execute (is allergic to eggs):
-  let input = 1
-  AssertEqual 1, AllergicTo(input, 'eggs')
+Execute (testing for eggs allergy: allergic to something, but not eggs):
+  let g:score = 2
+  let g:item = "eggs"
+  let g:expected = 0
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
 
-Execute (allergic to eggs in addition to other stuff):
-  let input = 5
-  AssertEqual 1, AllergicTo(input, 'eggs')
-  AssertEqual 1, AllergicTo(input, 'shellfish')
-  AssertEqual 0, AllergicTo(input, 'strawberries')
+Execute (testing for eggs allergy: allergic to everything):
+  let g:score = 255
+  let g:item = "eggs"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
 
-Execute (no allergies at all):
-  let input = 0
-  let expected = []
-  AssertEqual expected, List(input)
+Execute (testing for peanuts allergy: not allergic to anything):
+  let g:score = 0
+  let g:item = "peanuts"
+  let g:expected = 0
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
 
-Execute (allergic to just eggs):
-  let input = 1
-  let expected = ['eggs']
-  AssertEqual expected, List(input)
+Execute (testing for peanuts allergy: allergic only to peanuts):
+  let g:score = 2
+  let g:item = "peanuts"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
 
-Execute (allergic to just peanuts):
-  let input = 2
-  let expected = ['peanuts']
-  AssertEqual expected, List(input)
+Execute (testing for peanuts allergy: allergic to peanuts and something else):
+  let g:score = 7
+  let g:item = "peanuts"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
 
-Execute (allergic to just strawberries):
-  let input = 8
-  let expected = ['strawberries']
-  AssertEqual expected, List(input)
+Execute (testing for peanuts allergy: allergic to something, but not peanuts):
+  let g:score = 5
+  let g:item = "peanuts"
+  let g:expected = 0
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
 
-Execute (allergic to eggs and peanuts):
-  let input = 3
-  let expected = ['eggs', 'peanuts']
-  AssertEqual expected, List(input)
+Execute (testing for peanuts allergy: allergic to everything):
+  let g:score = 255
+  let g:item = "peanuts"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
 
-Execute (allergic to more than eggs but not peanuts):
-  let input = 5
-  let expected = ['eggs', 'shellfish']
-  AssertEqual expected, List(input)
+Execute (testing for shellfish allergy: not allergic to anything):
+  let g:score = 0
+  let g:item = "shellfish"
+  let g:expected = 0
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
 
-Execute (allergic to lots of stuff):
-  let input = 248
-  let expected = ['strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats']
-  AssertEqual expected, List(input)
+Execute (testing for shellfish allergy: allergic only to shellfish):
+  let g:score = 4
+  let g:item = "shellfish"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
 
-Execute (allergic to everything):
-  let input = 255
-  let expected = ['eggs', 'peanuts', 'shellfish', 'strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats']
-  AssertEqual expected, List(input)
+Execute (testing for shellfish allergy: allergic to shellfish and something else):
+  let g:score = 14
+  let g:item = "shellfish"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
 
-Execute (ignore non allergen score parts):
-  let input = 509
-  let expected = ['eggs', 'shellfish', 'strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats']
-  AssertEqual expected, List(input)
+Execute (testing for shellfish allergy: allergic to something, but not shellfish):
+  let g:score = 10
+  let g:item = "shellfish"
+  let g:expected = 0
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
 
-Execute (no allergen score parts without highest valid score):
-  let input = 257
-  let expected = ['eggs']
-  AssertEqual expected, List(input)
+Execute (testing for shellfish allergy: allergic to everything):
+  let g:score = 255
+  let g:item = "shellfish"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for strawberries allergy: not allergic to anything):
+  let g:score = 0
+  let g:item = "strawberries"
+  let g:expected = 0
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for strawberries allergy: allergic only to strawberries):
+  let g:score = 8
+  let g:item = "strawberries"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for strawberries allergy: allergic to strawberries and something else):
+  let g:score = 28
+  let g:item = "strawberries"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for strawberries allergy: allergic to something, but not strawberries):
+  let g:score = 20
+  let g:item = "strawberries"
+  let g:expected = 0
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for strawberries allergy: allergic to everything):
+  let g:score = 255
+  let g:item = "strawberries"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for tomatoes allergy: not allergic to anything):
+  let g:score = 0
+  let g:item = "tomatoes"
+  let g:expected = 0
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for tomatoes allergy: allergic only to tomatoes):
+  let g:score = 16
+  let g:item = "tomatoes"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for tomatoes allergy: allergic to tomatoes and something else):
+  let g:score = 56
+  let g:item = "tomatoes"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for tomatoes allergy: allergic to something, but not tomatoes):
+  let g:score = 40
+  let g:item = "tomatoes"
+  let g:expected = 0
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for tomatoes allergy: allergic to everything):
+  let g:score = 255
+  let g:item = "tomatoes"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for chocolate allergy: not allergic to anything):
+  let g:score = 0
+  let g:item = "chocolate"
+  let g:expected = 0
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for chocolate allergy: allergic only to chocolate):
+  let g:score = 32
+  let g:item = "chocolate"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for chocolate allergy: allergic to chocolate and something else):
+  let g:score = 112
+  let g:item = "chocolate"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for chocolate allergy: allergic to something, but not chocolate):
+  let g:score = 80
+  let g:item = "chocolate"
+  let g:expected = 0
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for chocolate allergy: allergic to everything):
+  let g:score = 255
+  let g:item = "chocolate"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for pollen allergy: not allergic to anything):
+  let g:score = 0
+  let g:item = "pollen"
+  let g:expected = 0
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for pollen allergy: allergic only to pollen):
+  let g:score = 64
+  let g:item = "pollen"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for pollen allergy: allergic to pollen and something else):
+  let g:score = 224
+  let g:item = "pollen"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for pollen allergy: allergic to something, but not pollen):
+  let g:score = 160
+  let g:item = "pollen"
+  let g:expected = 0
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for pollen allergy: allergic to everything):
+  let g:score = 255
+  let g:item = "pollen"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for cats allergy: not allergic to anything):
+  let g:score = 0
+  let g:item = "cats"
+  let g:expected = 0
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for cats allergy: allergic only to cats):
+  let g:score = 128
+  let g:item = "cats"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for cats allergy: allergic to cats and something else):
+  let g:score = 192
+  let g:item = "cats"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for cats allergy: allergic to something, but not cats):
+  let g:score = 64
+  let g:item = "cats"
+  let g:expected = 0
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (testing for cats allergy: allergic to everything):
+  let g:score = 255
+  let g:item = "cats"
+  let g:expected = 1
+  AssertEqual g:expected, AllergicTo(g:score, g:item)
+
+Execute (list when: no allergies):
+  let g:score = 0
+  let g:expected = []
+  AssertEqual g:expected, List(g:score)
+
+Execute (list when: just eggs):
+  let g:score = 1
+  let g:expected = ["eggs"]
+  AssertEqual g:expected, List(g:score)
+
+Execute (list when: just peanuts):
+  let g:score = 2
+  let g:expected = ["peanuts"]
+  AssertEqual g:expected, List(g:score)
+
+Execute (list when: just strawberries):
+  let g:score = 8
+  let g:expected = ["strawberries"]
+  AssertEqual g:expected, List(g:score)
+
+Execute (list when: eggs and peanuts):
+  let g:score = 3
+  let g:expected = ["eggs", "peanuts"]
+  AssertEqual g:expected, List(g:score)
+
+Execute (list when: more than eggs but not peanuts):
+  let g:score = 5
+  let g:expected = ["eggs", "shellfish"]
+  AssertEqual g:expected, List(g:score)
+
+Execute (list when: lots of stuff):
+  let g:score = 248
+  let g:expected = ["strawberries", "tomatoes", "chocolate", "pollen", "cats"]
+  AssertEqual g:expected, List(g:score)
+
+Execute (list when: everything):
+  let g:score = 255
+  let g:expected = ["eggs", "peanuts", "shellfish", "strawberries", "tomatoes", "chocolate", "pollen", "cats"]
+  AssertEqual g:expected, List(g:score)
+
+Execute (list when: no allergen score parts):
+  let g:score = 509
+  let g:expected = ["eggs", "shellfish", "strawberries", "tomatoes", "chocolate", "pollen", "cats"]
+  AssertEqual g:expected, List(g:score)
+
+Execute (list when: no allergen score parts without highest valid score):
+  let g:score = 257
+  let g:expected = ["eggs"]
+  AssertEqual g:expected, List(g:score)

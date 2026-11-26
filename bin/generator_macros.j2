@@ -12,7 +12,7 @@
 
 
 {%- macro test_equal(case, function, params) -%}
-Execute ({{ case.description }}):
+Execute ({{ case.descriptions | join(": ") | replace(":: ", ": ") }}):
  {%- for param in params %}
   {{ render_var_assignment(param, case.input[param]) }}
  {%- endfor %}
