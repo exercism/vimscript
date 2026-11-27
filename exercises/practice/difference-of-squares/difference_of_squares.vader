@@ -1,45 +1,44 @@
-
-Execute (square of sum 1):
+Execute (Square the sum of the numbers up to the given number: square of sum 1):
   let g:number = 1
   let g:expected = 1
   AssertEqual g:expected, SquareOfSum(g:number)
 
-Execute (square of sum 5):
+Execute (Square the sum of the numbers up to the given number: square of sum 5):
   let g:number = 5
   let g:expected = 225
   AssertEqual g:expected, SquareOfSum(g:number)
 
-Execute (square of sum 100):
+Execute (Square the sum of the numbers up to the given number: square of sum 100):
   let g:number = 100
   let g:expected = 25502500
   AssertEqual g:expected, SquareOfSum(g:number)
 
-Execute (sum of squares 1):
+Execute (Sum the squares of the numbers up to the given number: sum of squares 1):
   let g:number = 1
   let g:expected = 1
   AssertEqual g:expected, SumOfSquares(g:number)
 
-Execute (sum of squares 5):
+Execute (Sum the squares of the numbers up to the given number: sum of squares 5):
   let g:number = 5
   let g:expected = 55
   AssertEqual g:expected, SumOfSquares(g:number)
 
-Execute (sum of squares 100):
+Execute (Sum the squares of the numbers up to the given number: sum of squares 100):
   let g:number = 100
   let g:expected = 338350
   AssertEqual g:expected, SumOfSquares(g:number)
 
-Execute (difference of squares 1):
+Execute (Subtract sum of squares from square of sums: difference of squares 1):
   let g:number = 1
   let g:expected = 0
   AssertEqual g:expected, DifferenceOfSquares(g:number)
 
-Execute (difference of squares 5):
+Execute (Subtract sum of squares from square of sums: difference of squares 5):
   let g:number = 5
   let g:expected = 170
   AssertEqual g:expected, DifferenceOfSquares(g:number)
 
-Execute (difference of squares 100):
+Execute (Subtract sum of squares from square of sums: difference of squares 100):
   let g:number = 100
   let g:expected = 25164150
   AssertEqual g:expected, DifferenceOfSquares(g:number)
