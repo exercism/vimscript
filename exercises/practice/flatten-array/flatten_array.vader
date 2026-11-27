@@ -1,4 +1,3 @@
-
 Execute (empty):
   let g:array = []
   let g:expected = []
@@ -24,7 +23,7 @@ Execute (5 level nesting):
   let g:expected = [0, 2, 2, 3, 8, 100, 4, 50, -2]
   AssertEqual g:expected, Flatten(g:array)
 
-Execute (6 level nesting):
+Execute (5 level nesting with multiple nested arrays):
   let g:array = [1, [2, [[3]], [4, [[5]]], 6, 7], 8]
   let g:expected = [1, 2, 3, 4, 5, 6, 7, 8]
   AssertEqual g:expected, Flatten(g:array)
@@ -44,7 +43,7 @@ Execute (consecutive null values in the middle of the array are omitted from the
   let g:expected = [1, 4]
   AssertEqual g:expected, Flatten(g:array)
 
-Execute (6 level nested array with null values):
+Execute (4 level nested array with null values):
   let g:array = [0, 2, [[2, 3], 8, [[100]], v:null, [[v:null]]], -2]
   let g:expected = [0, 2, 2, 3, 8, 100, -2]
   AssertEqual g:expected, Flatten(g:array)
