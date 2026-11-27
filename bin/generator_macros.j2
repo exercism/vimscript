@@ -1,7 +1,8 @@
 {%- macro render_var_assignment(name, value) -%}
-  {%- if value is sequence and not value is string and value | length > 15 -%}
+  {%- if value is sequence and not value is string and (value | length > 15 or value | quote | length > 80)  -%}
+  {%- if value[0] | quote | length > 10 %}{% set batch_size = 1 %}{% else %}{% set batch_size = 15 %}{% endif -%}
   let g:{{ name }} = [
-    {%- for elements in value | batch(15) %}
+    {%- for elements in value | batch(batch_size) %}
   \ {{ elements | map("quote") | join(", ") }}{% if not loop.last %},{% endif %}
     {%- endfor %}
   \ ]

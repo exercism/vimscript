@@ -275,7 +275,9 @@ Execute (list when: lots of stuff):
 
 Execute (list when: everything):
   let g:score = 255
-  let g:expected = ["eggs", "peanuts", "shellfish", "strawberries", "tomatoes", "chocolate", "pollen", "cats"]
+  let g:expected = [
+  \ "eggs", "peanuts", "shellfish", "strawberries", "tomatoes", "chocolate", "pollen", "cats"
+  \ ]
   AssertEqual g:expected, List(g:score)
 
 Execute (list when: no allergen score parts):
