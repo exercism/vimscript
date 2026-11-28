@@ -21,13 +21,13 @@
 {%- endmacro -%}
 
 
-{%- macro test_equal(case, function, params) -%}
+{%- macro test_equal(case, function, params, multiline=False) -%}
 Execute ({{ case.descriptions | join(": ") | replace(":: ", ": ") }}):
  {%- for param in params %}
-  {{ render_var_assignment(param, case.input[param]) }}
+  {{ render_var_assignment(param, case.input[param], multiline=multiline) }}
  {%- endfor %}
  {%- if not case.expect_error %}
-  {{ render_var_assignment("expected", case.expected) }}
+  {{ render_var_assignment("expected", case.expected, multiline=multiline) }}
   AssertEqual g:expected, {{ function }}({% for param in params %}g:{{param}}{% if not loop.last %}, {% endif %}{% endfor %})
  {%- else %}
   let g:expected = {{ case.expect_error_msg | quote }}
